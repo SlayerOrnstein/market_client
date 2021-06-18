@@ -1,0 +1,18 @@
+{
+    "payload": {
+        "profile": {
+            "status": "online",
+            "avatar": null,
+            "ingame_name": "Lotus",
+            "id": "5816d390d3ffb6576c854571",
+            "region": "en",
+            "last_seen": "2021-06-18T00:11:06+00:00",
+            "platform": "pc",
+            "background": null,
+            "reputation": 3,
+            "own_profile": true,
+            "banned": false,
+            "about": ""
+        }
+    }
+}
