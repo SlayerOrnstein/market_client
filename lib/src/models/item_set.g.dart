@@ -37,12 +37,12 @@ MarketSetItem _$MarketSetItemFromJson(Map json) {
       subIcon: $checkedConvert(json, 'sub_icon', (v) => v as String?),
       icon: $checkedConvert(json, 'icon', (v) => v as String),
       iconFormat: $checkedConvert(json, 'icon_format', (v) => v as String),
-      masteryLevel: $checkedConvert(json, 'masteryLevel', (v) => v as int?),
+      masteryLevel: $checkedConvert(json, 'mastery_level', (v) => v as int?),
       tags: $checkedConvert(json, 'tags',
           (v) => (v as List<dynamic>).map((e) => e as String).toList()),
       thumb: $checkedConvert(json, 'thumb', (v) => v as String),
       ducats: $checkedConvert(json, 'ducats', (v) => v as int?),
-      setRoot: $checkedConvert(json, 'setRoot', (v) => v as bool?),
+      setRoot: $checkedConvert(json, 'set_root', (v) => v as bool?),
       en: $checkedConvert(
           json,
           'en',
@@ -105,6 +105,8 @@ MarketSetItem _$MarketSetItemFromJson(Map json) {
     'tradingTax': 'trading_tax',
     'subIcon': 'sub_icon',
     'iconFormat': 'icon_format',
+    'masteryLevel': 'mastery_level',
+    'setRoot': 'set_root',
     'zhhant': 'zh-hant',
     'zhhans': 'zh-hans'
   });
@@ -118,11 +120,11 @@ Map<String, dynamic> _$MarketSetItemToJson(MarketSetItem instance) =>
       'sub_icon': instance.subIcon,
       'icon': instance.icon,
       'icon_format': instance.iconFormat,
-      'masteryLevel': instance.masteryLevel,
+      'mastery_level': instance.masteryLevel,
       'tags': instance.tags,
       'thumb': instance.thumb,
       'ducats': instance.ducats,
-      'setRoot': instance.setRoot,
+      'set_root': instance.setRoot,
       'en': instance.en.toJson(),
       'ru': instance.ru.toJson(),
       'ko': instance.ko.toJson(),
@@ -144,14 +146,18 @@ MarketSetItemLanguage _$MarketSetItemLanguageFromJson(Map json) {
       wikiLink: $checkedConvert(json, 'wiki_link', (v) => v as String),
       drops: $checkedConvert(
           json,
-          'drops',
+          'drop',
           (v) => (v as List<dynamic>?)
               ?.map((e) => MarketSetItemDrop.fromJson(
                   Map<String, dynamic>.from(e as Map)))
               .toList()),
     );
     return val;
-  }, fieldKeyMap: const {'itemName': 'item_name', 'wikiLink': 'wiki_link'});
+  }, fieldKeyMap: const {
+    'itemName': 'item_name',
+    'wikiLink': 'wiki_link',
+    'drops': 'drop'
+  });
 }
 
 Map<String, dynamic> _$MarketSetItemLanguageToJson(
@@ -160,7 +166,7 @@ Map<String, dynamic> _$MarketSetItemLanguageToJson(
       'item_name': instance.itemName,
       'description': instance.description,
       'wiki_link': instance.wikiLink,
-      'drops': instance.drops?.map((e) => e.toJson()).toList(),
+      'drop': instance.drops?.map((e) => e.toJson()).toList(),
     };
 
 MarketSetItemDrop _$MarketSetItemDropFromJson(Map json) {

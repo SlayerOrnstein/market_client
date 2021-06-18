@@ -69,6 +69,7 @@ class MarketSetItem extends Equatable {
   @JsonKey(name: 'icon_format')
   final String iconFormat;
 
+  @JsonKey(name: 'mastery_level')
   final int? masteryLevel;
 
   final List<String> tags;
@@ -77,6 +78,7 @@ class MarketSetItem extends Equatable {
 
   final int? ducats;
 
+  @JsonKey(name: 'set_root')
   final bool? setRoot;
 
   final MarketSetItemLanguage en;
@@ -155,6 +157,7 @@ class MarketSetItemLanguage extends Equatable {
   @JsonKey(name: 'wiki_link')
   final String wikiLink;
 
+  @JsonKey(name: 'drop')
   final List<MarketSetItemDrop>? drops;
 
   Map<String, dynamic> toJson() => _$MarketSetItemLanguageToJson(this);

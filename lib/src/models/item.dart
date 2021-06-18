@@ -11,6 +11,7 @@ class MarketItem extends Equatable {
     required this.id,
     required this.urlName,
   });
+
   factory MarketItem.fromJson(Map<String, dynamic> json) {
     return _$MarketItemFromJson(json);
   }
