@@ -5,24 +5,30 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 import 'package:retry/retry.dart';
 
+import 'enums.dart';
 import 'exceptions.dart';
 
-enum MarketPlatform { pc, ps4, xbox, swi }
-
 class MarketHttpClient {
-  MarketHttpClient({http.Client? client}) : _client = client ?? http.Client();
+  MarketHttpClient({
+    http.Client? client,
+    this.token,
+    this.platform = MarketPlatform.pc,
+    this.language = 'en',
+  }) : _client = client ?? http.Client();
 
   final http.Client _client;
+
+  final String? token;
+
+  final MarketPlatform platform;
+
+  final String language;
 
   static const _root = 'https://api.warframe.market/v1';
 
   static const kTimeout = Duration(seconds: 5);
 
-  Future<Map<String, dynamic>> get(
-    String path, {
-    String? token,
-    MarketPlatform? platform,
-  }) async {
+  Future<Map<String, dynamic>> get(String path) async {
     return await retry(
       () async {
         final res = await _client
@@ -35,11 +41,7 @@ class MarketHttpClient {
     );
   }
 
-  Future<Map<String, dynamic>> post(
-    String path, {
-    String? token,
-    MarketPlatform? platform,
-  }) async {
+  Future<Map<String, dynamic>> post(String path) async {
     return await retry(
       () async {
         final res = await _client
@@ -63,7 +65,7 @@ class MarketHttpClient {
   Map<String, String> _headers(String? token, MarketPlatform? platform) {
     return <String, String>{
       'Platform': platform.toString().split('.').last,
-      'Language': Platform.localeName.split('_').first,
+      'Language': language,
       if (token != null)
         'Authorization': 'JWT=$token' // This token header might not be right.
     };
