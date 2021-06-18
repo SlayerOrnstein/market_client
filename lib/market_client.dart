@@ -4,6 +4,7 @@
 library market_client;
 
 export 'src/client.dart';
+export 'src/enums.dart';
 export 'src/http.dart';
 export 'src/models/item.dart';
 
