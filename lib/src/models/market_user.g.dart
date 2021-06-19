@@ -10,8 +10,8 @@ MarketUser _$MarketUserFromJson(Map json) {
   return $checkedNew('MarketUser', json, () {
     final val = MarketUser(
       ingameName: $checkedConvert(json, 'ingame_name', (v) => v as String),
-      lastSeen: $checkedConvert(
-          json, 'last_seen', (v) => DateTime.parse(v as String)),
+      lastSeen: $checkedConvert(json, 'last_seen',
+          (v) => v == null ? null : DateTime.parse(v as String)),
       reputation: $checkedConvert(json, 'reputation', (v) => v as int),
       status: $checkedConvert(
           json, 'status', (v) => _$enumDecode(_$UserStatusEnumMap, v)),
@@ -25,7 +25,7 @@ MarketUser _$MarketUserFromJson(Map json) {
 Map<String, dynamic> _$MarketUserToJson(MarketUser instance) =>
     <String, dynamic>{
       'ingame_name': instance.ingameName,
-      'last_seen': instance.lastSeen.toIso8601String(),
+      'last_seen': instance.lastSeen?.toIso8601String(),
       'reputation': instance.reputation,
       'status': _$UserStatusEnumMap[instance.status],
       'id': instance.id,
@@ -94,7 +94,7 @@ MarketUserProfile _$MarketUserProfileFromJson(Map json) {
 Map<String, dynamic> _$MarketUserProfileToJson(MarketUserProfile instance) =>
     <String, dynamic>{
       'ingame_name': instance.ingameName,
-      'last_seen': instance.lastSeen.toIso8601String(),
+      'last_seen': instance.lastSeen?.toIso8601String(),
       'reputation': instance.reputation,
       'status': _$UserStatusEnumMap[instance.status],
       'id': instance.id,

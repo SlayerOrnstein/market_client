@@ -24,7 +24,7 @@ class MarketUser extends Equatable {
   final String ingameName;
 
   @JsonKey(name: 'last_seen')
-  final DateTime lastSeen;
+  final DateTime? lastSeen;
 
   final int reputation;
 
