@@ -17,7 +17,7 @@ ItemOrder _$ItemOrderFromJson(Map json) {
           (v) => MarketUser.fromJson(Map<String, dynamic>.from(v as Map))),
       lastUpdate: $checkedConvert(
           json, 'last_update', (v) => DateTime.parse(v as String)),
-      platinum: $checkedConvert(json, 'platinum', (v) => v as int),
+      platinum: $checkedConvert(json, 'platinum', (v) => (v as num).toDouble()),
       orderType: $checkedConvert(
           json, 'order_type', (v) => _$enumDecode(_$OrderTypeEnumMap, v)),
       region: $checkedConvert(json, 'region', (v) => v as String),

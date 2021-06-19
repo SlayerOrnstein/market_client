@@ -37,7 +37,7 @@ class ItemOrder extends Equatable {
   @JsonKey(name: 'last_update')
   final DateTime lastUpdate;
 
-  final int platinum;
+  final double platinum;
 
   @JsonKey(name: 'order_type')
   final OrderType orderType;
