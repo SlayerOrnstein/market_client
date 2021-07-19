@@ -10,7 +10,7 @@ part 'item_order.g.dart';
 /// Representes an Order.
 /// {@endtemplate}
 @JsonSerializable()
-class ItemOrder extends Equatable {
+class ItemOrder extends Equatable implements Comparable {
   /// {@macro item_order}
   const ItemOrder({
     required this.creationDate,
@@ -65,6 +65,33 @@ class ItemOrder extends Equatable {
 
   /// Returns instance as a json encodable value.
   Map<String, dynamic> toJson() => _$ItemOrderToJson(this);
+
+  /// Compares 2 ItemOrders
+  static int compare(dynamic a, dynamic b) {
+    final itemA = a as ItemOrder;
+    final itemB = b as ItemOrder;
+    if (itemA.orderType.index != itemB.orderType.index) {
+      return -(a.orderType.index.compareTo(itemB.orderType.index));
+    }
+    if (itemA.user.status.index < itemB.user.status.index) {
+      return -1;
+    }
+    if (itemA.user.status.index == itemB.user.status.index) {
+      return itemA.orderType == OrderType.sell
+          ? itemA.platinum.compareTo(itemB.platinum)
+          : itemB.platinum.compareTo(itemA.platinum);
+    }
+    if (itemA.user.status.index > itemB.user.status.index) {
+      return 1;
+    }
+    return 0;
+  }
+
+  /// Compares this ItemOrder to another
+  @override
+  int compareTo(dynamic b) {
+    return ItemOrder.compare(this, b);
+  }
 
   @override
   List<Object?> get props {
