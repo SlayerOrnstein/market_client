@@ -6,31 +6,29 @@ part of 'item_set.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-MarketItemSet _$MarketItemSetFromJson(Map json) {
-  return $checkedNew('MarketItemSet', json, () {
-    final val = MarketItemSet(
+ItemSet _$ItemSetFromJson(Map json) {
+  return $checkedNew('ItemSet', json, () {
+    final val = ItemSet(
       id: $checkedConvert(json, 'id', (v) => v as String),
       itemsInSet: $checkedConvert(
           json,
           'items_in_set',
           (v) => (v as List<dynamic>)
-              .map((e) =>
-                  MarketSetItem.fromJson(Map<String, dynamic>.from(e as Map)))
+              .map((e) => SetItem.fromJson(Map<String, dynamic>.from(e as Map)))
               .toList()),
     );
     return val;
   }, fieldKeyMap: const {'itemsInSet': 'items_in_set'});
 }
 
-Map<String, dynamic> _$MarketItemSetToJson(MarketItemSet instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$ItemSetToJson(ItemSet instance) => <String, dynamic>{
       'id': instance.id,
       'items_in_set': instance.itemsInSet.map((e) => e.toJson()).toList(),
     };
 
-MarketSetItem _$MarketSetItemFromJson(Map json) {
-  return $checkedNew('MarketSetItem', json, () {
-    final val = MarketSetItem(
+SetItem _$SetItemFromJson(Map json) {
+  return $checkedNew('SetItem', json, () {
+    final val = SetItem(
       id: $checkedConvert(json, 'id', (v) => v as String),
       urlName: $checkedConvert(json, 'url_name', (v) => v as String),
       tradingTax: $checkedConvert(json, 'trading_tax', (v) => v as int),
@@ -43,61 +41,28 @@ MarketSetItem _$MarketSetItemFromJson(Map json) {
       thumb: $checkedConvert(json, 'thumb', (v) => v as String),
       ducats: $checkedConvert(json, 'ducats', (v) => v as int?),
       setRoot: $checkedConvert(json, 'set_root', (v) => v as bool?),
-      en: $checkedConvert(
-          json,
-          'en',
-          (v) => MarketSetItemLanguage.fromJson(
-              Map<String, dynamic>.from(v as Map))),
-      ru: $checkedConvert(
-          json,
-          'ru',
-          (v) => MarketSetItemLanguage.fromJson(
-              Map<String, dynamic>.from(v as Map))),
-      ko: $checkedConvert(
-          json,
-          'ko',
-          (v) => MarketSetItemLanguage.fromJson(
-              Map<String, dynamic>.from(v as Map))),
-      fr: $checkedConvert(
-          json,
-          'fr',
-          (v) => MarketSetItemLanguage.fromJson(
-              Map<String, dynamic>.from(v as Map))),
-      sv: $checkedConvert(
-          json,
-          'sv',
-          (v) => MarketSetItemLanguage.fromJson(
-              Map<String, dynamic>.from(v as Map))),
-      de: $checkedConvert(
-          json,
-          'de',
-          (v) => MarketSetItemLanguage.fromJson(
-              Map<String, dynamic>.from(v as Map))),
-      zhhant: $checkedConvert(
-          json,
-          'zh-hant',
-          (v) => MarketSetItemLanguage.fromJson(
-              Map<String, dynamic>.from(v as Map))),
-      zhhans: $checkedConvert(
-          json,
-          'zh-hans',
-          (v) => MarketSetItemLanguage.fromJson(
-              Map<String, dynamic>.from(v as Map))),
-      pt: $checkedConvert(
-          json,
-          'pt',
-          (v) => MarketSetItemLanguage.fromJson(
-              Map<String, dynamic>.from(v as Map))),
-      es: $checkedConvert(
-          json,
-          'es',
-          (v) => MarketSetItemLanguage.fromJson(
-              Map<String, dynamic>.from(v as Map))),
-      pl: $checkedConvert(
-          json,
-          'pl',
-          (v) => MarketSetItemLanguage.fromJson(
-              Map<String, dynamic>.from(v as Map))),
+      en: $checkedConvert(json, 'en',
+          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+      ru: $checkedConvert(json, 'ru',
+          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+      ko: $checkedConvert(json, 'ko',
+          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+      fr: $checkedConvert(json, 'fr',
+          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+      sv: $checkedConvert(json, 'sv',
+          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+      de: $checkedConvert(json, 'de',
+          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+      zhhant: $checkedConvert(json, 'zh-hant',
+          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+      zhhans: $checkedConvert(json, 'zh-hans',
+          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+      pt: $checkedConvert(json, 'pt',
+          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+      es: $checkedConvert(json, 'es',
+          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+      pl: $checkedConvert(json, 'pl',
+          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
     );
     return val;
   }, fieldKeyMap: const {
@@ -112,8 +77,7 @@ MarketSetItem _$MarketSetItemFromJson(Map json) {
   });
 }
 
-Map<String, dynamic> _$MarketSetItemToJson(MarketSetItem instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$SetItemToJson(SetItem instance) => <String, dynamic>{
       'id': instance.id,
       'url_name': instance.urlName,
       'trading_tax': instance.tradingTax,
@@ -138,9 +102,9 @@ Map<String, dynamic> _$MarketSetItemToJson(MarketSetItem instance) =>
       'pl': instance.pl.toJson(),
     };
 
-MarketSetItemLanguage _$MarketSetItemLanguageFromJson(Map json) {
-  return $checkedNew('MarketSetItemLanguage', json, () {
-    final val = MarketSetItemLanguage(
+ItemLanguage _$ItemLanguageFromJson(Map json) {
+  return $checkedNew('ItemLanguage', json, () {
+    final val = ItemLanguage(
       itemName: $checkedConvert(json, 'item_name', (v) => v as String),
       description: $checkedConvert(json, 'description', (v) => v as String),
       wikiLink: $checkedConvert(json, 'wiki_link', (v) => v as String),
@@ -148,8 +112,8 @@ MarketSetItemLanguage _$MarketSetItemLanguageFromJson(Map json) {
           json,
           'drop',
           (v) => (v as List<dynamic>?)
-              ?.map((e) => MarketSetItemDrop.fromJson(
-                  Map<String, dynamic>.from(e as Map)))
+              ?.map(
+                  (e) => ItemDrop.fromJson(Map<String, dynamic>.from(e as Map)))
               .toList()),
     );
     return val;
@@ -160,8 +124,7 @@ MarketSetItemLanguage _$MarketSetItemLanguageFromJson(Map json) {
   });
 }
 
-Map<String, dynamic> _$MarketSetItemLanguageToJson(
-        MarketSetItemLanguage instance) =>
+Map<String, dynamic> _$ItemLanguageToJson(ItemLanguage instance) =>
     <String, dynamic>{
       'item_name': instance.itemName,
       'description': instance.description,
@@ -169,9 +132,9 @@ Map<String, dynamic> _$MarketSetItemLanguageToJson(
       'drop': instance.drops?.map((e) => e.toJson()).toList(),
     };
 
-MarketSetItemDrop _$MarketSetItemDropFromJson(Map json) {
-  return $checkedNew('MarketSetItemDrop', json, () {
-    final val = MarketSetItemDrop(
+ItemDrop _$ItemDropFromJson(Map json) {
+  return $checkedNew('ItemDrop', json, () {
+    final val = ItemDrop(
       name: $checkedConvert(json, 'name', (v) => v as String),
       link: $checkedConvert(json, 'link', (v) => v as String),
     );
@@ -179,8 +142,7 @@ MarketSetItemDrop _$MarketSetItemDropFromJson(Map json) {
   });
 }
 
-Map<String, dynamic> _$MarketSetItemDropToJson(MarketSetItemDrop instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$ItemDropToJson(ItemDrop instance) => <String, dynamic>{
       'name': instance.name,
       'link': instance.link,
     };

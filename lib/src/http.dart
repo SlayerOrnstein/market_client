@@ -8,7 +8,11 @@ import 'package:retry/retry.dart';
 import 'enums.dart';
 import 'exceptions.dart';
 
+/// {@template client}
+/// The Client that makes the raw calls to Warframe market
+/// {@endtemplate}
 class MarketHttpClient {
+  /// {@macro client}
   MarketHttpClient({
     http.Client? client,
     this.token,
@@ -18,22 +22,28 @@ class MarketHttpClient {
 
   final http.Client _client;
 
+  /// The users JWT token
+  ///
+  /// token can be null but only request that aren't authorized will be
+  /// fulfilled.
   final String? token;
 
+  /// The game platform used to make request
   final MarketPlatform platform;
 
+  /// The language used to make request.
   final String language;
 
   static const _root = 'https://api.warframe.market/v1';
+  static const _kTimeout = Duration(seconds: 5);
 
-  static const kTimeout = Duration(seconds: 5);
-
+  /// Makes a GET request to [path]
   Future<Map<String, dynamic>> get(String path) async {
     return await retry(
       () async {
         final res = await _client
             .get(Uri.parse('$_root$path'), headers: _headers(token, platform))
-            .timeout(kTimeout);
+            .timeout(_kTimeout);
 
         return _parseResponse(res);
       },
@@ -41,12 +51,13 @@ class MarketHttpClient {
     );
   }
 
+  /// Makes a POST request to [path]
   Future<Map<String, dynamic>> post(String path) async {
     return await retry(
       () async {
         final res = await _client
             .post(Uri.parse('$_root/$path'), headers: _headers(token, platform))
-            .timeout(kTimeout);
+            .timeout(_kTimeout);
 
         return _parseResponse(res);
       },

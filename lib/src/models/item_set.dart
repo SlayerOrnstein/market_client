@@ -3,28 +3,40 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'item_set.g.dart';
 
+/// {@template item_set}
+/// The complete set for an item.
+/// {@endtemplate}
 @JsonSerializable()
-class MarketItemSet extends Equatable {
-  const MarketItemSet({required this.id, required this.itemsInSet});
+class ItemSet extends Equatable {
+  /// {@macro item_set}
+  const ItemSet({required this.id, required this.itemsInSet});
 
-  factory MarketItemSet.fromJson(Map<String, dynamic> json) {
-    return _$MarketItemSetFromJson(json);
+  /// Creates an [ItemSet] from a json value.
+  factory ItemSet.fromJson(Map<String, dynamic> json) {
+    return _$ItemSetFromJson(json);
   }
 
+  /// Set ID.
   final String id;
 
+  /// The items in this set.
   @JsonKey(name: 'items_in_set')
-  final List<MarketSetItem> itemsInSet;
+  final List<SetItem> itemsInSet;
 
-  Map<String, dynamic> toJson() => _$MarketItemSetToJson(this);
+  /// Returns a json value for instance.
+  Map<String, dynamic> toJson() => _$ItemSetToJson(this);
 
   @override
   List<Object?> get props => [id, itemsInSet];
 }
 
+/// {@template set_item}
+/// The item in a set.
+/// {@endtemplate}
 @JsonSerializable()
-class MarketSetItem extends Equatable {
-  const MarketSetItem({
+class SetItem extends Equatable {
+  /// {@macro set_item}
+  const SetItem({
     required this.id,
     required this.urlName,
     required this.tradingTax,
@@ -49,63 +61,88 @@ class MarketSetItem extends Equatable {
     required this.pl,
   });
 
-  factory MarketSetItem.fromJson(Map<String, dynamic> json) {
-    return _$MarketSetItemFromJson(json);
+  /// Creates instance from json.
+  factory SetItem.fromJson(Map<String, dynamic> json) {
+    return _$SetItemFromJson(json);
   }
 
+  /// Item ID.
   final String id;
 
+  /// Url name for the item
   @JsonKey(name: 'url_name')
   final String urlName;
 
+  /// The item's trading tax.
   @JsonKey(name: 'trading_tax')
   final int tradingTax;
 
+  /// The sub icon.
   @JsonKey(name: 'sub_icon')
   final String? subIcon;
 
+  /// The main icon.
   final String icon;
 
+  /// The icon's format.
   @JsonKey(name: 'icon_format')
   final String iconFormat;
 
+  /// Required mastery level to craft item.
   @JsonKey(name: 'mastery_level')
   final int? masteryLevel;
 
+  /// The item's tags.
   final List<String> tags;
 
+  /// Thumbnail.
   final String thumb;
 
+  /// The amount of ducats this item sells for.
   final int? ducats;
 
+  /// If the item is the root of the set.
+  ///
+  /// i.e. the main blueprint for an item.
   @JsonKey(name: 'set_root')
   final bool? setRoot;
 
-  final MarketSetItemLanguage en;
+  /// Item name in English.
+  final ItemLanguage en;
 
-  final MarketSetItemLanguage ru;
+  /// Item name in Russion.
+  final ItemLanguage ru;
 
-  final MarketSetItemLanguage ko;
+  /// Item name in Korean.
+  final ItemLanguage ko;
 
-  final MarketSetItemLanguage fr;
+  /// Item name in French.
+  final ItemLanguage fr;
 
-  final MarketSetItemLanguage sv;
+  /// Item name in English.
+  final ItemLanguage sv;
 
-  final MarketSetItemLanguage de;
+  /// Item name in German.
+  final ItemLanguage de;
 
+  /// Item name in Traditional Chinese(?).
   @JsonKey(name: 'zh-hant')
-  final MarketSetItemLanguage zhhant;
+  final ItemLanguage zhhant;
 
+  /// Item name in Simplified Chinese.
   @JsonKey(name: 'zh-hans')
-  final MarketSetItemLanguage zhhans;
+  final ItemLanguage zhhans;
 
-  final MarketSetItemLanguage pt;
+  /// Item name in Portuguese.
+  final ItemLanguage pt;
 
-  final MarketSetItemLanguage es;
+  /// Item name in Spanish.
+  final ItemLanguage es;
 
-  final MarketSetItemLanguage pl;
+  /// Item name in Polish.
+  final ItemLanguage pl;
 
-  Map<String, dynamic> toJson() => _$MarketSetItemToJson(this);
+  Map<String, dynamic> toJson() => _$SetItemToJson(this);
 
   @override
   List<Object?> get props {
@@ -137,16 +174,16 @@ class MarketSetItem extends Equatable {
 }
 
 @JsonSerializable()
-class MarketSetItemLanguage extends Equatable {
-  const MarketSetItemLanguage({
+class ItemLanguage extends Equatable {
+  const ItemLanguage({
     required this.itemName,
     required this.description,
     required this.wikiLink,
     this.drops,
   });
 
-  factory MarketSetItemLanguage.fromJson(Map<String, dynamic> json) {
-    return _$MarketSetItemLanguageFromJson(json);
+  factory ItemLanguage.fromJson(Map<String, dynamic> json) {
+    return _$ItemLanguageFromJson(json);
   }
 
   @JsonKey(name: 'item_name')
@@ -158,25 +195,25 @@ class MarketSetItemLanguage extends Equatable {
   final String wikiLink;
 
   @JsonKey(name: 'drop')
-  final List<MarketSetItemDrop>? drops;
+  final List<ItemDrop>? drops;
 
-  Map<String, dynamic> toJson() => _$MarketSetItemLanguageToJson(this);
+  Map<String, dynamic> toJson() => _$ItemLanguageToJson(this);
 
   @override
   List<Object?> get props => [itemName, description, wikiLink, drops];
 }
 
 @JsonSerializable()
-class MarketSetItemDrop extends Equatable {
-  const MarketSetItemDrop({required this.name, required this.link});
+class ItemDrop extends Equatable {
+  const ItemDrop({required this.name, required this.link});
 
-  factory MarketSetItemDrop.fromJson(Map<String, dynamic> json) {
-    return _$MarketSetItemDropFromJson(json);
+  factory ItemDrop.fromJson(Map<String, dynamic> json) {
+    return _$ItemDropFromJson(json);
   }
 
   final String name, link;
 
-  Map<String, dynamic> toJson() => _$MarketSetItemDropToJson(this);
+  Map<String, dynamic> toJson() => _$ItemDropToJson(this);
 
   @override
   List<Object?> get props => [name, link];

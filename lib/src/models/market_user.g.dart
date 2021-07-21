@@ -59,9 +59,9 @@ K _$enumDecode<K, V>(
 }
 
 const _$UserStatusEnumMap = {
-  UserStatus.offline: 'offline',
   UserStatus.ingame: 'ingame',
   UserStatus.online: 'online',
+  UserStatus.offline: 'offline',
 };
 
 MarketUserProfile _$MarketUserProfileFromJson(Map json) {
@@ -110,6 +110,6 @@ Map<String, dynamic> _$MarketUserProfileToJson(MarketUserProfile instance) =>
 const _$MarketPlatformEnumMap = {
   MarketPlatform.pc: 'pc',
   MarketPlatform.ps4: 'ps4',
-  MarketPlatform.xbox: 'xbox',
   MarketPlatform.swi: 'swi',
+  MarketPlatform.xbox: 'xbox',
 };

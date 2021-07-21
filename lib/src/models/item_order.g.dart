@@ -80,6 +80,6 @@ const _$OrderTypeEnumMap = {
 const _$MarketPlatformEnumMap = {
   MarketPlatform.pc: 'pc',
   MarketPlatform.ps4: 'ps4',
-  MarketPlatform.xbox: 'xbox',
   MarketPlatform.swi: 'swi',
+  MarketPlatform.xbox: 'xbox',
 };
