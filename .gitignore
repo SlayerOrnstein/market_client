@@ -11,3 +11,10 @@ build/
 
 # Directory created by dartdoc
 doc/api/
+
+gradlew
+gradlew.bat
+gradle/
+.idea/
+.gradle/
+local.properties
