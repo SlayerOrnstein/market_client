@@ -6,4 +6,5 @@ export 'src/http.dart';
 export 'src/models/item.dart';
 export 'src/models/item_order.dart';
 export 'src/models/item_set.dart';
+export 'src/models/market_orders.dart';
 export 'src/models/market_user.dart';
