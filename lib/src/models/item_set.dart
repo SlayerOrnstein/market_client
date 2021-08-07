@@ -142,6 +142,7 @@ class SetItem extends Equatable {
   /// Item name in Polish.
   final ItemLanguage pl;
 
+  /// Returns [ItemSet] as a json object.
   Map<String, dynamic> toJson() => _$SetItemToJson(this);
 
   @override
@@ -173,8 +174,12 @@ class SetItem extends Equatable {
   }
 }
 
+/// {@template item_lang}
+/// Model for item language.
+/// {@endtemplate}
 @JsonSerializable()
 class ItemLanguage extends Equatable {
+  /// {@macro item_lang}
   const ItemLanguage({
     required this.itemName,
     required this.description,
@@ -182,37 +187,53 @@ class ItemLanguage extends Equatable {
     this.drops,
   });
 
+  /// Get an instance of [ItemLanguage] from json object.
   factory ItemLanguage.fromJson(Map<String, dynamic> json) {
     return _$ItemLanguageFromJson(json);
   }
 
+  /// Item name.
   @JsonKey(name: 'item_name')
   final String itemName;
 
+  /// item description.
   final String description;
 
+  /// Item wiki link.
   @JsonKey(name: 'wiki_link')
   final String wikiLink;
 
+  /// List of drops for the item
   @JsonKey(name: 'drop')
   final List<ItemDrop>? drops;
 
+  /// Returns a json object from this [ItemLanguage] instance
   Map<String, dynamic> toJson() => _$ItemLanguageToJson(this);
 
   @override
   List<Object?> get props => [itemName, description, wikiLink, drops];
 }
 
+/// {@template item_drop}
+/// Item drops
+/// {@endtemplate}
 @JsonSerializable()
 class ItemDrop extends Equatable {
+  /// {@macro item_drop}
   const ItemDrop({required this.name, required this.link});
 
+  /// Get instance of [ItemDrop] from json object
   factory ItemDrop.fromJson(Map<String, dynamic> json) {
     return _$ItemDropFromJson(json);
   }
 
-  final String name, link;
+  /// Item Drop name.
+  final String name;
 
+  /// Item link.
+  final String link;
+
+  /// Returns [ItemDrop] to a json object
   Map<String, dynamic> toJson() => _$ItemDropToJson(this);
 
   @override
