@@ -182,8 +182,8 @@ class ItemLanguage extends Equatable {
   /// {@macro item_lang}
   const ItemLanguage({
     required this.itemName,
-    required this.description,
-    required this.wikiLink,
+    this.description,
+    this.wikiLink,
     this.drops,
   });
 
@@ -197,11 +197,11 @@ class ItemLanguage extends Equatable {
   final String itemName;
 
   /// item description.
-  final String description;
+  final String? description;
 
   /// Item wiki link.
   @JsonKey(name: 'wiki_link')
-  final String wikiLink;
+  final String? wikiLink;
 
   /// List of drops for the item
   @JsonKey(name: 'drop')

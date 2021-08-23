@@ -106,8 +106,8 @@ ItemLanguage _$ItemLanguageFromJson(Map json) {
   return $checkedNew('ItemLanguage', json, () {
     final val = ItemLanguage(
       itemName: $checkedConvert(json, 'item_name', (v) => v as String),
-      description: $checkedConvert(json, 'description', (v) => v as String),
-      wikiLink: $checkedConvert(json, 'wiki_link', (v) => v as String),
+      description: $checkedConvert(json, 'description', (v) => v as String?),
+      wikiLink: $checkedConvert(json, 'wiki_link', (v) => v as String?),
       drops: $checkedConvert(
           json,
           'drop',
