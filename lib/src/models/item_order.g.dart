@@ -121,7 +121,7 @@ OrderItem _$OrderItemFromJson(Map json) {
           (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
       pl: $checkedConvert(json, 'pl',
           (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
-      platinum: $checkedConvert(json, 'platinum', (v) => v as int),
+      platinum: $checkedConvert(json, 'platinum', (v) => v as int?),
       orderType: $checkedConvert(
           json, 'order_type', (v) => _$enumDecode(_$OrderTypeEnumMap, v)),
       platform: $checkedConvert(

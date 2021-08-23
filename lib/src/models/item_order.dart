@@ -137,7 +137,7 @@ class OrderItem extends Equatable {
     required this.pt,
     required this.es,
     required this.pl,
-    required this.platinum,
+    this.platinum,
     required this.orderType,
     required this.platform,
     required this.creationDate,
@@ -204,7 +204,7 @@ class OrderItem extends Equatable {
   /// Item name in Polish.
   final ItemLanguage pl;
 
-  final int platinum;
+  final int? platinum;
 
   @JsonKey(name: 'order_type')
   final OrderType orderType;
