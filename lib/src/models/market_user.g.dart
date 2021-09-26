@@ -13,6 +13,7 @@ MarketUser _$MarketUserFromJson(Map json) {
       lastSeen: $checkedConvert(json, 'last_seen',
           (v) => v == null ? null : DateTime.parse(v as String)),
       reputation: $checkedConvert(json, 'reputation', (v) => v as int),
+      region: $checkedConvert(json, 'region', (v) => v as String),
       status: $checkedConvert(
           json, 'status', (v) => _$enumDecode(_$UserStatusEnumMap, v)),
       id: $checkedConvert(json, 'id', (v) => v as String),
@@ -27,6 +28,7 @@ Map<String, dynamic> _$MarketUserToJson(MarketUser instance) =>
       'ingame_name': instance.ingameName,
       'last_seen': instance.lastSeen?.toIso8601String(),
       'reputation': instance.reputation,
+      'region': instance.region,
       'status': _$UserStatusEnumMap[instance.status],
       'id': instance.id,
       'avatar': instance.avatar,
@@ -71,6 +73,7 @@ MarketUserProfile _$MarketUserProfileFromJson(Map json) {
       lastSeen: $checkedConvert(
           json, 'last_seen', (v) => DateTime.parse(v as String)),
       reputation: $checkedConvert(json, 'reputation', (v) => v as int),
+      region: $checkedConvert(json, 'region', (v) => v as String),
       status: $checkedConvert(
           json, 'status', (v) => _$enumDecode(_$UserStatusEnumMap, v)),
       id: $checkedConvert(json, 'id', (v) => v as String),
@@ -81,7 +84,6 @@ MarketUserProfile _$MarketUserProfileFromJson(Map json) {
       ownProfile: $checkedConvert(json, 'own_profile', (v) => v as bool),
       platform: $checkedConvert(
           json, 'platform', (v) => _$enumDecode(_$MarketPlatformEnumMap, v)),
-      region: $checkedConvert(json, 'region', (v) => v as String),
     );
     return val;
   }, fieldKeyMap: const {
@@ -96,10 +98,10 @@ Map<String, dynamic> _$MarketUserProfileToJson(MarketUserProfile instance) =>
       'ingame_name': instance.ingameName,
       'last_seen': instance.lastSeen?.toIso8601String(),
       'reputation': instance.reputation,
+      'region': instance.region,
       'status': _$UserStatusEnumMap[instance.status],
       'id': instance.id,
       'avatar': instance.avatar,
-      'region': instance.region,
       'platform': _$MarketPlatformEnumMap[instance.platform],
       'own_profile': instance.ownProfile,
       'background': instance.background,

@@ -16,6 +16,7 @@ class MarketUser extends Equatable {
     required this.ingameName,
     required this.lastSeen,
     required this.reputation,
+    required this.region,
     required this.status,
     required this.id,
     this.avatar,
@@ -37,6 +38,9 @@ class MarketUser extends Equatable {
   /// User reputation.
   final int reputation;
 
+  /// User region
+  final String region;
+
   /// User's current status
   final UserStatus status;
 
@@ -57,6 +61,7 @@ class MarketUser extends Equatable {
       ingameName,
       lastSeen,
       reputation,
+      region,
       status,
       id,
       avatar,
@@ -75,6 +80,7 @@ class MarketUserProfile extends MarketUser {
     required String ingameName,
     required DateTime lastSeen,
     required int reputation,
+    required String region,
     required UserStatus status,
     required String id,
     String? avatar,
@@ -83,11 +89,11 @@ class MarketUserProfile extends MarketUser {
     this.background,
     required this.ownProfile,
     required this.platform,
-    required this.region,
   }) : super(
           ingameName: ingameName,
           lastSeen: lastSeen,
           reputation: reputation,
+          region: region,
           status: status,
           id: id,
           avatar: avatar,
@@ -97,9 +103,6 @@ class MarketUserProfile extends MarketUser {
   factory MarketUserProfile.fromJson(Map<String, dynamic> json) {
     return _$MarketUserProfileFromJson(json);
   }
-
-  /// User's region
-  final String region;
 
   /// The platform that this user has set
   final MarketPlatform platform;
@@ -124,7 +127,6 @@ class MarketUserProfile extends MarketUser {
   List<Object?> get props {
     return super.props
       ..addAll([
-        region,
         platform,
         ownProfile,
         background,

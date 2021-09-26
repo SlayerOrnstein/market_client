@@ -15,6 +15,7 @@ class ItemOrder extends Equatable implements Comparable {
   /// {@macro item_order}
   const ItemOrder({
     required this.creationDate,
+    this.modRank,
     required this.visible,
     required this.quantity,
     required this.user,
@@ -35,6 +36,10 @@ class ItemOrder extends Equatable implements Comparable {
   /// The timestamp for the order.
   @JsonKey(name: 'creation_date')
   final DateTime creationDate;
+
+  /// The mod's rank
+  @JsonKey(name: 'mod_rank')
+  final int? modRank;
 
   /// Whether the user made the order visible or not.
   final bool visible;
@@ -102,6 +107,7 @@ class ItemOrder extends Equatable implements Comparable {
   List<Object?> get props {
     return [
       creationDate,
+      modRank,
       visible,
       quantity,
       user,
@@ -115,8 +121,12 @@ class ItemOrder extends Equatable implements Comparable {
   }
 }
 
+/// {@template order_item}
+/// The Item for any given order
+/// {@endtemplate}
 @JsonSerializable()
 class OrderItem extends Equatable {
+  /// {@macro order_item}
   const OrderItem({
     required this.iconFormat,
     required this.thumb,
@@ -137,36 +147,40 @@ class OrderItem extends Equatable {
     required this.pt,
     required this.es,
     required this.pl,
-    this.platinum,
-    required this.orderType,
-    required this.platform,
-    required this.creationDate,
-    required this.quantity,
-    required this.lastUpdate,
   });
 
+  /// {@macro order_item}
+  /// from json
   factory OrderItem.fromJson(Map<String, dynamic> json) {
     return _$OrderItemFromJson(json);
   }
 
+  /// The icon format
   @JsonKey(name: 'icon_format')
   final String iconFormat;
 
+  /// Icon Thumbnail
   final String thumb;
 
+  /// Item id
   final String id;
 
+  /// Item url
   @JsonKey(name: 'url_name')
   final String urlName;
 
+  /// Item tags
   final List<String> tags;
 
+  /// Item sub icon
   @JsonKey(name: 'sub_icon')
   final String? subIcon;
 
+  /// Mod's max rank
   @JsonKey(name: 'mod_max_rank')
   final int? modMaxRank;
 
+  /// Item icon
   final String icon;
 
   /// Item name in English.
@@ -204,23 +218,10 @@ class OrderItem extends Equatable {
   /// Item name in Polish.
   final ItemLanguage pl;
 
-  final int? platinum;
+  /// Icon Uri
+  Uri get iconUrl => Uri.parse('https://warframe.market/static/assets/$icon');
 
-  @JsonKey(name: 'order_type')
-  final OrderType orderType;
-
-  final MarketPlatform platform;
-
-  @JsonKey(name: 'creation_date')
-  final DateTime creationDate;
-
-  final int quantity;
-
-  @JsonKey(name: 'last_update')
-  final DateTime lastUpdate;
-
-  String get iconUrl => 'https://warframe.market/static/assets/$icon';
-
+  /// Returns this instance as a [Map<String, dynamic>]
   Map<String, dynamic> toJson() => _$OrderItemToJson(this);
 
   @override
@@ -245,12 +246,6 @@ class OrderItem extends Equatable {
       pt,
       es,
       pl,
-      platinum,
-      orderType,
-      platform,
-      creationDate,
-      quantity,
-      lastUpdate,
     ];
   }
 }

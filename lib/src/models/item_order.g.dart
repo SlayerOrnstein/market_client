@@ -11,6 +11,7 @@ ItemOrder _$ItemOrderFromJson(Map json) {
     final val = ItemOrder(
       creationDate: $checkedConvert(
           json, 'creation_date', (v) => DateTime.parse(v as String)),
+      modRank: $checkedConvert(json, 'mod_rank', (v) => v as int?),
       visible: $checkedConvert(json, 'visible', (v) => v as bool),
       quantity: $checkedConvert(json, 'quantity', (v) => v as int),
       user: $checkedConvert(json, 'user',
@@ -30,6 +31,7 @@ ItemOrder _$ItemOrderFromJson(Map json) {
     return val;
   }, fieldKeyMap: const {
     'creationDate': 'creation_date',
+    'modRank': 'mod_rank',
     'lastUpdate': 'last_update',
     'orderType': 'order_type'
   });
@@ -37,6 +39,7 @@ ItemOrder _$ItemOrderFromJson(Map json) {
 
 Map<String, dynamic> _$ItemOrderToJson(ItemOrder instance) => <String, dynamic>{
       'creation_date': instance.creationDate.toIso8601String(),
+      'mod_rank': instance.modRank,
       'visible': instance.visible,
       'quantity': instance.quantity,
       'user': instance.user.toJson(),
@@ -121,16 +124,6 @@ OrderItem _$OrderItemFromJson(Map json) {
           (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
       pl: $checkedConvert(json, 'pl',
           (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
-      platinum: $checkedConvert(json, 'platinum', (v) => v as int?),
-      orderType: $checkedConvert(
-          json, 'order_type', (v) => _$enumDecode(_$OrderTypeEnumMap, v)),
-      platform: $checkedConvert(
-          json, 'platform', (v) => _$enumDecode(_$MarketPlatformEnumMap, v)),
-      creationDate: $checkedConvert(
-          json, 'creation_date', (v) => DateTime.parse(v as String)),
-      quantity: $checkedConvert(json, 'quantity', (v) => v as int),
-      lastUpdate: $checkedConvert(
-          json, 'last_update', (v) => DateTime.parse(v as String)),
     );
     return val;
   }, fieldKeyMap: const {
@@ -139,10 +132,7 @@ OrderItem _$OrderItemFromJson(Map json) {
     'subIcon': 'sub_icon',
     'modMaxRank': 'mod_max_rank',
     'zhhant': 'zh-hant',
-    'zhhans': 'zh-hans',
-    'orderType': 'order_type',
-    'creationDate': 'creation_date',
-    'lastUpdate': 'last_update'
+    'zhhans': 'zh-hans'
   });
 }
 
@@ -166,10 +156,4 @@ Map<String, dynamic> _$OrderItemToJson(OrderItem instance) => <String, dynamic>{
       'pt': instance.pt.toJson(),
       'es': instance.es.toJson(),
       'pl': instance.pl.toJson(),
-      'platinum': instance.platinum,
-      'order_type': _$OrderTypeEnumMap[instance.orderType],
-      'platform': _$MarketPlatformEnumMap[instance.platform],
-      'creation_date': instance.creationDate.toIso8601String(),
-      'quantity': instance.quantity,
-      'last_update': instance.lastUpdate.toIso8601String(),
     };
