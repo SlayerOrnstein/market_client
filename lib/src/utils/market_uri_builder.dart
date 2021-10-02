@@ -1,4 +1,4 @@
-const String _basePath = 'https://warframe.market';
+const String _basePath = 'warframe.market';
 
 /// Market Image Uri builder for market assets
 Uri marketImageUriBuilder(String imagePath) {
