@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:market_client/market_client.dart';
+import 'package:market_client/src/utils/market_uri_builder.dart';
 
 import '../enums.dart';
 import 'market_user.dart';
@@ -219,7 +220,10 @@ class OrderItem extends Equatable {
   final ItemLanguage pl;
 
   /// Icon Uri
-  Uri get iconUrl => Uri.parse('https://warframe.market/static/assets/$icon');
+  Uri get iconUri => marketImageUriBuilder(icon);
+
+  /// Thumbnail Uri
+  Uri get thumbnailUri => marketImageUriBuilder(thumb);
 
   /// Returns this instance as a [Map<String, dynamic>]
   Map<String, dynamic> toJson() => _$OrderItemToJson(this);
