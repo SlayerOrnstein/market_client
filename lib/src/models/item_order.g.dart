@@ -25,8 +25,6 @@ ItemOrder _$ItemOrderFromJson(Map json) {
       platform: $checkedConvert(
           json, 'platform', (v) => _$enumDecode(_$MarketPlatformEnumMap, v)),
       id: $checkedConvert(json, 'id', (v) => v as String),
-      item: $checkedConvert(json, 'item',
-          (v) => OrderItem.fromJson(Map<String, dynamic>.from(v as Map))),
     );
     return val;
   }, fieldKeyMap: const {
@@ -49,7 +47,6 @@ Map<String, dynamic> _$ItemOrderToJson(ItemOrder instance) => <String, dynamic>{
       'region': instance.region,
       'platform': _$MarketPlatformEnumMap[instance.platform],
       'id': instance.id,
-      'item': instance.item.toJson(),
     };
 
 K _$enumDecode<K, V>(
@@ -89,6 +86,53 @@ const _$MarketPlatformEnumMap = {
   MarketPlatform.swi: 'swi',
   MarketPlatform.xbox: 'xbox',
 };
+
+RecentOrder _$RecentOrderFromJson(Map json) {
+  return $checkedNew('RecentOrder', json, () {
+    final val = RecentOrder(
+      creationDate: $checkedConvert(
+          json, 'creation_date', (v) => DateTime.parse(v as String)),
+      modRank: $checkedConvert(json, 'mod_rank', (v) => v as int?),
+      visible: $checkedConvert(json, 'visible', (v) => v as bool),
+      quantity: $checkedConvert(json, 'quantity', (v) => v as int),
+      user: $checkedConvert(json, 'user',
+          (v) => MarketUser.fromJson(Map<String, dynamic>.from(v as Map))),
+      lastUpdate: $checkedConvert(
+          json, 'last_update', (v) => DateTime.parse(v as String)),
+      platinum: $checkedConvert(json, 'platinum', (v) => (v as num).toDouble()),
+      orderType: $checkedConvert(
+          json, 'order_type', (v) => _$enumDecode(_$OrderTypeEnumMap, v)),
+      region: $checkedConvert(json, 'region', (v) => v as String),
+      platform: $checkedConvert(
+          json, 'platform', (v) => _$enumDecode(_$MarketPlatformEnumMap, v)),
+      id: $checkedConvert(json, 'id', (v) => v as String),
+      item: $checkedConvert(json, 'item',
+          (v) => OrderItem.fromJson(Map<String, dynamic>.from(v as Map))),
+    );
+    return val;
+  }, fieldKeyMap: const {
+    'creationDate': 'creation_date',
+    'modRank': 'mod_rank',
+    'lastUpdate': 'last_update',
+    'orderType': 'order_type'
+  });
+}
+
+Map<String, dynamic> _$RecentOrderToJson(RecentOrder instance) =>
+    <String, dynamic>{
+      'creation_date': instance.creationDate.toIso8601String(),
+      'mod_rank': instance.modRank,
+      'visible': instance.visible,
+      'quantity': instance.quantity,
+      'user': instance.user.toJson(),
+      'last_update': instance.lastUpdate.toIso8601String(),
+      'platinum': instance.platinum,
+      'order_type': _$OrderTypeEnumMap[instance.orderType],
+      'region': instance.region,
+      'platform': _$MarketPlatformEnumMap[instance.platform],
+      'id': instance.id,
+      'item': instance.item.toJson(),
+    };
 
 OrderItem _$OrderItemFromJson(Map json) {
   return $checkedNew('OrderItem', json, () {

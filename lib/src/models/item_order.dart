@@ -26,7 +26,6 @@ class ItemOrder extends Equatable implements Comparable {
     required this.region,
     required this.platform,
     required this.id,
-    required this.item,
   });
 
   /// Creates an [ItemOrder] from a json.
@@ -70,9 +69,6 @@ class ItemOrder extends Equatable implements Comparable {
 
   /// Order ID.
   final String id;
-
-  /// Item for this order
-  final OrderItem item;
 
   /// Returns instance as a json encodable value.
   Map<String, dynamic> toJson() => _$ItemOrderToJson(this);
@@ -120,6 +116,46 @@ class ItemOrder extends Equatable implements Comparable {
       id
     ];
   }
+}
+
+/// {@template recent_order}
+/// Representes a recent order
+/// {@endtemplate}
+@JsonSerializable()
+class RecentOrder extends ItemOrder {
+  /// {@macro recent_order}
+  const RecentOrder({
+    required DateTime creationDate,
+    int? modRank,
+    required bool visible,
+    required int quantity,
+    required MarketUser user,
+    @JsonKey(name: 'last_update') required DateTime lastUpdate,
+    required double platinum,
+    @JsonKey(name: 'order_type') required OrderType orderType,
+    required String region,
+    required MarketPlatform platform,
+    required String id,
+    required this.item,
+  }) : super(
+          creationDate: creationDate,
+          modRank: modRank,
+          visible: visible,
+          user: user,
+          lastUpdate: lastUpdate,
+          platform: platform,
+          platinum: platinum,
+          orderType: orderType,
+          region: region,
+          id: id,
+          quantity: quantity,
+        );
+
+  /// The item for this recent order.
+  final OrderItem item;
+
+  @override
+  List<Object?> get props => super.props..add(item);
 }
 
 /// {@template order_item}
