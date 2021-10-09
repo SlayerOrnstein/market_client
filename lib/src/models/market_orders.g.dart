@@ -36,3 +36,34 @@ Map<String, dynamic> _$MarketOrdersToJson(MarketOrders instance) =>
       'sell_orders': instance.sellOrders.map((e) => e.toJson()).toList(),
       'buy_orders': instance.buyOrders.map((e) => e.toJson()).toList(),
     };
+
+RecentMarketOrders _$RecentMarketOrdersFromJson(Map json) {
+  return $checkedNew('RecentMarketOrders', json, () {
+    final val = RecentMarketOrders(
+      sellOrders: $checkedConvert(
+          json,
+          'sell_orders',
+          (v) => (v as List<dynamic>)
+              .map((e) =>
+                  RecentOrder.fromJson(Map<String, dynamic>.from(e as Map)))
+              .toList()),
+      buyOrders: $checkedConvert(
+          json,
+          'buy_orders',
+          (v) => (v as List<dynamic>)
+              .map((e) =>
+                  RecentOrder.fromJson(Map<String, dynamic>.from(e as Map)))
+              .toList()),
+    );
+    return val;
+  }, fieldKeyMap: const {
+    'sellOrders': 'sell_orders',
+    'buyOrders': 'buy_orders'
+  });
+}
+
+Map<String, dynamic> _$RecentMarketOrdersToJson(RecentMarketOrders instance) =>
+    <String, dynamic>{
+      'sell_orders': instance.sellOrders.map((e) => e.toJson()).toList(),
+      'buy_orders': instance.buyOrders.map((e) => e.toJson()).toList(),
+    };

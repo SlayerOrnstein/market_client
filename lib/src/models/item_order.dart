@@ -151,8 +151,17 @@ class RecentOrder extends ItemOrder {
           quantity: quantity,
         );
 
+  /// {@macro recent_order}
+  factory RecentOrder.fromJson(Map<String, dynamic> json) {
+    return _$RecentOrderFromJson(json);
+  }
+
   /// The item for this recent order.
   final OrderItem item;
+
+  /// returns this instance as a json
+  @override
+  Map<String, dynamic> toJson() => _$RecentOrderToJson(this);
 
   @override
   List<Object?> get props => super.props..add(item);

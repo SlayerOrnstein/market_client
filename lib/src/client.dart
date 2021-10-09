@@ -57,9 +57,9 @@ class MarketClient {
   }
 
   /// Returns both sell and buy orders for the last 4 hours.
-  Future<MarketOrders> mostRecentOrders() async {
+  Future<RecentMarketOrders> mostRecentOrders() async {
     final payload = await _client.get('/most_recent');
 
-    return MarketOrders.fromJson(payload);
+    return RecentMarketOrders.fromJson(payload);
   }
 }
