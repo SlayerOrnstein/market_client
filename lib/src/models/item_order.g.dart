@@ -25,6 +25,8 @@ ItemOrder _$ItemOrderFromJson(Map json) {
       platform: $checkedConvert(
           json, 'platform', (v) => _$enumDecode(_$MarketPlatformEnumMap, v)),
       id: $checkedConvert(json, 'id', (v) => v as String),
+      item: $checkedConvert(json, 'item',
+          (v) => OrderItem.fromJson(Map<String, dynamic>.from(v as Map))),
     );
     return val;
   }, fieldKeyMap: const {
@@ -47,6 +49,7 @@ Map<String, dynamic> _$ItemOrderToJson(ItemOrder instance) => <String, dynamic>{
       'region': instance.region,
       'platform': _$MarketPlatformEnumMap[instance.platform],
       'id': instance.id,
+      'item': instance.item.toJson(),
     };
 
 K _$enumDecode<K, V>(
