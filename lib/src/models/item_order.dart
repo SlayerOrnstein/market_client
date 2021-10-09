@@ -26,7 +26,6 @@ class ItemOrder extends Equatable implements Comparable {
     required this.region,
     required this.platform,
     required this.id,
-    required this.item,
   });
 
   /// Creates an [ItemOrder] from a json.
@@ -70,9 +69,6 @@ class ItemOrder extends Equatable implements Comparable {
 
   /// Order ID.
   final String id;
-
-  /// Item for this order
-  final OrderItem item;
 
   /// Returns instance as a json encodable value.
   Map<String, dynamic> toJson() => _$ItemOrderToJson(this);
