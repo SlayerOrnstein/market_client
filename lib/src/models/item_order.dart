@@ -174,7 +174,7 @@ class RecentOrder extends ItemOrder {
 class OrderItem extends Equatable {
   /// {@macro order_item}
   const OrderItem({
-    required this.iconFormat,
+    this.iconFormat,
     required this.thumb,
     required this.id,
     required this.urlName,
@@ -203,7 +203,7 @@ class OrderItem extends Equatable {
 
   /// The icon format
   @JsonKey(name: 'icon_format')
-  final String iconFormat;
+  final String? iconFormat;
 
   /// Icon Thumbnail
   final String thumb;
