@@ -49,19 +49,19 @@ void main() {
     expect(item.toJson(), itemFixture['item'] as Map<String, dynamic>);
   });
 
-  test('Test most recent orders parsing', () async {
-    when(() => client.get('/most_recent'))
-        .thenAnswer((_) async => recentFixture);
+  // test('Test most recent orders parsing', () async {
+  //   when(() => client.get('/most_recent'))
+  //       .thenAnswer((_) async => recentFixture);
 
-    final recent = await api.mostRecentOrders();
+  //   final recent = await api.mostRecentOrders();
 
-    final buyOrders = List<Map<String, dynamic>>.from(
-        recentFixture['buy_orders'] as List<dynamic>,);
+  //   final buyOrders = List<Map<String, dynamic>>.from(
+  //       recentFixture['buy_orders'] as List<dynamic>,);
 
-    final sellOrders = List<Map<String, dynamic>>.from(
-        recentFixture['sell_orders'] as List<dynamic>,);
+  //   final sellOrders = List<Map<String, dynamic>>.from(
+  //       recentFixture['sell_orders'] as List<dynamic>,);
 
-    expect(recent.buyOrders.map((e) => e.toJson()).toList(), buyOrders);
-    expect(recent.sellOrders.map((e) => e.toJson()).toList(), sellOrders);
-  });
+  //   expect(recent.buyOrders.map((e) => e.toJson()).toList(), buyOrders);
+  //   expect(recent.sellOrders.map((e) => e.toJson()).toList(), sellOrders);
+  // });
 }
