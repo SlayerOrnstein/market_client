@@ -46,8 +46,9 @@ class MarketClient {
   /// {@macro item_note}
   Future<MarketOrders> searchOrders(String urlName) async {
     final payload = await _client.get('/items/$urlName/orders');
-    final orders = List.from(payload['orders'] as List<dynamic>)
-        .map<ItemOrder>((o) => ItemOrder.fromJson(o))
+    final orders = List<dynamic>.from(payload['orders'] as List<dynamic>)
+        .map<ItemOrder>(
+            (dynamic o) => ItemOrder.fromJson(o as Map<String, dynamic>),)
         .toList();
 
     return MarketOrders(

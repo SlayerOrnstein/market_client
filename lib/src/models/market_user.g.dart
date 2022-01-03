@@ -6,22 +6,25 @@ part of 'market_user.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-MarketUser _$MarketUserFromJson(Map json) {
-  return $checkedNew('MarketUser', json, () {
-    final val = MarketUser(
-      ingameName: $checkedConvert(json, 'ingame_name', (v) => v as String),
-      lastSeen: $checkedConvert(json, 'last_seen',
-          (v) => v == null ? null : DateTime.parse(v as String)),
-      reputation: $checkedConvert(json, 'reputation', (v) => v as int),
-      region: $checkedConvert(json, 'region', (v) => v as String),
-      status: $checkedConvert(
-          json, 'status', (v) => _$enumDecode(_$UserStatusEnumMap, v)),
-      id: $checkedConvert(json, 'id', (v) => v as String),
-      avatar: $checkedConvert(json, 'avatar', (v) => v as String?),
+MarketUser _$MarketUserFromJson(Map json) => $checkedCreate(
+      'MarketUser',
+      json,
+      ($checkedConvert) {
+        final val = MarketUser(
+          ingameName: $checkedConvert('ingame_name', (v) => v as String),
+          lastSeen: $checkedConvert('last_seen',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          reputation: $checkedConvert('reputation', (v) => v as int),
+          region: $checkedConvert('region', (v) => v as String),
+          status: $checkedConvert(
+              'status', (v) => $enumDecode(_$UserStatusEnumMap, v)),
+          id: $checkedConvert('id', (v) => v as String),
+          avatar: $checkedConvert('avatar', (v) => v as String?),
+        );
+        return val;
+      },
+      fieldKeyMap: const {'ingameName': 'ingame_name', 'lastSeen': 'last_seen'},
     );
-    return val;
-  }, fieldKeyMap: const {'ingameName': 'ingame_name', 'lastSeen': 'last_seen'});
-}
 
 Map<String, dynamic> _$MarketUserToJson(MarketUser instance) =>
     <String, dynamic>{
@@ -34,64 +37,41 @@ Map<String, dynamic> _$MarketUserToJson(MarketUser instance) =>
       'avatar': instance.avatar,
     };
 
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
 const _$UserStatusEnumMap = {
   UserStatus.ingame: 'ingame',
   UserStatus.online: 'online',
   UserStatus.offline: 'offline',
 };
 
-MarketUserProfile _$MarketUserProfileFromJson(Map json) {
-  return $checkedNew('MarketUserProfile', json, () {
-    final val = MarketUserProfile(
-      ingameName: $checkedConvert(json, 'ingame_name', (v) => v as String),
-      lastSeen: $checkedConvert(
-          json, 'last_seen', (v) => DateTime.parse(v as String)),
-      reputation: $checkedConvert(json, 'reputation', (v) => v as int),
-      region: $checkedConvert(json, 'region', (v) => v as String),
-      status: $checkedConvert(
-          json, 'status', (v) => _$enumDecode(_$UserStatusEnumMap, v)),
-      id: $checkedConvert(json, 'id', (v) => v as String),
-      avatar: $checkedConvert(json, 'avatar', (v) => v as String?),
-      banned: $checkedConvert(json, 'banned', (v) => v as bool),
-      about: $checkedConvert(json, 'about', (v) => v as String),
-      background: $checkedConvert(json, 'background', (v) => v as String?),
-      ownProfile: $checkedConvert(json, 'own_profile', (v) => v as bool),
-      platform: $checkedConvert(
-          json, 'platform', (v) => _$enumDecode(_$MarketPlatformEnumMap, v)),
+MarketUserProfile _$MarketUserProfileFromJson(Map json) => $checkedCreate(
+      'MarketUserProfile',
+      json,
+      ($checkedConvert) {
+        final val = MarketUserProfile(
+          ingameName: $checkedConvert('ingame_name', (v) => v as String),
+          lastSeen:
+              $checkedConvert('last_seen', (v) => DateTime.parse(v as String)),
+          reputation: $checkedConvert('reputation', (v) => v as int),
+          region: $checkedConvert('region', (v) => v as String),
+          status: $checkedConvert(
+              'status', (v) => $enumDecode(_$UserStatusEnumMap, v)),
+          id: $checkedConvert('id', (v) => v as String),
+          avatar: $checkedConvert('avatar', (v) => v as String?),
+          banned: $checkedConvert('banned', (v) => v as bool),
+          about: $checkedConvert('about', (v) => v as String),
+          background: $checkedConvert('background', (v) => v as String?),
+          ownProfile: $checkedConvert('own_profile', (v) => v as bool),
+          platform: $checkedConvert(
+              'platform', (v) => $enumDecode(_$MarketPlatformEnumMap, v)),
+        );
+        return val;
+      },
+      fieldKeyMap: const {
+        'ingameName': 'ingame_name',
+        'lastSeen': 'last_seen',
+        'ownProfile': 'own_profile'
+      },
     );
-    return val;
-  }, fieldKeyMap: const {
-    'ingameName': 'ingame_name',
-    'lastSeen': 'last_seen',
-    'ownProfile': 'own_profile'
-  });
-}
 
 Map<String, dynamic> _$MarketUserProfileToJson(MarketUserProfile instance) =>
     <String, dynamic>{

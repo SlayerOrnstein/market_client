@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-
-import '../enums.dart';
+import 'package:market_client/src/enums.dart';
 
 part 'market_user.g.dart';
 

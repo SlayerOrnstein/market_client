@@ -1,10 +1,11 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:market_client/market_client.dart';
+import 'package:market_client/src/enums.dart';
+import 'package:market_client/src/models/item_set.dart';
+import 'package:market_client/src/models/market_user.dart';
 import 'package:market_client/src/utils/market_uri_builder.dart';
-
-import '../enums.dart';
-import 'market_user.dart';
 
 part 'item_order.g.dart';
 
@@ -12,7 +13,7 @@ part 'item_order.g.dart';
 /// Representes an Order.
 /// {@endtemplate}
 @JsonSerializable()
-class ItemOrder extends Equatable implements Comparable {
+class ItemOrder extends Equatable implements Comparable<int> {
   /// {@macro item_order}
   const ItemOrder({
     required this.creationDate,
@@ -78,7 +79,7 @@ class ItemOrder extends Equatable implements Comparable {
     final itemA = a as ItemOrder;
     final itemB = b as ItemOrder;
     if (itemA.orderType.index != itemB.orderType.index) {
-      return -(a.orderType.index.compareTo(itemB.orderType.index));
+      return -a.orderType.index.compareTo(itemB.orderType.index);
     }
     if (itemA.user.status.index < itemB.user.status.index) {
       return -1;

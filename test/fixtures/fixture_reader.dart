@@ -12,7 +12,8 @@ Map<String, dynamic> fixture(String name) {
     fixture = _file(p.join('fixtures', name));
   }
 
-  return (json.decode(fixture) as Map<String, dynamic>)['payload'];
+  return (json.decode(fixture) as Map<String, dynamic>)['payload']
+      as Map<String, dynamic>;
 }
 
 String _file(String path) => File(path).readAsStringSync();

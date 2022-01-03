@@ -6,34 +6,37 @@ part of 'item_order.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ItemOrder _$ItemOrderFromJson(Map json) {
-  return $checkedNew('ItemOrder', json, () {
-    final val = ItemOrder(
-      creationDate: $checkedConvert(
-          json, 'creation_date', (v) => DateTime.parse(v as String)),
-      modRank: $checkedConvert(json, 'mod_rank', (v) => v as int?),
-      visible: $checkedConvert(json, 'visible', (v) => v as bool),
-      quantity: $checkedConvert(json, 'quantity', (v) => v as int),
-      user: $checkedConvert(json, 'user',
-          (v) => MarketUser.fromJson(Map<String, dynamic>.from(v as Map))),
-      lastUpdate: $checkedConvert(
-          json, 'last_update', (v) => DateTime.parse(v as String)),
-      platinum: $checkedConvert(json, 'platinum', (v) => (v as num).toDouble()),
-      orderType: $checkedConvert(
-          json, 'order_type', (v) => _$enumDecode(_$OrderTypeEnumMap, v)),
-      region: $checkedConvert(json, 'region', (v) => v as String),
-      platform: $checkedConvert(
-          json, 'platform', (v) => _$enumDecode(_$MarketPlatformEnumMap, v)),
-      id: $checkedConvert(json, 'id', (v) => v as String),
+ItemOrder _$ItemOrderFromJson(Map json) => $checkedCreate(
+      'ItemOrder',
+      json,
+      ($checkedConvert) {
+        final val = ItemOrder(
+          creationDate: $checkedConvert(
+              'creation_date', (v) => DateTime.parse(v as String)),
+          modRank: $checkedConvert('mod_rank', (v) => v as int?),
+          visible: $checkedConvert('visible', (v) => v as bool),
+          quantity: $checkedConvert('quantity', (v) => v as int),
+          user: $checkedConvert('user',
+              (v) => MarketUser.fromJson(Map<String, dynamic>.from(v as Map))),
+          lastUpdate: $checkedConvert(
+              'last_update', (v) => DateTime.parse(v as String)),
+          platinum: $checkedConvert('platinum', (v) => (v as num).toDouble()),
+          orderType: $checkedConvert(
+              'order_type', (v) => $enumDecode(_$OrderTypeEnumMap, v)),
+          region: $checkedConvert('region', (v) => v as String),
+          platform: $checkedConvert(
+              'platform', (v) => $enumDecode(_$MarketPlatformEnumMap, v)),
+          id: $checkedConvert('id', (v) => v as String),
+        );
+        return val;
+      },
+      fieldKeyMap: const {
+        'creationDate': 'creation_date',
+        'modRank': 'mod_rank',
+        'lastUpdate': 'last_update',
+        'orderType': 'order_type'
+      },
     );
-    return val;
-  }, fieldKeyMap: const {
-    'creationDate': 'creation_date',
-    'modRank': 'mod_rank',
-    'lastUpdate': 'last_update',
-    'orderType': 'order_type'
-  });
-}
 
 Map<String, dynamic> _$ItemOrderToJson(ItemOrder instance) => <String, dynamic>{
       'creation_date': instance.creationDate.toIso8601String(),
@@ -49,32 +52,6 @@ Map<String, dynamic> _$ItemOrderToJson(ItemOrder instance) => <String, dynamic>{
       'id': instance.id,
     };
 
-K _$enumDecode<K, V>(
-  Map<K, V> enumValues,
-  Object? source, {
-  K? unknownValue,
-}) {
-  if (source == null) {
-    throw ArgumentError(
-      'A value must be provided. Supported values: '
-      '${enumValues.values.join(', ')}',
-    );
-  }
-
-  return enumValues.entries.singleWhere(
-    (e) => e.value == source,
-    orElse: () {
-      if (unknownValue == null) {
-        throw ArgumentError(
-          '`$source` is not one of the supported values: '
-          '${enumValues.values.join(', ')}',
-        );
-      }
-      return MapEntry(unknownValue, enumValues.values.first);
-    },
-  ).key;
-}
-
 const _$OrderTypeEnumMap = {
   OrderType.buy: 'buy',
   OrderType.sell: 'sell',
@@ -87,36 +64,39 @@ const _$MarketPlatformEnumMap = {
   MarketPlatform.xbox: 'xbox',
 };
 
-RecentOrder _$RecentOrderFromJson(Map json) {
-  return $checkedNew('RecentOrder', json, () {
-    final val = RecentOrder(
-      creationDate: $checkedConvert(
-          json, 'creation_date', (v) => DateTime.parse(v as String)),
-      modRank: $checkedConvert(json, 'mod_rank', (v) => v as int?),
-      visible: $checkedConvert(json, 'visible', (v) => v as bool),
-      quantity: $checkedConvert(json, 'quantity', (v) => v as int),
-      user: $checkedConvert(json, 'user',
-          (v) => MarketUser.fromJson(Map<String, dynamic>.from(v as Map))),
-      lastUpdate: $checkedConvert(
-          json, 'last_update', (v) => DateTime.parse(v as String)),
-      platinum: $checkedConvert(json, 'platinum', (v) => (v as num).toDouble()),
-      orderType: $checkedConvert(
-          json, 'order_type', (v) => _$enumDecode(_$OrderTypeEnumMap, v)),
-      region: $checkedConvert(json, 'region', (v) => v as String),
-      platform: $checkedConvert(
-          json, 'platform', (v) => _$enumDecode(_$MarketPlatformEnumMap, v)),
-      id: $checkedConvert(json, 'id', (v) => v as String),
-      item: $checkedConvert(json, 'item',
-          (v) => OrderItem.fromJson(Map<String, dynamic>.from(v as Map))),
+RecentOrder _$RecentOrderFromJson(Map json) => $checkedCreate(
+      'RecentOrder',
+      json,
+      ($checkedConvert) {
+        final val = RecentOrder(
+          creationDate: $checkedConvert(
+              'creation_date', (v) => DateTime.parse(v as String)),
+          modRank: $checkedConvert('mod_rank', (v) => v as int?),
+          visible: $checkedConvert('visible', (v) => v as bool),
+          quantity: $checkedConvert('quantity', (v) => v as int),
+          user: $checkedConvert('user',
+              (v) => MarketUser.fromJson(Map<String, dynamic>.from(v as Map))),
+          lastUpdate: $checkedConvert(
+              'last_update', (v) => DateTime.parse(v as String)),
+          platinum: $checkedConvert('platinum', (v) => (v as num).toDouble()),
+          orderType: $checkedConvert(
+              'order_type', (v) => $enumDecode(_$OrderTypeEnumMap, v)),
+          region: $checkedConvert('region', (v) => v as String),
+          platform: $checkedConvert(
+              'platform', (v) => $enumDecode(_$MarketPlatformEnumMap, v)),
+          id: $checkedConvert('id', (v) => v as String),
+          item: $checkedConvert('item',
+              (v) => OrderItem.fromJson(Map<String, dynamic>.from(v as Map))),
+        );
+        return val;
+      },
+      fieldKeyMap: const {
+        'creationDate': 'creation_date',
+        'modRank': 'mod_rank',
+        'lastUpdate': 'last_update',
+        'orderType': 'order_type'
+      },
     );
-    return val;
-  }, fieldKeyMap: const {
-    'creationDate': 'creation_date',
-    'modRank': 'mod_rank',
-    'lastUpdate': 'last_update',
-    'orderType': 'order_type'
-  });
-}
 
 Map<String, dynamic> _$RecentOrderToJson(RecentOrder instance) =>
     <String, dynamic>{
@@ -134,51 +114,76 @@ Map<String, dynamic> _$RecentOrderToJson(RecentOrder instance) =>
       'item': instance.item.toJson(),
     };
 
-OrderItem _$OrderItemFromJson(Map json) {
-  return $checkedNew('OrderItem', json, () {
-    final val = OrderItem(
-      iconFormat: $checkedConvert(json, 'icon_format', (v) => v as String),
-      thumb: $checkedConvert(json, 'thumb', (v) => v as String),
-      id: $checkedConvert(json, 'id', (v) => v as String),
-      urlName: $checkedConvert(json, 'url_name', (v) => v as String),
-      tags: $checkedConvert(json, 'tags',
-          (v) => (v as List<dynamic>).map((e) => e as String).toList()),
-      subIcon: $checkedConvert(json, 'sub_icon', (v) => v as String?),
-      modMaxRank: $checkedConvert(json, 'mod_max_rank', (v) => v as int?),
-      icon: $checkedConvert(json, 'icon', (v) => v as String),
-      en: $checkedConvert(json, 'en',
-          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
-      ru: $checkedConvert(json, 'ru',
-          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
-      ko: $checkedConvert(json, 'ko',
-          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
-      fr: $checkedConvert(json, 'fr',
-          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
-      sv: $checkedConvert(json, 'sv',
-          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
-      de: $checkedConvert(json, 'de',
-          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
-      zhhant: $checkedConvert(json, 'zh-hant',
-          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
-      zhhans: $checkedConvert(json, 'zh-hans',
-          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
-      pt: $checkedConvert(json, 'pt',
-          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
-      es: $checkedConvert(json, 'es',
-          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
-      pl: $checkedConvert(json, 'pl',
-          (v) => ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+OrderItem _$OrderItemFromJson(Map json) => $checkedCreate(
+      'OrderItem',
+      json,
+      ($checkedConvert) {
+        final val = OrderItem(
+          iconFormat: $checkedConvert('icon_format', (v) => v as String?),
+          thumb: $checkedConvert('thumb', (v) => v as String),
+          id: $checkedConvert('id', (v) => v as String),
+          urlName: $checkedConvert('url_name', (v) => v as String),
+          tags: $checkedConvert('tags',
+              (v) => (v as List<dynamic>).map((e) => e as String).toList()),
+          subIcon: $checkedConvert('sub_icon', (v) => v as String?),
+          modMaxRank: $checkedConvert('mod_max_rank', (v) => v as int?),
+          icon: $checkedConvert('icon', (v) => v as String),
+          en: $checkedConvert(
+              'en',
+              (v) =>
+                  ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+          ru: $checkedConvert(
+              'ru',
+              (v) =>
+                  ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+          ko: $checkedConvert(
+              'ko',
+              (v) =>
+                  ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+          fr: $checkedConvert(
+              'fr',
+              (v) =>
+                  ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+          sv: $checkedConvert(
+              'sv',
+              (v) =>
+                  ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+          de: $checkedConvert(
+              'de',
+              (v) =>
+                  ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+          zhhant: $checkedConvert(
+              'zh-hant',
+              (v) =>
+                  ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+          zhhans: $checkedConvert(
+              'zh-hans',
+              (v) =>
+                  ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+          pt: $checkedConvert(
+              'pt',
+              (v) =>
+                  ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+          es: $checkedConvert(
+              'es',
+              (v) =>
+                  ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+          pl: $checkedConvert(
+              'pl',
+              (v) =>
+                  ItemLanguage.fromJson(Map<String, dynamic>.from(v as Map))),
+        );
+        return val;
+      },
+      fieldKeyMap: const {
+        'iconFormat': 'icon_format',
+        'urlName': 'url_name',
+        'subIcon': 'sub_icon',
+        'modMaxRank': 'mod_max_rank',
+        'zhhant': 'zh-hant',
+        'zhhans': 'zh-hans'
+      },
     );
-    return val;
-  }, fieldKeyMap: const {
-    'iconFormat': 'icon_format',
-    'urlName': 'url_name',
-    'subIcon': 'sub_icon',
-    'modMaxRank': 'mod_max_rank',
-    'zhhant': 'zh-hant',
-    'zhhans': 'zh-hans'
-  });
-}
 
 Map<String, dynamic> _$OrderItemToJson(OrderItem instance) => <String, dynamic>{
       'icon_format': instance.iconFormat,

@@ -3,10 +3,9 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
+import 'package:market_client/src/enums.dart';
+import 'package:market_client/src/exceptions.dart';
 import 'package:retry/retry.dart';
-
-import 'enums.dart';
-import 'exceptions.dart';
 
 /// {@template client}
 /// The Client that makes the raw calls to Warframe market
@@ -39,7 +38,7 @@ class MarketHttpClient {
 
   /// Makes a GET request to [path]
   Future<Map<String, dynamic>> get(String path) async {
-    return await retry(
+    return retry(
       () async {
         final res = await _client
             .get(Uri.parse('$_root$path'), headers: _headers(token, platform))
@@ -53,7 +52,7 @@ class MarketHttpClient {
 
   /// Makes a POST request to [path]
   Future<Map<String, dynamic>> post(String path) async {
-    return await retry(
+    return retry(
       () async {
         final res = await _client
             .post(Uri.parse('$_root/$path'), headers: _headers(token, platform))
@@ -92,10 +91,11 @@ class MarketHttpClient {
       case 500:
       default:
         throw FetchDataException(
-            'Error occured while communicating with the server');
+          'Error occured while communicating with the server',
+        );
     }
   }
 
-  bool _shouldRetry(e) =>
+  bool _shouldRetry(dynamic e) =>
       e is SocketException || e is TimeoutException || e is FormatException;
 }

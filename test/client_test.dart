@@ -56,10 +56,10 @@ void main() {
     final recent = await api.mostRecentOrders();
 
     final buyOrders = List<Map<String, dynamic>>.from(
-        recentFixture['buy_orders'] as List<dynamic>);
+        recentFixture['buy_orders'] as List<dynamic>,);
 
     final sellOrders = List<Map<String, dynamic>>.from(
-        recentFixture['sell_orders'] as List<dynamic>);
+        recentFixture['sell_orders'] as List<dynamic>,);
 
     expect(recent.buyOrders.map((e) => e.toJson()).toList(), buyOrders);
     expect(recent.sellOrders.map((e) => e.toJson()).toList(), sellOrders);

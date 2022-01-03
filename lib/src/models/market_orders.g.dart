@@ -6,30 +6,31 @@ part of 'market_orders.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-MarketOrders _$MarketOrdersFromJson(Map json) {
-  return $checkedNew('MarketOrders', json, () {
-    final val = MarketOrders(
-      sellOrders: $checkedConvert(
-          json,
-          'sell_orders',
-          (v) => (v as List<dynamic>)
-              .map((e) =>
-                  ItemOrder.fromJson(Map<String, dynamic>.from(e as Map)))
-              .toList()),
-      buyOrders: $checkedConvert(
-          json,
-          'buy_orders',
-          (v) => (v as List<dynamic>)
-              .map((e) =>
-                  ItemOrder.fromJson(Map<String, dynamic>.from(e as Map)))
-              .toList()),
+MarketOrders _$MarketOrdersFromJson(Map json) => $checkedCreate(
+      'MarketOrders',
+      json,
+      ($checkedConvert) {
+        final val = MarketOrders(
+          sellOrders: $checkedConvert(
+              'sell_orders',
+              (v) => (v as List<dynamic>)
+                  .map((e) =>
+                      ItemOrder.fromJson(Map<String, dynamic>.from(e as Map)))
+                  .toList()),
+          buyOrders: $checkedConvert(
+              'buy_orders',
+              (v) => (v as List<dynamic>)
+                  .map((e) =>
+                      ItemOrder.fromJson(Map<String, dynamic>.from(e as Map)))
+                  .toList()),
+        );
+        return val;
+      },
+      fieldKeyMap: const {
+        'sellOrders': 'sell_orders',
+        'buyOrders': 'buy_orders'
+      },
     );
-    return val;
-  }, fieldKeyMap: const {
-    'sellOrders': 'sell_orders',
-    'buyOrders': 'buy_orders'
-  });
-}
 
 Map<String, dynamic> _$MarketOrdersToJson(MarketOrders instance) =>
     <String, dynamic>{
@@ -37,30 +38,31 @@ Map<String, dynamic> _$MarketOrdersToJson(MarketOrders instance) =>
       'buy_orders': instance.buyOrders.map((e) => e.toJson()).toList(),
     };
 
-RecentMarketOrders _$RecentMarketOrdersFromJson(Map json) {
-  return $checkedNew('RecentMarketOrders', json, () {
-    final val = RecentMarketOrders(
-      sellOrders: $checkedConvert(
-          json,
-          'sell_orders',
-          (v) => (v as List<dynamic>)
-              .map((e) =>
-                  RecentOrder.fromJson(Map<String, dynamic>.from(e as Map)))
-              .toList()),
-      buyOrders: $checkedConvert(
-          json,
-          'buy_orders',
-          (v) => (v as List<dynamic>)
-              .map((e) =>
-                  RecentOrder.fromJson(Map<String, dynamic>.from(e as Map)))
-              .toList()),
+RecentMarketOrders _$RecentMarketOrdersFromJson(Map json) => $checkedCreate(
+      'RecentMarketOrders',
+      json,
+      ($checkedConvert) {
+        final val = RecentMarketOrders(
+          sellOrders: $checkedConvert(
+              'sell_orders',
+              (v) => (v as List<dynamic>)
+                  .map((e) =>
+                      RecentOrder.fromJson(Map<String, dynamic>.from(e as Map)))
+                  .toList()),
+          buyOrders: $checkedConvert(
+              'buy_orders',
+              (v) => (v as List<dynamic>)
+                  .map((e) =>
+                      RecentOrder.fromJson(Map<String, dynamic>.from(e as Map)))
+                  .toList()),
+        );
+        return val;
+      },
+      fieldKeyMap: const {
+        'sellOrders': 'sell_orders',
+        'buyOrders': 'buy_orders'
+      },
     );
-    return val;
-  }, fieldKeyMap: const {
-    'sellOrders': 'sell_orders',
-    'buyOrders': 'buy_orders'
-  });
-}
 
 Map<String, dynamic> _$RecentMarketOrdersToJson(RecentMarketOrders instance) =>
     <String, dynamic>{

@@ -6,17 +6,20 @@ part of 'item.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-MarketItem _$MarketItemFromJson(Map json) {
-  return $checkedNew('MarketItem', json, () {
-    final val = MarketItem(
-      thumb: $checkedConvert(json, 'thumb', (v) => v as String),
-      itemName: $checkedConvert(json, 'item_name', (v) => v as String),
-      id: $checkedConvert(json, 'id', (v) => v as String),
-      urlName: $checkedConvert(json, 'url_name', (v) => v as String),
+MarketItem _$MarketItemFromJson(Map json) => $checkedCreate(
+      'MarketItem',
+      json,
+      ($checkedConvert) {
+        final val = MarketItem(
+          thumb: $checkedConvert('thumb', (v) => v as String),
+          itemName: $checkedConvert('item_name', (v) => v as String),
+          id: $checkedConvert('id', (v) => v as String),
+          urlName: $checkedConvert('url_name', (v) => v as String),
+        );
+        return val;
+      },
+      fieldKeyMap: const {'itemName': 'item_name', 'urlName': 'url_name'},
     );
-    return val;
-  }, fieldKeyMap: const {'itemName': 'item_name', 'urlName': 'url_name'});
-}
 
 Map<String, dynamic> _$MarketItemToJson(MarketItem instance) =>
     <String, dynamic>{
