@@ -6,7 +6,7 @@ part 'market_orders.g.dart';
 
 /// {@template orders}
 /// Base class for sell and buy orders.
-/// {@endTemplate}
+/// {@endtemplate}
 abstract class Orders extends Equatable {
   /// {@macro orders}
   const Orders({required this.sellOrders, required this.buyOrders});
