@@ -1,5 +1,7 @@
 WIP dart client for Warframe Market.
 
+Documentation can be found [here][docs]
+
 ## Usage
 
 A simple usage example:
@@ -20,3 +22,4 @@ Future<void> main() async {
 Please file feature requests and bugs at the [issue tracker][tracker].
 
 [tracker]: http://example.com/issues/replaceme
+[docs]: https://slayerornstein.github.io/market_client/
