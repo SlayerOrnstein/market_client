@@ -13,7 +13,14 @@ const _kTimeout = Duration(seconds: 5);
 /// {@endtemplate}
 abstract class MarketHttpClient {
   /// {@macro client}
-  const MarketHttpClient({required this.language, required this.platform});
+  const MarketHttpClient({
+    required this.client,
+    required this.language,
+    required this.platform,
+  });
+
+  /// Http Client used to make calls.
+  final http.Client client;
 
   /// The language that the http caller will emit to the api.
   ///
@@ -42,14 +49,15 @@ class MarketGuestHttpClient extends MarketHttpClient {
     http.Client? client,
     MarketPlatform platform = MarketPlatform.pc,
     String language = 'en',
-  })  : _client = client ?? RetryClient(http.Client()),
-        super(platform: platform, language: language);
-
-  final http.Client _client;
+  }) : super(
+          client: client ?? RetryClient(http.Client()),
+          platform: platform,
+          language: language,
+        );
 
   @override
   Future<Map<String, dynamic>> get(String path) async {
-    final res = await _client
+    final res = await client
         .get(
           Uri.parse('$_root$path'),
           headers: HttpHelpers.headers(
@@ -64,12 +72,64 @@ class MarketGuestHttpClient extends MarketHttpClient {
 
   @override
   Future<Map<String, dynamic>> post(String path) async {
-    final res = await _client
+    final res = await client
         .post(
           Uri.parse('$_root/$path'),
           headers: HttpHelpers.headers(
             platform: platform,
             language: language,
+          ),
+        )
+        .timeout(_kTimeout);
+
+    return HttpHelpers.parseResponse(res);
+  }
+}
+
+/// {@template martket_auth}
+/// Creates and autherized client to make calls to Warframe market as a user.
+/// {@endtemplate market_auth}
+class MarketAuthHttpClient extends MarketHttpClient {
+  /// {@macro market_auth}
+  MarketAuthHttpClient({
+    http.Client? client,
+    required this.token,
+    MarketPlatform platform = MarketPlatform.pc,
+    String language = 'en',
+  }) : super(
+          client: client ?? RetryClient(http.Client()),
+          platform: platform,
+          language: language,
+        );
+
+  /// User JWT token.
+  final String token;
+
+  @override
+  Future<Map<String, dynamic>> get(String path) async {
+    final res = await client
+        .get(
+          Uri.parse('$_root$path'),
+          headers: HttpHelpers.headers(
+            platform: platform,
+            language: language,
+            token: token,
+          ),
+        )
+        .timeout(_kTimeout);
+
+    return HttpHelpers.parseResponse(res);
+  }
+
+  @override
+  Future<Map<String, dynamic>> post(String path) async {
+    final res = await client
+        .post(
+          Uri.parse('$_root/$path'),
+          headers: HttpHelpers.headers(
+            platform: platform,
+            language: language,
+            token: token,
           ),
         )
         .timeout(_kTimeout);
