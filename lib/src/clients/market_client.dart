@@ -9,8 +9,8 @@ import 'package:market_client/src/models/models.dart';
 class MarketClient {
   /// {@macro marketclient}
   ///
-  /// Users can pass down an instance of [MarketGuestHttpClient] in order to channge
-  /// the default language or game platform which is English and PC.
+  /// Users can pass down an instance of [MarketGuestHttpClient] in order to
+  /// channge the default language or game platform which is English and PC.
   MarketClient({MarketGuestHttpClient? client})
       : _client = client ?? MarketGuestHttpClient();
 
