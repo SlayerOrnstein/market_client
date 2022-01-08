@@ -7,6 +7,7 @@ import 'package:market_client/src/exceptions.dart';
 
 const String _basePath = 'warframe.market';
 
+/// An abstract class for functions to help with http related jobs.
 abstract class HttpHelpers {
   /// Market Image Uri builder for market assets
   static Uri marketImageUriBuilder(String imagePath) {
