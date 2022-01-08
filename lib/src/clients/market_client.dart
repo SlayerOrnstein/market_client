@@ -55,6 +55,7 @@ class MarketClient {
     );
   }
 
+  /// Get sale statistics on a [MarketItem].
   Future<MarketItemStatistics> itemStatistics(String itemUrl) async {
     final payload = await _client.get('items/$itemUrl/statistics');
 
