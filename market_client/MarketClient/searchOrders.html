@@ -61,7 +61,7 @@
     </section>
     
 <section class="desc markdown">
-  <p>Returns a list of recently posted orders.</p>
+  <p>Returns a list of orders for any tradable item.</p>
 <p>Note: Warfrmae market has a certian layout for item urls, it's recommneded
 to get the url from <a href="../../market_client/MarketClient/getMarketItems.html">MarketClient.getMarketItems()</a> in order to get that
 url.</p>
@@ -75,7 +75,8 @@ url.</p>
   final payload = await _client.get(&#39;&#47;items&#47;$urlName&#47;orders&#39;);
   final orders = List&lt;dynamic&gt;.from(payload[&#39;orders&#39;] as List&lt;dynamic&gt;)
       .map&lt;ItemOrder&gt;(
-          (dynamic o) =&gt; ItemOrder.fromJson(o as Map&lt;String, dynamic&gt;),)
+        (dynamic o) =&gt; ItemOrder.fromJson(o as Map&lt;String, dynamic&gt;),
+      )
       .toList();
 
   return MarketOrders(
@@ -119,6 +120,7 @@ url.</p>
     <li class="section-title"><a href="../../market_client/MarketClient-class.html#instance-methods">Methods</a></li>
     <li><a href="../../market_client/MarketClient/getMarketItem.html">getMarketItem</a></li>
     <li><a href="../../market_client/MarketClient/getMarketItems.html">getMarketItems</a></li>
+    <li><a href="../../market_client/MarketClient/itemStatistics.html">itemStatistics</a></li>
     <li><a href="../../market_client/MarketClient/mostRecentOrders.html">mostRecentOrders</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li><a href="../../market_client/MarketClient/searchOrders.html">searchOrders</a></li>

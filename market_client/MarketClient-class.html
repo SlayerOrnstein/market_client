@@ -128,6 +128,19 @@ Items will always return an entire set for any item. <a href="../market_client/M
 
 </dd>
 
+        <dt id="itemStatistics" class="callable">
+  <span class="name"><a href="../market_client/MarketClient/itemStatistics.html">itemStatistics</a></span><span class="signature">(<wbr><span class="parameter" id="itemStatistics-param-itemUrl"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">itemUrl</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../market_client/MarketItemStatistics-class.html">MarketItemStatistics</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+   
+  
+
+</dd>
+
         <dt id="mostRecentOrders" class="callable">
   <span class="name"><a href="../market_client/MarketClient/mostRecentOrders.html">mostRecentOrders</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../market_client/RecentMarketOrders-class.html">RecentMarketOrders</a></span>&gt;</span></span>
@@ -162,7 +175,7 @@ Items will always return an entire set for any item. <a href="../market_client/M
 
 </dt>
 <dd>
-  Returns a list of recently posted orders. <a href="../market_client/MarketClient/searchOrders.html">[...]</a>
+  Returns a list of orders for any tradable item. <a href="../market_client/MarketClient/searchOrders.html">[...]</a>
   
 
 </dd>
@@ -228,9 +241,13 @@ Items will always return an entire set for any item. <a href="../market_client/M
   <li><a href="../market_client/ItemLanguage-class.html">ItemLanguage</a></li>
   <li><a href="../market_client/ItemOrder-class.html">ItemOrder</a></li>
   <li><a href="../market_client/ItemSet-class.html">ItemSet</a></li>
+  <li><a href="../market_client/ItemStatistic-class.html">ItemStatistic</a></li>
+  <li><a href="../market_client/ItemStatisticClosed-class.html">ItemStatisticClosed</a></li>
+  <li><a href="../market_client/ItemStatisticLive-class.html">ItemStatisticLive</a></li>
   <li><a href="../market_client/MarketClient-class.html">MarketClient</a></li>
   <li><a href="../market_client/MarketHttpClient-class.html">MarketHttpClient</a></li>
   <li><a href="../market_client/MarketItem-class.html">MarketItem</a></li>
+  <li><a href="../market_client/MarketItemStatistics-class.html">MarketItemStatistics</a></li>
   <li><a href="../market_client/MarketOrders-class.html">MarketOrders</a></li>
   <li><a href="../market_client/MarketUser-class.html">MarketUser</a></li>
   <li><a href="../market_client/MarketUserProfile-class.html">MarketUserProfile</a></li>
@@ -239,6 +256,10 @@ Items will always return an entire set for any item. <a href="../market_client/M
   <li><a href="../market_client/RecentMarketOrders-class.html">RecentMarketOrders</a></li>
   <li><a href="../market_client/RecentOrder-class.html">RecentOrder</a></li>
   <li><a href="../market_client/SetItem-class.html">SetItem</a></li>
+  <li><a href="../market_client/Statistics-class.html">Statistics</a></li>
+  <li><a href="../market_client/StatisticsClosed-class.html">StatisticsClosed</a></li>
+  <li><a href="../market_client/StatisticsLive-class.html">StatisticsLive</a></li>
+  <li><a href="../market_client/UserClient-class.html">UserClient</a></li>
 
 
 
@@ -271,6 +292,7 @@ Items will always return an entire set for any item. <a href="../market_client/M
     <li class="section-title"><a href="../market_client/MarketClient-class.html#instance-methods">Methods</a></li>
     <li><a href="../market_client/MarketClient/getMarketItem.html">getMarketItem</a></li>
     <li><a href="../market_client/MarketClient/getMarketItems.html">getMarketItems</a></li>
+    <li><a href="../market_client/MarketClient/itemStatistics.html">itemStatistics</a></li>
     <li><a href="../market_client/MarketClient/mostRecentOrders.html">mostRecentOrders</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li><a href="../market_client/MarketClient/searchOrders.html">searchOrders</a></li>
