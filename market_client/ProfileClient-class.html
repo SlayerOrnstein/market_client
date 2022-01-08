@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the UserStatus enum from the market_client library, for the Dart programming language.">
-  <title>UserStatus enum - market_client library - Dart API</title>
+  <meta name="description" content="API docs for the ProfileClient class from the market_client library, for the Dart programming language.">
+  <title>ProfileClient class - market_client library - Dart API</title>
 
 
   
@@ -31,9 +31,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">market_client</a></li>
     <li><a href="../market_client/market_client-library.html">market_client</a></li>
-    <li class="self-crumb">UserStatus enum</li>
+    <li class="self-crumb">ProfileClient class</li>
   </ol>
-  <div class="self-name">UserStatus</div>
+  <div class="self-name">ProfileClient</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -44,91 +44,34 @@
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
-<h1><span class="kind-enum">UserStatus</span> enum 
+<h1><span class="kind-class">ProfileClient</span> class 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
     
 <section class="desc markdown">
-  <p>The user status.</p>
+  <p>Holds endpoints that don't require auth in order to retrive orders and
+statistics from profiles</p>
 </section>
 
 
-    <section>
-      <dl class="dl-horizontal">
 
+    <section class="summary offset-anchor" id="constructors">
+      <h2>Constructors</h2>
+
+      <dl class="constructor-summary-list">
+        <dt id="ProfileClient" class="callable">
+          <span class="name"><a href="../market_client/ProfileClient/ProfileClient.html">ProfileClient</a></span><span class="signature">(<span class="parameter" id="-param-client"><span class="type-annotation"><a href="../market_client/MarketGuestHttpClient-class.html">MarketGuestHttpClient</a>?</span> <span class="parameter-name">client</span></span>)</span>
+        </dt>
+        <dd>
+          Holds endpoints that don't require auth in order to retrive orders and
+statistics from profiles 
+        </dd>
       </dl>
     </section>
 
-    <section class="summary offset-anchor" id="constants">
-      <h2>Constants</h2>
-
-      <dl class="properties">
-        <dt id="ingame" class="constant">
-  <span class="name ">ingame</span>
-  <span class="signature">&#8594; const <a href="../market_client/UserStatus.html">UserStatus</a></span>
-  
-
-</dt>
-<dd>
-  <p>User is online and in-game.</p> 
-  
-
-  <div>
-    <span class="signature"><code>const UserStatus(0)</code></span>
-  </div>
-</dd>
-
-        <dt id="offline" class="constant">
-  <span class="name ">offline</span>
-  <span class="signature">&#8594; const <a href="../market_client/UserStatus.html">UserStatus</a></span>
-  
-
-</dt>
-<dd>
-  <p>User is neither online or in-game.</p> 
-  
-
-  <div>
-    <span class="signature"><code>const UserStatus(2)</code></span>
-  </div>
-</dd>
-
-        <dt id="online" class="constant">
-  <span class="name ">online</span>
-  <span class="signature">&#8594; const <a href="../market_client/UserStatus.html">UserStatus</a></span>
-  
-
-</dt>
-<dd>
-  <p>User is online but not in-game.</p> 
-  
-
-  <div>
-    <span class="signature"><code>const UserStatus(1)</code></span>
-  </div>
-</dd>
-
-        <dt id="values" class="constant">
-  <span class="name ">values</span>
-  <span class="signature">&#8594; const <a href="https://api.dart.dev/stable/2.15.1/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../market_client/UserStatus.html">UserStatus</a></span>&gt;</span></span>
-  
-
-</dt>
-<dd>
-  <p>A constant List of the values in this enum, in order of their declaration.</p> 
-  
-
-  <div>
-    <span class="signature"><code>const List&lt;<wbr><span class="type-parameter">UserStatus</span>&gt;</code></span>
-  </div>
-</dd>
-
-      </dl>
-    </section>
-
-    <section class="summary offset-anchor" id="instance-properties">
+    <section class="summary offset-anchor inherited" id="instance-properties">
       <h2>Properties</h2>
 
       <dl class="properties">
@@ -140,17 +83,6 @@
 <dd class="inherited">
   The hash code for this object. <a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/hashCode.html">[...]</a>
   <div class="features">read-only, inherited</div>
-
-</dd>
-
-        <dt id="index" class="property">
-  <span class="name">index</span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/int-class.html">int</a></span> 
-
-</dt>
-<dd>
-  <p>The integer index of this enum.</p> 
-  <div class="features">final</div>
 
 </dd>
 
@@ -168,7 +100,7 @@
       </dl>
     </section>
 
-    <section class="summary offset-anchor" id="instance-methods">
+    <section class="summary offset-anchor inherited" id="instance-methods">
       <h2>Methods</h2>
       <dl class="callables">
         <dt id="noSuchMethod" class="callable inherited">
@@ -184,16 +116,16 @@
 
 </dd>
 
-        <dt id="toString" class="callable">
-  <span class="name"><a href="../market_client/UserStatus/toString.html">toString</a></span><span class="signature">(<wbr>)
+        <dt id="toString" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/toString.html">toString</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>
   </span>
   
 
 </dt>
-<dd>
-  A string representation of this object. <a href="../market_client/UserStatus/toString.html">[...]</a>
-  <div class="features">override</div>
+<dd class="inherited">
+  A string representation of this object. <a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/toString.html">[...]</a>
+  <div class="features">inherited</div>
 
 </dd>
 
@@ -220,6 +152,8 @@
     </section>
 
 
+
+
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
@@ -232,7 +166,7 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
   <li><a href="../index.html">market_client</a></li>
   <li><a href="../market_client/market_client-library.html">market_client</a></li>
-  <li class="self-crumb">UserStatus enum</li>
+  <li class="self-crumb">ProfileClient class</li>
 </ol>
 
 
@@ -285,26 +219,24 @@
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
     <ol>
 
+    <li class="section-title"><a href="../market_client/ProfileClient-class.html#constructors">Constructors</a></li>
+    <li><a href="../market_client/ProfileClient/ProfileClient.html">ProfileClient</a></li>
 
-    <li class="section-title"><a href="../market_client/UserStatus.html#constants">Constants</a></li>
-    <li>ingame</li>
-    <li>offline</li>
-    <li>online</li>
-    <li>values</li>
 
-    <li class="section-title">
-      <a href="../market_client/UserStatus.html#instance-properties">Properties</a>
+    <li class="section-title inherited">
+      <a href="../market_client/ProfileClient-class.html#instance-properties">Properties</a>
     </li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/hashCode.html">hashCode</a></li>
-    <li>index</li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
-    <li class="section-title"><a href="../market_client/UserStatus.html#instance-methods">Methods</a></li>
+    <li class="section-title inherited"><a href="../market_client/ProfileClient-class.html#instance-methods">Methods</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-    <li><a href="../market_client/UserStatus/toString.html">toString</a></li>
+    <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/toString.html">toString</a></li>
 
-    <li class="section-title inherited"><a href="../market_client/UserStatus.html#operators">Operators</a></li>
+    <li class="section-title inherited"><a href="../market_client/ProfileClient-class.html#operators">Operators</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/operator_equals.html">operator ==</a></li>
+
+
 
 
 </ol>
