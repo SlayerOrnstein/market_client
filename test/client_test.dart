@@ -6,7 +6,7 @@ import 'package:test/scaffolding.dart';
 
 import 'fixtures/fixture_reader.dart';
 
-class MockMarketHttpClient extends Mock implements MarketHttpClient {}
+class MockMarketHttpClient extends Mock implements MarketGuestHttpClient {}
 
 void main() {
   // final itemOrderFixture = fixture('item_order.json');
@@ -15,7 +15,7 @@ void main() {
   // final recentFixture = fixture('most_recent.json');
   // final userProfileFixture = fixture('user_profile.json');
 
-  late MarketHttpClient client;
+  late MarketGuestHttpClient client;
   late MarketClient api;
 
   setUpAll(() {

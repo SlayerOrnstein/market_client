@@ -5,7 +5,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:market_client/src/enums.dart';
 import 'package:market_client/src/models/item_set.dart';
 import 'package:market_client/src/models/market_user.dart';
-import 'package:market_client/src/utils/market_uri_builder.dart';
+import 'package:market_client/src/utils/http_helpers.dart';
 
 part 'item_order.g.dart';
 
@@ -266,10 +266,10 @@ class OrderItem extends Equatable {
   final ItemLanguage pl;
 
   /// Icon Uri
-  Uri get iconUri => marketImageUriBuilder(icon);
+  Uri get iconUri => HttpHelpers.marketImageUriBuilder(icon);
 
   /// Thumbnail Uri
-  Uri get thumbnailUri => marketImageUriBuilder(thumb);
+  Uri get thumbnailUri => HttpHelpers.marketImageUriBuilder(thumb);
 
   /// Returns this instance as a [Map<String, dynamic>]
   Map<String, dynamic> toJson() => _$OrderItemToJson(this);

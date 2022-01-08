@@ -1,3 +1,4 @@
+import 'package:market_client/src/clients/clients.dart';
 import 'package:market_client/src/enums.dart';
 import 'package:market_client/src/http.dart';
 import 'package:market_client/src/models/models.dart';
@@ -8,12 +9,12 @@ import 'package:market_client/src/models/models.dart';
 class MarketClient {
   /// {@macro marketclient}
   ///
-  /// Users can pass down an instance of [MarketHttpClient] in order to channge
+  /// Users can pass down an instance of [MarketGuestHttpClient] in order to channge
   /// the default language or game platform which is English and PC.
-  MarketClient({MarketHttpClient? client})
-      : _client = client ?? MarketHttpClient();
+  MarketClient({MarketGuestHttpClient? client})
+      : _client = client ?? MarketGuestHttpClient();
 
-  final MarketHttpClient _client;
+  final MarketGuestHttpClient _client;
 
   /// Gets all items and their information.
   Future<List<MarketItem>> getMarketItems() async {
@@ -68,4 +69,8 @@ class MarketClient {
 
     return RecentMarketOrders.fromJson(payload);
   }
+
+  /// Returns an instance of [ProfileClient] using the [MarketClient] of this
+  /// instance.
+  ProfileClient get profiles => ProfileClient(_client);
 }
