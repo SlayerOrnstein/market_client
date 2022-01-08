@@ -1,8 +1,7 @@
 import 'package:market_client/market_client.dart';
 import 'package:market_client/src/exceptions.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:test/expect.dart';
-import 'package:test/scaffolding.dart';
+import 'package:test/test.dart';
 
 import 'fixtures/fixture_reader.dart';
 
