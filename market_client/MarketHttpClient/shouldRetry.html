@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the token property from the MarketHttpClient class, for the Dart programming language.">
-  <title>token property - MarketHttpClient class - market_client library - Dart API</title>
+  <meta name="description" content="API docs for the shouldRetry method from the MarketHttpClient class, for the Dart programming language.">
+  <title>shouldRetry method - MarketHttpClient class - market_client library - Dart API</title>
 
 
   
@@ -32,9 +32,9 @@
     <li><a href="../../index.html">market_client</a></li>
     <li><a href="../../market_client/market_client-library.html">market_client</a></li>
     <li><a href="../../market_client/MarketHttpClient-class.html">MarketHttpClient</a></li>
-    <li class="self-crumb">token property</li>
+    <li class="self-crumb">shouldRetry method</li>
   </ol>
-  <div class="self-name">token</div>
+  <div class="self-name">shouldRetry</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -45,29 +45,31 @@
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
-<h1><span class="kind-property">token</span> property 
+<h1><span class="kind-method">shouldRetry</span> method 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
 </h1></div>
 
-        <section class="multi-line-signature">
-          <a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a>?
-          <span class="name ">token</span>
-          <div class="features">final</div>
+    <section class="multi-line-signature">
+      
 
-        </section>
-        
+<span class="returntype"><a href="https://api.dart.dev/stable/2.15.1/dart-core/bool-class.html">bool</a></span>
+<span class="name ">shouldRetry</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="shouldRetry-param-e"><span class="type-annotation">dynamic</span> <span class="parameter-name">e</span></span></li>
+</ol>)
+
+      
+
+    </section>
+    
 <section class="desc markdown">
-  <p>The users JWT token</p>
-<p>token can be null but only request that aren't authorized will be
-fulfilled.</p>
+  <p>Decides if the client should retry the call again.</p>
 </section>
 
-        
+
+    
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">final String? token;
-
-</code></pre>
+  <pre class="language-dart"><code class="language-dart">bool shouldRetry(dynamic e) =&gt;
+    e is SocketException || e is TimeoutException || e is FormatException;</code></pre>
 </section>
 
 
@@ -84,7 +86,7 @@ fulfilled.</p>
   <li><a href="../../index.html">market_client</a></li>
   <li><a href="../../market_client/market_client-library.html">market_client</a></li>
   <li><a href="../../market_client/MarketHttpClient-class.html">MarketHttpClient</a></li>
-  <li class="self-crumb">token property</li>
+  <li class="self-crumb">shouldRetry method</li>
 </ol>
 
 
@@ -102,12 +104,12 @@ fulfilled.</p>
     <li><a href="../../market_client/MarketHttpClient/language.html">language</a></li>
     <li><a href="../../market_client/MarketHttpClient/platform.html">platform</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/runtimeType.html">runtimeType</a></li>
-    <li><a href="../../market_client/MarketHttpClient/token.html">token</a></li>
 
     <li class="section-title"><a href="../../market_client/MarketHttpClient-class.html#instance-methods">Methods</a></li>
     <li><a href="../../market_client/MarketHttpClient/get.html">get</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li><a href="../../market_client/MarketHttpClient/post.html">post</a></li>
+    <li><a href="../../market_client/MarketHttpClient/shouldRetry.html">shouldRetry</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/toString.html">toString</a></li>
 
     <li class="section-title inherited"><a href="../../market_client/MarketHttpClient-class.html#operators">Operators</a></li>

@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the ItemDrop class from the market_client library, for the Dart programming language.">
-  <title>ItemDrop class - market_client library - Dart API</title>
+  <meta name="description" content="API docs for the MarketGuestHttpClient class from the market_client library, for the Dart programming language.">
+  <title>MarketGuestHttpClient class - market_client library - Dart API</title>
 
 
   
@@ -31,9 +31,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">market_client</a></li>
     <li><a href="../market_client/market_client-library.html">market_client</a></li>
-    <li class="self-crumb">ItemDrop class</li>
+    <li class="self-crumb">MarketGuestHttpClient class</li>
   </ol>
-  <div class="self-name">ItemDrop</div>
+  <div class="self-name">MarketGuestHttpClient</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -44,14 +44,14 @@
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
-<h1><span class="kind-class">ItemDrop</span> class 
+<h1><span class="kind-class">MarketGuestHttpClient</span> class 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
     
 <section class="desc markdown">
-  <p>Item drops</p>
+  <p>The Client that makes the raw calls to Warframe market</p>
 </section>
 
 
@@ -60,18 +60,14 @@
         <dt>Inheritance</dt>
         <dd><ul class="gt-separated dark clazz-relationships">
           <li><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object-class.html">Object</a></li>
-          <li><a href="https://pub.dev/documentation/equatable/2.0.3/equatable/Equatable-class.html">Equatable</a></li>
-          <li>ItemDrop</li>
+          <li><a href="../market_client/MarketHttpClient-class.html">MarketHttpClient</a></li>
+          <li>MarketGuestHttpClient</li>
         </ul></dd>
 
 
 
 
 
-        <dt>Annotations</dt>
-        <dd><ul class="annotation-list clazz-relationships">
-          <li>@<a href="https://pub.dev/documentation/json_annotation/4.4.0/json_annotation/JsonSerializable-class.html">JsonSerializable</a>()</li>
-        </ul></dd>
       </dl>
     </section>
 
@@ -79,69 +75,49 @@
       <h2>Constructors</h2>
 
       <dl class="constructor-summary-list">
-        <dt id="ItemDrop" class="callable">
-          <span class="name"><a href="../market_client/ItemDrop/ItemDrop.html">ItemDrop</a></span><span class="signature">(<span class="parameter" id="-param-name">{<span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">name</span>, </span><span class="parameter" id="-param-link"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">link</span>}</span>)</span>
+        <dt id="MarketGuestHttpClient" class="callable">
+          <span class="name"><a href="../market_client/MarketGuestHttpClient/MarketGuestHttpClient.html">MarketGuestHttpClient</a></span><span class="signature">(<span class="parameter" id="-param-client">{<span class="type-annotation"><a href="https://pub.dev/documentation/http/0.13.4/http/Client-class.html">Client</a>?</span> <span class="parameter-name">client</span>, </span><span class="parameter" id="-param-platform"><span class="type-annotation"><a href="../market_client/MarketPlatform.html">MarketPlatform</a></span> <span class="parameter-name">platform</span> = <span class="default-value">MarketPlatform.pc</span>, </span><span class="parameter" id="-param-language"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">language</span> = <span class="default-value">&#39;en&#39;</span>}</span>)</span>
         </dt>
         <dd>
-          Item drops 
-          <div class="constructor-modifier features">const</div>
-        </dd>
-        <dt id="ItemDrop.fromJson" class="callable">
-          <span class="name"><a href="../market_client/ItemDrop/ItemDrop.fromJson.html">ItemDrop.fromJson</a></span><span class="signature">(<span class="parameter" id="fromJson-param-json"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">json</span></span>)</span>
-        </dt>
-        <dd>
-          Get instance of <a href="../market_client/ItemDrop-class.html">ItemDrop</a> from json object 
-          <div class="constructor-modifier features">factory</div>
+          The Client that makes the raw calls to Warframe market 
         </dd>
       </dl>
     </section>
 
-    <section class="summary offset-anchor" id="instance-properties">
+    <section class="summary offset-anchor inherited" id="instance-properties">
       <h2>Properties</h2>
 
       <dl class="properties">
         <dt id="hashCode" class="property inherited">
-  <span class="name"><a href="https://pub.dev/documentation/equatable/2.0.3/equatable/Equatable/hashCode.html">hashCode</a></span>
+  <span class="name"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/hashCode.html">hashCode</a></span>
   <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/int-class.html">int</a></span> 
 
 </dt>
 <dd class="inherited">
-  The hash code for this object. <a href="https://pub.dev/documentation/equatable/2.0.3/equatable/Equatable/hashCode.html">[...]</a>
+  The hash code for this object. <a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/hashCode.html">[...]</a>
   <div class="features">read-only, inherited</div>
 
 </dd>
 
-        <dt id="link" class="property">
-  <span class="name"><a href="../market_client/ItemDrop/link.html">link</a></span>
+        <dt id="language" class="property inherited">
+  <span class="name"><a href="../market_client/MarketHttpClient/language.html">language</a></span>
   <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> 
 
 </dt>
-<dd>
-  Item link. 
-  <div class="features">final</div>
+<dd class="inherited">
+  The language that the http caller will emit to the api. <a href="../market_client/MarketHttpClient/language.html">[...]</a>
+  <div class="features">final, inherited</div>
 
 </dd>
 
-        <dt id="name" class="property">
-  <span class="name"><a href="../market_client/ItemDrop/name.html">name</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> 
+        <dt id="platform" class="property inherited">
+  <span class="name"><a href="../market_client/MarketHttpClient/platform.html">platform</a></span>
+  <span class="signature">&#8594; <a href="../market_client/MarketPlatform.html">MarketPlatform</a></span> 
 
 </dt>
-<dd>
-  Item Drop name. 
-  <div class="features">final</div>
-
-</dd>
-
-        <dt id="props" class="property">
-  <span class="name"><a href="../market_client/ItemDrop/props.html">props</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object-class.html">Object</a>?</span>&gt;</span></span> 
-
-</dt>
-<dd>
-  The list of properties that will be used to determine whether
-two instances are equal. 
-  <div class="features">read-only, override</div>
+<dd class="inherited">
+  The game platform the http caller will send to the api. <a href="../market_client/MarketHttpClient/platform.html">[...]</a>
+  <div class="features">final, inherited</div>
 
 </dd>
 
@@ -156,24 +132,25 @@ two instances are equal.
 
 </dd>
 
-        <dt id="stringify" class="property inherited">
-  <span class="name"><a href="https://pub.dev/documentation/equatable/2.0.3/equatable/Equatable/stringify.html">stringify</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/bool-class.html">bool</a>?</span> 
-
-</dt>
-<dd class="inherited">
-  If set to <code>true</code>, the <a href="https://pub.dev/documentation/equatable/2.0.3/equatable/Equatable/toString.html">toString</a> method will be overridden to output
-this instance's <a href="../market_client/ItemDrop/props.html">props</a>. <a href="https://pub.dev/documentation/equatable/2.0.3/equatable/Equatable/stringify.html">[...]</a>
-  <div class="features">read-only, inherited</div>
-
-</dd>
-
       </dl>
     </section>
 
     <section class="summary offset-anchor" id="instance-methods">
       <h2>Methods</h2>
       <dl class="callables">
+        <dt id="get" class="callable">
+  <span class="name"><a href="../market_client/MarketGuestHttpClient/get.html">get</a></span><span class="signature">(<wbr><span class="parameter" id="get-param-path"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Makes a GET request to <code>path</code> 
+  <div class="features">override</div>
+
+</dd>
+
         <dt id="noSuchMethod" class="callable inherited">
   <span class="name"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
     <span class="returntype parameter">&#8594; dynamic</span>
@@ -187,28 +164,41 @@ this instance's <a href="../market_client/ItemDrop/props.html">props</a>. <a hre
 
 </dd>
 
-        <dt id="toJson" class="callable">
-  <span class="name"><a href="../market_client/ItemDrop/toJson.html">toJson</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>
+        <dt id="post" class="callable">
+  <span class="name"><a href="../market_client/MarketGuestHttpClient/post.html">post</a></span><span class="signature">(<wbr><span class="parameter" id="post-param-path"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">path</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Returns <a href="../market_client/ItemDrop-class.html">ItemDrop</a> to a json object 
+  Makes a POST request to <code>path</code> 
+  <div class="features">override</div>
+
+</dd>
+
+        <dt id="shouldRetry" class="callable inherited">
+  <span class="name"><a href="../market_client/MarketHttpClient/shouldRetry.html">shouldRetry</a></span><span class="signature">(<wbr><span class="parameter" id="shouldRetry-param-e"><span class="type-annotation">dynamic</span> <span class="parameter-name">e</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/bool-class.html">bool</a></span>
+  </span>
   
+
+</dt>
+<dd class="inherited">
+  Decides if the client should retry the call again. 
+  <div class="features">inherited</div>
 
 </dd>
 
         <dt id="toString" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/equatable/2.0.3/equatable/Equatable/toString.html">toString</a></span><span class="signature">(<wbr>)
+  <span class="name"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/toString.html">toString</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>
   </span>
   
 
 </dt>
 <dd class="inherited">
-  A string representation of this object. <a href="https://pub.dev/documentation/equatable/2.0.3/equatable/Equatable/toString.html">[...]</a>
+  A string representation of this object. <a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/toString.html">[...]</a>
   <div class="features">inherited</div>
 
 </dd>
@@ -220,14 +210,14 @@ this instance's <a href="../market_client/ItemDrop/props.html">props</a>. <a hre
       <h2>Operators</h2>
       <dl class="callables">
         <dt id="operator ==" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/equatable/2.0.3/equatable/Equatable/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+  <span class="name"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
     <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/bool-class.html">bool</a></span>
   </span>
   
 
 </dt>
 <dd class="inherited">
-  The equality operator. <a href="https://pub.dev/documentation/equatable/2.0.3/equatable/Equatable/operator_equals.html">[...]</a>
+  The equality operator. <a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/operator_equals.html">[...]</a>
   <div class="features">inherited</div>
 
 </dd>
@@ -250,7 +240,7 @@ this instance's <a href="../market_client/ItemDrop/props.html">props</a>. <a hre
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
   <li><a href="../index.html">market_client</a></li>
   <li><a href="../market_client/market_client-library.html">market_client</a></li>
-  <li class="self-crumb">ItemDrop class</li>
+  <li class="self-crumb">MarketGuestHttpClient class</li>
 </ol>
 
 
@@ -300,28 +290,27 @@ this instance's <a href="../market_client/ItemDrop/props.html">props</a>. <a hre
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
     <ol>
 
-    <li class="section-title"><a href="../market_client/ItemDrop-class.html#constructors">Constructors</a></li>
-    <li><a href="../market_client/ItemDrop/ItemDrop.html">ItemDrop</a></li>
-    <li><a href="../market_client/ItemDrop/ItemDrop.fromJson.html">fromJson</a></li>
+    <li class="section-title"><a href="../market_client/MarketGuestHttpClient-class.html#constructors">Constructors</a></li>
+    <li><a href="../market_client/MarketGuestHttpClient/MarketGuestHttpClient.html">MarketGuestHttpClient</a></li>
 
 
-    <li class="section-title">
-      <a href="../market_client/ItemDrop-class.html#instance-properties">Properties</a>
+    <li class="section-title inherited">
+      <a href="../market_client/MarketGuestHttpClient-class.html#instance-properties">Properties</a>
     </li>
-    <li class="inherited"><a href="https://pub.dev/documentation/equatable/2.0.3/equatable/Equatable/hashCode.html">hashCode</a></li>
-    <li><a href="../market_client/ItemDrop/link.html">link</a></li>
-    <li><a href="../market_client/ItemDrop/name.html">name</a></li>
-    <li><a href="../market_client/ItemDrop/props.html">props</a></li>
+    <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/hashCode.html">hashCode</a></li>
+    <li class="inherited"><a href="../market_client/MarketHttpClient/language.html">language</a></li>
+    <li class="inherited"><a href="../market_client/MarketHttpClient/platform.html">platform</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/runtimeType.html">runtimeType</a></li>
-    <li class="inherited"><a href="https://pub.dev/documentation/equatable/2.0.3/equatable/Equatable/stringify.html">stringify</a></li>
 
-    <li class="section-title"><a href="../market_client/ItemDrop-class.html#instance-methods">Methods</a></li>
+    <li class="section-title"><a href="../market_client/MarketGuestHttpClient-class.html#instance-methods">Methods</a></li>
+    <li><a href="../market_client/MarketGuestHttpClient/get.html">get</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-    <li><a href="../market_client/ItemDrop/toJson.html">toJson</a></li>
-    <li class="inherited"><a href="https://pub.dev/documentation/equatable/2.0.3/equatable/Equatable/toString.html">toString</a></li>
+    <li><a href="../market_client/MarketGuestHttpClient/post.html">post</a></li>
+    <li class="inherited"><a href="../market_client/MarketHttpClient/shouldRetry.html">shouldRetry</a></li>
+    <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/toString.html">toString</a></li>
 
-    <li class="section-title inherited"><a href="../market_client/ItemDrop-class.html#operators">Operators</a></li>
-    <li class="inherited"><a href="https://pub.dev/documentation/equatable/2.0.3/equatable/Equatable/operator_equals.html">operator ==</a></li>
+    <li class="section-title inherited"><a href="../market_client/MarketGuestHttpClient-class.html#operators">Operators</a></li>
+    <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/operator_equals.html">operator ==</a></li>
 
 
 
