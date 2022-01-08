@@ -6,7 +6,6 @@ import 'package:market_client/src/enums.dart';
 import 'package:market_client/src/utils/http_helpers.dart';
 
 const _root = 'https://api.warframe.market/v1';
-const _kTimeout = Duration(seconds: 5);
 
 /// {@template client}
 /// The base client class for [MarketGuestHttpClient] and [MarketAuthHttpClient]
@@ -57,30 +56,26 @@ class MarketGuestHttpClient extends MarketHttpClient {
 
   @override
   Future<Map<String, dynamic>> get(String path) async {
-    final res = await client
-        .get(
-          Uri.parse('$_root$path'),
-          headers: HttpHelpers.headers(
-            platform: platform,
-            language: language,
-          ),
-        )
-        .timeout(_kTimeout);
+    final res = await client.get(
+      Uri.parse('$_root$path'),
+      headers: HttpHelpers.headers(
+        platform: platform,
+        language: language,
+      ),
+    );
 
     return HttpHelpers.parseResponse(res);
   }
 
   @override
   Future<Map<String, dynamic>> post(String path) async {
-    final res = await client
-        .post(
-          Uri.parse('$_root/$path'),
-          headers: HttpHelpers.headers(
-            platform: platform,
-            language: language,
-          ),
-        )
-        .timeout(_kTimeout);
+    final res = await client.post(
+      Uri.parse('$_root/$path'),
+      headers: HttpHelpers.headers(
+        platform: platform,
+        language: language,
+      ),
+    );
 
     return HttpHelpers.parseResponse(res);
   }
@@ -107,32 +102,28 @@ class MarketAuthHttpClient extends MarketHttpClient {
 
   @override
   Future<Map<String, dynamic>> get(String path) async {
-    final res = await client
-        .get(
-          Uri.parse('$_root$path'),
-          headers: HttpHelpers.headers(
-            platform: platform,
-            language: language,
-            token: token,
-          ),
-        )
-        .timeout(_kTimeout);
+    final res = await client.get(
+      Uri.parse('$_root$path'),
+      headers: HttpHelpers.headers(
+        platform: platform,
+        language: language,
+        token: token,
+      ),
+    );
 
     return HttpHelpers.parseResponse(res);
   }
 
   @override
   Future<Map<String, dynamic>> post(String path) async {
-    final res = await client
-        .post(
-          Uri.parse('$_root/$path'),
-          headers: HttpHelpers.headers(
-            platform: platform,
-            language: language,
-            token: token,
-          ),
-        )
-        .timeout(_kTimeout);
+    final res = await client.post(
+      Uri.parse('$_root/$path'),
+      headers: HttpHelpers.headers(
+        platform: platform,
+        language: language,
+        token: token,
+      ),
+    );
 
     return HttpHelpers.parseResponse(res);
   }
