@@ -1,9 +1,6 @@
 import 'package:market_client/src/enums.dart';
 import 'package:market_client/src/http.dart';
-import 'package:market_client/src/models/item.dart';
-import 'package:market_client/src/models/item_order.dart';
-import 'package:market_client/src/models/item_set.dart';
-import 'package:market_client/src/models/market_orders.dart';
+import 'package:market_client/src/models/models.dart';
 
 /// {@template marketclient}
 /// Main Entry point for the market client.
@@ -41,20 +38,27 @@ class MarketClient {
     return ItemSet.fromJson(payload['item'] as Map<String, dynamic>);
   }
 
-  /// Returns a list of recently posted orders.
+  /// Returns a list of orders for any tradable item.
   ///
   /// {@macro item_note}
   Future<MarketOrders> searchOrders(String urlName) async {
     final payload = await _client.get('/items/$urlName/orders');
     final orders = List<dynamic>.from(payload['orders'] as List<dynamic>)
         .map<ItemOrder>(
-            (dynamic o) => ItemOrder.fromJson(o as Map<String, dynamic>),)
+          (dynamic o) => ItemOrder.fromJson(o as Map<String, dynamic>),
+        )
         .toList();
 
     return MarketOrders(
       sellOrders: orders.where((e) => e.orderType == OrderType.sell).toList(),
       buyOrders: orders.where((e) => e.orderType == OrderType.buy).toList(),
     );
+  }
+
+  Future<MarketItemStatistics> itemStatistics(String itemUrl) async {
+    final payload = await _client.get('items/$itemUrl/statistics');
+
+    return MarketItemStatistics.fromJson(payload);
   }
 
   /// Returns both sell and buy orders for the last 4 hours.
