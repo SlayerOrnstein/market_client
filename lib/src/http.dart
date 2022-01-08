@@ -1,10 +1,9 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:http/http.dart' as http;
+import 'package:http/retry.dart';
 import 'package:market_client/src/enums.dart';
 import 'package:market_client/src/utils/http_helpers.dart';
-import 'package:retry/retry.dart';
 
 const _root = 'https://api.warframe.market/v1';
 const _kTimeout = Duration(seconds: 5);
@@ -32,10 +31,6 @@ abstract class MarketHttpClient {
 
   /// Makes a POST request to [path]
   Future<Map<String, dynamic>> post(String path);
-
-  /// Decides if the client should retry the call again.
-  bool shouldRetry(dynamic e) =>
-      e is SocketException || e is TimeoutException || e is FormatException;
 }
 
 /// {@template guest_client}
@@ -47,48 +42,38 @@ class MarketGuestHttpClient extends MarketHttpClient {
     http.Client? client,
     MarketPlatform platform = MarketPlatform.pc,
     String language = 'en',
-  })  : _client = client ?? http.Client(),
+  })  : _client = client ?? RetryClient(http.Client()),
         super(platform: platform, language: language);
 
   final http.Client _client;
 
   @override
   Future<Map<String, dynamic>> get(String path) async {
-    return retry(
-      () async {
-        final res = await _client
-            .get(
-              Uri.parse('$_root$path'),
-              headers: HttpHelpers.headers(
-                platform: platform,
-                language: language,
-              ),
-            )
-            .timeout(_kTimeout);
+    final res = await _client
+        .get(
+          Uri.parse('$_root$path'),
+          headers: HttpHelpers.headers(
+            platform: platform,
+            language: language,
+          ),
+        )
+        .timeout(_kTimeout);
 
-        return HttpHelpers.parseResponse(res);
-      },
-      retryIf: shouldRetry,
-    );
+    return HttpHelpers.parseResponse(res);
   }
 
   @override
   Future<Map<String, dynamic>> post(String path) async {
-    return retry(
-      () async {
-        final res = await _client
-            .post(
-              Uri.parse('$_root/$path'),
-              headers: HttpHelpers.headers(
-                platform: platform,
-                language: language,
-              ),
-            )
-            .timeout(_kTimeout);
+    final res = await _client
+        .post(
+          Uri.parse('$_root/$path'),
+          headers: HttpHelpers.headers(
+            platform: platform,
+            language: language,
+          ),
+        )
+        .timeout(_kTimeout);
 
-        return HttpHelpers.parseResponse(res);
-      },
-      retryIf: shouldRetry,
-    );
+    return HttpHelpers.parseResponse(res);
   }
 }
