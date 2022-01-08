@@ -75,22 +75,17 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Future&lt;Map&lt;String, dynamic&gt;&gt; post(String path) async {
-  return retry(
-    () async {
-      final res = await _client
-          .post(
-            Uri.parse(&#39;$_root&#47;$path&#39;),
-            headers: HttpHelpers.headers(
-              platform: platform,
-              language: language,
-            ),
-          )
-          .timeout(_kTimeout);
+  final res = await client
+      .post(
+        Uri.parse(&#39;$_root&#47;$path&#39;),
+        headers: HttpHelpers.headers(
+          platform: platform,
+          language: language,
+        ),
+      )
+      .timeout(_kTimeout);
 
-      return HttpHelpers.parseResponse(res);
-    },
-    retryIf: shouldRetry,
-  );
+  return HttpHelpers.parseResponse(res);
 }</code></pre>
 </section>
 
@@ -122,6 +117,7 @@ Future&lt;Map&lt;String, dynamic&gt;&gt; post(String path) async {
     <li class="section-title inherited">
       <a href="../../market_client/MarketGuestHttpClient-class.html#instance-properties">Properties</a>
     </li>
+    <li class="inherited"><a href="../../market_client/MarketHttpClient/client.html">client</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/hashCode.html">hashCode</a></li>
     <li class="inherited"><a href="../../market_client/MarketHttpClient/language.html">language</a></li>
     <li class="inherited"><a href="../../market_client/MarketHttpClient/platform.html">platform</a></li>
@@ -131,7 +127,6 @@ Future&lt;Map&lt;String, dynamic&gt;&gt; post(String path) async {
     <li><a href="../../market_client/MarketGuestHttpClient/get.html">get</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li><a href="../../market_client/MarketGuestHttpClient/post.html">post</a></li>
-    <li class="inherited"><a href="../../market_client/MarketHttpClient/shouldRetry.html">shouldRetry</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/toString.html">toString</a></li>
 
     <li class="section-title inherited"><a href="../../market_client/MarketGuestHttpClient-class.html#operators">Operators</a></li>

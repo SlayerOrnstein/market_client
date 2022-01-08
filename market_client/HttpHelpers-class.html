@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the MarketClient class from the market_client library, for the Dart programming language.">
-  <title>MarketClient class - market_client library - Dart API</title>
+  <meta name="description" content="API docs for the HttpHelpers class from the market_client library, for the Dart programming language.">
+  <title>HttpHelpers class - market_client library - Dart API</title>
 
 
   
@@ -31,9 +31,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">market_client</a></li>
     <li><a href="../market_client/market_client-library.html">market_client</a></li>
-    <li class="self-crumb">MarketClient class</li>
+    <li class="self-crumb">HttpHelpers abstract class</li>
   </ol>
-  <div class="self-name">MarketClient</div>
+  <div class="self-name">HttpHelpers</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -44,15 +44,12 @@
 
   <div id="dartdoc-main-content" class="main-content">
       <div>
-<h1><span class="kind-class">MarketClient</span> class 
+<h1><span class="kind-class">HttpHelpers</span> class 
     <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
  
 </h1></div>
 
     
-<section class="desc markdown">
-  <p>Main Entry point for the market client.</p>
-</section>
 
 
 
@@ -60,16 +57,16 @@
       <h2>Constructors</h2>
 
       <dl class="constructor-summary-list">
-        <dt id="MarketClient" class="callable">
-          <span class="name"><a href="../market_client/MarketClient/MarketClient.html">MarketClient</a></span><span class="signature">(<span class="parameter" id="-param-client">{<span class="type-annotation"><a href="../market_client/MarketGuestHttpClient-class.html">MarketGuestHttpClient</a>?</span> <span class="parameter-name">client</span>}</span>)</span>
+        <dt id="HttpHelpers" class="callable">
+          <span class="name"><a href="../market_client/HttpHelpers/HttpHelpers.html">HttpHelpers</a></span><span class="signature">()</span>
         </dt>
         <dd>
-          Main Entry point for the market client. <a href="../market_client/MarketClient/MarketClient.html">[...]</a>
+           
         </dd>
       </dl>
     </section>
 
-    <section class="summary offset-anchor" id="instance-properties">
+    <section class="summary offset-anchor inherited" id="instance-properties">
       <h2>Properties</h2>
 
       <dl class="properties">
@@ -81,18 +78,6 @@
 <dd class="inherited">
   The hash code for this object. <a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/hashCode.html">[...]</a>
   <div class="features">read-only, inherited</div>
-
-</dd>
-
-        <dt id="profiles" class="property">
-  <span class="name"><a href="../market_client/MarketClient/profiles.html">profiles</a></span>
-  <span class="signature">&#8594; dynamic</span> 
-
-</dt>
-<dd>
-  Returns an instance of <code>ProfileClient</code> using the <a href="../market_client/MarketClient-class.html">MarketClient</a> of this
-instance. 
-  <div class="features">read-only</div>
 
 </dd>
 
@@ -110,62 +95,9 @@ instance.
       </dl>
     </section>
 
-    <section class="summary offset-anchor" id="instance-methods">
+    <section class="summary offset-anchor inherited" id="instance-methods">
       <h2>Methods</h2>
       <dl class="callables">
-        <dt id="getMarketItem" class="callable">
-  <span class="name"><a href="../market_client/MarketClient/getMarketItem.html">getMarketItem</a></span><span class="signature">(<wbr><span class="parameter" id="getMarketItem-param-item"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">item</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../market_client/ItemSet-class.html">ItemSet</a></span>&gt;</span></span>
-  </span>
-  
-
-</dt>
-<dd>
-  Gets the Warframe market information for one item.
-Items will always return an entire set for any item. <a href="../market_client/MarketClient/getMarketItem.html">[...]</a>
-  
-
-</dd>
-
-        <dt id="getMarketItems" class="callable">
-  <span class="name"><a href="../market_client/MarketClient/getMarketItems.html">getMarketItems</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../market_client/MarketItem-class.html">MarketItem</a></span>&gt;</span></span>&gt;</span></span>
-  </span>
-  
-
-</dt>
-<dd>
-  Gets all items and their information. 
-  
-
-</dd>
-
-        <dt id="itemStatistics" class="callable">
-  <span class="name"><a href="../market_client/MarketClient/itemStatistics.html">itemStatistics</a></span><span class="signature">(<wbr><span class="parameter" id="itemStatistics-param-itemUrl"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">itemUrl</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../market_client/MarketItemStatistics-class.html">MarketItemStatistics</a></span>&gt;</span></span>
-  </span>
-  
-
-</dt>
-<dd>
-  Get sale statistics on a <a href="../market_client/MarketItem-class.html">MarketItem</a>. 
-  
-
-</dd>
-
-        <dt id="mostRecentOrders" class="callable">
-  <span class="name"><a href="../market_client/MarketClient/mostRecentOrders.html">mostRecentOrders</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../market_client/RecentMarketOrders-class.html">RecentMarketOrders</a></span>&gt;</span></span>
-  </span>
-  
-
-</dt>
-<dd>
-  Returns both sell and buy orders for the last 4 hours. 
-  
-
-</dd>
-
         <dt id="noSuchMethod" class="callable inherited">
   <span class="name"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
     <span class="returntype parameter">&#8594; dynamic</span>
@@ -176,19 +108,6 @@ Items will always return an entire set for any item. <a href="../market_client/M
 <dd class="inherited">
   Invoked when a non-existent method or property is accessed. <a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">[...]</a>
   <div class="features">inherited</div>
-
-</dd>
-
-        <dt id="searchOrders" class="callable">
-  <span class="name"><a href="../market_client/MarketClient/searchOrders.html">searchOrders</a></span><span class="signature">(<wbr><span class="parameter" id="searchOrders-param-urlName"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">urlName</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../market_client/MarketOrders-class.html">MarketOrders</a></span>&gt;</span></span>
-  </span>
-  
-
-</dt>
-<dd>
-  Returns a list of orders for any tradable item. <a href="../market_client/MarketClient/searchOrders.html">[...]</a>
-  
 
 </dd>
 
@@ -228,6 +147,50 @@ Items will always return an entire set for any item. <a href="../market_client/M
     </section>
 
 
+    <section class="summary offset-anchor" id="static-methods">
+      <h2>Static Methods</h2>
+      <dl class="callables">
+        <dt id="headers" class="callable">
+  <span class="name"><a href="../market_client/HttpHelpers/headers.html">headers</a></span><span class="signature">(<wbr><span class="parameter" id="headers-param-platform">{<span>required</span> <span class="type-annotation"><a href="../market_client/MarketPlatform.html">MarketPlatform</a></span> <span class="parameter-name">platform</span>, </span><span class="parameter" id="headers-param-language"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">language</span>, </span><span class="parameter" id="headers-param-token"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">token</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Helper to create headers with proper values. <a href="../market_client/HttpHelpers/headers.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="marketImageUriBuilder" class="callable">
+  <span class="name"><a href="../market_client/HttpHelpers/marketImageUriBuilder.html">marketImageUriBuilder</a></span><span class="signature">(<wbr><span class="parameter" id="marketImageUriBuilder-param-imagePath"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">imagePath</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/Uri-class.html">Uri</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Market Image Uri builder for market assets 
+  
+
+</dd>
+
+        <dt id="parseResponse" class="callable">
+  <span class="name"><a href="../market_client/HttpHelpers/parseResponse.html">parseResponse</a></span><span class="signature">(<wbr><span class="parameter" id="parseResponse-param-res"><span class="type-annotation"><a href="https://pub.dev/documentation/http/0.13.4/http/Response-class.html">Response</a></span> <span class="parameter-name">res</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns the payload of Warframe Market's response. <a href="../market_client/HttpHelpers/parseResponse.html">[...]</a>
+  
+
+</dd>
+
+      </dl>
+    </section>
 
 
   </div> <!-- /.main-content -->
@@ -242,7 +205,7 @@ Items will always return an entire set for any item. <a href="../market_client/M
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
   <li><a href="../index.html">market_client</a></li>
   <li><a href="../market_client/market_client-library.html">market_client</a></li>
-  <li class="self-crumb">MarketClient class</li>
+  <li class="self-crumb">HttpHelpers abstract class</li>
 </ol>
 
 
@@ -294,31 +257,29 @@ Items will always return an entire set for any item. <a href="../market_client/M
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
     <ol>
 
-    <li class="section-title"><a href="../market_client/MarketClient-class.html#constructors">Constructors</a></li>
-    <li><a href="../market_client/MarketClient/MarketClient.html">MarketClient</a></li>
+    <li class="section-title"><a href="../market_client/HttpHelpers-class.html#constructors">Constructors</a></li>
+    <li><a href="../market_client/HttpHelpers/HttpHelpers.html">HttpHelpers</a></li>
 
 
-    <li class="section-title">
-      <a href="../market_client/MarketClient-class.html#instance-properties">Properties</a>
+    <li class="section-title inherited">
+      <a href="../market_client/HttpHelpers-class.html#instance-properties">Properties</a>
     </li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/hashCode.html">hashCode</a></li>
-    <li><a href="../market_client/MarketClient/profiles.html">profiles</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
-    <li class="section-title"><a href="../market_client/MarketClient-class.html#instance-methods">Methods</a></li>
-    <li><a href="../market_client/MarketClient/getMarketItem.html">getMarketItem</a></li>
-    <li><a href="../market_client/MarketClient/getMarketItems.html">getMarketItems</a></li>
-    <li><a href="../market_client/MarketClient/itemStatistics.html">itemStatistics</a></li>
-    <li><a href="../market_client/MarketClient/mostRecentOrders.html">mostRecentOrders</a></li>
+    <li class="section-title inherited"><a href="../market_client/HttpHelpers-class.html#instance-methods">Methods</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-    <li><a href="../market_client/MarketClient/searchOrders.html">searchOrders</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/toString.html">toString</a></li>
 
-    <li class="section-title inherited"><a href="../market_client/MarketClient-class.html#operators">Operators</a></li>
+    <li class="section-title inherited"><a href="../market_client/HttpHelpers-class.html#operators">Operators</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/operator_equals.html">operator ==</a></li>
 
 
 
+    <li class="section-title"><a href="../market_client/HttpHelpers-class.html#static-methods">Static methods</a></li>
+    <li><a href="../market_client/HttpHelpers/headers.html">headers</a></li>
+    <li><a href="../market_client/HttpHelpers/marketImageUriBuilder.html">marketImageUriBuilder</a></li>
+    <li><a href="../market_client/HttpHelpers/parseResponse.html">parseResponse</a></li>
 
 </ol>
 

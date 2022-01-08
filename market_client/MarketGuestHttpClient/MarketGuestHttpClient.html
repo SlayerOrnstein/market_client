@@ -69,8 +69,11 @@
   http.Client? client,
   MarketPlatform platform = MarketPlatform.pc,
   String language = &#39;en&#39;,
-})  : _client = client ?? http.Client(),
-      super(platform: platform, language: language);</code></pre>
+}) : super(
+        client: client ?? RetryClient(http.Client()),
+        platform: platform,
+        language: language,
+      );</code></pre>
 </section>
 
 
@@ -101,6 +104,7 @@
     <li class="section-title inherited">
       <a href="../../market_client/MarketGuestHttpClient-class.html#instance-properties">Properties</a>
     </li>
+    <li class="inherited"><a href="../../market_client/MarketHttpClient/client.html">client</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/hashCode.html">hashCode</a></li>
     <li class="inherited"><a href="../../market_client/MarketHttpClient/language.html">language</a></li>
     <li class="inherited"><a href="../../market_client/MarketHttpClient/platform.html">platform</a></li>
@@ -110,7 +114,6 @@
     <li><a href="../../market_client/MarketGuestHttpClient/get.html">get</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li><a href="../../market_client/MarketGuestHttpClient/post.html">post</a></li>
-    <li class="inherited"><a href="../../market_client/MarketHttpClient/shouldRetry.html">shouldRetry</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/toString.html">toString</a></li>
 
     <li class="section-title inherited"><a href="../../market_client/MarketGuestHttpClient-class.html#operators">Operators</a></li>
