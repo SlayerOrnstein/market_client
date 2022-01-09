@@ -75,16 +75,14 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Future&lt;Map&lt;String, dynamic&gt;&gt; post(String path) async {
-  final res = await client
-      .post(
-        Uri.parse(&#39;$_root&#47;$path&#39;),
-        headers: HttpHelpers.headers(
-          platform: platform,
-          language: language,
-          token: token,
-        ),
-      )
-      .timeout(_kTimeout);
+  final res = await client.post(
+    Uri.parse(&#39;$_root&#47;$path&#39;),
+    headers: HttpHelpers.headers(
+      platform: platform,
+      language: language,
+      token: token,
+    ),
+  );
 
   return HttpHelpers.parseResponse(res);
 }</code></pre>
