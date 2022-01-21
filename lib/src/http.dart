@@ -5,126 +5,93 @@ import 'package:http/retry.dart';
 import 'package:market_client/src/enums.dart';
 import 'package:market_client/src/utils/http_helpers.dart';
 
-const _root = 'https://api.warframe.market/v1';
-
-/// {@template client}
-/// The base client class for [MarketGuestHttpClient] and [MarketAuthHttpClient]
-/// {@endtemplate}
-abstract class MarketHttpClient {
-  /// {@macro client}
-  const MarketHttpClient({
-    required this.client,
-    required this.language,
-    required this.platform,
-  });
-
-  /// Http Client used to make calls.
-  final http.Client client;
-
-  /// The language that the http caller will emit to the api.
-  ///
-  /// According to Warframe Market's docs if a language isn't supported it will
-  /// return results in  english.
-  final String language;
-
-  /// The game platform the http caller will send to the api.
-  ///
-  /// By default this will be [MarketPlatform.pc].
-  final MarketPlatform platform;
-
-  /// Makes a GET request to [path]
-  Future<Map<String, dynamic>> get(String path);
-
-  /// Makes a POST request to [path]
-  Future<Map<String, dynamic>> post(String path);
-}
+const _root = 'api.warframe.market';
+const _version = 'v1';
 
 /// {@template guest_client}
 /// The Client that makes the raw calls to Warframe market
 /// {@endtemplate}
-class MarketGuestHttpClient extends MarketHttpClient {
+class MarketHttpClient {
   /// {@macro guest_client}
-  MarketGuestHttpClient({
+  MarketHttpClient({
+    this.platform = MarketPlatform.pc,
+    this.language = 'en',
+    this.token,
     http.Client? client,
-    MarketPlatform platform = MarketPlatform.pc,
-    String language = 'en',
-  }) : super(
-          client: client ?? RetryClient(http.Client()),
-          platform: platform,
-          language: language,
-        );
+  }) : client = client ?? RetryClient(http.Client());
 
-  @override
-  Future<Map<String, dynamic>> get(String path) async {
-    final res = await client.get(
-      Uri.parse('$_root$path'),
-      headers: HttpHelpers.headers(
-        platform: platform,
-        language: language,
-      ),
+  /// The game platform used in request.
+  final MarketPlatform platform;
+
+  /// The language used in request
+  ///
+  /// Note: If a language isn't supported by Warframe Market the request will
+  /// return in English.
+  final String language;
+
+  /// The token used to make authorized request.
+  ///
+  /// If a token is supplied it will be used for all request.
+  final String? token;
+
+  /// The [http.Client] used internally to make http request.
+  ///
+  /// If no [http.Client] is supplied a [RetryClient] is used.
+  late final http.Client client;
+
+  Map<String, String> get _headers {
+    return HttpHelpers.headers(
+      platform: platform,
+      language: language,
+      token: token,
     );
+  }
 
+  /// Sends a GET  request.
+  Future<Map<String, dynamic>> get(
+    String path, [
+    Map<String, String>? queryParameters,
+  ]) async {
+    final uri = Uri.https(_root, '/$_version/$path', queryParameters);
+
+    final res = await client.get(uri, headers: _headers);
     return HttpHelpers.parseResponse(res);
   }
 
-  @override
-  Future<Map<String, dynamic>> post(String path) async {
-    final res = await client.post(
-      Uri.parse('$_root/$path'),
-      headers: HttpHelpers.headers(
-        platform: platform,
-        language: language,
-      ),
-    );
+  /// Sends a POST request.
+  Future<Map<String, dynamic>> post(
+    String path, [
+    Map<String, String>? queryParameters,
+  ]) async {
+    final uri = Uri.https(_root, '/$_version/$path', queryParameters);
 
+    final res = await client.post(uri, headers: _headers);
     return HttpHelpers.parseResponse(res);
   }
-}
 
-/// {@template martket_auth}
-/// Creates and autherized client to make calls to Warframe market as a user.
-/// {@endtemplate market_auth}
-class MarketAuthHttpClient extends MarketHttpClient {
-  /// {@macro market_auth}
-  MarketAuthHttpClient({
+  /// Sends a DELETE request.
+  Future<Map<String, dynamic>> delete(
+    String path, [
+    Map<String, String>? queryParameters,
+  ]) async {
+    final uri = Uri.https(_root, '/$_version/$path', queryParameters);
+
+    final res = await client.delete(uri, headers: _headers);
+    return HttpHelpers.parseResponse(res);
+  }
+
+  /// Creates a new instance of [MarketHttpClient].
+  MarketHttpClient copyWith({
+    MarketPlatform? platform,
+    String? language,
+    String? token,
     http.Client? client,
-    required this.token,
-    MarketPlatform platform = MarketPlatform.pc,
-    String language = 'en',
-  }) : super(
-          client: client ?? RetryClient(http.Client()),
-          platform: platform,
-          language: language,
-        );
-
-  /// User JWT token.
-  final String token;
-
-  @override
-  Future<Map<String, dynamic>> get(String path) async {
-    final res = await client.get(
-      Uri.parse('$_root$path'),
-      headers: HttpHelpers.headers(
-        platform: platform,
-        language: language,
-        token: token,
-      ),
+  }) {
+    return MarketHttpClient(
+      platform: platform ?? this.platform,
+      language: language ?? this.language,
+      token: token ?? this.token,
+      client: client ?? this.client,
     );
-
-    return HttpHelpers.parseResponse(res);
-  }
-
-  @override
-  Future<Map<String, dynamic>> post(String path) async {
-    final res = await client.post(
-      Uri.parse('$_root/$path'),
-      headers: HttpHelpers.headers(
-        platform: platform,
-        language: language,
-        token: token,
-      ),
-    );
-
-    return HttpHelpers.parseResponse(res);
   }
 }

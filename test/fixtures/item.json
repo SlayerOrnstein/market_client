@@ -4,12 +4,11 @@
             "id": "54aae292e7798909064f1575",
             "items_in_set": [
                 {
-                    "icon_format": "land",
                     "url_name": "secura_dual_cestra",
                     "icon": "icons/en/secura_dual_cestra.3d47a4ec6675ff774bb0da9b16c53e0e.png",
                     "sub_icon": null,
                     "trading_tax": 2000,
-                    "mastery_level": 10,
+                    "mastery_rank": 10,
                     "ducats": 45,
                     "set_root": false,
                     "thumb": "icons/en/thumbs/secura_dual_cestra.3d47a4ec6675ff774bb0da9b16c53e0e.128x128.png",

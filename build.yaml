@@ -11,4 +11,4 @@ targets:
           explicit_to_json: true
           field_rename: none
           ignore_unannotated: false
-          include_if_null: true
+          include_if_null: false
