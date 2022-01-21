@@ -35,7 +35,9 @@ void main() {
   test('Test items exceptions', () {
     when(() => client.get('/items')).thenThrow(BadRequestException());
     expect(
-        () => api.items.getMarketItems(), throwsA(isA<BadRequestException>()));
+      () => api.items.getMarketItems(),
+      throwsA(isA<BadRequestException>()),
+    );
   });
 
   test('Test retrivial of a single item', () async {
