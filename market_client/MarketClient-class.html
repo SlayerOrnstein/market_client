@@ -61,10 +61,10 @@
 
       <dl class="constructor-summary-list">
         <dt id="MarketClient" class="callable">
-          <span class="name"><a href="../market_client/MarketClient/MarketClient.html">MarketClient</a></span><span class="signature">(<span class="parameter" id="-param-client">{<span class="type-annotation"><a href="../market_client/MarketGuestHttpClient-class.html">MarketGuestHttpClient</a>?</span> <span class="parameter-name">client</span>}</span>)</span>
+          <span class="name"><a href="../market_client/MarketClient/MarketClient.html">MarketClient</a></span><span class="signature">(<span class="parameter" id="-param-client">{<span>required</span> <span class="type-annotation"><a href="../market_client/MarketHttpClient-class.html">MarketHttpClient</a></span> <span class="parameter-name">client</span>}</span>)</span>
         </dt>
         <dd>
-          Main Entry point for the market client. <a href="../market_client/MarketClient/MarketClient.html">[...]</a>
+          Main Entry point for the market client. 
         </dd>
       </dl>
     </section>
@@ -73,6 +73,17 @@
       <h2>Properties</h2>
 
       <dl class="properties">
+        <dt id="client" class="property">
+  <span class="name"><a href="../market_client/MarketClient/client.html">client</a></span>
+  <span class="signature">&#8594; <a href="../market_client/MarketHttpClient-class.html">MarketHttpClient</a></span> 
+
+</dt>
+<dd>
+  Client used for all other clients. 
+  <div class="features">final</div>
+
+</dd>
+
         <dt id="hashCode" class="property inherited">
   <span class="name"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/hashCode.html">hashCode</a></span>
   <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/int-class.html">int</a></span> 
@@ -84,14 +95,13 @@
 
 </dd>
 
-        <dt id="profiles" class="property">
-  <span class="name"><a href="../market_client/MarketClient/profiles.html">profiles</a></span>
-  <span class="signature">&#8594; <a href="../market_client/ProfileClient-class.html">ProfileClient</a></span> 
+        <dt id="items" class="property">
+  <span class="name"><a href="../market_client/MarketClient/items.html">items</a></span>
+  <span class="signature">&#8594; ItemClient</span> 
 
 </dt>
 <dd>
-  Returns an instance of <a href="../market_client/ProfileClient-class.html">ProfileClient</a> using the <a href="../market_client/MarketClient-class.html">MarketClient</a> of this
-instance. 
+  Contains all endpoints to access Warframe Market Items. 
   <div class="features">read-only</div>
 
 </dd>
@@ -113,59 +123,6 @@ instance.
     <section class="summary offset-anchor" id="instance-methods">
       <h2>Methods</h2>
       <dl class="callables">
-        <dt id="getMarketItem" class="callable">
-  <span class="name"><a href="../market_client/MarketClient/getMarketItem.html">getMarketItem</a></span><span class="signature">(<wbr><span class="parameter" id="getMarketItem-param-item"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">item</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../market_client/ItemSet-class.html">ItemSet</a></span>&gt;</span></span>
-  </span>
-  
-
-</dt>
-<dd>
-  Gets the Warframe market information for one item.
-Items will always return an entire set for any item. <a href="../market_client/MarketClient/getMarketItem.html">[...]</a>
-  
-
-</dd>
-
-        <dt id="getMarketItems" class="callable">
-  <span class="name"><a href="../market_client/MarketClient/getMarketItems.html">getMarketItems</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../market_client/MarketItem-class.html">MarketItem</a></span>&gt;</span></span>&gt;</span></span>
-  </span>
-  
-
-</dt>
-<dd>
-  Gets all items and their information. 
-  
-
-</dd>
-
-        <dt id="itemStatistics" class="callable">
-  <span class="name"><a href="../market_client/MarketClient/itemStatistics.html">itemStatistics</a></span><span class="signature">(<wbr><span class="parameter" id="itemStatistics-param-itemUrl"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">itemUrl</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../market_client/MarketItemStatistics-class.html">MarketItemStatistics</a></span>&gt;</span></span>
-  </span>
-  
-
-</dt>
-<dd>
-  Get sale statistics on a <a href="../market_client/MarketItem-class.html">MarketItem</a>. 
-  
-
-</dd>
-
-        <dt id="mostRecentOrders" class="callable">
-  <span class="name"><a href="../market_client/MarketClient/mostRecentOrders.html">mostRecentOrders</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../market_client/RecentMarketOrders-class.html">RecentMarketOrders</a></span>&gt;</span></span>
-  </span>
-  
-
-</dt>
-<dd>
-  Returns both sell and buy orders for the last 4 hours. 
-  
-
-</dd>
-
         <dt id="noSuchMethod" class="callable inherited">
   <span class="name"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
     <span class="returntype parameter">&#8594; dynamic</span>
@@ -179,15 +136,15 @@ Items will always return an entire set for any item. <a href="../market_client/M
 
 </dd>
 
-        <dt id="searchOrders" class="callable">
-  <span class="name"><a href="../market_client/MarketClient/searchOrders.html">searchOrders</a></span><span class="signature">(<wbr><span class="parameter" id="searchOrders-param-urlName"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">urlName</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../market_client/MarketOrders-class.html">MarketOrders</a></span>&gt;</span></span>
+        <dt id="profiles" class="callable">
+  <span class="name"><a href="../market_client/MarketClient/profiles.html">profiles</a></span><span class="signature">(<wbr><span class="parameter" id="profiles-param-ingameName"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">ingameName</span></span>)
+    <span class="returntype parameter">&#8594; <a href="../market_client/ProfileClient-class.html">ProfileClient</a></span>
   </span>
   
 
 </dt>
 <dd>
-  Returns a list of orders for any tradable item. <a href="../market_client/MarketClient/searchOrders.html">[...]</a>
+  Contains all endpoints to access Warframe Market profiles. 
   
 
 </dd>
@@ -249,33 +206,26 @@ Items will always return an entire set for any item. <a href="../market_client/M
     <h5>market_client library</h5>
     <ol>
   <li class="section-title"><a href="../market_client/market_client-library.html#classes">Classes</a></li>
+  <li><a href="../market_client/CurrentUser-class.html">CurrentUser</a></li>
   <li><a href="../market_client/HttpHelpers-class.html">HttpHelpers</a></li>
-  <li><a href="../market_client/ItemDrop-class.html">ItemDrop</a></li>
-  <li><a href="../market_client/ItemLanguage-class.html">ItemLanguage</a></li>
-  <li><a href="../market_client/ItemOrder-class.html">ItemOrder</a></li>
+  <li><a href="../market_client/ItemCommon-class.html">ItemCommon</a></li>
+  <li><a href="../market_client/ItemFull-class.html">ItemFull</a></li>
+  <li><a href="../market_client/ItemInOrder-class.html">ItemInOrder</a></li>
   <li><a href="../market_client/ItemSet-class.html">ItemSet</a></li>
-  <li><a href="../market_client/ItemStatistic-class.html">ItemStatistic</a></li>
-  <li><a href="../market_client/ItemStatisticClosed-class.html">ItemStatisticClosed</a></li>
-  <li><a href="../market_client/ItemStatisticLive-class.html">ItemStatisticLive</a></li>
-  <li><a href="../market_client/MarketAuthHttpClient-class.html">MarketAuthHttpClient</a></li>
+  <li><a href="../market_client/ItemShort-class.html">ItemShort</a></li>
+  <li><a href="../market_client/LangDrop-class.html">LangDrop</a></li>
+  <li><a href="../market_client/LangInItem-class.html">LangInItem</a></li>
+  <li><a href="../market_client/LangShort-class.html">LangShort</a></li>
+  <li><a href="../market_client/LinkedAccounts-class.html">LinkedAccounts</a></li>
   <li><a href="../market_client/MarketClient-class.html">MarketClient</a></li>
-  <li><a href="../market_client/MarketGuestHttpClient-class.html">MarketGuestHttpClient</a></li>
   <li><a href="../market_client/MarketHttpClient-class.html">MarketHttpClient</a></li>
-  <li><a href="../market_client/MarketItem-class.html">MarketItem</a></li>
-  <li><a href="../market_client/MarketItemStatistics-class.html">MarketItemStatistics</a></li>
-  <li><a href="../market_client/MarketOrders-class.html">MarketOrders</a></li>
-  <li><a href="../market_client/MarketUser-class.html">MarketUser</a></li>
-  <li><a href="../market_client/MarketUserProfile-class.html">MarketUserProfile</a></li>
-  <li><a href="../market_client/OrderItem-class.html">OrderItem</a></li>
-  <li><a href="../market_client/Orders-class.html">Orders</a></li>
+  <li><a href="../market_client/OrderCommon-class.html">OrderCommon</a></li>
+  <li><a href="../market_client/OrderFull-class.html">OrderFull</a></li>
+  <li><a href="../market_client/OrderRow-class.html">OrderRow</a></li>
+  <li><a href="../market_client/PatreonProfile-class.html">PatreonProfile</a></li>
   <li><a href="../market_client/ProfileClient-class.html">ProfileClient</a></li>
-  <li><a href="../market_client/RecentMarketOrders-class.html">RecentMarketOrders</a></li>
-  <li><a href="../market_client/RecentOrder-class.html">RecentOrder</a></li>
-  <li><a href="../market_client/SetItem-class.html">SetItem</a></li>
-  <li><a href="../market_client/Statistics-class.html">Statistics</a></li>
-  <li><a href="../market_client/StatisticsClosed-class.html">StatisticsClosed</a></li>
-  <li><a href="../market_client/StatisticsLive-class.html">StatisticsLive</a></li>
   <li><a href="../market_client/UserClient-class.html">UserClient</a></li>
+  <li><a href="../market_client/UserShort-class.html">UserShort</a></li>
 
 
 
@@ -285,6 +235,9 @@ Items will always return an entire set for any item. <a href="../market_client/M
   <li class="section-title"><a href="../market_client/market_client-library.html#enums">Enums</a></li>
   <li><a href="../market_client/MarketPlatform.html">MarketPlatform</a></li>
   <li><a href="../market_client/OrderType.html">OrderType</a></li>
+  <li><a href="../market_client/PatreonBadge.html">PatreonBadge</a></li>
+  <li><a href="../market_client/Rarity.html">Rarity</a></li>
+  <li><a href="../market_client/Role.html">Role</a></li>
   <li><a href="../market_client/UserStatus.html">UserStatus</a></li>
 
 
@@ -302,17 +255,14 @@ Items will always return an entire set for any item. <a href="../market_client/M
     <li class="section-title">
       <a href="../market_client/MarketClient-class.html#instance-properties">Properties</a>
     </li>
+    <li><a href="../market_client/MarketClient/client.html">client</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/hashCode.html">hashCode</a></li>
-    <li><a href="../market_client/MarketClient/profiles.html">profiles</a></li>
+    <li><a href="../market_client/MarketClient/items.html">items</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
     <li class="section-title"><a href="../market_client/MarketClient-class.html#instance-methods">Methods</a></li>
-    <li><a href="../market_client/MarketClient/getMarketItem.html">getMarketItem</a></li>
-    <li><a href="../market_client/MarketClient/getMarketItems.html">getMarketItems</a></li>
-    <li><a href="../market_client/MarketClient/itemStatistics.html">itemStatistics</a></li>
-    <li><a href="../market_client/MarketClient/mostRecentOrders.html">mostRecentOrders</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
-    <li><a href="../market_client/MarketClient/searchOrders.html">searchOrders</a></li>
+    <li><a href="../market_client/MarketClient/profiles.html">profiles</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/toString.html">toString</a></li>
 
     <li class="section-title inherited"><a href="../market_client/MarketClient-class.html#operators">Operators</a></li>

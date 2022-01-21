@@ -62,7 +62,7 @@ statistics from profiles</p>
 
       <dl class="constructor-summary-list">
         <dt id="ProfileClient" class="callable">
-          <span class="name"><a href="../market_client/ProfileClient/ProfileClient.html">ProfileClient</a></span><span class="signature">(<span class="parameter" id="-param-client"><span class="type-annotation"><a href="../market_client/MarketGuestHttpClient-class.html">MarketGuestHttpClient</a>?</span> <span class="parameter-name">client</span></span>)</span>
+          <span class="name"><a href="../market_client/ProfileClient/ProfileClient.html">ProfileClient</a></span><span class="signature">(<span class="parameter" id="-param-ingameName">{<span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">ingameName</span>, </span><span class="parameter" id="-param-client"><span>required</span> <span class="type-annotation"><a href="../market_client/MarketHttpClient-class.html">MarketHttpClient</a></span> <span class="parameter-name">client</span>}</span>)</span>
         </dt>
         <dd>
           Holds endpoints that don't require auth in order to retrive orders and
@@ -71,10 +71,21 @@ statistics from profiles
       </dl>
     </section>
 
-    <section class="summary offset-anchor inherited" id="instance-properties">
+    <section class="summary offset-anchor" id="instance-properties">
       <h2>Properties</h2>
 
       <dl class="properties">
+        <dt id="client" class="property">
+  <span class="name"><a href="../market_client/ProfileClient/client.html">client</a></span>
+  <span class="signature">&#8594; <a href="../market_client/MarketHttpClient-class.html">MarketHttpClient</a></span> 
+
+</dt>
+<dd>
+  <a href="../market_client/MarketHttpClient-class.html">MarketHttpClient</a> used by the instance. 
+  <div class="features">final</div>
+
+</dd>
+
         <dt id="hashCode" class="property inherited">
   <span class="name"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/hashCode.html">hashCode</a></span>
   <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/int-class.html">int</a></span> 
@@ -83,6 +94,17 @@ statistics from profiles
 <dd class="inherited">
   The hash code for this object. <a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/hashCode.html">[...]</a>
   <div class="features">read-only, inherited</div>
+
+</dd>
+
+        <dt id="ingameName" class="property">
+  <span class="name"><a href="../market_client/ProfileClient/ingameName.html">ingameName</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> 
+
+</dt>
+<dd>
+  in-game name for this profile. 
+  <div class="features">final</div>
 
 </dd>
 
@@ -100,9 +122,103 @@ statistics from profiles
       </dl>
     </section>
 
-    <section class="summary offset-anchor inherited" id="instance-methods">
+    <section class="summary offset-anchor" id="instance-methods">
       <h2>Methods</h2>
       <dl class="callables">
+        <dt id="createReview" class="callable">
+  <span class="name"><a href="../market_client/ProfileClient/createReview.html">createReview</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Not yet documented in Warframe Market.
+DO NOT USE.
+Creates a review for this profile. <a href="../market_client/ProfileClient/createReview.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="deleteReview" class="callable">
+  <span class="name"><a href="../market_client/ProfileClient/deleteReview.html">deleteReview</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Deletes a review from this profile <a href="../market_client/ProfileClient/deleteReview.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="getProfile" class="callable">
+  <span class="name"><a href="../market_client/ProfileClient/getProfile.html">getProfile</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../market_client/CurrentUser-class.html">CurrentUser</a></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Return profile information for given user. 
+  
+
+</dd>
+
+        <dt id="getprofileAchievements" class="callable">
+  <span class="name"><a href="../market_client/ProfileClient/getprofileAchievements.html">getprofileAchievements</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Return profile achievements. <a href="../market_client/ProfileClient/getprofileAchievements.html">[...]</a>
+  
+
+</dd>
+
+        <dt id="getProfileOrders" class="callable">
+  <span class="name"><a href="../market_client/ProfileClient/getProfileOrders.html">getProfileOrders</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">OrderSet<span class="signature">&lt;<wbr><span class="type-parameter"><a href="../market_client/OrderCommon-class.html">OrderCommon</a></span>&gt;</span></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Return all orders owned by this profile. 
+  
+
+</dd>
+
+        <dt id="getprofileReviews" class="callable">
+  <span class="name"><a href="../market_client/ProfileClient/getprofileReviews.html">getprofileReviews</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Currently throw <a href="https://api.dart.dev/stable/2.15.1/dart-core/UnimplementedError-class.html">UnimplementedError</a> since there are no models for
+this yet. 
+  
+
+</dd>
+
+        <dt id="getProfileStatistics" class="callable">
+  <span class="name"><a href="../market_client/ProfileClient/getProfileStatistics.html">getProfileStatistics</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Return profile statistics for given user. <a href="../market_client/ProfileClient/getProfileStatistics.html">[...]</a>
+  
+
+</dd>
+
         <dt id="noSuchMethod" class="callable inherited">
   <span class="name"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
     <span class="returntype parameter">&#8594; dynamic</span>
@@ -173,33 +289,26 @@ statistics from profiles
     <h5>market_client library</h5>
     <ol>
   <li class="section-title"><a href="../market_client/market_client-library.html#classes">Classes</a></li>
+  <li><a href="../market_client/CurrentUser-class.html">CurrentUser</a></li>
   <li><a href="../market_client/HttpHelpers-class.html">HttpHelpers</a></li>
-  <li><a href="../market_client/ItemDrop-class.html">ItemDrop</a></li>
-  <li><a href="../market_client/ItemLanguage-class.html">ItemLanguage</a></li>
-  <li><a href="../market_client/ItemOrder-class.html">ItemOrder</a></li>
+  <li><a href="../market_client/ItemCommon-class.html">ItemCommon</a></li>
+  <li><a href="../market_client/ItemFull-class.html">ItemFull</a></li>
+  <li><a href="../market_client/ItemInOrder-class.html">ItemInOrder</a></li>
   <li><a href="../market_client/ItemSet-class.html">ItemSet</a></li>
-  <li><a href="../market_client/ItemStatistic-class.html">ItemStatistic</a></li>
-  <li><a href="../market_client/ItemStatisticClosed-class.html">ItemStatisticClosed</a></li>
-  <li><a href="../market_client/ItemStatisticLive-class.html">ItemStatisticLive</a></li>
-  <li><a href="../market_client/MarketAuthHttpClient-class.html">MarketAuthHttpClient</a></li>
+  <li><a href="../market_client/ItemShort-class.html">ItemShort</a></li>
+  <li><a href="../market_client/LangDrop-class.html">LangDrop</a></li>
+  <li><a href="../market_client/LangInItem-class.html">LangInItem</a></li>
+  <li><a href="../market_client/LangShort-class.html">LangShort</a></li>
+  <li><a href="../market_client/LinkedAccounts-class.html">LinkedAccounts</a></li>
   <li><a href="../market_client/MarketClient-class.html">MarketClient</a></li>
-  <li><a href="../market_client/MarketGuestHttpClient-class.html">MarketGuestHttpClient</a></li>
   <li><a href="../market_client/MarketHttpClient-class.html">MarketHttpClient</a></li>
-  <li><a href="../market_client/MarketItem-class.html">MarketItem</a></li>
-  <li><a href="../market_client/MarketItemStatistics-class.html">MarketItemStatistics</a></li>
-  <li><a href="../market_client/MarketOrders-class.html">MarketOrders</a></li>
-  <li><a href="../market_client/MarketUser-class.html">MarketUser</a></li>
-  <li><a href="../market_client/MarketUserProfile-class.html">MarketUserProfile</a></li>
-  <li><a href="../market_client/OrderItem-class.html">OrderItem</a></li>
-  <li><a href="../market_client/Orders-class.html">Orders</a></li>
+  <li><a href="../market_client/OrderCommon-class.html">OrderCommon</a></li>
+  <li><a href="../market_client/OrderFull-class.html">OrderFull</a></li>
+  <li><a href="../market_client/OrderRow-class.html">OrderRow</a></li>
+  <li><a href="../market_client/PatreonProfile-class.html">PatreonProfile</a></li>
   <li><a href="../market_client/ProfileClient-class.html">ProfileClient</a></li>
-  <li><a href="../market_client/RecentMarketOrders-class.html">RecentMarketOrders</a></li>
-  <li><a href="../market_client/RecentOrder-class.html">RecentOrder</a></li>
-  <li><a href="../market_client/SetItem-class.html">SetItem</a></li>
-  <li><a href="../market_client/Statistics-class.html">Statistics</a></li>
-  <li><a href="../market_client/StatisticsClosed-class.html">StatisticsClosed</a></li>
-  <li><a href="../market_client/StatisticsLive-class.html">StatisticsLive</a></li>
   <li><a href="../market_client/UserClient-class.html">UserClient</a></li>
+  <li><a href="../market_client/UserShort-class.html">UserShort</a></li>
 
 
 
@@ -209,6 +318,9 @@ statistics from profiles
   <li class="section-title"><a href="../market_client/market_client-library.html#enums">Enums</a></li>
   <li><a href="../market_client/MarketPlatform.html">MarketPlatform</a></li>
   <li><a href="../market_client/OrderType.html">OrderType</a></li>
+  <li><a href="../market_client/PatreonBadge.html">PatreonBadge</a></li>
+  <li><a href="../market_client/Rarity.html">Rarity</a></li>
+  <li><a href="../market_client/Role.html">Role</a></li>
   <li><a href="../market_client/UserStatus.html">UserStatus</a></li>
 
 
@@ -223,13 +335,22 @@ statistics from profiles
     <li><a href="../market_client/ProfileClient/ProfileClient.html">ProfileClient</a></li>
 
 
-    <li class="section-title inherited">
+    <li class="section-title">
       <a href="../market_client/ProfileClient-class.html#instance-properties">Properties</a>
     </li>
+    <li><a href="../market_client/ProfileClient/client.html">client</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/hashCode.html">hashCode</a></li>
+    <li><a href="../market_client/ProfileClient/ingameName.html">ingameName</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/runtimeType.html">runtimeType</a></li>
 
-    <li class="section-title inherited"><a href="../market_client/ProfileClient-class.html#instance-methods">Methods</a></li>
+    <li class="section-title"><a href="../market_client/ProfileClient-class.html#instance-methods">Methods</a></li>
+    <li><a href="../market_client/ProfileClient/createReview.html">createReview</a></li>
+    <li><a href="../market_client/ProfileClient/deleteReview.html">deleteReview</a></li>
+    <li><a href="../market_client/ProfileClient/getProfile.html">getProfile</a></li>
+    <li><a href="../market_client/ProfileClient/getprofileAchievements.html">getprofileAchievements</a></li>
+    <li><a href="../market_client/ProfileClient/getProfileOrders.html">getProfileOrders</a></li>
+    <li><a href="../market_client/ProfileClient/getprofileReviews.html">getprofileReviews</a></li>
+    <li><a href="../market_client/ProfileClient/getProfileStatistics.html">getProfileStatistics</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/toString.html">toString</a></li>
 

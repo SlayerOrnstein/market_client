@@ -55,6 +55,14 @@
       <h2>Classes</h2>
 
       <dl>
+        <dt id="CurrentUser">
+  <span class="name "><a href="../market_client/CurrentUser-class.html">CurrentUser</a></span> 
+
+</dt>
+<dd>
+  Current User's profile. 
+</dd>
+
         <dt id="HttpHelpers">
   <span class="name "><a href="../market_client/HttpHelpers-class.html">HttpHelpers</a></span> 
 
@@ -63,28 +71,30 @@
   An abstract class for functions to help with http related jobs. 
 </dd>
 
-        <dt id="ItemDrop">
-  <span class="name "><a href="../market_client/ItemDrop-class.html">ItemDrop</a></span> 
+        <dt id="ItemCommon">
+  <span class="name "><a href="../market_client/ItemCommon-class.html">ItemCommon</a></span> 
 
 </dt>
 <dd>
-  Item drops 
+  {@template item_common}
+Common fields for <a href="../market_client/ItemInOrder-class.html">ItemInOrder</a> and <a href="../market_client/ItemFull-class.html">ItemFull</a>
+{@endtemplate item_common} 
 </dd>
 
-        <dt id="ItemLanguage">
-  <span class="name "><a href="../market_client/ItemLanguage-class.html">ItemLanguage</a></span> 
+        <dt id="ItemFull">
+  <span class="name "><a href="../market_client/ItemFull-class.html">ItemFull</a></span> 
 
 </dt>
 <dd>
-  Model for item language. 
+  Full information of the item. 
 </dd>
 
-        <dt id="ItemOrder">
-  <span class="name "><a href="../market_client/ItemOrder-class.html">ItemOrder</a></span> 
+        <dt id="ItemInOrder">
+  <span class="name "><a href="../market_client/ItemInOrder-class.html">ItemInOrder</a></span> 
 
 </dt>
 <dd>
-  Representes an Order. 
+  Item information for <a href="../market_client/OrderFull-class.html">OrderFull</a> 
 </dd>
 
         <dt id="ItemSet">
@@ -95,38 +105,44 @@
   The complete set for an item. 
 </dd>
 
-        <dt id="ItemStatistic">
-  <span class="name "><a href="../market_client/ItemStatistic-class.html">ItemStatistic</a></span> 
+        <dt id="ItemShort">
+  <span class="name "><a href="../market_client/ItemShort-class.html">ItemShort</a></span> 
 
 </dt>
 <dd>
-   
+  Brief information about an item. 
 </dd>
 
-        <dt id="ItemStatisticClosed">
-  <span class="name "><a href="../market_client/ItemStatisticClosed-class.html">ItemStatisticClosed</a></span> 
+        <dt id="LangDrop">
+  <span class="name "><a href="../market_client/LangDrop-class.html">LangDrop</a></span> 
 
 </dt>
 <dd>
-  Representes statistics for a sold/brought(?) item. <a href="../market_client/ItemStatisticClosed-class.html">[...]</a>
+  Translated drop information. 
 </dd>
 
-        <dt id="ItemStatisticLive">
-  <span class="name "><a href="../market_client/ItemStatisticLive-class.html">ItemStatisticLive</a></span> 
+        <dt id="LangInItem">
+  <span class="name "><a href="../market_client/LangInItem-class.html">LangInItem</a></span> 
 
 </dt>
 <dd>
-  Representes statistics for items currently being sold/brought(?). <a href="../market_client/ItemStatisticLive-class.html">[...]</a>
+  Translated entry for <a href="../market_client/ItemInOrder-class.html">ItemInOrder</a> and <a href="../market_client/ItemFull-class.html">ItemFull</a> <a href="../market_client/LangInItem-class.html">[...]</a>
 </dd>
 
-        <dt id="MarketAuthHttpClient">
-  <span class="name "><a href="../market_client/MarketAuthHttpClient-class.html">MarketAuthHttpClient</a></span> 
+        <dt id="LangShort">
+  <span class="name "><a href="../market_client/LangShort-class.html">LangShort</a></span> 
 
 </dt>
 <dd>
-  {@template martket_auth}
-Creates and autherized client to make calls to Warframe market as a user.
-{@endtemplate market_auth} 
+  Short version of <a href="../market_client/LangInItem-class.html">LangInItem</a>. 
+</dd>
+
+        <dt id="LinkedAccounts">
+  <span class="name "><a href="../market_client/LinkedAccounts-class.html">LinkedAccounts</a></span> 
+
+</dt>
+<dd>
+  Accounts linked to the <a href="../market_client/CurrentUser-class.html">CurrentUser</a> <a href="../market_client/LinkedAccounts-class.html">[...]</a>
 </dd>
 
         <dt id="MarketClient">
@@ -137,76 +153,44 @@ Creates and autherized client to make calls to Warframe market as a user.
   Main Entry point for the market client. 
 </dd>
 
-        <dt id="MarketGuestHttpClient">
-  <span class="name "><a href="../market_client/MarketGuestHttpClient-class.html">MarketGuestHttpClient</a></span> 
+        <dt id="MarketHttpClient">
+  <span class="name "><a href="../market_client/MarketHttpClient-class.html">MarketHttpClient</a></span> 
 
 </dt>
 <dd>
   The Client that makes the raw calls to Warframe market 
 </dd>
 
-        <dt id="MarketHttpClient">
-  <span class="name "><a href="../market_client/MarketHttpClient-class.html">MarketHttpClient</a></span> 
+        <dt id="OrderCommon">
+  <span class="name "><a href="../market_client/OrderCommon-class.html">OrderCommon</a></span> 
 
 </dt>
 <dd>
-  The base client class for <a href="../market_client/MarketGuestHttpClient-class.html">MarketGuestHttpClient</a> and <a href="../market_client/MarketAuthHttpClient-class.html">MarketAuthHttpClient</a> 
+  Common fields for both <a href="../market_client/OrderRow-class.html">OrderRow</a> and <a href="../market_client/OrderFull-class.html">OrderFull</a> 
 </dd>
 
-        <dt id="MarketItem">
-  <span class="name "><a href="../market_client/MarketItem-class.html">MarketItem</a></span> 
+        <dt id="OrderFull">
+  <span class="name "><a href="../market_client/OrderFull-class.html">OrderFull</a></span> 
 
 </dt>
 <dd>
-  Market's item model. 
+  Full order object that includes <a href="../market_client/ItemInOrder-class.html">ItemInOrder</a>. 
 </dd>
 
-        <dt id="MarketItemStatistics">
-  <span class="name "><a href="../market_client/MarketItemStatistics-class.html">MarketItemStatistics</a></span> 
+        <dt id="OrderRow">
+  <span class="name "><a href="../market_client/OrderRow-class.html">OrderRow</a></span> 
 
 </dt>
 <dd>
-   
+  Order information for recent orders. 
 </dd>
 
-        <dt id="MarketOrders">
-  <span class="name "><a href="../market_client/MarketOrders-class.html">MarketOrders</a></span> 
+        <dt id="PatreonProfile">
+  <span class="name "><a href="../market_client/PatreonProfile-class.html">PatreonProfile</a></span> 
 
 </dt>
 <dd>
-  Contains both sell and buy orders models for market order search <a href="../market_client/MarketOrders-class.html">[...]</a>
-</dd>
-
-        <dt id="MarketUser">
-  <span class="name "><a href="../market_client/MarketUser-class.html">MarketUser</a></span> 
-
-</dt>
-<dd>
-  Market user model 
-</dd>
-
-        <dt id="MarketUserProfile">
-  <span class="name "><a href="../market_client/MarketUserProfile-class.html">MarketUserProfile</a></span> 
-
-</dt>
-<dd>
-  Full <a href="../market_client/MarketUser-class.html">MarketUser</a> profile 
-</dd>
-
-        <dt id="OrderItem">
-  <span class="name "><a href="../market_client/OrderItem-class.html">OrderItem</a></span> 
-
-</dt>
-<dd>
-  The Item for any given order 
-</dd>
-
-        <dt id="Orders">
-  <span class="name "><a href="../market_client/Orders-class.html">Orders</a></span> 
-
-</dt>
-<dd>
-  Base class for sell and buy orders. 
+  Patreon Profile linked to the <a href="../market_client/CurrentUser-class.html">CurrentUser</a>. 
 </dd>
 
         <dt id="ProfileClient">
@@ -218,60 +202,20 @@ Creates and autherized client to make calls to Warframe market as a user.
 statistics from profiles 
 </dd>
 
-        <dt id="RecentMarketOrders">
-  <span class="name "><a href="../market_client/RecentMarketOrders-class.html">RecentMarketOrders</a></span> 
-
-</dt>
-<dd>
-  Contains both sell and buy orders models for most recent orders <a href="../market_client/RecentMarketOrders-class.html">[...]</a>
-</dd>
-
-        <dt id="RecentOrder">
-  <span class="name "><a href="../market_client/RecentOrder-class.html">RecentOrder</a></span> 
-
-</dt>
-<dd>
-  Contains both sell and buy orders models for most recent orders <a href="../market_client/RecentOrder-class.html">[...]</a>
-</dd>
-
-        <dt id="SetItem">
-  <span class="name "><a href="../market_client/SetItem-class.html">SetItem</a></span> 
-
-</dt>
-<dd>
-  The item in a set. 
-</dd>
-
-        <dt id="Statistics">
-  <span class="name "><a href="../market_client/Statistics-class.html">Statistics</a></span> 
-
-</dt>
-<dd>
-   
-</dd>
-
-        <dt id="StatisticsClosed">
-  <span class="name "><a href="../market_client/StatisticsClosed-class.html">StatisticsClosed</a></span> 
-
-</dt>
-<dd>
-  Holds statistics for all sold/brought(?) for an item. <a href="../market_client/StatisticsClosed-class.html">[...]</a>
-</dd>
-
-        <dt id="StatisticsLive">
-  <span class="name "><a href="../market_client/StatisticsLive-class.html">StatisticsLive</a></span> 
-
-</dt>
-<dd>
-  Holds statistics for a specfic item currently being sold/brought(?). <a href="../market_client/StatisticsLive-class.html">[...]</a>
-</dd>
-
         <dt id="UserClient">
   <span class="name "><a href="../market_client/UserClient-class.html">UserClient</a></span> 
 
 </dt>
 <dd>
    
+</dd>
+
+        <dt id="UserShort">
+  <span class="name "><a href="../market_client/UserShort-class.html">UserShort</a></span> 
+
+</dt>
+<dd>
+  Brief overview of User. 
 </dd>
 
       </dl>
@@ -300,6 +244,30 @@ statistics from profiles
 </dt>
 <dd>
   Order Type. <a href="../market_client/OrderType.html">[...]</a>
+</dd>
+
+        <dt id="PatreonBadge">
+  <span class="name "><a href="../market_client/PatreonBadge.html">PatreonBadge</a></span> 
+
+</dt>
+<dd>
+  Patreon badge. 
+</dd>
+
+        <dt id="Rarity">
+  <span class="name "><a href="../market_client/Rarity.html">Rarity</a></span> 
+
+</dt>
+<dd>
+  Mod rarity. 
+</dd>
+
+        <dt id="Role">
+  <span class="name "><a href="../market_client/Role.html">Role</a></span> 
+
+</dt>
+<dd>
+  User role. 
 </dd>
 
         <dt id="UserStatus">
@@ -342,33 +310,26 @@ statistics from profiles
     <h5>market_client library</h5>
     <ol>
   <li class="section-title"><a href="../market_client/market_client-library.html#classes">Classes</a></li>
+  <li><a href="../market_client/CurrentUser-class.html">CurrentUser</a></li>
   <li><a href="../market_client/HttpHelpers-class.html">HttpHelpers</a></li>
-  <li><a href="../market_client/ItemDrop-class.html">ItemDrop</a></li>
-  <li><a href="../market_client/ItemLanguage-class.html">ItemLanguage</a></li>
-  <li><a href="../market_client/ItemOrder-class.html">ItemOrder</a></li>
+  <li><a href="../market_client/ItemCommon-class.html">ItemCommon</a></li>
+  <li><a href="../market_client/ItemFull-class.html">ItemFull</a></li>
+  <li><a href="../market_client/ItemInOrder-class.html">ItemInOrder</a></li>
   <li><a href="../market_client/ItemSet-class.html">ItemSet</a></li>
-  <li><a href="../market_client/ItemStatistic-class.html">ItemStatistic</a></li>
-  <li><a href="../market_client/ItemStatisticClosed-class.html">ItemStatisticClosed</a></li>
-  <li><a href="../market_client/ItemStatisticLive-class.html">ItemStatisticLive</a></li>
-  <li><a href="../market_client/MarketAuthHttpClient-class.html">MarketAuthHttpClient</a></li>
+  <li><a href="../market_client/ItemShort-class.html">ItemShort</a></li>
+  <li><a href="../market_client/LangDrop-class.html">LangDrop</a></li>
+  <li><a href="../market_client/LangInItem-class.html">LangInItem</a></li>
+  <li><a href="../market_client/LangShort-class.html">LangShort</a></li>
+  <li><a href="../market_client/LinkedAccounts-class.html">LinkedAccounts</a></li>
   <li><a href="../market_client/MarketClient-class.html">MarketClient</a></li>
-  <li><a href="../market_client/MarketGuestHttpClient-class.html">MarketGuestHttpClient</a></li>
   <li><a href="../market_client/MarketHttpClient-class.html">MarketHttpClient</a></li>
-  <li><a href="../market_client/MarketItem-class.html">MarketItem</a></li>
-  <li><a href="../market_client/MarketItemStatistics-class.html">MarketItemStatistics</a></li>
-  <li><a href="../market_client/MarketOrders-class.html">MarketOrders</a></li>
-  <li><a href="../market_client/MarketUser-class.html">MarketUser</a></li>
-  <li><a href="../market_client/MarketUserProfile-class.html">MarketUserProfile</a></li>
-  <li><a href="../market_client/OrderItem-class.html">OrderItem</a></li>
-  <li><a href="../market_client/Orders-class.html">Orders</a></li>
+  <li><a href="../market_client/OrderCommon-class.html">OrderCommon</a></li>
+  <li><a href="../market_client/OrderFull-class.html">OrderFull</a></li>
+  <li><a href="../market_client/OrderRow-class.html">OrderRow</a></li>
+  <li><a href="../market_client/PatreonProfile-class.html">PatreonProfile</a></li>
   <li><a href="../market_client/ProfileClient-class.html">ProfileClient</a></li>
-  <li><a href="../market_client/RecentMarketOrders-class.html">RecentMarketOrders</a></li>
-  <li><a href="../market_client/RecentOrder-class.html">RecentOrder</a></li>
-  <li><a href="../market_client/SetItem-class.html">SetItem</a></li>
-  <li><a href="../market_client/Statistics-class.html">Statistics</a></li>
-  <li><a href="../market_client/StatisticsClosed-class.html">StatisticsClosed</a></li>
-  <li><a href="../market_client/StatisticsLive-class.html">StatisticsLive</a></li>
   <li><a href="../market_client/UserClient-class.html">UserClient</a></li>
+  <li><a href="../market_client/UserShort-class.html">UserShort</a></li>
 
 
 
@@ -378,6 +339,9 @@ statistics from profiles
   <li class="section-title"><a href="../market_client/market_client-library.html#enums">Enums</a></li>
   <li><a href="../market_client/MarketPlatform.html">MarketPlatform</a></li>
   <li><a href="../market_client/OrderType.html">OrderType</a></li>
+  <li><a href="../market_client/PatreonBadge.html">PatreonBadge</a></li>
+  <li><a href="../market_client/Rarity.html">Rarity</a></li>
+  <li><a href="../market_client/Role.html">Role</a></li>
   <li><a href="../market_client/UserStatus.html">UserStatus</a></li>
 
 

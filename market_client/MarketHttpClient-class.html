@@ -31,7 +31,7 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">market_client</a></li>
     <li><a href="../market_client/market_client-library.html">market_client</a></li>
-    <li class="self-crumb">MarketHttpClient abstract class</li>
+    <li class="self-crumb">MarketHttpClient class</li>
   </ol>
   <div class="self-name">MarketHttpClient</div>
   <form class="search navbar-right" role="search">
@@ -51,35 +51,20 @@
 
     
 <section class="desc markdown">
-  <p>The base client class for <a href="../market_client/MarketGuestHttpClient-class.html">MarketGuestHttpClient</a> and <a href="../market_client/MarketAuthHttpClient-class.html">MarketAuthHttpClient</a></p>
+  <p>The Client that makes the raw calls to Warframe market</p>
 </section>
 
 
-    <section>
-      <dl class="dl-horizontal">
-
-
-
-        <dt>Implementers</dt>
-        <dd><ul class="comma-separated clazz-relationships">
-          <li><a href="../market_client/MarketAuthHttpClient-class.html">MarketAuthHttpClient</a></li>
-          <li><a href="../market_client/MarketGuestHttpClient-class.html">MarketGuestHttpClient</a></li>
-        </ul></dd>
-
-
-      </dl>
-    </section>
 
     <section class="summary offset-anchor" id="constructors">
       <h2>Constructors</h2>
 
       <dl class="constructor-summary-list">
         <dt id="MarketHttpClient" class="callable">
-          <span class="name"><a href="../market_client/MarketHttpClient/MarketHttpClient.html">MarketHttpClient</a></span><span class="signature">(<span class="parameter" id="-param-client">{<span>required</span> <span class="type-annotation"><a href="https://pub.dev/documentation/http/0.13.4/http/Client-class.html">Client</a></span> <span class="parameter-name">client</span>, </span><span class="parameter" id="-param-language"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">language</span>, </span><span class="parameter" id="-param-platform"><span>required</span> <span class="type-annotation"><a href="../market_client/MarketPlatform.html">MarketPlatform</a></span> <span class="parameter-name">platform</span>}</span>)</span>
+          <span class="name"><a href="../market_client/MarketHttpClient/MarketHttpClient.html">MarketHttpClient</a></span><span class="signature">(<span class="parameter" id="-param-platform">{<span class="type-annotation"><a href="../market_client/MarketPlatform.html">MarketPlatform</a></span> <span class="parameter-name">platform</span> = <span class="default-value">MarketPlatform.pc</span>, </span><span class="parameter" id="-param-language"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">language</span> = <span class="default-value">&#39;en&#39;</span>, </span><span class="parameter" id="-param-token"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">token</span>, </span><span class="parameter" id="-param-client"><span class="type-annotation"><a href="https://pub.dev/documentation/http/0.13.4/http/Client-class.html">Client</a>?</span> <span class="parameter-name">client</span>}</span>)</span>
         </dt>
         <dd>
-          The base client class for <a href="../market_client/MarketGuestHttpClient-class.html">MarketGuestHttpClient</a> and <a href="../market_client/MarketAuthHttpClient-class.html">MarketAuthHttpClient</a> 
-          <div class="constructor-modifier features">const</div>
+          The Client that makes the raw calls to Warframe market 
         </dd>
       </dl>
     </section>
@@ -90,12 +75,12 @@
       <dl class="properties">
         <dt id="client" class="property">
   <span class="name"><a href="../market_client/MarketHttpClient/client.html">client</a></span>
-  <span class="signature">&#8594; <a href="https://pub.dev/documentation/http/0.13.4/http/Client-class.html">Client</a></span> 
+  <span class="signature">&#8596; <a href="https://pub.dev/documentation/http/0.13.4/http/Client-class.html">Client</a></span> 
 
 </dt>
 <dd>
-  Http Client used to make calls. 
-  <div class="features">final</div>
+  The <a href="https://pub.dev/documentation/http/0.13.4/http/Client-class.html">http.Client</a> used internally to make http request. <a href="../market_client/MarketHttpClient/client.html">[...]</a>
+  <div class="features">late, final</div>
 
 </dd>
 
@@ -116,7 +101,7 @@
 
 </dt>
 <dd>
-  The language that the http caller will emit to the api. <a href="../market_client/MarketHttpClient/language.html">[...]</a>
+  The language used in request <a href="../market_client/MarketHttpClient/language.html">[...]</a>
   <div class="features">final</div>
 
 </dd>
@@ -127,7 +112,7 @@
 
 </dt>
 <dd>
-  The game platform the http caller will send to the api. <a href="../market_client/MarketHttpClient/platform.html">[...]</a>
+  The game platform used in request. 
   <div class="features">final</div>
 
 </dd>
@@ -143,21 +128,58 @@
 
 </dd>
 
+        <dt id="token" class="property">
+  <span class="name"><a href="../market_client/MarketHttpClient/token.html">token</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a>?</span> 
+
+</dt>
+<dd>
+  The token used to make authorized request. <a href="../market_client/MarketHttpClient/token.html">[...]</a>
+  <div class="features">final</div>
+
+</dd>
+
       </dl>
     </section>
 
     <section class="summary offset-anchor" id="instance-methods">
       <h2>Methods</h2>
       <dl class="callables">
-        <dt id="get" class="callable">
-  <span class="name"><a href="../market_client/MarketHttpClient/get.html">get</a></span><span class="signature">(<wbr><span class="parameter" id="get-param-path"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">path</span></span>)
+        <dt id="copyWith" class="callable">
+  <span class="name"><a href="../market_client/MarketHttpClient/copyWith.html">copyWith</a></span><span class="signature">(<wbr><span class="parameter" id="copyWith-param-platform">{<span class="type-annotation"><a href="../market_client/MarketPlatform.html">MarketPlatform</a>?</span> <span class="parameter-name">platform</span>, </span><span class="parameter" id="copyWith-param-language"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">language</span>, </span><span class="parameter" id="copyWith-param-token"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">token</span>, </span><span class="parameter" id="copyWith-param-client"><span class="type-annotation"><a href="https://pub.dev/documentation/http/0.13.4/http/Client-class.html">Client</a>?</span> <span class="parameter-name">client</span>}</span>)
+    <span class="returntype parameter">&#8594; <a href="../market_client/MarketHttpClient-class.html">MarketHttpClient</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Creates a new instance of <a href="../market_client/MarketHttpClient-class.html">MarketHttpClient</a>. 
+  
+
+</dd>
+
+        <dt id="delete" class="callable">
+  <span class="name"><a href="../market_client/MarketHttpClient/delete.html">delete</a></span><span class="signature">(<wbr><span class="parameter" id="delete-param-path"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">path</span>, </span><span class="parameter" id="delete-param-queryParameters">[<span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">queryParameters</span>]</span>)
     <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Makes a GET request to <code>path</code> 
+  Sends a DELETE request. 
+  
+
+</dd>
+
+        <dt id="get" class="callable">
+  <span class="name"><a href="../market_client/MarketHttpClient/get.html">get</a></span><span class="signature">(<wbr><span class="parameter" id="get-param-path"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">path</span>, </span><span class="parameter" id="get-param-queryParameters">[<span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">queryParameters</span>]</span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Sends a GET  request. 
   
 
 </dd>
@@ -176,14 +198,14 @@
 </dd>
 
         <dt id="post" class="callable">
-  <span class="name"><a href="../market_client/MarketHttpClient/post.html">post</a></span><span class="signature">(<wbr><span class="parameter" id="post-param-path"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">path</span></span>)
+  <span class="name"><a href="../market_client/MarketHttpClient/post.html">post</a></span><span class="signature">(<wbr><span class="parameter" id="post-param-path"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">path</span>, </span><span class="parameter" id="post-param-queryParameters">[<span class="type-annotation"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">queryParameters</span>]</span>)
     <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.15.1/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.15.1/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Makes a POST request to <code>path</code> 
+  Sends a POST request. 
   
 
 </dd>
@@ -238,40 +260,33 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
   <li><a href="../index.html">market_client</a></li>
   <li><a href="../market_client/market_client-library.html">market_client</a></li>
-  <li class="self-crumb">MarketHttpClient abstract class</li>
+  <li class="self-crumb">MarketHttpClient class</li>
 </ol>
 
 
     <h5>market_client library</h5>
     <ol>
   <li class="section-title"><a href="../market_client/market_client-library.html#classes">Classes</a></li>
+  <li><a href="../market_client/CurrentUser-class.html">CurrentUser</a></li>
   <li><a href="../market_client/HttpHelpers-class.html">HttpHelpers</a></li>
-  <li><a href="../market_client/ItemDrop-class.html">ItemDrop</a></li>
-  <li><a href="../market_client/ItemLanguage-class.html">ItemLanguage</a></li>
-  <li><a href="../market_client/ItemOrder-class.html">ItemOrder</a></li>
+  <li><a href="../market_client/ItemCommon-class.html">ItemCommon</a></li>
+  <li><a href="../market_client/ItemFull-class.html">ItemFull</a></li>
+  <li><a href="../market_client/ItemInOrder-class.html">ItemInOrder</a></li>
   <li><a href="../market_client/ItemSet-class.html">ItemSet</a></li>
-  <li><a href="../market_client/ItemStatistic-class.html">ItemStatistic</a></li>
-  <li><a href="../market_client/ItemStatisticClosed-class.html">ItemStatisticClosed</a></li>
-  <li><a href="../market_client/ItemStatisticLive-class.html">ItemStatisticLive</a></li>
-  <li><a href="../market_client/MarketAuthHttpClient-class.html">MarketAuthHttpClient</a></li>
+  <li><a href="../market_client/ItemShort-class.html">ItemShort</a></li>
+  <li><a href="../market_client/LangDrop-class.html">LangDrop</a></li>
+  <li><a href="../market_client/LangInItem-class.html">LangInItem</a></li>
+  <li><a href="../market_client/LangShort-class.html">LangShort</a></li>
+  <li><a href="../market_client/LinkedAccounts-class.html">LinkedAccounts</a></li>
   <li><a href="../market_client/MarketClient-class.html">MarketClient</a></li>
-  <li><a href="../market_client/MarketGuestHttpClient-class.html">MarketGuestHttpClient</a></li>
   <li><a href="../market_client/MarketHttpClient-class.html">MarketHttpClient</a></li>
-  <li><a href="../market_client/MarketItem-class.html">MarketItem</a></li>
-  <li><a href="../market_client/MarketItemStatistics-class.html">MarketItemStatistics</a></li>
-  <li><a href="../market_client/MarketOrders-class.html">MarketOrders</a></li>
-  <li><a href="../market_client/MarketUser-class.html">MarketUser</a></li>
-  <li><a href="../market_client/MarketUserProfile-class.html">MarketUserProfile</a></li>
-  <li><a href="../market_client/OrderItem-class.html">OrderItem</a></li>
-  <li><a href="../market_client/Orders-class.html">Orders</a></li>
+  <li><a href="../market_client/OrderCommon-class.html">OrderCommon</a></li>
+  <li><a href="../market_client/OrderFull-class.html">OrderFull</a></li>
+  <li><a href="../market_client/OrderRow-class.html">OrderRow</a></li>
+  <li><a href="../market_client/PatreonProfile-class.html">PatreonProfile</a></li>
   <li><a href="../market_client/ProfileClient-class.html">ProfileClient</a></li>
-  <li><a href="../market_client/RecentMarketOrders-class.html">RecentMarketOrders</a></li>
-  <li><a href="../market_client/RecentOrder-class.html">RecentOrder</a></li>
-  <li><a href="../market_client/SetItem-class.html">SetItem</a></li>
-  <li><a href="../market_client/Statistics-class.html">Statistics</a></li>
-  <li><a href="../market_client/StatisticsClosed-class.html">StatisticsClosed</a></li>
-  <li><a href="../market_client/StatisticsLive-class.html">StatisticsLive</a></li>
   <li><a href="../market_client/UserClient-class.html">UserClient</a></li>
+  <li><a href="../market_client/UserShort-class.html">UserShort</a></li>
 
 
 
@@ -281,6 +296,9 @@
   <li class="section-title"><a href="../market_client/market_client-library.html#enums">Enums</a></li>
   <li><a href="../market_client/MarketPlatform.html">MarketPlatform</a></li>
   <li><a href="../market_client/OrderType.html">OrderType</a></li>
+  <li><a href="../market_client/PatreonBadge.html">PatreonBadge</a></li>
+  <li><a href="../market_client/Rarity.html">Rarity</a></li>
+  <li><a href="../market_client/Role.html">Role</a></li>
   <li><a href="../market_client/UserStatus.html">UserStatus</a></li>
 
 
@@ -303,8 +321,11 @@
     <li><a href="../market_client/MarketHttpClient/language.html">language</a></li>
     <li><a href="../market_client/MarketHttpClient/platform.html">platform</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/runtimeType.html">runtimeType</a></li>
+    <li><a href="../market_client/MarketHttpClient/token.html">token</a></li>
 
     <li class="section-title"><a href="../market_client/MarketHttpClient-class.html#instance-methods">Methods</a></li>
+    <li><a href="../market_client/MarketHttpClient/copyWith.html">copyWith</a></li>
+    <li><a href="../market_client/MarketHttpClient/delete.html">delete</a></li>
     <li><a href="../market_client/MarketHttpClient/get.html">get</a></li>
     <li class="inherited"><a href="https://api.dart.dev/stable/2.15.1/dart-core/Object/noSuchMethod.html">noSuchMethod</a></li>
     <li><a href="../market_client/MarketHttpClient/post.html">post</a></li>
