@@ -38,12 +38,12 @@ class ProfileClient {
 
     final sellOrders =
         List<Map<String, dynamic>>.from(res['sell_orders'] as List<dynamic>)
-            .map((e) => OrderFull.fromJson(e))
+            .map(OrderFull.fromJson)
             .toList();
 
     final buyOrders =
         List<Map<String, dynamic>>.from(res['buy_orders'] as List<dynamic>)
-            .map((e) => OrderFull.fromJson(e))
+            .map(OrderFull.fromJson)
             .toList();
 
     return OrderSet(selling: sellOrders, buying: buyOrders);

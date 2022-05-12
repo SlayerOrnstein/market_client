@@ -119,28 +119,17 @@ class OrderCommon extends Equatable implements Comparable<OrderCommon> {
 class OrderRow extends OrderCommon {
   /// {@macro order_row}
   const OrderRow({
-    required String id,
-    required int platinum,
-    required int quantity,
-    required OrderType orderType,
-    required MarketPlatform platform,
-    required String region,
-    required DateTime creationDate,
-    required DateTime lastUpdate,
-    required bool visible,
-    required UserShort user,
-  }) : super(
-          id: id,
-          platinum: platinum,
-          quantity: quantity,
-          orderType: orderType,
-          platform: platform,
-          region: region,
-          creationDate: creationDate,
-          lastUpdate: lastUpdate,
-          visible: visible,
-          user: user,
-        );
+    required super.id,
+    required super.platinum,
+    required super.quantity,
+    required super.orderType,
+    required super.platform,
+    required super.region,
+    required super.creationDate,
+    required super.lastUpdate,
+    required super.visible,
+    required super.user,
+  });
 
   /// Create an [OrderRow] instance from json.
   factory OrderRow.fromJson(Map<String, dynamic> json) {
@@ -161,29 +150,18 @@ class OrderRow extends OrderCommon {
 class OrderFull extends OrderCommon {
   /// {@macro order_full}
   const OrderFull({
-    required String id,
-    required int platinum,
-    required int quantity,
-    required OrderType orderType,
-    required MarketPlatform platform,
-    required String region,
-    required DateTime creationDate,
-    required DateTime lastUpdate,
-    required bool visible,
-    required UserShort user,
+    required super.id,
+    required super.platinum,
+    required super.quantity,
+    required super.orderType,
+    required super.platform,
+    required super.region,
+    required super.creationDate,
+    required super.lastUpdate,
+    required super.visible,
+    required super.user,
     required this.item,
-  }) : super(
-          id: id,
-          platinum: platinum,
-          quantity: quantity,
-          orderType: orderType,
-          platform: platform,
-          region: region,
-          creationDate: creationDate,
-          lastUpdate: lastUpdate,
-          visible: visible,
-          user: user,
-        );
+  });
 
   /// Create an [OrderFull] instance from json.
   factory OrderFull.fromJson(Map<String, dynamic> json) {

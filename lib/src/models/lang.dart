@@ -38,11 +38,11 @@ class LangShort extends Equatable {
 class LangInItem extends LangShort {
   /// {@macro lang_in_item}
   const LangInItem({
-    required String itemName,
+    required super.itemName,
     required this.description,
     this.wikiLink,
     required this.drops,
-  }) : super(itemName: itemName);
+  });
 
   /// {@macro lang_in_item}
   factory LangInItem.fromJson(Map<String, dynamic> json) {

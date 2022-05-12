@@ -106,17 +106,17 @@ class ItemCommon extends Equatable {
 class ItemInOrder extends ItemCommon {
   /// {@macro item_in_order}
   const ItemInOrder({
-    required String id,
-    required String urlName,
-    required String icon,
-    required String thumb,
-    required String? subIcon,
-    required int? maxRank,
-    required List<String>? subTypes,
-    required List<String> tags,
-    required int? cyanStars,
-    required int? amberStars,
-    required int? ducats,
+    required super.id,
+    required super.urlName,
+    required super.icon,
+    required super.thumb,
+    required super.subIcon,
+    required super.maxRank,
+    required super.subTypes,
+    required super.tags,
+    required super.cyanStars,
+    required super.amberStars,
+    required super.ducats,
     required this.en,
     required this.ru,
     required this.ko,
@@ -128,19 +128,7 @@ class ItemInOrder extends ItemCommon {
     required this.pt,
     required this.es,
     required this.pl,
-  }) : super(
-          id: id,
-          urlName: urlName,
-          icon: icon,
-          thumb: thumb,
-          subIcon: subIcon,
-          maxRank: maxRank,
-          subTypes: subTypes,
-          tags: tags,
-          cyanStars: cyanStars,
-          amberStars: amberStars,
-          ducats: ducats,
-        );
+  });
 
   /// {@macro item_in_order}
   factory ItemInOrder.fromJson(Map<String, dynamic> json) {
@@ -271,17 +259,17 @@ enum Rarity {
 class ItemFull extends ItemCommon {
   /// {@macro item_full}
   const ItemFull({
-    required String id,
-    required String urlName,
-    required String icon,
-    required String thumb,
-    required String? subIcon,
-    required int? maxRank,
-    required List<String>? subTypes,
-    required List<String> tags,
-    required int? cyanStars,
-    required int? amberStars,
-    required int? ducats,
+    required super.id,
+    required super.urlName,
+    required super.icon,
+    required super.thumb,
+    required super.subIcon,
+    required super.maxRank,
+    required super.subTypes,
+    required super.tags,
+    required super.cyanStars,
+    required super.amberStars,
+    required super.ducats,
     required this.setRoot,
     required this.masteryRank,
     required this.rarity,
@@ -297,19 +285,7 @@ class ItemFull extends ItemCommon {
     required this.pt,
     required this.es,
     required this.pl,
-  }) : super(
-          id: id,
-          urlName: urlName,
-          icon: icon,
-          thumb: thumb,
-          subIcon: subIcon,
-          maxRank: maxRank,
-          subTypes: subTypes,
-          tags: tags,
-          cyanStars: cyanStars,
-          amberStars: amberStars,
-          ducats: ducats,
-        );
+  });
 
   /// {@macro item_full}
   factory ItemFull.fromJson(Map<String, dynamic> json) {
