@@ -4,16 +4,16 @@ import 'package:market_client/src/http.dart';
 import 'package:market_client/src/models/models.dart';
 
 class ItemClient {
-  const ItemClient({required this.client});
+  const ItemClient({required MarketHttpClient client}) : _client = client;
 
-  final MarketHttpClient client;
+  final MarketHttpClient _client;
 
   /// Gets all items and their information.
   Future<List<ItemShort>> getMarketItems() async {
-    final payload = await client.get('/items');
+    final payload = await _client.get('/items');
 
     return List<Map<String, dynamic>>.from(payload['items'] as List<dynamic>)
-        .map((e) => ItemShort.fromJson(e))
+        .map(ItemShort.fromJson)
         .toList();
   }
 
@@ -26,7 +26,7 @@ class ItemClient {
   /// url.
   /// {@endtemplate}
   Future<ItemSet> getMarketItem(String item) async {
-    final payload = await client.get('/items/$item');
+    final payload = await _client.get('/items/$item');
 
     return ItemSet.fromJson(payload['item'] as Map<String, dynamic>);
   }
@@ -35,7 +35,7 @@ class ItemClient {
   ///
   /// {@macro item_note}
   Future<OrderSet<OrderFull>> searchOrders(String urlName) async {
-    final payload = await client.get('/items/$urlName/orders');
+    final payload = await _client.get('/items/$urlName/orders');
     final orders = List<dynamic>.from(payload['orders'] as List<dynamic>)
         .map<OrderFull>(
           (dynamic o) => OrderFull.fromJson(o as Map<String, dynamic>),
@@ -57,7 +57,7 @@ class ItemClient {
 
   /// Returns both sell and buy orders for the last 4 hours.
   Future<OrderRow> mostRecentOrders() async {
-    final payload = await client.get('/most_recent');
+    final payload = await _client.get('/most_recent');
 
     return OrderRow.fromJson(payload);
   }
