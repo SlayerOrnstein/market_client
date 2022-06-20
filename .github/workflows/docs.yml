@@ -13,8 +13,10 @@ jobs:
       - uses: dart-lang/setup-dart@v1
         with:
           release-channel: stable
-      - name: Install dartdoc
-        run: dart pub global activate dartdoc
+      - name: Install dependacies
+        run: |
+          - dart pub get
+          - dart pub global activate dartdoc
       - name: Generate docs
         run: dartdoc
       - name: Deploy to GH pages
