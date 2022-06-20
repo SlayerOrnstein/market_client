@@ -15,8 +15,8 @@ jobs:
           release-channel: stable
       - name: Install dependacies
         run: |
-          - dart pub get
-          - dart pub global activate dartdoc
+          dart pub get
+          dart pub global activate dartdoc
       - name: Generate docs
         run: dartdoc
       - name: Deploy to GH pages
