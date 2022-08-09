@@ -294,7 +294,7 @@ class ItemFull extends ItemCommon {
 
   /// Whether the item represents the set itself.
   @JsonKey(name: 'set_root')
-  final bool setRoot;
+  final bool? setRoot;
 
   /// Mastery required to build this item.
   @JsonKey(name: 'mastery_rank')

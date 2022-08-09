@@ -189,7 +189,7 @@ ItemFull _$ItemFullFromJson(Map json) => $checkedCreate(
           cyanStars: $checkedConvert('cyan_stars', (v) => v as int?),
           amberStars: $checkedConvert('amber_stars', (v) => v as int?),
           ducats: $checkedConvert('ducats', (v) => v as int?),
-          setRoot: $checkedConvert('set_root', (v) => v as bool),
+          setRoot: $checkedConvert('set_root', (v) => v as bool?),
           masteryRank: $checkedConvert('mastery_rank', (v) => v as int?),
           rarity: $checkedConvert(
               'rarity', (v) => $enumDecodeNullable(_$RarityEnumMap, v)),
@@ -254,7 +254,7 @@ Map<String, dynamic> _$ItemFullToJson(ItemFull instance) {
   writeNotNull('cyan_stars', instance.cyanStars);
   writeNotNull('amber_stars', instance.amberStars);
   writeNotNull('ducats', instance.ducats);
-  val['set_root'] = instance.setRoot;
+  writeNotNull('set_root', instance.setRoot);
   writeNotNull('mastery_rank', instance.masteryRank);
   writeNotNull('rarity', _$RarityEnumMap[instance.rarity]);
   val['trading_tax'] = instance.tradingTax;
