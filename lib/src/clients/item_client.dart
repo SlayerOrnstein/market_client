@@ -34,11 +34,11 @@ class ItemClient {
   /// Returns a list of orders for any tradable item.
   ///
   /// {@macro item_note}
-  Future<OrderSet<OrderFull>> searchOrders(String urlName) async {
+  Future<OrderSet<OrderRow>> searchOrders(String urlName) async {
     final payload = await _client.get('/items/$urlName/orders');
     final orders = List<dynamic>.from(payload['orders'] as List<dynamic>)
-        .map<OrderFull>(
-          (dynamic o) => OrderFull.fromJson(o as Map<String, dynamic>),
+        .map(
+          (dynamic o) => OrderRow.fromJson(o as Map<String, dynamic>),
         )
         .toList();
 
