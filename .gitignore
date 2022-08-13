@@ -18,3 +18,4 @@ gradle/
 .idea/
 .gradle/
 local.properties
+.vscode/
