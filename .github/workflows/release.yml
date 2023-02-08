@@ -20,7 +20,7 @@ jobs:
         run: dart pub global activate cider
 
       - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v2
+        uses: cycjimmy/semantic-release-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
