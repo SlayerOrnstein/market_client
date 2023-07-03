@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="generator" content="made with love by dartdoc 6.2.1">
+  <meta name="generator" content="made with love by dartdoc 6.3.0">
   <meta name="description" content="market_client API docs, for the Dart programming language.">
   <title>market_client - Dart API docs</title>
 
@@ -52,32 +52,56 @@
   <div id="dartdoc-main-content" class="main-content">
       
 <section class="desc markdown">
-  <p>WIP dart client for Warframe Market.</p>
-<p>Documentation can be found <a href="https://slayerornstein.github.io/market_client/">here</a></p>
-<h2 id="usage">Usage</h2>
-<p>A simple usage example:</p>
-<pre class="language-dart"><code class="language-dart">import 'package:market_client/market_client.dart';
-
-Future&lt;void&gt; main() async {
-  final api = MarketClient();
-  final item = await api.getMarketItem('secura_dual_cestra');
-
-  print(item.id);
-}
+  <h1 id="market-client">Market Client</h1>
+<p><a href="https://pub.dev/packages/very_good_analysis"><img src="https://img.shields.io/badge/style-very_good_analysis-B22C89.svg" alt="style: very good analysis"></a>
+<a href="https://github.com/felangel/mason"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Ftinyurl.com%2Fmason-badge" alt="Powered by Mason"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a></p>
+<p>A Very Good Project created by Very Good CLI.</p>
+<h2 id="installation-">Installation 💻</h2>
+<p><strong>❗ In order to start using Market Client you must have the <a href="https://dart.dev/get-dart">Dart SDK</a> installed on your machine.</strong></p>
+<p>Add <code>market_client</code> to your <code>pubspec.yaml</code>:</p>
+<pre class="language-yaml"><code class="language-yaml">dependencies:
+  market_client:
 </code></pre>
-<h2 id="features-and-bugs">Features and bugs</h2>
-<p>Please file feature requests and bugs at the <a href="http://example.com/issues/replaceme">issue tracker</a>.</p>
+<p>Install it:</p>
+<pre class="language-sh"><code class="language-sh">dart pub get
+</code></pre>
+<hr>
+<h2 id="continuous-integration-">Continuous Integration 🤖</h2>
+<p>Market Client comes with a built-in <a href="https://docs.github.com/en/actions/learn-github-actions">GitHub Actions workflow</a> powered by <a href="https://github.com/VeryGoodOpenSource/very_good_workflows">Very Good Workflows</a> but you can also add your preferred CI/CD solution.</p>
+<p>Out of the box, on each pull request and push, the CI <code>formats</code>, <code>lints</code>, and <code>tests</code> the code. This ensures the code remains consistent and behaves correctly as you add functionality or make changes. The project uses <a href="https://pub.dev/packages/very_good_analysis">Very Good Analysis</a> for a strict set of analysis options used by our team. Code coverage is enforced using the <a href="https://github.com/marketplace/actions/very-good-coverage">Very Good Workflows</a>.</p>
+<hr>
+<h2 id="running-tests-">Running Tests 🧪</h2>
+<p>To run all unit tests:</p>
+<pre class="language-sh"><code class="language-sh">dart pub global activate coverage 1.2.0
+dart test --coverage=coverage
+dart pub global run coverage:format_coverage --lcov --in=coverage --out=coverage/lcov.info
+</code></pre>
+<p>To view the generated coverage report you can use <a href="https://github.com/linux-test-project/lcov">lcov</a>.</p>
+<pre class="language-sh"><code class="language-sh"># Generate Coverage Report
+genhtml coverage/lcov.info -o coverage/
+
+# Open Coverage Report
+open coverage/index.html
+</code></pre>
 </section>
 
 
       <section class="summary">
           <h2>Libraries</h2>
         <dl>
+          <dt id="http_client">
+  <span class="name"><a href="http_client/http_client-library.html">http_client</a></span> 
+
+</dt>
+<dd>
+</dd>
+
           <dt id="market_client">
   <span class="name"><a href="market_client/market_client-library.html">market_client</a></span> 
 
 </dt>
-<dd>
+<dd>A Very Good Project created by Very Good CLI.
 </dd>
 
         </dl>
@@ -86,20 +110,22 @@ Future&lt;void&gt; main() async {
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li class="self-crumb">market_client package</li>
+    <li class="self-crumb">market_client package</li>
 </ol>
 
 
     <h5 class="hidden-xs"><span class="package-name">market_client</span> <span class="package-kind">package</span></h5>
     <ol>
       <li class="section-title">Libraries</li>
+      <li><a href="http_client/http_client-library.html">http_client</a></li>
       <li><a href="market_client/market_client-library.html">market_client</a></li>
 </ol>
 

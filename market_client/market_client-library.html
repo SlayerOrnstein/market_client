@@ -49,26 +49,41 @@
 </header>
 <main>
 
-  <div id="dartdoc-main-content" class="main-content">
-    
+  <div
+      id="dartdoc-main-content"
+      class="main-content"
+      data-above-sidebar=""
+      data-below-sidebar="market_client&#47;market_client-library-sidebar.html">
+      
       <div>
 <h1><span class="kind-library">market_client</span> library 
  
 </h1></div>
 
     
+<section class="desc markdown">
+  <p>A Very Good Project created by Very Good CLI.</p>
+</section>
 
 
     <section class="summary offset-anchor" id="classes">
       <h2>Classes</h2>
 
       <dl>
+        <dt id="AuthEndpoint">
+  <span class="name "><a href="../market_client/AuthEndpoint-class.html">AuthEndpoint</a></span> 
+
+</dt>
+<dd>
+  Login, logout, registration and password reset.
+</dd>
+
         <dt id="CurrentUser">
   <span class="name "><a href="../market_client/CurrentUser-class.html">CurrentUser</a></span> 
 
 </dt>
 <dd>
-  Current User's profile.
+  CurrentUser description
 </dd>
 
         <dt id="HttpHelpers">
@@ -79,30 +94,28 @@
   An abstract class for functions to help with http related jobs.
 </dd>
 
-        <dt id="ItemCommon">
-  <span class="name "><a href="../market_client/ItemCommon-class.html">ItemCommon</a></span> 
-
-</dt>
-<dd>
-  {@template item_common}
-Common fields for <a href="../market_client/ItemInOrder-class.html">ItemInOrder</a> and <a href="../market_client/ItemFull-class.html">ItemFull</a>
-{@endtemplate item_common}
-</dd>
-
         <dt id="ItemFull">
   <span class="name "><a href="../market_client/ItemFull-class.html">ItemFull</a></span> 
 
 </dt>
 <dd>
-  Full information of the item.
+  ItemFull description
 </dd>
 
-        <dt id="ItemInOrder">
-  <span class="name "><a href="../market_client/ItemInOrder-class.html">ItemInOrder</a></span> 
+        <dt id="ItemOrder">
+  <span class="name "><a href="../market_client/ItemOrder-class.html">ItemOrder</a></span> 
 
 </dt>
 <dd>
-  Item information for <a href="../market_client/OrderFull-class.html">OrderFull</a>
+  ItemOrder description
+</dd>
+
+        <dt id="ItemsEndpoint">
+  <span class="name "><a href="../market_client/ItemsEndpoint-class.html">ItemsEndpoint</a></span> 
+
+</dt>
+<dd>
+  
 </dd>
 
         <dt id="ItemSet">
@@ -110,7 +123,7 @@ Common fields for <a href="../market_client/ItemInOrder-class.html">ItemInOrder<
 
 </dt>
 <dd>
-  The complete set for an item.
+  ItemSet description
 </dd>
 
         <dt id="ItemShort">
@@ -118,7 +131,7 @@ Common fields for <a href="../market_client/ItemInOrder-class.html">ItemInOrder<
 
 </dt>
 <dd>
-  Brief information about an item.
+  ItemShort description
 </dd>
 
         <dt id="LangDrop">
@@ -126,7 +139,7 @@ Common fields for <a href="../market_client/ItemInOrder-class.html">ItemInOrder<
 
 </dt>
 <dd>
-  Translated drop information.
+  
 </dd>
 
         <dt id="LangInItem">
@@ -134,15 +147,7 @@ Common fields for <a href="../market_client/ItemInOrder-class.html">ItemInOrder<
 
 </dt>
 <dd>
-  Translated entry for <a href="../market_client/ItemInOrder-class.html">ItemInOrder</a> and <a href="../market_client/ItemFull-class.html">ItemFull</a>
-</dd>
-
-        <dt id="LangShort">
-  <span class="name "><a href="../market_client/LangShort-class.html">LangShort</a></span> 
-
-</dt>
-<dd>
-  Short version of <a href="../market_client/LangInItem-class.html">LangInItem</a>.
+  
 </dd>
 
         <dt id="LinkedAccounts">
@@ -150,55 +155,15 @@ Common fields for <a href="../market_client/ItemInOrder-class.html">ItemInOrder<
 
 </dt>
 <dd>
-  Accounts linked to the <a href="../market_client/CurrentUser-class.html">CurrentUser</a>
-</dd>
-
-        <dt id="MarketClient">
-  <span class="name "><a href="../market_client/MarketClient-class.html">MarketClient</a></span> 
-
-</dt>
-<dd>
-  Main Entry point for the market client.
+  User linked  accounts.
 </dd>
 
         <dt id="MarketHttpClient">
-  <span class="name "><a href="../market_client/MarketHttpClient-class.html">MarketHttpClient</a></span> 
+  <span class="name "><a href="../http_client/MarketHttpClient-class.html">MarketHttpClient</a></span> 
 
 </dt>
 <dd>
   The Client that makes the raw calls to Warframe market
-</dd>
-
-        <dt id="OrderCommon">
-  <span class="name "><a href="../market_client/OrderCommon-class.html">OrderCommon</a></span> 
-
-</dt>
-<dd>
-  Common fields for both <a href="../market_client/OrderRow-class.html">OrderRow</a> and <a href="../market_client/OrderFull-class.html">OrderFull</a>
-</dd>
-
-        <dt id="OrderFull">
-  <span class="name "><a href="../market_client/OrderFull-class.html">OrderFull</a></span> 
-
-</dt>
-<dd>
-  Full order object that includes <a href="../market_client/ItemInOrder-class.html">ItemInOrder</a>.
-</dd>
-
-        <dt id="OrderRow">
-  <span class="name "><a href="../market_client/OrderRow-class.html">OrderRow</a></span> 
-
-</dt>
-<dd>
-  Order information for recent orders.
-</dd>
-
-        <dt id="OrderSet">
-  <span class="name "><a href="../market_client/OrderSet-class.html">OrderSet</a><span class="signature">&lt;<wbr><span class="type-parameter">T extends <a href="../market_client/OrderCommon-class.html">OrderCommon</a></span>&gt;</span></span> 
-
-</dt>
-<dd>
-  A set of selling and buying orders for a specfic item or recent items.
 </dd>
 
         <dt id="PatreonProfile">
@@ -206,24 +171,23 @@ Common fields for <a href="../market_client/ItemInOrder-class.html">ItemInOrder<
 
 </dt>
 <dd>
-  Patreon Profile linked to the <a href="../market_client/CurrentUser-class.html">CurrentUser</a>.
+  User Patreon profile
 </dd>
 
-        <dt id="ProfileClient">
-  <span class="name "><a href="../market_client/ProfileClient-class.html">ProfileClient</a></span> 
+        <dt id="RegistrationRequest">
+  <span class="name "><a href="../market_client/RegistrationRequest-class.html">RegistrationRequest</a></span> 
 
 </dt>
 <dd>
-  Holds endpoints that don't require auth in order to retrive orders and
-statistics from profiles
+  RegistrationRequest description
 </dd>
 
-        <dt id="UserClient">
-  <span class="name "><a href="../market_client/UserClient-class.html">UserClient</a></span> 
+        <dt id="SignInRequest">
+  <span class="name "><a href="../market_client/SignInRequest-class.html">SignInRequest</a></span> 
 
 </dt>
 <dd>
-  
+  SignInRequest description
 </dd>
 
         <dt id="UserShort">
@@ -231,7 +195,7 @@ statistics from profiles
 
 </dt>
 <dd>
-  Brief overview of User.
+  UserShort description
 </dd>
 
       </dl>
@@ -246,6 +210,14 @@ statistics from profiles
       <h2>Enums</h2>
 
       <dl>
+        <dt id="AuthType">
+  <span class="name "><a href="../market_client/AuthType.html">AuthType</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
         <dt id="MarketPlatform">
   <span class="name "><a href="../market_client/MarketPlatform.html">MarketPlatform</a></span> 
 
@@ -259,7 +231,7 @@ statistics from profiles
 
 </dt>
 <dd>
-  Order Type.
+  
 </dd>
 
         <dt id="PatreonBadge">
@@ -267,7 +239,7 @@ statistics from profiles
 
 </dt>
 <dd>
-  Patreon badge.
+  User patreon badge.
 </dd>
 
         <dt id="Rarity">
@@ -275,7 +247,7 @@ statistics from profiles
 
 </dt>
 <dd>
-  Mod rarity.
+  
 </dd>
 
         <dt id="Role">
@@ -283,7 +255,7 @@ statistics from profiles
 
 </dt>
 <dd>
-  User role.
+  User's role.
 </dd>
 
         <dt id="UserStatus">
@@ -291,32 +263,64 @@ statistics from profiles
 
 </dt>
 <dd>
-  The user status.
+  
 </dd>
 
       </dl>
     </section>
 
 
+    <section class="summary offset-anchor" id="exceptions">
+      <h2>Exceptions / Errors</h2>
+
+      <dl>
+        <dt id="BadRequestException">
+  <span class="name "><a href="../market_client/BadRequestException-class.html">BadRequestException</a></span> 
+
+</dt>
+<dd>
+  Your request was bad and you should find out why.
+</dd>
+
+        <dt id="FetchDataException">
+  <span class="name "><a href="../market_client/FetchDataException-class.html">FetchDataException</a></span> 
+
+</dt>
+<dd>
+  Server denied your advances.
+</dd>
+
+        <dt id="UnauthorisedException">
+  <span class="name "><a href="../market_client/UnauthorisedException-class.html">UnauthorisedException</a></span> 
+
+</dt>
+<dd>
+  You have no power here
+</dd>
+
+      </dl>
+    </section>
 
   </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <header id="header-search-sidebar" class="hidden-l">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
 
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-  <li><a href="../index.html">market_client</a></li>
-  <li class="self-crumb">market_client library</li>
+    <li><a href="../index.html">market_client</a></li>
+    <li class="self-crumb">market_client library</li>
 </ol>
 
 
     <h5><span class="package-name">market_client</span> <span class="package-kind">package</span></h5>
     <ol>
       <li class="section-title">Libraries</li>
+      <li><a href="../http_client/http_client-library.html">http_client</a></li>
       <li><a href="../market_client/market_client-library.html">market_client</a></li>
 </ol>
 
@@ -324,46 +328,6 @@ statistics from profiles
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
     <h5>market_client library</h5>
-    <ol>
-      <li class="section-title"><a href="../market_client/market_client-library.html#classes">Classes</a></li>
-        <li><a href="../market_client/CurrentUser-class.html">CurrentUser</a></li>
-        <li><a href="../market_client/HttpHelpers-class.html">HttpHelpers</a></li>
-        <li><a href="../market_client/ItemCommon-class.html">ItemCommon</a></li>
-        <li><a href="../market_client/ItemFull-class.html">ItemFull</a></li>
-        <li><a href="../market_client/ItemInOrder-class.html">ItemInOrder</a></li>
-        <li><a href="../market_client/ItemSet-class.html">ItemSet</a></li>
-        <li><a href="../market_client/ItemShort-class.html">ItemShort</a></li>
-        <li><a href="../market_client/LangDrop-class.html">LangDrop</a></li>
-        <li><a href="../market_client/LangInItem-class.html">LangInItem</a></li>
-        <li><a href="../market_client/LangShort-class.html">LangShort</a></li>
-        <li><a href="../market_client/LinkedAccounts-class.html">LinkedAccounts</a></li>
-        <li><a href="../market_client/MarketClient-class.html">MarketClient</a></li>
-        <li><a href="../market_client/MarketHttpClient-class.html">MarketHttpClient</a></li>
-        <li><a href="../market_client/OrderCommon-class.html">OrderCommon</a></li>
-        <li><a href="../market_client/OrderFull-class.html">OrderFull</a></li>
-        <li><a href="../market_client/OrderRow-class.html">OrderRow</a></li>
-        <li><a href="../market_client/OrderSet-class.html">OrderSet</a></li>
-        <li><a href="../market_client/PatreonProfile-class.html">PatreonProfile</a></li>
-        <li><a href="../market_client/ProfileClient-class.html">ProfileClient</a></li>
-        <li><a href="../market_client/UserClient-class.html">UserClient</a></li>
-        <li><a href="../market_client/UserShort-class.html">UserShort</a></li>
-
-
-
-
-
-
-      <li class="section-title"><a href="../market_client/market_client-library.html#enums">Enums</a></li>
-        <li><a href="../market_client/MarketPlatform.html">MarketPlatform</a></li>
-        <li><a href="../market_client/OrderType.html">OrderType</a></li>
-        <li><a href="../market_client/PatreonBadge.html">PatreonBadge</a></li>
-        <li><a href="../market_client/Rarity.html">Rarity</a></li>
-        <li><a href="../market_client/Role.html">Role</a></li>
-        <li><a href="../market_client/UserStatus.html">UserStatus</a></li>
-
-
-</ol>
-
   </div><!--/sidebar-offcanvas-right-->
 
 </main>
