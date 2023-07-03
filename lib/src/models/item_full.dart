@@ -224,8 +224,12 @@ class ItemFull extends Equatable {
   Map<String, dynamic> toJson() => _$ItemFullToJson(this);
 }
 
+/// {@template lang_in_item}
+/// Contains translated information on an item.
+/// {@endtemplate}
 @JsonSerializable()
 class LangInItem extends Equatable {
+  /// {@macro lang_in_item}
   const LangInItem({
     required this.itemName,
     required this.description,
@@ -233,40 +237,54 @@ class LangInItem extends Equatable {
     required this.drop,
   });
 
+  /// Creates a LangInItem from json.
   factory LangInItem.fromJson(Map<String, dynamic> data) {
     return _$LangInItemFromJson(data);
   }
 
+  /// Item name translated.
   @JsonKey(name: 'item_name')
   final String itemName;
 
+  /// Item description translated.
   final String description;
 
+  /// Item wikilink if available.
   @JsonKey(name: 'wiki_link')
   final String? wikiLink;
 
+  /// Translated drop sources for item.
   final List<LangDrop> drop;
 
   @override
   List<Object?> get props => [itemName, description, wikiLink, drop];
 
+  /// Creates a json map from an LangInItem instance.
   Map<String, dynamic> toJson() => _$LangInItemToJson(this);
 }
 
+/// {@template lang_drop}
+/// Translated data for an item drop source.
+/// {@endtemplate}
 @JsonSerializable()
 class LangDrop extends Equatable {
+  /// {@macro lang_drop}
   const LangDrop({required this.name, required this.link});
 
+  /// Creates a LangDrop from a json map.
   factory LangDrop.fromJson(Map<String, dynamic> data) {
     return _$LangDropFromJson(data);
   }
 
+  /// Translated name.
   final String name;
 
+  /// Link if available.
   final String? link;
 
   @override
   List<Object?> get props => [name, link];
 
+  /// Creates a json map from an instance of LangDrop.
   Map<String, dynamic> toJson() => _$LangDropToJson(this);
 }

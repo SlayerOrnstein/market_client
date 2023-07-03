@@ -5,7 +5,7 @@ import 'package:market_client/market_client.dart';
 part 'item_order.g.dart';
 
 /// {@template item_order}
-/// ItemOrder description
+/// Order information for an item.
 /// {@endtemplate}
 @JsonSerializable()
 class ItemOrder extends Equatable implements Comparable<ItemOrder> {
@@ -28,40 +28,40 @@ class ItemOrder extends Equatable implements Comparable<ItemOrder> {
   factory ItemOrder.fromJson(Map<String, dynamic> data) =>
       _$ItemOrderFromJson(data);
 
-  /// A description for id
+  /// Order id.
   final String id;
 
-  /// A description for platinum
+  /// Platinum user is requesting for said item.
   final int platinum;
 
-  /// A description for quantity
+  /// A user's inventory of this Item.
   final int quantity;
 
-  /// A description for orderType
+  /// Whether this user is looking to buy or sell this item.
   @JsonKey(name: 'order_type')
   final OrderType orderType;
 
-  /// A description for platform
+  /// The platform this user is on
   final MarketPlatform platform;
 
-  /// A description for region
+  /// A user's region.
   final String region;
 
-  /// A description for creationDate
+  /// The date this order was created on
   @JsonKey(name: 'creation_date')
   final DateTime creationDate;
 
-  /// A description for lastUpdate
+  /// THe last time this order was updated.
   @JsonKey(name: 'last_update')
   final DateTime lastUpdate;
 
-  /// A description for subtype
+  /// Item subtype.
   final String subtype;
 
-  /// A description for visible
+  /// Whether the order is visible to other users or not.
   final bool visible;
 
-  /// User selling item.
+  /// The user that created this order.
   final UserShort user;
 
   /// Creates a copy of the current ItemOrder with property changes

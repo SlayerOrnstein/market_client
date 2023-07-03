@@ -4,7 +4,7 @@ import 'package:json_annotation/json_annotation.dart';
 part 'item_short.g.dart';
 
 /// {@template item_short}
-/// ItemShort description
+/// A short data model of the item
 /// {@endtemplate}
 @JsonSerializable()
 class ItemShort extends Equatable {
@@ -20,17 +20,19 @@ class ItemShort extends Equatable {
   factory ItemShort.fromJson(Map<String, dynamic> data) =>
       _$ItemShortFromJson(data);
 
-  /// A description for id
+  /// Item ID.
   final String id;
 
-  /// A description for urlName
+  /// Item's url name
+  ///
+  /// Name is snake case.
   @JsonKey(name: 'url_name')
   final String urlName;
 
-  /// A description for thumb
+  /// Item thumbnail
   final String thumb;
 
-  /// A description for itemName
+  /// Item name.
   @JsonKey(name: 'item_name')
   final String itemName;
 

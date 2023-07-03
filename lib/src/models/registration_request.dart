@@ -5,7 +5,7 @@ import 'package:market_client/market_client.dart';
 part 'registration_request.g.dart';
 
 /// {@template registration_request}
-/// RegistrationRequest description
+/// This is the required information needed to register a new user.
 /// {@endtemplate}
 @JsonSerializable()
 class RegistrationRequest extends Equatable {
@@ -28,24 +28,24 @@ class RegistrationRequest extends Equatable {
   factory RegistrationRequest.fromJson(Map<String, dynamic> data) =>
       _$RegistrationRequestFromJson(data);
 
-  /// A description for authType
+  /// Authorization type
   @JsonKey(name: 'auth_type')
   final AuthType authType;
 
-  /// A description for email
+  /// User email.
   final String email;
 
-  /// A description for password
+  /// User created password.
   final String password;
 
-  /// A description for passwordSecond
+  /// Confirm user created password.
   @JsonKey(name: 'password_second')
   final String passwordSecond;
 
-  /// A description for region
+  /// User region.
   final String region;
 
-  /// A description for deviceId
+  /// User's device ID
   @JsonKey(name: 'device_id')
   final String? deviceId;
 

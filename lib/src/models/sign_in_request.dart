@@ -21,17 +21,17 @@ class SignInRequest extends Equatable {
   factory SignInRequest.fromJson(Map<String, dynamic> data) =>
       _$SignInRequestFromJson(data);
 
-  /// A description for authType
+  /// Authorization type
   @JsonKey(name: 'auth_type')
   final AuthType authType;
 
-  /// A description for email
+  /// User email.
   final String email;
 
-  /// A description for password
+  /// User password
   final String password;
 
-  /// A description for deviceId
+  /// Device ID.
   @JsonKey(name: 'device_id')
   final String deviceId;
 

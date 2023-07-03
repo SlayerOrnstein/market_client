@@ -1,7 +1,10 @@
 import 'package:json_annotation/json_annotation.dart';
 
+/// Authorization type
 enum AuthType {
   /// Authoriz via cookie.
+  ///
+  /// For browsers use this.
   cookie,
 
   /// Authorize via header (use of device id is required)
@@ -26,18 +29,41 @@ enum MarketPlatform {
   xbox,
 }
 
+/// Level of rarity for an item
 enum Rarity {
+  /// Item drops commonly.
   common,
+
+  /// Item drop is not common but very possible.
   uncommon,
+
+  /// Item drops rarely.
   rare,
+
+  /// Item can only be obtined from a specfic source
   legendary,
+
+  /// A peculiar item.
   peculiar,
 }
 
+/// User status.
 enum UserStatus {
+  /// User is online and in-game.
   ingame,
+
+  /// User is online but not in -ame.
   online,
+
+  /// User is offline.
   offline,
 }
 
-enum OrderType { sell, buy }
+/// Item order type.
+enum OrderType {
+  /// Item is for sale.
+  sell,
+
+  /// An order to buy said item.
+  buy,
+}
