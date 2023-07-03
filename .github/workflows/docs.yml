@@ -10,19 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
       - name: Install Dart SDK
-        uses: dart-lang/setup-dart@v1.4
-        with:
-          release-channel: stable
-
+        uses: dart-lang/setup-dart@v1.5.0
       - name: Install dependacies
         run: |
           dart pub get
           dart pub global activate dartdoc
       - name: Generate docs
         run: dartdoc
-
       - name: Deploy to GH pages
         uses: peaceiris/actions-gh-pages@v3.9.3
         with:
