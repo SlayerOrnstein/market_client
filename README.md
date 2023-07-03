@@ -6,7 +6,7 @@
 
 A dart wrapper for the Warframe Market API.
 
-A Very Good Project created by Very Good CLI.
+_A Very Good Project created by Very Good CLI._
 
 ## Installation 💻
 
