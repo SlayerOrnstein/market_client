@@ -34,14 +34,14 @@ class ItemsEndpoint {
   /// Get a list of orders for an item.
   ///
   /// [includeItem] will include the item itself.
-  Future<(List<ItemOrder>, ItemFull?)> itemOrders(
+  Future<(List<OrderCommon>, ItemFull?)> itemOrders(
     String urlName, {
     bool includeItem = false,
   }) async {
     final response = await _client.get('/items/$urlName/orders');
     final payload = HttpHelpers.parseResponse(response.body);
     final orders = (payload['orders'] as List<dynamic>)
-        .map((e) => ItemOrder.fromJson(e as Map<String, dynamic>))
+        .map((e) => OrderRow.fromJson(e as Map<String, dynamic>))
         .toList();
 
     if (includeItem) {

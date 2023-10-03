@@ -45,9 +45,15 @@ class MarketHttpClient {
     Map<String, String>? queryParameters,
     Map<String, String>? headers,
   }) async {
-    if (headers != null) headers['Language'] = language;
     final uri = Uri.https(_root, '/$_version$path', queryParameters);
-    final res = await client.get(uri, headers: headers);
+    final res = await client.get(
+      uri,
+      headers: HttpHelpers.headers(
+        platform: platform,
+        language: language,
+        token: token,
+      ),
+    );
 
     HttpHelpers.checkStatusCode(res.statusCode, reason: res.body);
 

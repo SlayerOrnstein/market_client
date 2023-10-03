@@ -8,19 +8,21 @@ part 'item_full.g.dart';
 /// ItemFull description
 /// {@endtemplate}
 @JsonSerializable()
-class ItemFull extends Equatable {
+class ItemFull extends ItemCommon {
   /// {@macro item_full}
   const ItemFull({
-    required this.id,
-    required this.urlName,
-    required this.icon,
+    required super.id,
+    required super.urlName,
+    required super.icon,
     required this.iconFormat,
-    required this.thumb,
-    required this.subIcon,
-    required this.modMaxRank,
-    required this.subtypes,
-    required this.tags,
-    required this.ducats,
+    required super.thumb,
+    required super.subIcon,
+    required super.modMaxRank,
+    required super.subtypes,
+    required super.tags,
+    required super.cyanStars,
+    required super.amberStars,
+    required super.ducats,
     required this.quantityForSet,
     required this.setRoot,
     required this.masteryLevel,
@@ -43,39 +45,9 @@ class ItemFull extends Equatable {
   factory ItemFull.fromJson(Map<String, dynamic> data) =>
       _$ItemFullFromJson(data);
 
-  /// A description for id
-  final String id;
-
-  /// A description for urlName
-  @JsonKey(name: 'url_name')
-  final String urlName;
-
-  /// A description for icon
-  final String icon;
-
   /// A description for iconFormat
   @JsonKey(name: 'icon_format')
   final String iconFormat;
-
-  /// A description for thumb
-  final String thumb;
-
-  /// A description for subIcon
-  @JsonKey(name: 'sub_icon')
-  final String? subIcon;
-
-  /// A description for modMaxRank
-  @JsonKey(name: 'mod_max_rank')
-  final int? modMaxRank;
-
-  /// A description for subtypes
-  final List<String>? subtypes;
-
-  /// A description for tags
-  final List<String> tags;
-
-  /// A description for ducats
-  final int? ducats;
 
   /// A description for quantityForSet
   @JsonKey(name: 'quantity_for_set')
@@ -142,6 +114,8 @@ class ItemFull extends Equatable {
     int? modMaxRank,
     List<String>? subtypes,
     List<String>? tags,
+    int? cyanStars,
+    int? amberStars,
     int? ducats,
     int? quantityForSet,
     bool? setRoot,
@@ -170,6 +144,8 @@ class ItemFull extends Equatable {
       modMaxRank: modMaxRank ?? this.modMaxRank,
       subtypes: subtypes ?? this.subtypes,
       tags: tags ?? this.tags,
+      cyanStars: cyanStars ?? this.cyanStars,
+      amberStars: amberStars ?? this.amberStars,
       ducats: ducats ?? this.ducats,
       quantityForSet: quantityForSet ?? this.quantityForSet,
       setRoot: setRoot ?? this.setRoot,
@@ -191,17 +167,10 @@ class ItemFull extends Equatable {
   }
 
   @override
-  List<Object?> get props => [
-        id,
-        urlName,
-        icon,
+  List<Object?> get props {
+    return super.props
+      ..addAll([
         iconFormat,
-        thumb,
-        subIcon,
-        modMaxRank,
-        subtypes,
-        tags,
-        ducats,
         quantityForSet,
         setRoot,
         masteryLevel,
@@ -218,7 +187,8 @@ class ItemFull extends Equatable {
         pt,
         es,
         pl,
-      ];
+      ]);
+  }
 
   /// Creates a Json map from a ItemFull
   Map<String, dynamic> toJson() => _$ItemFullToJson(this);

@@ -2,15 +2,15 @@ import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:market_client/market_client.dart';
 
-part 'item_order.g.dart';
+part 'order.g.dart';
 
 /// {@template item_order}
-/// Order information for an item.
+/// Common order data.
 /// {@endtemplate}
-@JsonSerializable()
-class ItemOrder extends Equatable implements Comparable<ItemOrder> {
+abstract class OrderCommon extends Equatable
+    implements Comparable<OrderCommon> {
   /// {@macro item_order}
-  const ItemOrder({
+  const OrderCommon({
     required this.id,
     required this.platinum,
     required this.quantity,
@@ -23,10 +23,6 @@ class ItemOrder extends Equatable implements Comparable<ItemOrder> {
     required this.visible,
     required this.user,
   });
-
-  /// Creates a ItemOrder from Json map
-  factory ItemOrder.fromJson(Map<String, dynamic> data) =>
-      _$ItemOrderFromJson(data);
 
   /// Order id.
   final String id;
@@ -61,37 +57,10 @@ class ItemOrder extends Equatable implements Comparable<ItemOrder> {
   /// Whether the order is visible to other users or not.
   final bool visible;
 
+  // OrderRow and OrderFull both contain a user so I chose to keep it in their
+  // common class.
   /// The user that created this order.
   final UserShort user;
-
-  /// Creates a copy of the current ItemOrder with property changes
-  ItemOrder copyWith({
-    String? id,
-    int? platinum,
-    int? quantity,
-    OrderType? orderType,
-    MarketPlatform? platform,
-    String? region,
-    DateTime? creationDate,
-    DateTime? lastUpdate,
-    String? subtype,
-    bool? visible,
-    UserShort? user,
-  }) {
-    return ItemOrder(
-      id: id ?? this.id,
-      platinum: platinum ?? this.platinum,
-      quantity: quantity ?? this.quantity,
-      orderType: orderType ?? this.orderType,
-      platform: platform ?? this.platform,
-      region: region ?? this.region,
-      creationDate: creationDate ?? this.creationDate,
-      lastUpdate: lastUpdate ?? this.lastUpdate,
-      subtype: subtype ?? this.subtype,
-      visible: visible ?? this.visible,
-      user: user ?? this.user,
-    );
-  }
 
   @override
   List<Object?> get props => [
@@ -107,14 +76,11 @@ class ItemOrder extends Equatable implements Comparable<ItemOrder> {
         visible,
       ];
 
-  /// Creates a Json map from a ItemOrder
-  Map<String, dynamic> toJson() => _$ItemOrderToJson(this);
-
   /// Compares 2 ItemOrders
-  static int compare(ItemOrder a, ItemOrder b) => a.compareTo(b);
+  static int compare(OrderCommon a, OrderCommon b) => a.compareTo(b);
 
   @override
-  int compareTo(ItemOrder other) {
+  int compareTo(OrderCommon other) {
     if (orderType != other.orderType) {
       return -orderType.index.compareTo(other.orderType.index);
     }
@@ -135,4 +101,59 @@ class ItemOrder extends Equatable implements Comparable<ItemOrder> {
 
     return 0;
   }
+}
+
+/// {@template order_row}
+/// Short version of [OrderFull] without the item.
+/// {@endtemplate}
+@JsonSerializable()
+class OrderRow extends OrderCommon {
+  /// {@macro order_row}
+  const OrderRow({
+    required super.id,
+    required super.platinum,
+    required super.quantity,
+    required super.orderType,
+    required super.platform,
+    required super.region,
+    required super.creationDate,
+    required super.lastUpdate,
+    required super.subtype,
+    required super.visible,
+    required super.user,
+  });
+
+  /// Creates a ItemOrder from Json map
+  factory OrderRow.fromJson(Map<String, dynamic> data) =>
+      _$OrderRowFromJson(data);
+
+  /// Creates a Json map from a ItemOrder
+  Map<String, dynamic> toJson() => _$OrderRowToJson(this);
+}
+
+/// {@template order_full}
+/// {@endtemplate}
+@JsonSerializable()
+class OrderFull extends OrderCommon {
+  /// {@macro order_full}
+  const OrderFull({
+    required super.id,
+    required super.platinum,
+    required super.quantity,
+    required super.orderType,
+    required super.platform,
+    required super.region,
+    required super.creationDate,
+    required super.lastUpdate,
+    required super.subtype,
+    required super.visible,
+    required super.user,
+    required this.item,
+  });
+
+  /// The item the order is for.
+  final ItemInOrder item;
+
+  @override
+  List<Object?> get props => super.props..add(item);
 }

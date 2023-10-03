@@ -1,7 +1,11 @@
 export 'current_user.dart';
+export 'item_common.dart';
 export 'item_full.dart';
-export 'item_order.dart';
+export 'item_in_order.dart';
 export 'item_short.dart';
+export 'location.dart';
+export 'npc.dart';
+export 'order.dart';
 export 'registration_request.dart';
 export 'sign_in_request.dart';
 export 'user_short.dart';

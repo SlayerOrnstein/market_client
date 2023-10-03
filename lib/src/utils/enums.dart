@@ -67,3 +67,18 @@ enum OrderType {
   /// An order to buy said item.
   buy,
 }
+
+/// Enemy factions
+enum Faction {
+  /// Infested
+  infested,
+
+  /// Grineer
+  grineer,
+
+  /// Corpus
+  corpus,
+
+  /// Corrupted
+  corrupted,
+}

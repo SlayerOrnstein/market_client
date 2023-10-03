@@ -25,8 +25,8 @@ abstract class HttpHelpers {
     return <String, String>{
       'Platform': platform.toString().split('.').last,
       if (language != null) 'Language': language,
-      if (token != null) 'Authorization': 'JWT $token',
-      'Content-Type': 'application/json'
+      if (token != null) 'Authorization': token,
+      'Content-Type': 'application/json',
     };
   }
 
