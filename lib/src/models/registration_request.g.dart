@@ -17,17 +17,25 @@ RegistrationRequest _$RegistrationRequestFromJson(Map<String, dynamic> json) =>
       recaptcha: json['recaptcha'] as String?,
     );
 
-Map<String, dynamic> _$RegistrationRequestToJson(
-        RegistrationRequest instance) =>
-    <String, dynamic>{
-      'auth_type': _$AuthTypeEnumMap[instance.authType]!,
-      'email': instance.email,
-      'password': instance.password,
-      'password_second': instance.passwordSecond,
-      'region': instance.region,
-      'device_id': instance.deviceId,
-      'recaptcha': instance.recaptcha,
-    };
+Map<String, dynamic> _$RegistrationRequestToJson(RegistrationRequest instance) {
+  final val = <String, dynamic>{
+    'auth_type': _$AuthTypeEnumMap[instance.authType]!,
+    'email': instance.email,
+    'password': instance.password,
+    'password_second': instance.passwordSecond,
+    'region': instance.region,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('device_id', instance.deviceId);
+  writeNotNull('recaptcha', instance.recaptcha);
+  return val;
+}
 
 const _$AuthTypeEnumMap = {
   AuthType.cookie: 'cookie',

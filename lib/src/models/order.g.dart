@@ -15,24 +15,34 @@ OrderRow _$OrderRowFromJson(Map<String, dynamic> json) => OrderRow(
       region: json['region'] as String,
       creationDate: DateTime.parse(json['creation_date'] as String),
       lastUpdate: DateTime.parse(json['last_update'] as String),
-      subtype: json['subtype'] as String,
+      subtype: json['subtype'] as String?,
       visible: json['visible'] as bool,
       user: UserShort.fromJson(json['user'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$OrderRowToJson(OrderRow instance) => <String, dynamic>{
-      'id': instance.id,
-      'platinum': instance.platinum,
-      'quantity': instance.quantity,
-      'order_type': _$OrderTypeEnumMap[instance.orderType]!,
-      'platform': _$MarketPlatformEnumMap[instance.platform]!,
-      'region': instance.region,
-      'creation_date': instance.creationDate.toIso8601String(),
-      'last_update': instance.lastUpdate.toIso8601String(),
-      'subtype': instance.subtype,
-      'visible': instance.visible,
-      'user': instance.user,
-    };
+Map<String, dynamic> _$OrderRowToJson(OrderRow instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'platinum': instance.platinum,
+    'quantity': instance.quantity,
+    'order_type': _$OrderTypeEnumMap[instance.orderType]!,
+    'platform': _$MarketPlatformEnumMap[instance.platform]!,
+    'region': instance.region,
+    'creation_date': instance.creationDate.toIso8601String(),
+    'last_update': instance.lastUpdate.toIso8601String(),
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('subtype', instance.subtype);
+  val['visible'] = instance.visible;
+  val['user'] = instance.user.toJson();
+  return val;
+}
 
 const _$OrderTypeEnumMap = {
   OrderType.sell: 'sell',
@@ -55,23 +65,33 @@ OrderFull _$OrderFullFromJson(Map<String, dynamic> json) => OrderFull(
       region: json['region'] as String,
       creationDate: DateTime.parse(json['creation_date'] as String),
       lastUpdate: DateTime.parse(json['last_update'] as String),
-      subtype: json['subtype'] as String,
+      subtype: json['subtype'] as String?,
       visible: json['visible'] as bool,
       user: UserShort.fromJson(json['user'] as Map<String, dynamic>),
-      item: ItemInOrder.fromJson(json['item'] as Map<String, dynamic>),
+      item: ItemFull.fromJson(json['item'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$OrderFullToJson(OrderFull instance) => <String, dynamic>{
-      'id': instance.id,
-      'platinum': instance.platinum,
-      'quantity': instance.quantity,
-      'order_type': _$OrderTypeEnumMap[instance.orderType]!,
-      'platform': _$MarketPlatformEnumMap[instance.platform]!,
-      'region': instance.region,
-      'creation_date': instance.creationDate.toIso8601String(),
-      'last_update': instance.lastUpdate.toIso8601String(),
-      'subtype': instance.subtype,
-      'visible': instance.visible,
-      'user': instance.user,
-      'item': instance.item,
-    };
+Map<String, dynamic> _$OrderFullToJson(OrderFull instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'platinum': instance.platinum,
+    'quantity': instance.quantity,
+    'order_type': _$OrderTypeEnumMap[instance.orderType]!,
+    'platform': _$MarketPlatformEnumMap[instance.platform]!,
+    'region': instance.region,
+    'creation_date': instance.creationDate.toIso8601String(),
+    'last_update': instance.lastUpdate.toIso8601String(),
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('subtype', instance.subtype);
+  val['visible'] = instance.visible;
+  val['user'] = instance.user.toJson();
+  val['item'] = instance.item.toJson();
+  return val;
+}

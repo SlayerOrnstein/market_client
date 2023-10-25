@@ -44,7 +44,7 @@ class ItemCommon extends Equatable {
   /// Usually, if item is part of set and not set itself, it will have sub_icon
   /// like: Mirage Blueprint is part of Mirage Set, therefore the icon will be
   /// the Mirage warframe icon, and the sub_icon will be the blueprint icon
-  @JsonKey(name: 'sub_icon')
+  @JsonKey(name: 'sub_icon', includeIfNull: true)
   final String? subIcon;
 
   /// Max Rank for Mod item.

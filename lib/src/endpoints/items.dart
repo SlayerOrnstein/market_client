@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:market_client/market_client.dart';
 
 /// {@template items_endpoint}
@@ -10,7 +12,7 @@ class ItemsEndpoint {
   final MarketHttpClient _client;
 
   /// Get a list of all tradable items.
-  Future<List<ItemShort>> items() async {
+  Future<List<ItemShort>> getItems() async {
     final response = await _client.get('/items');
     final payload = HttpHelpers.parseResponse(response.body);
 
@@ -22,35 +24,39 @@ class ItemsEndpoint {
   /// Get information about a specific item.
   ///
   /// Warframe market url name are in snake case. If you are unsure of an
-  /// item's url name you can pull and cache [ItemsEndpoint.items].
-  Future<ItemFull> item(String urlName) async {
+  /// item's url name you can pull and cache [ItemsEndpoint.getItems].
+  Future<List<ItemFull>> getItem(String urlName) async {
     final response = await _client.get('/items/$urlName');
     final payload = HttpHelpers.parseResponse(response.body);
     final item = payload['item'] as Map<String, dynamic>;
+    final itemsInSet =
+        List<Map<String, dynamic>>.from(item['items_in_set'] as List<dynamic>);
 
-    return ItemFull.fromJson(item['items_in_set'] as Map<String, dynamic>);
+    return itemsInSet.map(ItemFull.fromJson).toList();
   }
 
   /// Get a list of orders for an item.
   ///
   /// [includeItem] will include the item itself.
-  Future<(List<OrderCommon>, ItemFull?)> itemOrders(
+  Future<(List<OrderRow>, List<ItemFull>?)> getItemOrders(
     String urlName, {
     bool includeItem = false,
   }) async {
-    final response = await _client.get('/items/$urlName/orders');
+    final response = await _client.get('/items/$urlName/orders',
+        queryParameters: includeItem ? {'include': 'item'} : null);
     final payload = HttpHelpers.parseResponse(response.body);
     final orders = (payload['orders'] as List<dynamic>)
         .map((e) => OrderRow.fromJson(e as Map<String, dynamic>))
         .toList();
 
     if (includeItem) {
-      final item = payload['item'] as Map<String, dynamic>;
+      final data = json.decode(response.body) as Map<String, dynamic>;
+      final included = data['include'] as Map<String, dynamic>;
+      final includedItem = included['item'] as Map<String, dynamic>;
+      final itemSet = List<Map<String, dynamic>>.from(
+          includedItem['items_in_set'] as List<dynamic>);
 
-      return (
-        orders,
-        ItemFull.fromJson(item['items_in_set'] as Map<String, dynamic>)
-      );
+      return (orders, itemSet.map(ItemFull.fromJson).toList());
     }
 
     return (orders, null);

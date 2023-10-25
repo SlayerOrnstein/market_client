@@ -7,7 +7,7 @@ part 'user_short.g.dart';
 /// {@template user_short}
 /// UserShort description
 /// {@endtemplate}
-@JsonSerializable()
+@JsonSerializable(includeIfNull: true)
 class UserShort extends Equatable {
   /// {@macro user_short}
   const UserShort({
@@ -15,6 +15,7 @@ class UserShort extends Equatable {
     required this.ingameName,
     required this.status,
     required this.region,
+    required this.locale,
     required this.reputation,
     this.avatar,
     this.lastSeen,
@@ -37,6 +38,8 @@ class UserShort extends Equatable {
   /// A description for region
   final String region;
 
+  final String locale;
+
   /// A description for reputation
   final int reputation;
 
@@ -53,6 +56,7 @@ class UserShort extends Equatable {
     String? ingameName,
     UserStatus? status,
     String? region,
+    String? locale,
     int? reputation,
     String? Function()? avatar,
     DateTime? Function()? lastSeen,
@@ -62,6 +66,7 @@ class UserShort extends Equatable {
       ingameName: ingameName ?? this.ingameName,
       status: status ?? this.status,
       region: region ?? this.region,
+      locale: locale ?? this.locale,
       reputation: reputation ?? this.reputation,
       avatar: avatar != null ? avatar() : this.avatar,
       lastSeen: lastSeen != null ? lastSeen() : this.lastSeen,
@@ -74,6 +79,7 @@ class UserShort extends Equatable {
         ingameName,
         status,
         region,
+        locale,
         reputation,
         avatar,
         lastSeen,

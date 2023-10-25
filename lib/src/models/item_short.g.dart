@@ -11,11 +11,23 @@ ItemShort _$ItemShortFromJson(Map<String, dynamic> json) => ItemShort(
       urlName: json['url_name'] as String,
       thumb: json['thumb'] as String,
       itemName: json['item_name'] as String,
+      vaulted: json['vaulted'] as bool?,
     );
 
-Map<String, dynamic> _$ItemShortToJson(ItemShort instance) => <String, dynamic>{
-      'id': instance.id,
-      'url_name': instance.urlName,
-      'thumb': instance.thumb,
-      'item_name': instance.itemName,
-    };
+Map<String, dynamic> _$ItemShortToJson(ItemShort instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'url_name': instance.urlName,
+    'thumb': instance.thumb,
+    'item_name': instance.itemName,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('vaulted', instance.vaulted);
+  return val;
+}

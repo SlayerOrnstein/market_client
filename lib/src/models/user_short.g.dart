@@ -11,6 +11,7 @@ UserShort _$UserShortFromJson(Map<String, dynamic> json) => UserShort(
       ingameName: json['ingame_name'] as String,
       status: $enumDecode(_$UserStatusEnumMap, json['status']),
       region: json['region'] as String,
+      locale: json['locale'] as String,
       reputation: json['reputation'] as int,
       avatar: json['avatar'] as String?,
       lastSeen: json['last_seen'] == null
@@ -23,6 +24,7 @@ Map<String, dynamic> _$UserShortToJson(UserShort instance) => <String, dynamic>{
       'ingame_name': instance.ingameName,
       'status': _$UserStatusEnumMap[instance.status]!,
       'region': instance.region,
+      'locale': instance.locale,
       'reputation': instance.reputation,
       'avatar': instance.avatar,
       'last_seen': instance.lastSeen?.toIso8601String(),

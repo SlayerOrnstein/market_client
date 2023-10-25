@@ -52,7 +52,7 @@ abstract class OrderCommon extends Equatable
   final DateTime lastUpdate;
 
   /// Item subtype.
-  final String subtype;
+  final String? subtype;
 
   /// Whether the order is visible to other users or not.
   final bool visible;
@@ -152,7 +152,7 @@ class OrderFull extends OrderCommon {
   });
 
   /// The item the order is for.
-  final ItemInOrder item;
+  final ItemFull item;
 
   @override
   List<Object?> get props => super.props..add(item);

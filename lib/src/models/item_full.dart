@@ -7,7 +7,7 @@ part 'item_full.g.dart';
 /// {@template item_full}
 /// ItemFull description
 /// {@endtemplate}
-@JsonSerializable()
+@JsonSerializable(includeIfNull: false)
 class ItemFull extends ItemCommon {
   /// {@macro item_full}
   const ItemFull({
@@ -39,6 +39,8 @@ class ItemFull extends ItemCommon {
     required this.pt,
     required this.es,
     required this.pl,
+    required this.cs,
+    required this.uk,
   });
 
   /// Creates a ItemFull from Json map
@@ -103,6 +105,10 @@ class ItemFull extends ItemCommon {
   /// A description for pl
   final LangInItem pl;
 
+  final LangInItem cs;
+
+  final LangInItem uk;
+
   /// Creates a copy of the current ItemFull with property changes
   ItemFull copyWith({
     String? id,
@@ -133,6 +139,8 @@ class ItemFull extends ItemCommon {
     LangInItem? pt,
     LangInItem? es,
     LangInItem? pl,
+    LangInItem? cs,
+    LangInItem? uk,
   }) {
     return ItemFull(
       id: id ?? this.id,
@@ -163,6 +171,8 @@ class ItemFull extends ItemCommon {
       pt: pt ?? this.pt,
       es: es ?? this.es,
       pl: pl ?? this.pl,
+      cs: cs ?? this.cs,
+      uk: pl ?? this.uk,
     );
   }
 
@@ -187,6 +197,8 @@ class ItemFull extends ItemCommon {
         pt,
         es,
         pl,
+        cs,
+        uk,
       ]);
   }
 
@@ -204,6 +216,8 @@ class LangInItem extends Equatable {
     required this.itemName,
     required this.description,
     required this.wikiLink,
+    required this.thumb,
+    required this.icon,
     required this.drop,
   });
 
@@ -223,11 +237,15 @@ class LangInItem extends Equatable {
   @JsonKey(name: 'wiki_link')
   final String? wikiLink;
 
+  final String? thumb;
+
+  final String? icon;
+
   /// Translated drop sources for item.
   final List<LangDrop> drop;
 
   @override
-  List<Object?> get props => [itemName, description, wikiLink, drop];
+  List<Object?> get props => [itemName, description, wikiLink, thumb, drop];
 
   /// Creates a json map from an LangInItem instance.
   Map<String, dynamic> toJson() => _$LangInItemToJson(this);

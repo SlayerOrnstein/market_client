@@ -30,26 +30,35 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => CurrentUser(
       unreadMessages: json['unread_messages'] as int,
     );
 
-Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'anonymous': instance.anonymous,
-      'verification': instance.verification,
-      'ingame_name': instance.ingameName,
-      'check_code': instance.checkCode,
-      'role': _$RoleEnumMap[instance.role]!,
-      'patreon_profile': instance.patreonProfile,
-      'platform': _$MarketPlatformEnumMap[instance.platform]!,
-      'region': instance.region,
-      'banned': instance.banned,
-      'ban_reason': instance.banReason,
-      'avatar': instance.avatar,
-      'background': instance.background,
-      'linked_accounts': instance.linkedAccounts,
-      'has_mail': instance.hasMail,
-      'written_reviews': instance.writtenReviews,
-      'unread_messages': instance.unreadMessages,
-    };
+Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {
+  final val = <String, dynamic>{
+    'id': instance.id,
+    'anonymous': instance.anonymous,
+    'verification': instance.verification,
+    'ingame_name': instance.ingameName,
+    'check_code': instance.checkCode,
+    'role': _$RoleEnumMap[instance.role]!,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('patreon_profile', instance.patreonProfile?.toJson());
+  val['platform'] = _$MarketPlatformEnumMap[instance.platform]!;
+  val['region'] = instance.region;
+  val['banned'] = instance.banned;
+  writeNotNull('ban_reason', instance.banReason);
+  writeNotNull('avatar', instance.avatar);
+  writeNotNull('background', instance.background);
+  val['linked_accounts'] = instance.linkedAccounts.toJson();
+  val['has_mail'] = instance.hasMail;
+  val['written_reviews'] = instance.writtenReviews;
+  val['unread_messages'] = instance.unreadMessages;
+  return val;
+}
 
 const _$RoleEnumMap = {
   Role.anonymous: 'anonymous',
