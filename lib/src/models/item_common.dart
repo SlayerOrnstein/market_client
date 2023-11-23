@@ -3,8 +3,8 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:market_client/market_client.dart';
 
 /// {@template item_common}
-/// Common fields for [ItemInOrder] and [ItemFull]
-/// {@endtemplate item_common}
+/// Common fields for [ItemShort] and [ItemFull]
+/// {@endtemplate}
 class ItemCommon extends Equatable {
   /// {@macro item_common}
   const ItemCommon({
