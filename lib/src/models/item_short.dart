@@ -48,11 +48,12 @@ class ItemShort extends Equatable {
     bool? vaulted,
   }) {
     return ItemShort(
-        id: id ?? this.id,
-        urlName: urlName ?? this.urlName,
-        thumb: thumb ?? this.thumb,
-        itemName: itemName ?? this.itemName,
-        vaulted: vaulted ?? this.vaulted);
+      id: id ?? this.id,
+      urlName: urlName ?? this.urlName,
+      thumb: thumb ?? this.thumb,
+      itemName: itemName ?? this.itemName,
+      vaulted: vaulted ?? this.vaulted,
+    );
   }
 
   @override

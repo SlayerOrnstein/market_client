@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-
 part 'npc.g.dart';
 
 /// {@template npc}
@@ -10,15 +9,15 @@ part 'npc.g.dart';
 @JsonSerializable()
 class Npc extends Equatable {
   /// {@macro npc}
-  const Npc({ 
-  required this.id,
-  required this.urlName,
-  required this.icon,
-  required this.thumb,
-  required this.name,
+  const Npc({
+    required this.id,
+    required this.urlName,
+    required this.icon,
+    required this.thumb,
+    required this.name,
   });
 
-    /// Creates a Npc from Json map
+  /// Creates a Npc from Json map
   factory Npc.fromJson(Map<String, dynamic> data) => _$NpcFromJson(data);
 
   /// A description for id
@@ -36,8 +35,8 @@ class Npc extends Equatable {
   /// A description for name
   final String name;
 
-    /// Creates a copy of the current Npc with property changes
-  Npc copyWith({ 
+  /// Creates a copy of the current Npc with property changes
+  Npc copyWith({
     String? id,
     String? urlName,
     String? icon,
@@ -53,8 +52,7 @@ class Npc extends Equatable {
     );
   }
 
-
-    @override
+  @override
   List<Object?> get props => [
         id,
         urlName,
@@ -63,7 +61,6 @@ class Npc extends Equatable {
         name,
       ];
 
-    /// Creates a Json map from a Npc
+  /// Creates a Json map from a Npc
   Map<String, dynamic> toJson() => _$NpcToJson(this);
-
 }

@@ -77,8 +77,8 @@ void main() {
           'item': {
             'id': '54aae292e7798909064f1575',
             'items_in_set': ordersWithItem.$2?.map((i) => i.toJson()).toList(),
-          }
-        }
+          },
+        },
       };
 
       expect(ordersWithItem.$2, isNotNull);

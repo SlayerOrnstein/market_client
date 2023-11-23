@@ -42,8 +42,10 @@ class ItemsEndpoint {
     String urlName, {
     bool includeItem = false,
   }) async {
-    final response = await _client.get('/items/$urlName/orders',
-        queryParameters: includeItem ? {'include': 'item'} : null);
+    final response = await _client.get(
+      '/items/$urlName/orders',
+      queryParameters: includeItem ? {'include': 'item'} : null,
+    );
     final payload = HttpHelpers.parseResponse(response.body);
     final orders = (payload['orders'] as List<dynamic>)
         .map((e) => OrderRow.fromJson(e as Map<String, dynamic>))
@@ -54,7 +56,8 @@ class ItemsEndpoint {
       final included = data['include'] as Map<String, dynamic>;
       final includedItem = included['item'] as Map<String, dynamic>;
       final itemSet = List<Map<String, dynamic>>.from(
-          includedItem['items_in_set'] as List<dynamic>);
+        includedItem['items_in_set'] as List<dynamic>,
+      );
 
       return (orders, itemSet.map(ItemFull.fromJson).toList());
     }
