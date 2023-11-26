@@ -106,4 +106,19 @@ class MarketHttpClient {
 
     return HttpHelpers.parseResponse(res.body);
   }
+
+  /// Creates a new [MarketHttpClient] with the new given parameters.
+  MarketHttpClient copyWith({
+    String? token,
+    String? language,
+    MarketPlatform? platform,
+    http.Client? client,
+  }) {
+    return MarketHttpClient(
+      token: token ?? this.token,
+      language: language ?? this.language,
+      platform: platform ?? this.platform,
+      client: client ?? this.client,
+    );
+  }
 }

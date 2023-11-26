@@ -13,7 +13,7 @@ class AuthEndpoint {
   /// Signs in a user and returns an instance of [CurrentUser] and the token.
   ///
   /// Token should be saved by the client securely.
-  Future<(String, CurrentUser)> signIn(SignInRequest request) async {
+  Future<(MarketHttpClient, CurrentUser)> signIn(SignInRequest request) async {
     final response = await _client.post(
       '/auth/signin',
       headers: <String, String>{'authorization': 'JWT'},
@@ -27,7 +27,7 @@ class AuthEndpoint {
     }
 
     return (
-      auth,
+      _client.copyWith(token: auth),
       CurrentUser.fromJson(payload['user'] as Map<String, dynamic>)
     );
   }
