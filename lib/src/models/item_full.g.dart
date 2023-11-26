@@ -10,7 +10,7 @@ ItemFull _$ItemFullFromJson(Map<String, dynamic> json) => ItemFull(
       id: json['id'] as String,
       urlName: json['url_name'] as String,
       icon: json['icon'] as String,
-      iconFormat: json['icon_format'] as String,
+      iconFormat: json['icon_format'] as String?,
       thumb: json['thumb'] as String,
       subIcon: json['sub_icon'] as String?,
       modMaxRank: json['mod_max_rank'] as int?,
@@ -25,7 +25,7 @@ ItemFull _$ItemFullFromJson(Map<String, dynamic> json) => ItemFull(
       setRoot: json['set_root'] as bool?,
       masteryLevel: json['mastery_level'] as int?,
       rarity: $enumDecodeNullable(_$RarityEnumMap, json['rarity']),
-      tradingTax: json['trading_tax'] as int,
+      tradingTax: json['trading_tax'] as int?,
       en: LangInItem.fromJson(json['en'] as Map<String, dynamic>),
       ru: LangInItem.fromJson(json['ru'] as Map<String, dynamic>),
       ko: LangInItem.fromJson(json['ko'] as Map<String, dynamic>),
@@ -62,12 +62,12 @@ Map<String, dynamic> _$ItemFullToJson(ItemFull instance) {
   writeNotNull('cyan_stars', instance.cyanStars);
   writeNotNull('amber_stars', instance.amberStars);
   writeNotNull('ducats', instance.ducats);
-  val['icon_format'] = instance.iconFormat;
+  writeNotNull('icon_format', instance.iconFormat);
   writeNotNull('quantity_for_set', instance.quantityForSet);
   writeNotNull('set_root', instance.setRoot);
   writeNotNull('mastery_level', instance.masteryLevel);
   writeNotNull('rarity', _$RarityEnumMap[instance.rarity]);
-  val['trading_tax'] = instance.tradingTax;
+  writeNotNull('trading_tax', instance.tradingTax);
   val['en'] = instance.en.toJson();
   val['ru'] = instance.ru.toJson();
   val['ko'] = instance.ko.toJson();
@@ -94,19 +94,18 @@ const _$RarityEnumMap = {
 
 LangInItem _$LangInItemFromJson(Map<String, dynamic> json) => LangInItem(
       itemName: json['item_name'] as String,
-      description: json['description'] as String,
+      description: json['description'] as String?,
       wikiLink: json['wiki_link'] as String?,
       thumb: json['thumb'] as String?,
       icon: json['icon'] as String?,
-      drop: (json['drop'] as List<dynamic>)
-          .map((e) => LangDrop.fromJson(e as Map<String, dynamic>))
+      drop: (json['drop'] as List<dynamic>?)
+          ?.map((e) => LangDrop.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
 Map<String, dynamic> _$LangInItemToJson(LangInItem instance) {
   final val = <String, dynamic>{
     'item_name': instance.itemName,
-    'description': instance.description,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -115,10 +114,11 @@ Map<String, dynamic> _$LangInItemToJson(LangInItem instance) {
     }
   }
 
+  writeNotNull('description', instance.description);
   writeNotNull('wiki_link', instance.wikiLink);
   writeNotNull('thumb', instance.thumb);
   writeNotNull('icon', instance.icon);
-  val['drop'] = instance.drop.map((e) => e.toJson()).toList();
+  writeNotNull('drop', instance.drop?.map((e) => e.toJson()).toList());
   return val;
 }
 

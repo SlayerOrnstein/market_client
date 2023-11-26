@@ -4,6 +4,7 @@ export 'item_full.dart';
 export 'item_short.dart';
 export 'location.dart';
 export 'npc.dart';
+export 'online_count.dart';
 export 'order.dart';
 export 'registration_request.dart';
 export 'sign_in_request.dart';

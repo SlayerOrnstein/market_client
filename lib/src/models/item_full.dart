@@ -49,7 +49,7 @@ class ItemFull extends ItemCommon {
 
   /// A description for iconFormat
   @JsonKey(name: 'icon_format')
-  final String iconFormat;
+  final String? iconFormat;
 
   /// A description for quantityForSet
   @JsonKey(name: 'quantity_for_set')
@@ -68,7 +68,7 @@ class ItemFull extends ItemCommon {
 
   /// A description for tradingTax
   @JsonKey(name: 'trading_tax')
-  final int tradingTax;
+  final int? tradingTax;
 
   /// A description for en
   final LangInItem en;
@@ -231,7 +231,7 @@ class LangInItem extends Equatable {
   final String itemName;
 
   /// Item description translated.
-  final String description;
+  final String? description;
 
   /// Item wikilink if available.
   @JsonKey(name: 'wiki_link')
@@ -242,7 +242,7 @@ class LangInItem extends Equatable {
   final String? icon;
 
   /// Translated drop sources for item.
-  final List<LangDrop> drop;
+  final List<LangDrop>? drop;
 
   @override
   List<Object?> get props => [itemName, description, wikiLink, thumb, drop];

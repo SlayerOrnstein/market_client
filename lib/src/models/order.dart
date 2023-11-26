@@ -151,8 +151,14 @@ class OrderFull extends OrderCommon {
     required this.item,
   });
 
+  factory OrderFull.fromJson(Map<String, dynamic> json) {
+    return _$OrderFullFromJson(json);
+  }
+
   /// The item the order is for.
   final ItemFull item;
+
+  Map<String, dynamic> toJson() => _$OrderFullToJson(this);
 
   @override
   List<Object?> get props => super.props..add(item);
