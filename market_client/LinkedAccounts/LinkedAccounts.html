@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">market_client</a></li>
-    <li><a href="../../market_client/market_client-library.html">market_client</a></li>
+    <li><a href="../../market_client/market_client-library.html">market_client.dart</a></li>
     <li><a href="../../market_client/LinkedAccounts-class.html">LinkedAccounts</a></li>
     <li class="self-crumb">LinkedAccounts const constructor</li>
   </ol>
@@ -62,9 +62,9 @@
 
     <section class="multi-line-signature">
       const
-      <span class="name ">LinkedAccounts</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-steamProfile">{<span class="type-annotation"><a href="https://api.dart.dev/stable/3.1.5/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">steamProfile</span> = <span class="default-value">false</span>, </span></li>
-<li><span class="parameter" id="-param-patreonProfile"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.1.5/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">patreonProfile</span> = <span class="default-value">false</span>, </span></li>
-<li><span class="parameter" id="-param-xboxProfile"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.1.5/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">xboxProfile</span> = <span class="default-value">false</span>}</span></li>
+      <span class="name ">LinkedAccounts</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-steamProfile">{<span class="type-annotation"><a href="https://api.dart.dev/stable/3.2.1/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">steamProfile</span> = <span class="default-value">false</span>, </span></li>
+<li><span class="parameter" id="-param-patreonProfile"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.2.1/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">patreonProfile</span> = <span class="default-value">false</span>, </span></li>
+<li><span class="parameter" id="-param-xboxProfile"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.2.1/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">xboxProfile</span> = <span class="default-value">false</span>}</span></li>
 </ol>)
     </section>
 
@@ -77,7 +77,11 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">const LinkedAccounts</code></pre>
+  <pre class="language-dart"><code class="language-dart">const LinkedAccounts({
+  this.steamProfile = false,
+  this.patreonProfile = false,
+  this.xboxProfile = false,
+});</code></pre>
 </section>
 
 

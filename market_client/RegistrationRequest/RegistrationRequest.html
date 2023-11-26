@@ -29,7 +29,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">market_client</a></li>
-    <li><a href="../../market_client/market_client-library.html">market_client</a></li>
+    <li><a href="../../market_client/market_client-library.html">market_client.dart</a></li>
     <li><a href="../../market_client/RegistrationRequest-class.html">RegistrationRequest</a></li>
     <li class="self-crumb">RegistrationRequest const constructor</li>
   </ol>
@@ -63,12 +63,12 @@
     <section class="multi-line-signature">
       const
       <span class="name ">RegistrationRequest</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-authType">{<span>required</span> <span class="type-annotation"><a href="../../market_client/AuthType.html">AuthType</a></span> <span class="parameter-name">authType</span>, </span></li>
-<li><span class="parameter" id="-param-email"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.1.5/dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span>, </span></li>
-<li><span class="parameter" id="-param-password"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.1.5/dart-core/String-class.html">String</a></span> <span class="parameter-name">password</span>, </span></li>
-<li><span class="parameter" id="-param-passwordSecond"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.1.5/dart-core/String-class.html">String</a></span> <span class="parameter-name">passwordSecond</span>, </span></li>
-<li><span class="parameter" id="-param-region"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.1.5/dart-core/String-class.html">String</a></span> <span class="parameter-name">region</span>, </span></li>
-<li><span class="parameter" id="-param-deviceId"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.1.5/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">deviceId</span>, </span></li>
-<li><span class="parameter" id="-param-recaptcha"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.1.5/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">recaptcha</span>}</span></li>
+<li><span class="parameter" id="-param-email"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.2.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">email</span>, </span></li>
+<li><span class="parameter" id="-param-password"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.2.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">password</span>, </span></li>
+<li><span class="parameter" id="-param-passwordSecond"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.2.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">passwordSecond</span>, </span></li>
+<li><span class="parameter" id="-param-region"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.2.1/dart-core/String-class.html">String</a></span> <span class="parameter-name">region</span>, </span></li>
+<li><span class="parameter" id="-param-deviceId"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.2.1/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">deviceId</span>, </span></li>
+<li><span class="parameter" id="-param-recaptcha"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.2.1/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">recaptcha</span>}</span></li>
 </ol>)
     </section>
 
@@ -81,7 +81,19 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">const RegistrationRequest</code></pre>
+  <pre class="language-dart"><code class="language-dart">const RegistrationRequest({
+  required this.authType,
+  required this.email,
+  required this.password,
+  required this.passwordSecond,
+  required this.region,
+  this.deviceId,
+  this.recaptcha,
+}) : assert(
+        deviceId == null || recaptcha == null,
+        &#39;Google reCaptcha, required if you are not &#39;
+        &#39;using special device auth.&#39;,
+      );</code></pre>
 </section>
 
 
