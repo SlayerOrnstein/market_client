@@ -1,5 +1,4 @@
 import 'package:market_client/market_client.dart';
-import 'package:market_client/src/models/recent_orders.dart';
 
 /// {@template orders_endpoint}
 /// Contains functions to retrive new and recent orders.

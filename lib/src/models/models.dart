@@ -6,6 +6,7 @@ export 'location.dart';
 export 'npc.dart';
 export 'online_count.dart';
 export 'order.dart';
+export 'recent_orders.dart';
 export 'registration_request.dart';
 export 'sign_in_request.dart';
 export 'user_short.dart';
