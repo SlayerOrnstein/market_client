@@ -99,14 +99,16 @@ class ItemFull extends ItemCommon {
   /// A description for pt
   final LangInItem pt;
 
-  /// A description for es
+  /// Spanish
   final LangInItem es;
 
   /// A description for pl
   final LangInItem pl;
 
+  /// Czech
   final LangInItem cs;
 
+  /// Ukrainian(?)
   final LangInItem uk;
 
   /// Creates a copy of the current ItemFull with property changes
@@ -237,8 +239,10 @@ class LangInItem extends Equatable {
   @JsonKey(name: 'wiki_link')
   final String? wikiLink;
 
+  /// Thumbnail name.
   final String? thumb;
 
+  /// Icon name.
   final String? icon;
 
   /// Translated drop sources for item.

@@ -151,6 +151,7 @@ class OrderFull extends OrderCommon {
     required this.item,
   });
 
+  /// Creates an [OrderFull] instance from a json.
   factory OrderFull.fromJson(Map<String, dynamic> json) {
     return _$OrderFullFromJson(json);
   }
@@ -158,6 +159,7 @@ class OrderFull extends OrderCommon {
   /// The item the order is for.
   final ItemFull item;
 
+  /// Creates a json map.
   Map<String, dynamic> toJson() => _$OrderFullToJson(this);
 
   @override

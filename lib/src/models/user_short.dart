@@ -38,6 +38,7 @@ class UserShort extends Equatable {
   /// A description for region
   final String region;
 
+  /// User's locale.
   final String locale;
 
   /// A description for reputation

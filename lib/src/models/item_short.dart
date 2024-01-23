@@ -37,6 +37,7 @@ class ItemShort extends Equatable {
   @JsonKey(name: 'item_name')
   final String itemName;
 
+  /// Whether the item is vaulted or not.
   final bool? vaulted;
 
   /// Creates a copy of the current ItemShort with property changes
