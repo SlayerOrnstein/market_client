@@ -12,7 +12,7 @@ class ItemsEndpoint {
   final MarketHttpClient _client;
 
   /// Get a list of all tradable items.
-  Future<List<ItemShort>> getItems() async {
+  Future<List<ItemShort>> fetchItems() async {
     final response = await _client.get('/items');
     final payload = HttpHelpers.parseResponse(response.body);
 
@@ -24,8 +24,8 @@ class ItemsEndpoint {
   /// Get information about a specific item.
   ///
   /// Warframe market url name are in snake case. If you are unsure of an
-  /// item's url name you can pull and cache [ItemsEndpoint.getItems].
-  Future<List<ItemFull>> getItem(String urlName) async {
+  /// item's url name you can pull and cache [ItemsEndpoint.fetchItems].
+  Future<List<ItemFull>> fetchItem(String urlName) async {
     final response = await _client.get('/items/$urlName');
     final payload = HttpHelpers.parseResponse(response.body);
     final item = payload['item'] as Map<String, dynamic>;
@@ -38,7 +38,7 @@ class ItemsEndpoint {
   /// Get a list of orders for an item.
   ///
   /// [includeItem] will include the item itself.
-  Future<(List<OrderRow>, List<ItemFull>?)> getItemOrders(
+  Future<(List<OrderRow>, List<ItemFull>?)> fetchItemOrders(
     String urlName, {
     bool includeItem = false,
   }) async {

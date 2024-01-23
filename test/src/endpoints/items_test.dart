@@ -24,7 +24,7 @@ void main() {
     when(() => mockClient.get('/items'))
         .thenAnswer((_) async => Response(itemsFixture, 200));
 
-    final items = await itemsEndpoint.getItems();
+    final items = await itemsEndpoint.fetchItems();
     final itemsJson = {
       'payload': {
         'items': items.map((i) => i.toJson()).toList(),
@@ -41,7 +41,7 @@ void main() {
     when(() => mockClient.get('/items/secura_dual_cestra'))
         .thenAnswer((_) async => Response(itemFullFixture, 200));
 
-    final itemsInSet = await itemsEndpoint.getItem('secura_dual_cestra');
+    final itemsInSet = await itemsEndpoint.fetchItem('secura_dual_cestra');
     final itemJson = {
       'payload': {
         'item': {
@@ -67,7 +67,7 @@ void main() {
       ).thenAnswer((_) async => Response(ordersFixture, 200));
 
       final ordersWithItem = await itemsEndpoint
-          .getItemOrders('secura_dual_cestra', includeItem: true);
+          .fetchItemOrders('secura_dual_cestra', includeItem: true);
 
       final ordersJson = {
         'payload': {
@@ -94,7 +94,7 @@ void main() {
       ).thenAnswer((_) async => Response(ordersFixture, 200));
 
       final ordersWithItem =
-          await itemsEndpoint.getItemOrders('secura_dual_cestra');
+          await itemsEndpoint.fetchItemOrders('secura_dual_cestra');
 
       final ordersJson = {
         'payload': {

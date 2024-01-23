@@ -5,7 +5,7 @@ Future<void> main() async {
   final marketWebsocket = MarketWebsocket.openWebsocket(httpClient.platform);
 
   final client = MarketClient(httpClient, marketWebsocket);
-  final recentOrders = await client.orders.fetchMostRecentOrders();
+  final recentOrders = await client.orders.fetchRecentOrders();
 
   for (final order in recentOrders.sellOrders) {
     // ignore: avoid_print
