@@ -18,7 +18,7 @@ class OrdersEndpoint {
     return payload['order'] as Map<String, dynamic>;
   }
 
-  /// Initializes and listens for new orders.
+  /// Emits new orders.
   Stream<OrderFull> newOrders() {
     _marketWebsocket.send(MarketWebsocketTypes.subscribeToNewOrders);
 
@@ -31,7 +31,7 @@ class OrdersEndpoint {
   /// Retrives a list of the most recent orders.
   ///
   /// Not sure up till when so expect a long list.
-  Future<MostRecentOrders> getMostRecentOrders() async {
+  Future<MostRecentOrders> fetchRecentOrders() async {
     final response = await _client.get('/most_recent');
     final payload = HttpHelpers.parseResponse(response.body);
 
