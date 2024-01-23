@@ -2,8 +2,8 @@ plugins:
   - "@semantic-release/commit-analyzer"
   - "@semantic-release/release-notes-generator"
   - "@semantic-release/github"
-  - - "@semantic-release/exec"
-    - prepareCmd: "dart pub global run cider version ${nextRelease.version}"
+  - - "semantic-release-pub"
+    - publsihPub: false
   - - "@semantic-release/git"
     - assets: ["pubspec.yaml"]
       message: "chore(release): ${nextRelease.version}"

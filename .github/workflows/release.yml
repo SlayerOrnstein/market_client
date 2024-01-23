@@ -14,8 +14,6 @@ jobs:
           persist-credentials: false
       - name: Setup Dart
         uses: dart-lang/setup-dart@v1.5.0
-      - name: Install dependacies
-        run: dart pub global activate cider
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v3
         env:
@@ -24,3 +22,4 @@ jobs:
           extra_plugins: |
             @semantic-release/exec
             @semantic-release/git
+            semantic-release-pub
