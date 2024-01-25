@@ -63,7 +63,7 @@
     <section class="multi-line-signature">
       
 
-<span class="returntype"><a href="https://api.dart.dev/stable/3.2.5/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../market_client/MostRecentOrders-class.html">MostRecentOrders</a></span>&gt;</span></span>
+<span class="returntype"><a href="https://api.dart.dev/stable/3.2.6/dart-async/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../market_client/MostRecentOrders-class.html">MostRecentOrders</a></span>&gt;</span></span>
 <span class="name ">fetchRecentOrders</span>(<wbr>)
 
       
@@ -81,7 +81,8 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Future&lt;MostRecentOrders&gt; fetchRecentOrders() async {
   final response = await _client.get(&#39;&#47;most_recent&#39;);
-  final payload = HttpHelpers.parseResponse(response.body);
+  final data = await compute(HttpHelpers.parseResponse, response.body);
+  final payload = data[&#39;payload&#39;] as Map&lt;String, dynamic&gt;;
 
   return MostRecentOrders.fromJson(payload);
 }</code></pre>
