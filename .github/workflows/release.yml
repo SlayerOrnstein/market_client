@@ -15,7 +15,7 @@ jobs:
       - name: Setup Dart
         uses: dart-lang/setup-dart@v1.5.0
       - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v3
+        uses: cycjimmy/semantic-release-action@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
