@@ -13,7 +13,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Setup Dart
-        uses: dart-lang/setup-dart@v1.5.0
+        uses: dart-lang/setup-dart@v1.6.1
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v4
         env:
