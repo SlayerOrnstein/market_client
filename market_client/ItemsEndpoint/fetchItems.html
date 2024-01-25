@@ -80,7 +80,8 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Future&lt;List&lt;ItemShort&gt;&gt; fetchItems() async {
   final response = await _client.get(&#39;&#47;items&#39;);
-  final payload = HttpHelpers.parseResponse(response.body);
+  final data = HttpHelpers.parseResponse(response.body);
+  final payload = data[&#39;payload&#39;] as Map&lt;String, dynamic&gt;;
 
   return (payload[&#39;items&#39;] as List&lt;dynamic&gt;)
       .map((e) =&gt; ItemShort.fromJson(e as Map&lt;String, dynamic&gt;))

@@ -83,7 +83,8 @@ item's url name you can pull and cache <a href="../../market_client/ItemsEndpoin
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Future&lt;List&lt;ItemFull&gt;&gt; fetchItem(String urlName) async {
   final response = await _client.get(&#39;&#47;items&#47;$urlName&#39;);
-  final payload = HttpHelpers.parseResponse(response.body);
+  final data = HttpHelpers.parseResponse(response.body);
+  final payload = data[&#39;payload&#39;] as Map&lt;String, dynamic&gt;;
   final item = payload[&#39;item&#39;] as Map&lt;String, dynamic&gt;;
   final itemsInSet =
       List&lt;Map&lt;String, dynamic&gt;&gt;.from(item[&#39;items_in_set&#39;] as List&lt;dynamic&gt;);
