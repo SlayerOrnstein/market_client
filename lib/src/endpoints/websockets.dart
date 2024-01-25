@@ -48,7 +48,7 @@ class MarketWebsocket {
   /// All events are decoded into a json object.
   Stream<Map<String, dynamic>> get messages {
     return _websocket.messages.map<Map<String, dynamic>>(
-      (event) => json.decode(event as String) as Map<String, dynamic>,
+      (event) => HttpHelpers.parseResponse(event as String),
     );
   }
 

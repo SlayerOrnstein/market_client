@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:market_client/market_client.dart';
 
 /// {@template items_endpoint}
@@ -46,13 +44,13 @@ class ItemsEndpoint {
       '/items/$urlName/orders',
       queryParameters: includeItem ? {'include': 'item'} : null,
     );
-    final payload = HttpHelpers.parseResponse(response.body);
+    final data = HttpHelpers.parseResponse(response.body);
+    final payload = data['payload'] as Map<String, dynamic>;
     final orders = (payload['orders'] as List<dynamic>)
         .map((e) => OrderRow.fromJson(e as Map<String, dynamic>))
         .toList();
 
     if (includeItem) {
-      final data = json.decode(response.body) as Map<String, dynamic>;
       final included = data['include'] as Map<String, dynamic>;
       final includedItem = included['item'] as Map<String, dynamic>;
       final itemSet = List<Map<String, dynamic>>.from(

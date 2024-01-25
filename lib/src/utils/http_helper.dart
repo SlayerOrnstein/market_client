@@ -30,22 +30,9 @@ abstract class HttpHelpers {
     };
   }
 
-  /// Returns the payload of Warframe Market's response.
-  ///
-  /// Warframe market wraps thier responses like so:
-  ///
-  /// ```json
-  /// {
-  ///   "payload": {}
-  /// }
-  /// ```
-  ///
-  /// this function simply returns the data in payload and discards everything
-  /// else.
+  /// Returns the response body into a Map object of Warframe Market's response.
   static Map<String, dynamic> parseResponse(String body) {
-    final data = json.decode(body) as Map<String, dynamic>;
-
-    return data['payload'] as Map<String, dynamic>;
+    return json.decode(body) as Map<String, dynamic>;
   }
 
   // ignore: public_member_api_docs

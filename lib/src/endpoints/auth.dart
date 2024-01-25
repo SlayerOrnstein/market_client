@@ -20,7 +20,8 @@ class AuthEndpoint {
       body: request.toJson(),
     );
 
-    final payload = HttpHelpers.parseResponse(response.body);
+    final data = HttpHelpers.parseResponse(response.body);
+    final payload = data['payload'] as Map<String, dynamic>;
     final auth = response.headers['authorization'];
     if (auth == null) {
       throw UnauthorisedException();
@@ -43,7 +44,8 @@ class AuthEndpoint {
       body: request.toJson(),
     );
 
-    final payload = HttpHelpers.parseResponse(response.body);
+    final data = HttpHelpers.parseResponse(response.body);
+    final payload = data['payload'] as Map<String, dynamic>;
     final auth = response.headers['authorization'];
     if (auth == null) {
       throw UnauthorisedException();
