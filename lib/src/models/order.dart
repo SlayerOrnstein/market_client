@@ -45,10 +45,12 @@ abstract class OrderCommon extends Equatable
 
   /// The date this order was created on
   @JsonKey(name: 'creation_date')
+  @DateTimeWithOffset()
   final DateTime creationDate;
 
   /// THe last time this order was updated.
   @JsonKey(name: 'last_update')
+  @DateTimeWithOffset()
   final DateTime lastUpdate;
 
   /// Item subtype.

@@ -14,9 +14,8 @@ UserShort _$UserShortFromJson(Map<String, dynamic> json) => UserShort(
       locale: json['locale'] as String,
       reputation: json['reputation'] as int,
       avatar: json['avatar'] as String?,
-      lastSeen: json['last_seen'] == null
-          ? null
-          : DateTime.parse(json['last_seen'] as String),
+      lastSeen: _$JsonConverterFromJson<String, DateTime>(
+          json['last_seen'], const DateTimeWithOffset().fromJson),
     );
 
 Map<String, dynamic> _$UserShortToJson(UserShort instance) => <String, dynamic>{
@@ -27,7 +26,8 @@ Map<String, dynamic> _$UserShortToJson(UserShort instance) => <String, dynamic>{
       'locale': instance.locale,
       'reputation': instance.reputation,
       'avatar': instance.avatar,
-      'last_seen': instance.lastSeen?.toIso8601String(),
+      'last_seen': _$JsonConverterToJson<String, DateTime>(
+          instance.lastSeen, const DateTimeWithOffset().toJson),
     };
 
 const _$UserStatusEnumMap = {
@@ -35,3 +35,15 @@ const _$UserStatusEnumMap = {
   UserStatus.online: 'online',
   UserStatus.offline: 'offline',
 };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);

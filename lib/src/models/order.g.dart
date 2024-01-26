@@ -13,8 +13,10 @@ OrderRow _$OrderRowFromJson(Map<String, dynamic> json) => OrderRow(
       orderType: $enumDecode(_$OrderTypeEnumMap, json['order_type']),
       platform: $enumDecode(_$MarketPlatformEnumMap, json['platform']),
       region: json['region'] as String,
-      creationDate: DateTime.parse(json['creation_date'] as String),
-      lastUpdate: DateTime.parse(json['last_update'] as String),
+      creationDate:
+          const DateTimeWithOffset().fromJson(json['creation_date'] as String),
+      lastUpdate:
+          const DateTimeWithOffset().fromJson(json['last_update'] as String),
       subtype: json['subtype'] as String?,
       visible: json['visible'] as bool,
       user: UserShort.fromJson(json['user'] as Map<String, dynamic>),
@@ -28,8 +30,8 @@ Map<String, dynamic> _$OrderRowToJson(OrderRow instance) {
     'order_type': _$OrderTypeEnumMap[instance.orderType]!,
     'platform': _$MarketPlatformEnumMap[instance.platform]!,
     'region': instance.region,
-    'creation_date': instance.creationDate.toIso8601String(),
-    'last_update': instance.lastUpdate.toIso8601String(),
+    'creation_date': const DateTimeWithOffset().toJson(instance.creationDate),
+    'last_update': const DateTimeWithOffset().toJson(instance.lastUpdate),
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -63,8 +65,10 @@ OrderFull _$OrderFullFromJson(Map<String, dynamic> json) => OrderFull(
       orderType: $enumDecode(_$OrderTypeEnumMap, json['order_type']),
       platform: $enumDecode(_$MarketPlatformEnumMap, json['platform']),
       region: json['region'] as String,
-      creationDate: DateTime.parse(json['creation_date'] as String),
-      lastUpdate: DateTime.parse(json['last_update'] as String),
+      creationDate:
+          const DateTimeWithOffset().fromJson(json['creation_date'] as String),
+      lastUpdate:
+          const DateTimeWithOffset().fromJson(json['last_update'] as String),
       subtype: json['subtype'] as String?,
       visible: json['visible'] as bool,
       user: UserShort.fromJson(json['user'] as Map<String, dynamic>),
@@ -79,8 +83,8 @@ Map<String, dynamic> _$OrderFullToJson(OrderFull instance) {
     'order_type': _$OrderTypeEnumMap[instance.orderType]!,
     'platform': _$MarketPlatformEnumMap[instance.platform]!,
     'region': instance.region,
-    'creation_date': instance.creationDate.toIso8601String(),
-    'last_update': instance.lastUpdate.toIso8601String(),
+    'creation_date': const DateTimeWithOffset().toJson(instance.creationDate),
+    'last_update': const DateTimeWithOffset().toJson(instance.lastUpdate),
   };
 
   void writeNotNull(String key, dynamic value) {

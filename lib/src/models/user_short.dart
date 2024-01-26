@@ -49,6 +49,7 @@ class UserShort extends Equatable {
 
   /// A description for lastSeen
   @JsonKey(name: 'last_seen')
+  @DateTimeWithOffset()
   final DateTime? lastSeen;
 
   /// Creates a copy of the current UserShort with property changes
