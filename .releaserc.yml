@@ -3,7 +3,7 @@ plugins:
   - "@semantic-release/release-notes-generator"
   - "@semantic-release/github"
   - - "semantic-release-pub"
-    - publsihPub: false
+    - publishPub: false
   - - "@semantic-release/git"
     - assets: ["pubspec.yaml"]
       message: "chore(release): ${nextRelease.version}"
