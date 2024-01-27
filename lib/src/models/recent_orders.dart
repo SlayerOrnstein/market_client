@@ -28,6 +28,17 @@ class MostRecentOrders extends Equatable {
   /// Creates a json object from the current [MostRecentOrders].
   Map<String, dynamic> toJson() => _$MostRecentOrdersToJson(this);
 
+  /// Creates a new instance of most recent with updated values.
+  MostRecentOrders copyWith({
+    List<OrderFull>? sellOrders,
+    List<OrderFull>? buyOrders,
+  }) {
+    return MostRecentOrders(
+      sellOrders: sellOrders ?? this.sellOrders,
+      buyOrders: buyOrders ?? this.buyOrders,
+    );
+  }
+
   @override
   List<Object?> get props => [sellOrders, buyOrders];
 }
