@@ -1,6 +1,6 @@
 name: market_client
 description: A starting point for Dart libraries or applications.
-version: 4.2.1
+version: 4.3.0
 publish_to: none
 # homepage: https://www.example.com
 environment:
