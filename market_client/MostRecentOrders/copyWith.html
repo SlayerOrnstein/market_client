@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the MarketWebsocket constructor from Class MarketWebsocket from the market_client library, for the Dart programming language.">
-  <title>MarketWebsocket constructor - MarketWebsocket - market_client library - Dart API</title>
+  <meta name="description" content="API docs for the copyWith method from the MostRecentOrders class, for the Dart programming language.">
+  <title>copyWith method - MostRecentOrders class - market_client library - Dart API</title>
 
 
   
@@ -30,10 +30,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">market_client</a></li>
     <li><a href="../../market_client/market_client-library.html">market_client.dart</a></li>
-    <li><a href="../../market_client/MarketWebsocket-class.html">MarketWebsocket</a></li>
-    <li class="self-crumb">MarketWebsocket constructor</li>
+    <li><a href="../../market_client/MostRecentOrders-class.html">MostRecentOrders</a></li>
+    <li class="self-crumb">copyWith method</li>
   </ol>
-  <div class="self-name">MarketWebsocket</div>
+  <div class="self-name">copyWith</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -54,28 +54,41 @@
   <div
       id="dartdoc-main-content"
       class="main-content"
-      data-above-sidebar="market_client&#47;MarketWebsocket-class-sidebar.html"
+      data-above-sidebar="market_client&#47;MostRecentOrders-class-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-constructor">MarketWebsocket</span> constructor 
+<h1><span class="kind-method">copyWith</span> method 
 </h1></div>
 
     <section class="multi-line-signature">
       
-      <span class="name ">MarketWebsocket</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-websocket"><span class="type-annotation"><a href="https://pub.dev/documentation/web_socket_client/0.1.1/web_socket_client/WebSocket-class.html">WebSocket</a></span> <span class="parameter-name">websocket</span></span></li>
-</ol>)
-    </section>
 
+<span class="returntype"><a href="../../market_client/MostRecentOrders-class.html">MostRecentOrders</a></span>
+<span class="name ">copyWith</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="copyWith-param-sellOrders">{<span class="type-annotation"><a href="https://api.dart.dev/stable/3.2.6/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../market_client/OrderFull-class.html">OrderFull</a></span>&gt;</span>?</span> <span class="parameter-name">sellOrders</span>, </span></li>
+<li><span class="parameter" id="copyWith-param-buyOrders"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.2.6/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../market_client/OrderFull-class.html">OrderFull</a></span>&gt;</span>?</span> <span class="parameter-name">buyOrders</span>}</span></li>
+</ol>)
+
+      
+
+    </section>
     
 <section class="desc markdown">
-  <p>Basic functions to listen to the websocket provided by Warframe.market.</p>
+  <p>Creates a new instance of most recent with updated values.</p>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">MarketWebsocket(WebSocket websocket) : _websocket = websocket;</code></pre>
+  <pre class="language-dart"><code class="language-dart">MostRecentOrders copyWith({
+  List&lt;OrderFull&gt;? sellOrders,
+  List&lt;OrderFull&gt;? buyOrders,
+}) {
+  return MostRecentOrders(
+    sellOrders: sellOrders ?? this.sellOrders,
+    buyOrders: buyOrders ?? this.buyOrders,
+  );
+}</code></pre>
 </section>
 
 
@@ -92,14 +105,14 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">market_client</a></li>
     <li><a href="../../market_client/market_client-library.html">market_client</a></li>
-    <li><a href="../../market_client/MarketWebsocket-class.html">MarketWebsocket</a></li>
-    <li class="self-crumb">MarketWebsocket constructor</li>
+    <li><a href="../../market_client/MostRecentOrders-class.html">MostRecentOrders</a></li>
+    <li class="self-crumb">copyWith method</li>
 </ol>
 
 
-    <h5>MarketWebsocket class</h5>
+    <h5>MostRecentOrders class</h5>
     <div id="dartdoc-sidebar-left-content"></div>
-  </div><!--/.sidebar-offcanvas-left-->
+  </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
   </div><!--/.sidebar-offcanvas-->
