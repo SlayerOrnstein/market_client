@@ -25,23 +25,7 @@ class MarketWebsocket {
   /// {@macro websocket_endpoint}
   MarketWebsocket(WebSocket websocket) : _websocket = websocket;
 
-  /// Creates a websocket connection  or returns the currently active one.
-  factory MarketWebsocket.openWebsocket(MarketPlatform platform) {
-    final wsUri = Uri(
-      scheme: 'wss',
-      host: 'warframe.market',
-      path: 'socket',
-      queryParameters: {'platform': platform.name},
-    );
-
-    final channel = WebSocket(wsUri);
-
-    return _marketWebsocket ??= MarketWebsocket(channel);
-  }
-
   final WebSocket _websocket;
-
-  static MarketWebsocket? _marketWebsocket;
 
   /// Warframe market websocket events.
   ///
@@ -58,10 +42,7 @@ class MarketWebsocket {
   void send(String type) => _websocket.send(json.encode({'type': type}));
 
   /// Closes and discards the websocket singleton.
-  void close() {
-    _websocket.close();
-    _marketWebsocket = null;
-  }
+  void close() => _websocket.close();
 
   /// By default the websocket transmits an online count of users.
   Stream<OnlineCount> onlineCount() {
