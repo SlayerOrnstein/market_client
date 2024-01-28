@@ -4,6 +4,16 @@ import 'dart:convert';
 import 'package:market_client/market_client.dart';
 import 'package:web_socket_client/web_socket_client.dart';
 
+/// Creates an websocket URI with the given [MarketPlatform]
+Uri websocketMarketUri(MarketPlatform platform) {
+  return Uri(
+    scheme: 'wss',
+    host: 'warframe.market',
+    path: 'socket',
+    queryParameters: {'platform': platform.name},
+  );
+}
+
 /// {@template websocket_types}
 /// Conains marcket websocket events.
 /// {@endtemplate}
@@ -23,7 +33,9 @@ abstract class MarketWebsocketTypes {
 /// {@endtemplate}
 class MarketWebsocket {
   /// {@macro websocket_endpoint}
-  MarketWebsocket(WebSocket websocket) : _websocket = websocket;
+  MarketWebsocket(WebSocket? websocket)
+      : _websocket =
+            websocket ?? WebSocket(websocketMarketUri(MarketPlatform.pc));
 
   final WebSocket _websocket;
 
