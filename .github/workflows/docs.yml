@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install Dart SDK
-        uses: dart-lang/setup-dart@v1.6.4
+        uses: dart-lang/setup-dart@v1.6.5
       - name: Install dependacies
         run: |
           dart pub get
