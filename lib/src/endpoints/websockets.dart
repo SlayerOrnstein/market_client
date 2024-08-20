@@ -17,15 +17,20 @@ Uri websocketMarketUri(MarketPlatform platform) {
 /// {@template websocket_types}
 /// Conains marcket websocket events.
 /// {@endtemplate}
-abstract class MarketWebsocketTypes {
+enum MarketWebsocketTypes {
   /// Event sent to subscribe to new orders.
-  static const subscribeToNewOrders = '@WS/SUBSCRIBE/MOST_RECENT';
+  subscribeToNewOrders('@WS/SUBSCRIBE/MOST_RECENT'),
 
   /// Event received when a new order was emmited.
-  static const newOrderEvent = '@WS/SUBSCRIPTIONS/MOST_RECENT/NEW_ORDER';
+  newOrderEvent('@WS/SUBSCRIPTIONS/MOST_RECENT/NEW_ORDER'),
 
   /// Event received when the online count is updated.
-  static const onlineCountEvent = '@WS/MESSAGE/ONLINE_COUNT';
+  onlineCountEvent('@WS/MESSAGE/ONLINE_COUNT');
+
+  const MarketWebsocketTypes(this.type);
+
+  /// Event type
+  final String type;
 }
 
 /// {@template websocket_endpoint}
@@ -51,7 +56,8 @@ class MarketWebsocket {
   /// Sends a json object to the market websocket.
   ///
   /// Must use the types in [MarketWebsocketTypes].
-  void send(String type) => _websocket.send(json.encode({'type': type}));
+  void send(MarketWebsocketTypes event) =>
+      _websocket.send(json.encode({'type': event.type}));
 
   /// Closes and discards the websocket singleton.
   void close() => _websocket.close();
