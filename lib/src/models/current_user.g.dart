@@ -26,8 +26,8 @@ CurrentUser _$CurrentUserFromJson(Map<String, dynamic> json) => CurrentUser(
       linkedAccounts: LinkedAccounts.fromJson(
           json['linked_accounts'] as Map<String, dynamic>),
       hasMail: json['has_mail'] as bool,
-      writtenReviews: json['written_reviews'] as int,
-      unreadMessages: json['unread_messages'] as int,
+      writtenReviews: (json['written_reviews'] as num).toInt(),
+      unreadMessages: (json['unread_messages'] as num).toInt(),
     );
 
 Map<String, dynamic> _$CurrentUserToJson(CurrentUser instance) {

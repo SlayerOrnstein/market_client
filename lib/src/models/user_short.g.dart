@@ -12,7 +12,7 @@ UserShort _$UserShortFromJson(Map<String, dynamic> json) => UserShort(
       status: $enumDecode(_$UserStatusEnumMap, json['status']),
       region: json['region'] as String,
       locale: json['locale'] as String,
-      reputation: json['reputation'] as int,
+      reputation: (json['reputation'] as num).toInt(),
       avatar: json['avatar'] as String?,
       lastSeen: _$JsonConverterFromJson<String, DateTime>(
           json['last_seen'], const DateTimeWithOffset().fromJson),

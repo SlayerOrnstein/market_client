@@ -8,8 +8,8 @@ part of 'order.dart';
 
 OrderRow _$OrderRowFromJson(Map<String, dynamic> json) => OrderRow(
       id: json['id'] as String,
-      platinum: json['platinum'] as int,
-      quantity: json['quantity'] as int,
+      platinum: (json['platinum'] as num).toInt(),
+      quantity: (json['quantity'] as num).toInt(),
       orderType: $enumDecode(_$OrderTypeEnumMap, json['order_type']),
       platform: $enumDecode(_$MarketPlatformEnumMap, json['platform']),
       region: json['region'] as String,
@@ -60,8 +60,8 @@ const _$MarketPlatformEnumMap = {
 
 OrderFull _$OrderFullFromJson(Map<String, dynamic> json) => OrderFull(
       id: json['id'] as String,
-      platinum: json['platinum'] as int,
-      quantity: json['quantity'] as int,
+      platinum: (json['platinum'] as num).toInt(),
+      quantity: (json['quantity'] as num).toInt(),
       orderType: $enumDecode(_$OrderTypeEnumMap, json['order_type']),
       platform: $enumDecode(_$MarketPlatformEnumMap, json['platform']),
       region: json['region'] as String,
