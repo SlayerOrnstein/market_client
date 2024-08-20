@@ -1,4 +1,5 @@
-import 'package:compute/compute.dart';
+import 'dart:isolate';
+
 import 'package:market_client/market_client.dart';
 
 /// {@template orders_endpoint}
@@ -34,7 +35,8 @@ class OrdersEndpoint {
   /// Not sure up till when so expect a long list.
   Future<MostRecentOrders> fetchRecentOrders() async {
     final response = await _client.get('/most_recent');
-    final data = await compute(HttpHelpers.parseResponse, response.body);
+    final data =
+        await Isolate.run(() => HttpHelpers.parseResponse(response.body));
     final payload = data['payload'] as Map<String, dynamic>;
 
     return MostRecentOrders.fromJson(payload);
