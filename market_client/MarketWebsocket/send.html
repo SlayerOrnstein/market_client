@@ -25,7 +25,7 @@
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">market_client</a></li>
-    <li><a href="../../market_client/market_client-library.html">market_client.dart</a></li>
+    <li><a href="../../market_client/">market_client.dart</a></li>
     <li><a href="../../market_client/MarketWebsocket-class.html">MarketWebsocket</a></li>
     <li class="self-crumb">send method</li>
   </ol>
@@ -58,7 +58,7 @@
     <section class="multi-line-signature">
       
 <span class="returntype">void</span>
-<span class="name ">send</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="send-param-type"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.5.4/dart-core/String-class.html">String</a></span> <span class="parameter-name">type</span></span></li>
+<span class="name ">send</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="send-param-event"><span class="type-annotation"><a href="../../market_client/MarketWebsocketTypes.html">MarketWebsocketTypes</a></span> <span class="parameter-name">event</span></span></li>
 </ol>)
 
       
@@ -67,14 +67,15 @@
     
 <section class="desc markdown">
   <p>Sends a json object to the market websocket.</p>
-<p>Must use the types in <a href="../../market_client/MarketWebsocketTypes-class.html">MarketWebsocketTypes</a>.</p>
+<p>Must use the types in <a href="../../market_client/MarketWebsocketTypes.html">MarketWebsocketTypes</a>.</p>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">void send(String type) =&gt; _websocket.send(json.encode({&#39;type&#39;: type}));</code></pre>
+  <pre class="language-dart"><code class="language-dart">void send(MarketWebsocketTypes event) =&gt;
+    _websocket.send(json.encode({&#39;type&#39;: event.type}));</code></pre>
 </section>
 
 
@@ -88,7 +89,7 @@
 </header>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">market_client</a></li>
-    <li><a href="../../market_client/market_client-library.html">market_client</a></li>
+    <li><a href="../../market_client/">market_client</a></li>
     <li><a href="../../market_client/MarketWebsocket-class.html">MarketWebsocket</a></li>
     <li class="self-crumb">send method</li>
 </ol>

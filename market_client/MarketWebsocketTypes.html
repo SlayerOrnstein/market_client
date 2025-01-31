@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the DateTimeWithOffset class from the market_client library, for the Dart programming language.">
-  <title>DateTimeWithOffset class - market_client library - Dart API</title>
+  <meta name="description" content="API docs for the MarketWebsocketTypes enum from the market_client library, for the Dart programming language.">
+  <title>MarketWebsocketTypes enum - market_client library - Dart API</title>
 
 
   
@@ -26,9 +26,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">market_client</a></li>
     <li><a href="../market_client/">market_client.dart</a></li>
-    <li class="self-crumb">DateTimeWithOffset class</li>
+    <li class="self-crumb">MarketWebsocketTypes enum</li>
   </ol>
-  <div class="self-name">DateTimeWithOffset</div>
+  <div class="self-name">MarketWebsocketTypes</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -49,56 +49,102 @@
     id="dartdoc-main-content"
     class="main-content"
     data-above-sidebar="market_client&#47;market_client-library-sidebar.html"
-    data-below-sidebar="market_client&#47;DateTimeWithOffset-class-sidebar.html">
+    data-below-sidebar="market_client&#47;MarketWebsocketTypes-enum-sidebar.html">
     <div>
-<h1><span class="kind-class">DateTimeWithOffset</span> class 
+
+      <h1>
+        <span class="kind-enum">MarketWebsocketTypes</span>
+        enum 
  
-</h1></div>
+
+      </h1>
+    </div>
 
     
 <section class="desc markdown">
-  <p>Converts Darts 'Z' datetime to one with an offset.</p>
-<p>This is mainly due to how Warframe Market stores it's own datetime.</p>
+  <p>Conains marcket websocket events.</p>
 </section>
 
 
-    <section>
-      <dl class="dl-horizontal">
-        
-
-        
-  <dt>Implemented types</dt>
+      <section>
+        <dl class="dl-horizontal">
+          
+  <dt>Inheritance</dt>
   <dd>
-    <ul class="comma-separated clazz-relationships">
-        <li><a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonConverter-class.html">JsonConverter</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.6.2/dart-core/DateTime-class.html">DateTime</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/3.6.2/dart-core/String-class.html">String</a></span>&gt;</span></li>
+    <ul class="gt-separated dark eNum-relationships">
+      <li><a href="https://api.dart.dev/stable/3.6.2/dart-core/Object-class.html">Object</a></li>
+        <li><a href="https://api.dart.dev/stable/3.6.2/dart-core/Enum-class.html">Enum</a></li>
+      <li>MarketWebsocketTypes</li>
     </ul>
   </dd>
-        
+
+          
+          
+          
+  <dt>Available extensions</dt>
+  <dd><ul class="comma-separated clazz-relationships">
+      <li><a href="https://api.dart.dev/stable/3.6.2/dart-core/EnumName.html">EnumName</a></li>
+  </ul></dd>
+          
 
 
-        
-        
+        </dl>
+      </section>
 
+      <section class="summary offset-anchor" id="values">
+        <h2>Values</h2>
+        <dl class="properties">
+            <dt id="subscribeToNewOrders" class="constant">
+    <span class="name ">subscribeToNewOrders</span>
+  <span class="signature">&#8594; const <a href="../market_client/MarketWebsocketTypes.html">MarketWebsocketTypes</a></span>
+  
 
-      </dl>
-    </section>
+</dt>
+<dd>
+  <p>Event sent to subscribe to new orders.</p>
+  
 
-    
-  <section class="summary offset-anchor" id="constructors">
-    <h2>Constructors</h2>
-    <dl class="constructor-summary-list">
-        <dt id="DateTimeWithOffset" class="callable">
-          <span class="name"><a href="../market_client/DateTimeWithOffset/DateTimeWithOffset.html">DateTimeWithOffset</a></span><span class="signature">()</span>
-        </dt>
-        <dd>
-          Converts Darts 'Z' datetime to one with an offset.
-            <div class="constructor-modifier features">const</div>
-        </dd>
-    </dl>
-  </section>
+    <div>
+      <span class="signature"><code>const MarketWebsocketTypes(&#39;@WS&#47;SUBSCRIBE&#47;MOST_RECENT&#39;)</code></span>
+    </div>
+</dd>
+
+            <dt id="newOrderEvent" class="constant">
+    <span class="name ">newOrderEvent</span>
+  <span class="signature">&#8594; const <a href="../market_client/MarketWebsocketTypes.html">MarketWebsocketTypes</a></span>
+  
+
+</dt>
+<dd>
+  <p>Event received when a new order was emmited.</p>
+  
+
+    <div>
+      <span class="signature"><code>const MarketWebsocketTypes(&#39;@WS&#47;SUBSCRIPTIONS&#47;MOST_RECENT&#47;NEW_ORDER&#39;)</code></span>
+    </div>
+</dd>
+
+            <dt id="onlineCountEvent" class="constant">
+    <span class="name ">onlineCountEvent</span>
+  <span class="signature">&#8594; const <a href="../market_client/MarketWebsocketTypes.html">MarketWebsocketTypes</a></span>
+  
+
+</dt>
+<dd>
+  <p>Event received when the online count is updated.</p>
+  
+
+    <div>
+      <span class="signature"><code>const MarketWebsocketTypes(&#39;@WS&#47;MESSAGE&#47;ONLINE_COUNT&#39;)</code></span>
+    </div>
+</dd>
+
+        </dl>
+      </section>
+
     
   <section
-      class="summary offset-anchor inherited"
+      class="summary offset-anchor"
       id="instance-properties">
     <h2>Properties</h2>
     <dl class="properties">
@@ -114,6 +160,34 @@
 
 </dd>
 
+        <dt id="index" class="property inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.6.2/dart-core/Enum/index.html">index</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.6.2/dart-core/int-class.html">int</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  A numeric identifier for the enumerated value.
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="name" class="property">
+  <span class="name"><a href="https://api.dart.dev/stable/3.6.2/dart-core/EnumName/name.html">name</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.6.2/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+      <p class="from-extension">
+        <span>Available on <a href="https://api.dart.dev/stable/3.6.2/dart-core/Enum-class.html">Enum</a>,
+        provided by the <a href="https://api.dart.dev/stable/3.6.2/dart-core/EnumName.html">EnumName</a> extension</span>
+      </p>
+  The name of the enum value.
+  <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
         <dt id="runtimeType" class="property inherited">
   <span class="name"><a href="https://api.dart.dev/stable/3.6.2/dart-core/Object/runtimeType.html">runtimeType</a></span>
   <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.6.2/dart-core/Type-class.html">Type</a></span>
@@ -126,28 +200,27 @@
 
 </dd>
 
+        <dt id="type" class="property">
+  <span class="name"><a href="../market_client/MarketWebsocketTypes/type.html">type</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.6.2/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  Event type
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
     </dl>
   </section>
 
     
   <section
-      class="summary offset-anchor"
+      class="summary offset-anchor inherited"
       id="instance-methods">
     <h2>Methods</h2>
     <dl class="callables">
-        <dt id="fromJson" class="callable">
-  <span class="name"><a href="../market_client/DateTimeWithOffset/fromJson.html">fromJson</a></span><span class="signature">(<wbr><span class="parameter" id="fromJson-param-json"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.6.2/dart-core/String-class.html">String</a></span> <span class="parameter-name">json</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.6.2/dart-core/DateTime-class.html">DateTime</a></span>
-  </span>
-  
-
-</dt>
-<dd>
-  
-  <div class="features"><span class="feature">override</span></div>
-
-</dd>
-
         <dt id="noSuchMethod" class="callable inherited">
   <span class="name"><a href="https://api.dart.dev/stable/3.6.2/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.6.2/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
     <span class="returntype parameter">&#8594; dynamic</span>
@@ -158,19 +231,6 @@
 <dd class="inherited">
   Invoked when a nonexistent method or property is accessed.
   <div class="features"><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="toJson" class="callable">
-  <span class="name"><a href="../market_client/DateTimeWithOffset/toJson.html">toJson</a></span><span class="signature">(<wbr><span class="parameter" id="toJson-param-object"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.6.2/dart-core/DateTime-class.html">DateTime</a></span> <span class="parameter-name">object</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.6.2/dart-core/String-class.html">String</a></span>
-  </span>
-  
-
-</dt>
-<dd>
-  
-  <div class="features"><span class="feature">override</span></div>
 
 </dd>
 
@@ -214,9 +274,26 @@
     
     
 
-  </div> <!-- /.main-content -->
-  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+  <section class="summary offset-anchor" id="constants">
+    <h2>Constants</h2>
+    <dl class="properties">
+        <dt id="values" class="constant">
+    <span class="name "><a href="../market_client/MarketWebsocketTypes/values-constant.html">values</a></span>
+  <span class="signature">&#8594; const <a href="https://api.dart.dev/stable/3.6.2/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../market_client/MarketWebsocketTypes.html">MarketWebsocketTypes</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  A constant List of the values in this enum, in order of their declaration.
+  
+
+</dd>
+
+    </dl>
+  </section>
+</div><!-- /.main-content -->
+<div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+  <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
 <header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
@@ -225,14 +302,14 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">market_client</a></li>
     <li><a href="../market_client/">market_client</a></li>
-    <li class="self-crumb">DateTimeWithOffset class</li>
+    <li class="self-crumb">MarketWebsocketTypes enum</li>
 </ol>
 
-    <h5>market_client library</h5>
-    <div id="dartdoc-sidebar-left-content"></div>
-  </div>
-  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
-  </div><!--/.sidebar-offcanvas-->
+  <h5>market_client library</h5>
+  <div id="dartdoc-sidebar-left-content"></div>
+</div>
+<div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+</div><!-- /.sidebar-offcanvas -->
 </main>
 <footer>
   <span class="no-break">
