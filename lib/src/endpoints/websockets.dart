@@ -35,6 +35,8 @@ enum MarketWebsocketTypes {
 
 /// {@template websocket_endpoint}
 /// Basic functions to listen to the websocket provided by Warframe.market.
+///
+/// Not documented and untested, used at your own risk
 /// {@endtemplate}
 class MarketWebsocket {
   /// {@macro websocket_endpoint}
