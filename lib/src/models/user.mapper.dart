@@ -6,60 +6,6 @@
 
 part of 'user.dart';
 
-class ActivityTypeMapper extends EnumMapper<ActivityType> {
-  ActivityTypeMapper._();
-
-  static ActivityTypeMapper? _instance;
-  static ActivityTypeMapper ensureInitialized() {
-    if (_instance == null) {
-      MapperContainer.globals.use(_instance = ActivityTypeMapper._());
-    }
-    return _instance!;
-  }
-
-  static ActivityType fromValue(dynamic value) {
-    ensureInitialized();
-    return MapperContainer.globals.fromValue(value);
-  }
-
-  @override
-  ActivityType decode(dynamic value) {
-    switch (value) {
-      case 'on_mission':
-        return ActivityType.onMission;
-      case 1:
-        return ActivityType.dojo;
-      case 2:
-        return ActivityType.unknown;
-      case '':
-        return ActivityType.empty;
-      default:
-        throw MapperException.unknownEnumValue(value);
-    }
-  }
-
-  @override
-  dynamic encode(ActivityType self) {
-    switch (self) {
-      case ActivityType.onMission:
-        return 'on_mission';
-      case ActivityType.dojo:
-        return 1;
-      case ActivityType.unknown:
-        return 2;
-      case ActivityType.empty:
-        return '';
-    }
-  }
-}
-
-extension ActivityTypeMapperExtension on ActivityType {
-  dynamic toValue() {
-    ActivityTypeMapper.ensureInitialized();
-    return MapperContainer.globals.toValue<ActivityType>(this);
-  }
-}
-
 class UserShortMapper extends ClassMapperBase<UserShort> {
   UserShortMapper._();
 
@@ -67,7 +13,7 @@ class UserShortMapper extends ClassMapperBase<UserShort> {
   static UserShortMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = UserShortMapper._());
-      ActivityTypeMapper.ensureInitialized();
+      ActivityMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -96,8 +42,8 @@ class UserShortMapper extends ClassMapperBase<UserShort> {
   static UserStatus _$status(UserShort v) => v.status;
   static const Field<UserShort, UserStatus> _f$status =
       Field('status', _$status);
-  static ActivityType _$activity(UserShort v) => v.activity;
-  static const Field<UserShort, ActivityType> _f$activity =
+  static Activity _$activity(UserShort v) => v.activity;
+  static const Field<UserShort, Activity> _f$activity =
       Field('activity', _$activity);
   static DateTime _$lastSeen(UserShort v) => v.lastSeen;
   static const Field<UserShort, DateTime> _f$lastSeen =
@@ -181,6 +127,7 @@ extension UserShortValueCopy<$R, $Out> on ObjectCopyWith<$R, UserShort, $Out> {
 
 abstract class UserShortCopyWith<$R, $In extends UserShort, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
+  ActivityCopyWith<$R, Activity, Activity> get activity;
   $R call(
       {String? id,
       String? ingameName,
@@ -190,7 +137,7 @@ abstract class UserShortCopyWith<$R, $In extends UserShort, $Out>
       MarketPlatform? platform,
       bool? crossplay,
       UserStatus? status,
-      ActivityType? activity,
+      Activity? activity,
       DateTime? lastSeen});
   UserShortCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
@@ -204,6 +151,9 @@ class _UserShortCopyWithImpl<$R, $Out>
   late final ClassMapperBase<UserShort> $mapper =
       UserShortMapper.ensureInitialized();
   @override
+  ActivityCopyWith<$R, Activity, Activity> get activity =>
+      $value.activity.copyWith.$chain((v) => call(activity: v));
+  @override
   $R call(
           {String? id,
           String? ingameName,
@@ -213,7 +163,7 @@ class _UserShortCopyWithImpl<$R, $Out>
           MarketPlatform? platform,
           bool? crossplay,
           UserStatus? status,
-          ActivityType? activity,
+          Activity? activity,
           DateTime? lastSeen}) =>
       $apply(FieldCopyWithData({
         if (id != null) #id: id,
@@ -246,6 +196,123 @@ class _UserShortCopyWithImpl<$R, $Out>
       _UserShortCopyWithImpl($value, $cast, t);
 }
 
+class ActivityMapper extends ClassMapperBase<Activity> {
+  ActivityMapper._();
+
+  static ActivityMapper? _instance;
+  static ActivityMapper ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(_instance = ActivityMapper._());
+    }
+    return _instance!;
+  }
+
+  @override
+  final String id = 'Activity';
+
+  static String _$type(Activity v) => v.type;
+  static const Field<Activity, String> _f$type = Field('type', _$type);
+  static String? _$details(Activity v) => v.details;
+  static const Field<Activity, String> _f$details =
+      Field('details', _$details, opt: true);
+  static DateTime? _$startedAt(Activity v) => v.startedAt;
+  static const Field<Activity, DateTime> _f$startedAt =
+      Field('startedAt', _$startedAt, opt: true);
+
+  @override
+  final MappableFields<Activity> fields = const {
+    #type: _f$type,
+    #details: _f$details,
+    #startedAt: _f$startedAt,
+  };
+
+  static Activity _instantiate(DecodingData data) {
+    return Activity(
+        type: data.dec(_f$type),
+        details: data.dec(_f$details),
+        startedAt: data.dec(_f$startedAt));
+  }
+
+  @override
+  final Function instantiate = _instantiate;
+
+  static Activity fromMap(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<Activity>(map);
+  }
+
+  static Activity fromJson(String json) {
+    return ensureInitialized().decodeJson<Activity>(json);
+  }
+}
+
+mixin ActivityMappable {
+  String toJson() {
+    return ActivityMapper.ensureInitialized()
+        .encodeJson<Activity>(this as Activity);
+  }
+
+  Map<String, dynamic> toMap() {
+    return ActivityMapper.ensureInitialized()
+        .encodeMap<Activity>(this as Activity);
+  }
+
+  ActivityCopyWith<Activity, Activity, Activity> get copyWith =>
+      _ActivityCopyWithImpl(this as Activity, $identity, $identity);
+  @override
+  String toString() {
+    return ActivityMapper.ensureInitialized().stringifyValue(this as Activity);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return ActivityMapper.ensureInitialized()
+        .equalsValue(this as Activity, other);
+  }
+
+  @override
+  int get hashCode {
+    return ActivityMapper.ensureInitialized().hashValue(this as Activity);
+  }
+}
+
+extension ActivityValueCopy<$R, $Out> on ObjectCopyWith<$R, Activity, $Out> {
+  ActivityCopyWith<$R, Activity, $Out> get $asActivity =>
+      $base.as((v, t, t2) => _ActivityCopyWithImpl(v, t, t2));
+}
+
+abstract class ActivityCopyWith<$R, $In extends Activity, $Out>
+    implements ClassCopyWith<$R, $In, $Out> {
+  $R call({String? type, String? details, DateTime? startedAt});
+  ActivityCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
+}
+
+class _ActivityCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, Activity, $Out>
+    implements ActivityCopyWith<$R, Activity, $Out> {
+  _ActivityCopyWithImpl(super.value, super.then, super.then2);
+
+  @override
+  late final ClassMapperBase<Activity> $mapper =
+      ActivityMapper.ensureInitialized();
+  @override
+  $R call({String? type, Object? details = $none, Object? startedAt = $none}) =>
+      $apply(FieldCopyWithData({
+        if (type != null) #type: type,
+        if (details != $none) #details: details,
+        if (startedAt != $none) #startedAt: startedAt
+      }));
+  @override
+  Activity $make(CopyWithData data) => Activity(
+      type: data.get(#type, or: $value.type),
+      details: data.get(#details, or: $value.details),
+      startedAt: data.get(#startedAt, or: $value.startedAt));
+
+  @override
+  ActivityCopyWith<$R2, Activity, $Out2> $chain<$R2, $Out2>(
+          Then<$Out2, $R2> t) =>
+      _ActivityCopyWithImpl($value, $cast, t);
+}
+
 class UserPublicMapper extends ClassMapperBase<UserPublic> {
   UserPublicMapper._();
 
@@ -253,7 +320,7 @@ class UserPublicMapper extends ClassMapperBase<UserPublic> {
   static UserPublicMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = UserPublicMapper._());
-      ActivityTypeMapper.ensureInitialized();
+      ActivityMapper.ensureInitialized();
       AchievementMapper.ensureInitialized();
     }
     return _instance!;
@@ -283,8 +350,8 @@ class UserPublicMapper extends ClassMapperBase<UserPublic> {
   static UserStatus _$status(UserPublic v) => v.status;
   static const Field<UserPublic, UserStatus> _f$status =
       Field('status', _$status);
-  static ActivityType _$activity(UserPublic v) => v.activity;
-  static const Field<UserPublic, ActivityType> _f$activity =
+  static Activity _$activity(UserPublic v) => v.activity;
+  static const Field<UserPublic, Activity> _f$activity =
       Field('activity', _$activity);
   static DateTime _$lastSeen(UserPublic v) => v.lastSeen;
   static const Field<UserPublic, DateTime> _f$lastSeen =
@@ -412,6 +479,7 @@ extension UserPublicValueCopy<$R, $Out>
 
 abstract class UserPublicCopyWith<$R, $In extends UserPublic, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
+  ActivityCopyWith<$R, Activity, Activity> get activity;
   ListCopyWith<$R, Achievement,
           AchievementCopyWith<$R, Achievement, Achievement>>
       get achievementShowcase;
@@ -424,7 +492,7 @@ abstract class UserPublicCopyWith<$R, $In extends UserPublic, $Out>
       MarketPlatform? platform,
       bool? crossplay,
       UserStatus? status,
-      ActivityType? activity,
+      Activity? activity,
       DateTime? lastSeen,
       String? background,
       String? about,
@@ -447,6 +515,9 @@ class _UserPublicCopyWithImpl<$R, $Out>
   late final ClassMapperBase<UserPublic> $mapper =
       UserPublicMapper.ensureInitialized();
   @override
+  ActivityCopyWith<$R, Activity, Activity> get activity =>
+      $value.activity.copyWith.$chain((v) => call(activity: v));
+  @override
   ListCopyWith<$R, Achievement,
           AchievementCopyWith<$R, Achievement, Achievement>>
       get achievementShowcase => ListCopyWith($value.achievementShowcase,
@@ -461,7 +532,7 @@ class _UserPublicCopyWithImpl<$R, $Out>
           MarketPlatform? platform,
           bool? crossplay,
           UserStatus? status,
-          ActivityType? activity,
+          Activity? activity,
           DateTime? lastSeen,
           Object? background = $none,
           Object? about = $none,
@@ -671,7 +742,7 @@ class UserPrivateMapper extends ClassMapperBase<UserPrivate> {
   static UserPrivateMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = UserPrivateMapper._());
-      ActivityTypeMapper.ensureInitialized();
+      ActivityMapper.ensureInitialized();
       AchievementMapper.ensureInitialized();
       LinkedAccountsMapper.ensureInitialized();
     }
@@ -702,9 +773,9 @@ class UserPrivateMapper extends ClassMapperBase<UserPrivate> {
   static UserStatus _$status(UserPrivate v) => v.status;
   static const Field<UserPrivate, UserStatus> _f$status =
       Field('status', _$status);
-  static ActivityType _$activity(UserPrivate v) => v.activity;
-  static const Field<UserPrivate, ActivityType> _f$activity =
-      Field('activity', _$activity, opt: true, def: ActivityType.unknown);
+  static Activity _$activity(UserPrivate v) => v.activity;
+  static const Field<UserPrivate, Activity> _f$activity =
+      Field('activity', _$activity, opt: true, def: const Activity(type: ''));
   static DateTime _$lastSeen(UserPrivate v) => v.lastSeen;
   static const Field<UserPrivate, DateTime> _f$lastSeen =
       Field('lastSeen', _$lastSeen);
@@ -906,6 +977,7 @@ extension UserPrivateValueCopy<$R, $Out>
 
 abstract class UserPrivateCopyWith<$R, $In extends UserPrivate, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
+  ActivityCopyWith<$R, Activity, Activity> get activity;
   AchievementCopyWith<$R, Achievement, Achievement> get achievementShowcase;
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>> get ignoreList;
   LinkedAccountsCopyWith<$R, LinkedAccounts, LinkedAccounts> get linkedAccounts;
@@ -918,7 +990,7 @@ abstract class UserPrivateCopyWith<$R, $In extends UserPrivate, $Out>
       MarketPlatform? platform,
       bool? crossplay,
       UserStatus? status,
-      ActivityType? activity,
+      Activity? activity,
       DateTime? lastSeen,
       Role? role,
       String? background,
@@ -956,6 +1028,9 @@ class _UserPrivateCopyWithImpl<$R, $Out>
   late final ClassMapperBase<UserPrivate> $mapper =
       UserPrivateMapper.ensureInitialized();
   @override
+  ActivityCopyWith<$R, Activity, Activity> get activity =>
+      $value.activity.copyWith.$chain((v) => call(activity: v));
+  @override
   AchievementCopyWith<$R, Achievement, Achievement> get achievementShowcase =>
       $value.achievementShowcase.copyWith
           .$chain((v) => call(achievementShowcase: v));
@@ -977,7 +1052,7 @@ class _UserPrivateCopyWithImpl<$R, $Out>
           MarketPlatform? platform,
           bool? crossplay,
           UserStatus? status,
-          ActivityType? activity,
+          Activity? activity,
           DateTime? lastSeen,
           Role? role,
           Object? background = $none,

@@ -59,7 +59,7 @@ abstract class User {
 
   // TODO(SlayerOrnstein): ActivityType needs a hook to handle empty strings
   /// Current activity the user is engaged in.
-  final ActivityType activity;
+  final Activity activity;
 
   /// Timstamp of the user's last online presence.
   final DateTime lastSeen;
@@ -176,7 +176,7 @@ class UserPrivate extends User with UserPrivateMappable {
     required super.platform,
     required super.crossplay,
     required super.status,
-    super.activity = ActivityType.unknown,
+    super.activity = const Activity(type: ''),
     required super.lastSeen,
     required this.role,
     this.background,
@@ -394,20 +394,29 @@ class Achievement with AchievementMappable {
   final AchievementI18n i18n;
 }
 
-/// Currently known activity types
-@MappableEnum(mode: ValuesMode.indexed)
-enum ActivityType {
-  /// User is in a mission
-  @MappableValue('on_mission')
-  onMission,
+/// {@template activity}
+/// Details about current activity the user is engaged in.
+/// {@endtemplate}
+@MappableClass()
+class Activity with ActivityMappable {
+  /// {@macro activity}
+  const Activity({
+    required this.type,
+    this.details,
+    this.startedAt,
+  });
 
-  /// User is in a dojo
-  dojo,
+  // TODO(SlayerOrnstein): Will need to use an enum at some point
+  /// Name of the activity.
+  ///
+  /// i.e. 'on mission', 'dojo'.
+  final String type;
 
-  /// User activity is unknown
-  unknown,
+  /// Optional specifics about the activity.
+  ///
+  /// i.e. mission name, solo/squad status.
+  final String? details;
 
-  /// Empty string activity
-  @MappableValue('')
-  empty;
+  /// Timestamp of when the activity was started.
+  final DateTime? startedAt;
 }
