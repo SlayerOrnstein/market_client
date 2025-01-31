@@ -1,5 +1,5 @@
 name: market_client
-description: A starting point for Dart libraries or applications.
+description: A Dart WFM API client wrapper
 version: 4.4.0
 publish_to: none
 # homepage: https://www.example.com
