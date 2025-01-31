@@ -1,16 +1,3 @@
-import 'package:json_annotation/json_annotation.dart';
-
-/// Authorization type
-enum AuthType {
-  /// Authoriz via cookie.
-  ///
-  /// For browsers use this.
-  cookie,
-
-  /// Authorize via header (use of device id is required)
-  header,
-}
-
 /// Game platforms that Warframe Market supports
 enum MarketPlatform {
   /// The PC platform, consist of steam users, and at one time dicord users
@@ -22,7 +9,6 @@ enum MarketPlatform {
   ps4,
 
   /// The Nintendo Switch, not great, but not bad.
-  @JsonValue('switch')
   swi,
 
   /// Microsoft Xbox series, not including the Xbox 360 or OG Xbox.

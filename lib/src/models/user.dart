@@ -57,7 +57,8 @@ abstract class User {
   /// Current user status
   final UserStatus status;
 
-  // TODO(@SlayerOrnstein): ActivityType needs a hook to handle empty strings
+  // TODO(SlayerOrnstein): ActivityType needs a hook to handle empty strings
+  /// Current activity the user is engaged in.
   final ActivityType activity;
 
   /// Timstamp of the user's last online presence.
@@ -92,6 +93,7 @@ class UserShort extends User with UserShortMappable {
 /// {@endtemplate}
 @MappableClass()
 class UserPublic extends User with UserPublicMappable {
+  /// {@macro user_public}
   const UserPublic({
     required super.id,
     required super.ingameName,
@@ -238,7 +240,7 @@ class UserPrivate extends User with UserPrivateMappable {
   /// Unique check code for the user.
   final String checkCode;
 
-  // TODO(@SlayerOrnstein): implement tier
+  // TODO(SlayerOrnstein): implement tier
 
   /// Subscription status.
   final bool subscription;
@@ -392,6 +394,7 @@ class Achievement with AchievementMappable {
   final AchievementI18n i18n;
 }
 
+/// Currently known activity types
 @MappableEnum(mode: ValuesMode.indexed)
 enum ActivityType {
   /// User is in a mission

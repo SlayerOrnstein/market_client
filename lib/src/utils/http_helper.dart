@@ -5,6 +5,7 @@ import 'package:market_client/src/utils/utils.dart';
 
 const String _basePath = 'warframe.market';
 
+/// Response structure returned by WFM
 typedef MarketResponse<T> = ({String apiVersion, T data, dynamic error});
 
 /// An abstract class for functions to help with http related jobs.
