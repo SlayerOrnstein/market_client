@@ -47,18 +47,6 @@ enum Rarity {
   peculiar,
 }
 
-/// User status.
-enum UserStatus {
-  /// User is online and in-game.
-  ingame,
-
-  /// User is online but not in -ame.
-  online,
-
-  /// User is offline.
-  offline,
-}
-
 /// Item order type.
 enum OrderType {
   /// Item is for sale.

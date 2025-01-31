@@ -1,9 +1,8 @@
 import 'dart:async';
-import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:http/retry.dart';
-import 'package:market_client/market_client.dart';
+import 'package:market_client/src/utils/utils.dart';
 
 const _root = 'api.warframe.market';
 const _version = 'v1';
@@ -60,52 +59,52 @@ class MarketHttpClient {
     return res;
   }
 
-  /// Sends a POST request.
-  Future<http.Response> post(
-    String path, {
-    Map<String, String>? headers,
-    Map<String, String>? queryParameters,
-    Object? body,
-  }) async {
-    final uri = Uri.https(_root, '/$_version$path', queryParameters);
+  // /// Sends a POST request.
+  // Future<http.Response> post(
+  //   String path, {
+  //   Map<String, String>? headers,
+  //   Map<String, String>? queryParameters,
+  //   Object? body,
+  // }) async {
+  //   final uri = Uri.https(_root, '/$_version$path', queryParameters);
 
-    final res = await client.post(
-      uri,
-      headers: HttpHelpers.headers(
-        platform: platform,
-        language: language,
-        token: token,
-      ),
-      body: json.encode(body),
-    );
+  //   final res = await client.post(
+  //     uri,
+  //     headers: HttpHelpers.headers(
+  //       platform: platform,
+  //       language: language,
+  //       token: token,
+  //     ),
+  //     body: json.encode(body),
+  //   );
 
-    HttpHelpers.checkStatusCode(res.statusCode);
+  //   HttpHelpers.checkStatusCode(res.statusCode);
 
-    return res;
-  }
+  //   return res;
+  // }
 
-  /// Sends a DELETE request.
-  Future<Map<String, dynamic>> delete(
-    String path, {
-    Map<String, String>? headers,
-    Map<String, String>? queryParameters,
-    Object? body,
-  }) async {
-    final uri = Uri.https(_root, '/$_version$path', queryParameters);
-    final res = await client.delete(
-      uri,
-      headers: HttpHelpers.headers(
-        platform: platform,
-        language: language,
-        token: token,
-      ),
-      body: body,
-    );
+  // /// Sends a DELETE request.
+  // Future<Map<String, dynamic>> delete(
+  //   String path, {
+  //   Map<String, String>? headers,
+  //   Map<String, String>? queryParameters,
+  //   Object? body,
+  // }) async {
+  //   final uri = Uri.https(_root, '/$_version$path', queryParameters);
+  //   final res = await client.delete(
+  //     uri,
+  //     headers: HttpHelpers.headers(
+  //       platform: platform,
+  //       language: language,
+  //       token: token,
+  //     ),
+  //     body: body,
+  //   );
 
-    HttpHelpers.checkStatusCode(res.statusCode);
+  //   HttpHelpers.checkStatusCode(res.statusCode);
 
-    return HttpHelpers.parseResponse(res.body);
-  }
+  //   return HttpHelpers.parseResponse(res.body);
+  // }
 
   /// Creates a new [MarketHttpClient] with the new given parameters.
   MarketHttpClient copyWith({

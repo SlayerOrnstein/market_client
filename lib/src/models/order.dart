@@ -1,31 +1,40 @@
-import 'package:equatable/equatable.dart';
-import 'package:json_annotation/json_annotation.dart';
-import 'package:market_client/market_client.dart';
+import 'package:dart_mappable/dart_mappable.dart';
+import 'package:market_client/src/models/user.dart';
+import 'package:market_client/src/utils/utils.dart';
 
-part 'order.g.dart';
+part 'order.mapper.dart';
 
 /// {@template item_order}
 /// Common order data.
 /// {@endtemplate}
-abstract class OrderCommon extends Equatable
-    implements Comparable<OrderCommon> {
-  /// {@macro item_order}
-  const OrderCommon({
+@MappableClass()
+class Order with OrderMappable {
+  const Order({
     required this.id,
+    required this.type,
     required this.platinum,
     required this.quantity,
-    required this.orderType,
-    required this.platform,
-    required this.region,
-    required this.creationDate,
-    required this.lastUpdate,
+    required this.perTrade,
+    required this.rank,
+    required this.charges,
     required this.subtype,
+    required this.amberStars,
+    required this.cyanStars,
     required this.visible,
-    required this.user,
+    required this.creationAt,
+    required this.updateAt,
+    required this.itemId,
+    required this.group,
   });
+
+  /// [Order] from a [Map]
+  factory Order.fromMap(Map<String, dynamic> map) => Order.fromMap(map);
 
   /// Order id.
   final String id;
+
+  /// Whether this user is looking to buy or sell this item.
+  final OrderType type;
 
   /// Platinum user is requesting for said item.
   final int platinum;
@@ -33,58 +42,86 @@ abstract class OrderCommon extends Equatable
   /// A user's inventory of this Item.
   final int quantity;
 
-  /// Whether this user is looking to buy or sell this item.
-  @JsonKey(name: 'order_type')
-  final OrderType orderType;
+  /// Indicates the items quantity per transaction.
+  final int? perTrade;
 
-  /// The platform this user is on
-  final MarketPlatform platform;
+  /// Specifies the rank or level of the item in the order.
+  final int? rank;
 
-  /// A user's region.
-  final String region;
+  /// Specifies number of charges left.
+  ///
+  /// Used for requiem mods.
+  final int? charges;
 
-  /// The date this order was created on
-  @JsonKey(name: 'creation_date')
-  @DateTimeWithOffset()
-  final DateTime creationDate;
-
-  /// THe last time this order was updated.
-  @JsonKey(name: 'last_update')
-  @DateTimeWithOffset()
-  final DateTime lastUpdate;
-
-  /// Item subtype.
+  /// Defines the specific subtype or category of the item.
   final String? subtype;
 
-  /// Whether the order is visible to other users or not.
+  /// Denotes the count of amber stars in a sculpture order.
+  final int amberStars;
+
+  /// Denotes the count of cyan stars in a sculpture order.
+  final int cyanStars;
+
+  /// Indicates whether the order is publicly visible or not.
   final bool visible;
 
-  // OrderRow and OrderFull both contain a user so I chose to keep it in their
-  // common class.
-  /// The user that created this order.
+  /// The date this order was created on
+  final DateTime creationAt;
+
+  /// THe last time this order was updated.
+  final DateTime updateAt;
+
+  /// Is the unique identifier of the item involved in the order.
+  final String? itemId;
+
+  /// User defined group to which the order belongs to.
+  final String group;
+}
+
+/// {@template order_with_user}
+/// This is a typical order model found in most requests, including a record
+/// about an owner.
+/// {@endtemplate}
+@MappableClass()
+class OrderWithUser extends Order
+    with OrderWithUserMappable
+    implements Comparable<OrderWithUser> {
+  /// {@macro order_with_user}
+  const OrderWithUser({
+    required super.id,
+    required super.type,
+    required super.platinum,
+    required super.quantity,
+    required super.perTrade,
+    required super.rank,
+    required super.charges,
+    required super.subtype,
+    required super.amberStars,
+    required super.cyanStars,
+    required super.visible,
+    required super.creationAt,
+    required super.updateAt,
+    required super.itemId,
+    required super.group,
+    required this.user,
+  });
+
+  /// [OrderWithUser] from a [Map]
+  factory OrderWithUser.fromMap(Map<String, dynamic> map) {
+    return OrderWithUser.fromMap(map);
+  }
+
+  /// Represents the user who created the order, with basic profile
+  /// information.
   final UserShort user;
 
-  @override
-  List<Object?> get props => [
-        id,
-        platinum,
-        quantity,
-        orderType,
-        platform,
-        region,
-        creationDate,
-        lastUpdate,
-        subtype,
-        visible,
-      ];
-
   /// Compares 2 ItemOrders
-  static int compare(OrderCommon a, OrderCommon b) => a.compareTo(b);
+  static int compare(OrderWithUser a, OrderWithUser b) => a.compareTo(b);
 
   @override
-  int compareTo(OrderCommon other) {
-    if (orderType != other.orderType) {
-      return -orderType.index.compareTo(other.orderType.index);
+  int compareTo(OrderWithUser other) {
+    if (type != other.type) {
+      return -type.index.compareTo(other.type.index);
     }
 
     if (user.status.index < other.user.status.index) {
@@ -92,7 +129,7 @@ abstract class OrderCommon extends Equatable
     }
 
     if (user.status == other.user.status) {
-      return orderType == OrderType.sell
+      return type == OrderType.sell
           ? platinum.compareTo(other.platinum)
           : other.platinum.compareTo(platinum);
     }
@@ -103,67 +140,4 @@ abstract class OrderCommon extends Equatable
 
     return 0;
   }
-}
-
-/// {@template order_row}
-/// Short version of [OrderFull] without the item.
-/// {@endtemplate}
-@JsonSerializable()
-class OrderRow extends OrderCommon {
-  /// {@macro order_row}
-  const OrderRow({
-    required super.id,
-    required super.platinum,
-    required super.quantity,
-    required super.orderType,
-    required super.platform,
-    required super.region,
-    required super.creationDate,
-    required super.lastUpdate,
-    required super.subtype,
-    required super.visible,
-    required super.user,
-  });
-
-  /// Creates a ItemOrder from Json map
-  factory OrderRow.fromJson(Map<String, dynamic> data) =>
-      _$OrderRowFromJson(data);
-
-  /// Creates a Json map from a ItemOrder
-  Map<String, dynamic> toJson() => _$OrderRowToJson(this);
-}
-
-/// {@template order_full}
-/// {@endtemplate}
-@JsonSerializable()
-class OrderFull extends OrderCommon {
-  /// {@macro order_full}
-  const OrderFull({
-    required super.id,
-    required super.platinum,
-    required super.quantity,
-    required super.orderType,
-    required super.platform,
-    required super.region,
-    required super.creationDate,
-    required super.lastUpdate,
-    required super.subtype,
-    required super.visible,
-    required super.user,
-    required this.item,
-  });
-
-  /// Creates an [OrderFull] instance from a json.
-  factory OrderFull.fromJson(Map<String, dynamic> json) {
-    return _$OrderFullFromJson(json);
-  }
-
-  /// The item the order is for.
-  final ItemFull item;
-
-  /// Creates a json map.
-  Map<String, dynamic> toJson() => _$OrderFullToJson(this);
-
-  @override
-  List<Object?> get props => super.props..add(item);
 }
