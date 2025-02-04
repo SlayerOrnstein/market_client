@@ -60,6 +60,8 @@ class OrderFilterMapper extends ClassMapperBase<OrderFilter> {
     #cyanStarsLt: _f$cyanStarsLt,
     #subtype: _f$subtype,
   };
+  @override
+  final bool ignoreNull = true;
 
   static OrderFilter _instantiate(DecodingData data) {
     return OrderFilter(

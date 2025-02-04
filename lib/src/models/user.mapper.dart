@@ -62,6 +62,8 @@ class UserShortMapper extends ClassMapperBase<UserShort> {
     #activity: _f$activity,
     #lastSeen: _f$lastSeen,
   };
+  @override
+  final bool ignoreNull = true;
 
   static UserShort _instantiate(DecodingData data) {
     return UserShort(
@@ -225,6 +227,8 @@ class ActivityMapper extends ClassMapperBase<Activity> {
     #details: _f$details,
     #startedAt: _f$startedAt,
   };
+  @override
+  final bool ignoreNull = true;
 
   static Activity _instantiate(DecodingData data) {
     return Activity(
@@ -404,6 +408,8 @@ class UserPublicMapper extends ClassMapperBase<UserPublic> {
     #warnMessage: _f$warnMessage,
     #banMessage: _f$banMessage,
   };
+  @override
+  final bool ignoreNull = true;
 
   static UserPublic _instantiate(DecodingData data) {
     return UserPublic(
@@ -629,6 +635,8 @@ class AchievementMapper extends ClassMapperBase<Achievement> {
     #type: _f$type,
     #i18n: _f$i18n,
   };
+  @override
+  final bool ignoreNull = true;
 
   static Achievement _instantiate(DecodingData data) {
     return Achievement(
@@ -887,6 +895,8 @@ class UserPrivateMapper extends ClassMapperBase<UserPrivate> {
     #hasEmail: _f$hasEmail,
     #writtenReviews: _f$writtenReviews,
   };
+  @override
+  final bool ignoreNull = true;
 
   static UserPrivate _instantiate(DecodingData data) {
     return UserPrivate(
@@ -1193,6 +1203,8 @@ class LinkedAccountsMapper extends ClassMapperBase<LinkedAccounts> {
     #patreonProfile: _f$patreonProfile,
     #xboxProfile: _f$xboxProfile,
   };
+  @override
+  final bool ignoreNull = true;
 
   static LinkedAccounts _instantiate(DecodingData data) {
     return LinkedAccounts(
@@ -1316,6 +1328,8 @@ class PatreonProfileMapper extends ClassMapperBase<PatreonProfile> {
     #subscription: _f$subscription,
     #patreonBadge: _f$patreonBadge,
   };
+  @override
+  final bool ignoreNull = true;
 
   static PatreonProfile _instantiate(DecodingData data) {
     return PatreonProfile(

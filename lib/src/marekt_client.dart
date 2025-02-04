@@ -9,11 +9,16 @@ class MarketClient {
 
   final MarketHttpClient _client;
 
-  /// endpoints to retrieve publicly available orders and new orders.
+  /// Get order(s)
   OrdersEndpoint get orders => OrdersEndpoint(_client);
 
-  /// Get orders on market items.
-  ///
-  /// Can also retrieve a list of items that warframe market currently allows.
+  /// Get item(s)
   ItemsEndpoint get items => ItemsEndpoint(_client);
+
+  /// Get litch/sister/Technocyte weapons, ephemeras, and quirks.
+  NemesisEndpoint nemesis(NemesisType type) =>
+      NemesisEndpoint(type: type, client: _client);
+
+  /// Get Riven weapon(s) and atrributes
+  RivenEndpoint get rivens => RivenEndpoint(_client);
 }

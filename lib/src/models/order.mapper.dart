@@ -73,6 +73,8 @@ class OrderMapper extends ClassMapperBase<Order> {
     #itemId: _f$itemId,
     #group: _f$group,
   };
+  @override
+  final bool ignoreNull = true;
 
   static Order _instantiate(DecodingData data) {
     return Order(
@@ -221,14 +223,14 @@ class _OrderCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, Order, $Out>
       _OrderCopyWithImpl($value, $cast, t);
 }
 
-class OrderWithUserMapper extends ClassMapperBase<OrderWithUser> {
+class OrderWithUserMapper extends SubClassMapperBase<OrderWithUser> {
   OrderWithUserMapper._();
 
   static OrderWithUserMapper? _instance;
   static OrderWithUserMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = OrderWithUserMapper._());
-      OrderMapper.ensureInitialized();
+      OrderMapper.ensureInitialized().addSubMapper(_instance!);
       UserShortMapper.ensureInitialized();
     }
     return _instance!;
@@ -300,6 +302,15 @@ class OrderWithUserMapper extends ClassMapperBase<OrderWithUser> {
     #group: _f$group,
     #user: _f$user,
   };
+  @override
+  final bool ignoreNull = true;
+
+  @override
+  final String discriminatorKey = 'type';
+  @override
+  final dynamic discriminatorValue = 'OrderWithUser';
+  @override
+  late final ClassMapperBase superMapper = OrderMapper.ensureInitialized();
 
   static OrderWithUser _instantiate(DecodingData data) {
     return OrderWithUser(

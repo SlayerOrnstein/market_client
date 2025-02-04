@@ -5,7 +5,7 @@ part 'item.mapper.dart';
 /// {@template item_i18n}
 /// Localized text for an item
 /// {@endtemplate}
-@MappableClass(ignoreNull: true)
+@MappableClass()
 class ItemI18n with ItemI18nMappable {
   /// {@macro item_i18n}
   const ItemI18n({
@@ -114,7 +114,7 @@ abstract class Item {
 /// Represent trimmed Item model, only used to build initial local copy of
 /// tradable items list on a client.
 /// {@endtemplate}
-@MappableClass(ignoreNull: true)
+@MappableClass()
 class ItemShort extends Item with ItemShortMappable {
   /// {@macro item-short}
   const ItemShort({
@@ -147,7 +147,7 @@ class ItemShort extends Item with ItemShortMappable {
 /// {@template item_full}
 /// Full item model with all possible fields
 /// {@endtemplate}
-@MappableClass(ignoreNull: true)
+@MappableClass()
 class ItemFull extends Item with ItemFullMappable {
   /// {@macro item_full}
   const ItemFull({
