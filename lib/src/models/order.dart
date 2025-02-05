@@ -31,7 +31,7 @@ class Order with OrderMappable {
   });
 
   /// [Order] from a [Map]
-  factory Order.fromMap(Map<String, dynamic> map) => Order.fromMap(map);
+  factory Order.fromMap(Map<String, dynamic> map) => OrderMapper.fromMap(map);
 
   /// Order id.
   final String id;

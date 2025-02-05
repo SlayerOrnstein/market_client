@@ -28,9 +28,9 @@ class UserShortMapper extends ClassMapperBase<UserShort> {
       Field('ingameName', _$ingameName);
   static String? _$avatar(UserShort v) => v.avatar;
   static const Field<UserShort, String> _f$avatar = Field('avatar', _$avatar);
-  static int _$repoutation(UserShort v) => v.repoutation;
-  static const Field<UserShort, int> _f$repoutation =
-      Field('repoutation', _$repoutation);
+  static int _$reputation(UserShort v) => v.reputation;
+  static const Field<UserShort, int> _f$reputation =
+      Field('reputation', _$reputation);
   static String _$locale(UserShort v) => v.locale;
   static const Field<UserShort, String> _f$locale = Field('locale', _$locale);
   static MarketPlatform _$platform(UserShort v) => v.platform;
@@ -54,7 +54,7 @@ class UserShortMapper extends ClassMapperBase<UserShort> {
     #id: _f$id,
     #ingameName: _f$ingameName,
     #avatar: _f$avatar,
-    #repoutation: _f$repoutation,
+    #reputation: _f$reputation,
     #locale: _f$locale,
     #platform: _f$platform,
     #crossplay: _f$crossplay,
@@ -70,7 +70,7 @@ class UserShortMapper extends ClassMapperBase<UserShort> {
         id: data.dec(_f$id),
         ingameName: data.dec(_f$ingameName),
         avatar: data.dec(_f$avatar),
-        repoutation: data.dec(_f$repoutation),
+        reputation: data.dec(_f$reputation),
         locale: data.dec(_f$locale),
         platform: data.dec(_f$platform),
         crossplay: data.dec(_f$crossplay),
@@ -134,7 +134,7 @@ abstract class UserShortCopyWith<$R, $In extends UserShort, $Out>
       {String? id,
       String? ingameName,
       String? avatar,
-      int? repoutation,
+      int? reputation,
       String? locale,
       MarketPlatform? platform,
       bool? crossplay,
@@ -160,7 +160,7 @@ class _UserShortCopyWithImpl<$R, $Out>
           {String? id,
           String? ingameName,
           Object? avatar = $none,
-          int? repoutation,
+          int? reputation,
           String? locale,
           MarketPlatform? platform,
           bool? crossplay,
@@ -171,7 +171,7 @@ class _UserShortCopyWithImpl<$R, $Out>
         if (id != null) #id: id,
         if (ingameName != null) #ingameName: ingameName,
         if (avatar != $none) #avatar: avatar,
-        if (repoutation != null) #repoutation: repoutation,
+        if (reputation != null) #reputation: reputation,
         if (locale != null) #locale: locale,
         if (platform != null) #platform: platform,
         if (crossplay != null) #crossplay: crossplay,
@@ -184,7 +184,7 @@ class _UserShortCopyWithImpl<$R, $Out>
       id: data.get(#id, or: $value.id),
       ingameName: data.get(#ingameName, or: $value.ingameName),
       avatar: data.get(#avatar, or: $value.avatar),
-      repoutation: data.get(#repoutation, or: $value.repoutation),
+      reputation: data.get(#reputation, or: $value.reputation),
       locale: data.get(#locale, or: $value.locale),
       platform: data.get(#platform, or: $value.platform),
       crossplay: data.get(#crossplay, or: $value.crossplay),
@@ -340,9 +340,9 @@ class UserPublicMapper extends ClassMapperBase<UserPublic> {
       Field('ingameName', _$ingameName);
   static String? _$avatar(UserPublic v) => v.avatar;
   static const Field<UserPublic, String> _f$avatar = Field('avatar', _$avatar);
-  static int _$repoutation(UserPublic v) => v.repoutation;
-  static const Field<UserPublic, int> _f$repoutation =
-      Field('repoutation', _$repoutation);
+  static int _$reputation(UserPublic v) => v.reputation;
+  static const Field<UserPublic, int> _f$reputation =
+      Field('reputation', _$reputation);
   static String _$locale(UserPublic v) => v.locale;
   static const Field<UserPublic, String> _f$locale = Field('locale', _$locale);
   static MarketPlatform _$platform(UserPublic v) => v.platform;
@@ -391,7 +391,7 @@ class UserPublicMapper extends ClassMapperBase<UserPublic> {
     #id: _f$id,
     #ingameName: _f$ingameName,
     #avatar: _f$avatar,
-    #repoutation: _f$repoutation,
+    #reputation: _f$reputation,
     #locale: _f$locale,
     #platform: _f$platform,
     #crossplay: _f$crossplay,
@@ -416,7 +416,7 @@ class UserPublicMapper extends ClassMapperBase<UserPublic> {
         id: data.dec(_f$id),
         ingameName: data.dec(_f$ingameName),
         avatar: data.dec(_f$avatar),
-        repoutation: data.dec(_f$repoutation),
+        reputation: data.dec(_f$reputation),
         locale: data.dec(_f$locale),
         platform: data.dec(_f$platform),
         crossplay: data.dec(_f$crossplay),
@@ -493,7 +493,7 @@ abstract class UserPublicCopyWith<$R, $In extends UserPublic, $Out>
       {String? id,
       String? ingameName,
       String? avatar,
-      int? repoutation,
+      int? reputation,
       String? locale,
       MarketPlatform? platform,
       bool? crossplay,
@@ -533,7 +533,7 @@ class _UserPublicCopyWithImpl<$R, $Out>
           {String? id,
           String? ingameName,
           Object? avatar = $none,
-          int? repoutation,
+          int? reputation,
           String? locale,
           MarketPlatform? platform,
           bool? crossplay,
@@ -553,7 +553,7 @@ class _UserPublicCopyWithImpl<$R, $Out>
         if (id != null) #id: id,
         if (ingameName != null) #ingameName: ingameName,
         if (avatar != $none) #avatar: avatar,
-        if (repoutation != null) #repoutation: repoutation,
+        if (reputation != null) #reputation: reputation,
         if (locale != null) #locale: locale,
         if (platform != null) #platform: platform,
         if (crossplay != null) #crossplay: crossplay,
@@ -576,7 +576,7 @@ class _UserPublicCopyWithImpl<$R, $Out>
       id: data.get(#id, or: $value.id),
       ingameName: data.get(#ingameName, or: $value.ingameName),
       avatar: data.get(#avatar, or: $value.avatar),
-      repoutation: data.get(#repoutation, or: $value.repoutation),
+      reputation: data.get(#reputation, or: $value.reputation),
       locale: data.get(#locale, or: $value.locale),
       platform: data.get(#platform, or: $value.platform),
       crossplay: data.get(#crossplay, or: $value.crossplay),
@@ -767,9 +767,9 @@ class UserPrivateMapper extends ClassMapperBase<UserPrivate> {
       Field('ingameName', _$ingameName);
   static String? _$avatar(UserPrivate v) => v.avatar;
   static const Field<UserPrivate, String> _f$avatar = Field('avatar', _$avatar);
-  static int _$repoutation(UserPrivate v) => v.repoutation;
-  static const Field<UserPrivate, int> _f$repoutation =
-      Field('repoutation', _$repoutation);
+  static int _$reputation(UserPrivate v) => v.reputation;
+  static const Field<UserPrivate, int> _f$reputation =
+      Field('reputation', _$reputation);
   static String _$locale(UserPrivate v) => v.locale;
   static const Field<UserPrivate, String> _f$locale = Field('locale', _$locale);
   static MarketPlatform _$platform(UserPrivate v) => v.platform;
@@ -798,9 +798,6 @@ class UserPrivateMapper extends ClassMapperBase<UserPrivate> {
   static String? _$aboutRaw(UserPrivate v) => v.aboutRaw;
   static const Field<UserPrivate, String> _f$aboutRaw =
       Field('aboutRaw', _$aboutRaw, opt: true);
-  static int _$reputation(UserPrivate v) => v.reputation;
-  static const Field<UserPrivate, int> _f$reputation =
-      Field('reputation', _$reputation);
   static int _$masteryRank(UserPrivate v) => v.masteryRank;
   static const Field<UserPrivate, int> _f$masteryRank =
       Field('masteryRank', _$masteryRank);
@@ -863,7 +860,7 @@ class UserPrivateMapper extends ClassMapperBase<UserPrivate> {
     #id: _f$id,
     #ingameName: _f$ingameName,
     #avatar: _f$avatar,
-    #repoutation: _f$repoutation,
+    #reputation: _f$reputation,
     #locale: _f$locale,
     #platform: _f$platform,
     #crossplay: _f$crossplay,
@@ -874,7 +871,6 @@ class UserPrivateMapper extends ClassMapperBase<UserPrivate> {
     #background: _f$background,
     #about: _f$about,
     #aboutRaw: _f$aboutRaw,
-    #reputation: _f$reputation,
     #masteryRank: _f$masteryRank,
     #credits: _f$credits,
     #theme: _f$theme,
@@ -903,7 +899,7 @@ class UserPrivateMapper extends ClassMapperBase<UserPrivate> {
         id: data.dec(_f$id),
         ingameName: data.dec(_f$ingameName),
         avatar: data.dec(_f$avatar),
-        repoutation: data.dec(_f$repoutation),
+        reputation: data.dec(_f$reputation),
         locale: data.dec(_f$locale),
         platform: data.dec(_f$platform),
         crossplay: data.dec(_f$crossplay),
@@ -914,7 +910,6 @@ class UserPrivateMapper extends ClassMapperBase<UserPrivate> {
         background: data.dec(_f$background),
         about: data.dec(_f$about),
         aboutRaw: data.dec(_f$aboutRaw),
-        reputation: data.dec(_f$reputation),
         masteryRank: data.dec(_f$masteryRank),
         credits: data.dec(_f$credits),
         theme: data.dec(_f$theme),
@@ -995,7 +990,7 @@ abstract class UserPrivateCopyWith<$R, $In extends UserPrivate, $Out>
       {String? id,
       String? ingameName,
       String? avatar,
-      int? repoutation,
+      int? reputation,
       String? locale,
       MarketPlatform? platform,
       bool? crossplay,
@@ -1006,7 +1001,6 @@ abstract class UserPrivateCopyWith<$R, $In extends UserPrivate, $Out>
       String? background,
       String? about,
       String? aboutRaw,
-      int? reputation,
       int? masteryRank,
       int? credits,
       String? theme,
@@ -1057,7 +1051,7 @@ class _UserPrivateCopyWithImpl<$R, $Out>
           {String? id,
           String? ingameName,
           Object? avatar = $none,
-          int? repoutation,
+          int? reputation,
           String? locale,
           MarketPlatform? platform,
           bool? crossplay,
@@ -1068,7 +1062,6 @@ class _UserPrivateCopyWithImpl<$R, $Out>
           Object? background = $none,
           Object? about = $none,
           Object? aboutRaw = $none,
-          int? reputation,
           int? masteryRank,
           int? credits,
           String? theme,
@@ -1092,7 +1085,7 @@ class _UserPrivateCopyWithImpl<$R, $Out>
         if (id != null) #id: id,
         if (ingameName != null) #ingameName: ingameName,
         if (avatar != $none) #avatar: avatar,
-        if (repoutation != null) #repoutation: repoutation,
+        if (reputation != null) #reputation: reputation,
         if (locale != null) #locale: locale,
         if (platform != null) #platform: platform,
         if (crossplay != null) #crossplay: crossplay,
@@ -1103,7 +1096,6 @@ class _UserPrivateCopyWithImpl<$R, $Out>
         if (background != $none) #background: background,
         if (about != $none) #about: about,
         if (aboutRaw != $none) #aboutRaw: aboutRaw,
-        if (reputation != null) #reputation: reputation,
         if (masteryRank != null) #masteryRank: masteryRank,
         if (credits != null) #credits: credits,
         if (theme != null) #theme: theme,
@@ -1130,7 +1122,7 @@ class _UserPrivateCopyWithImpl<$R, $Out>
       id: data.get(#id, or: $value.id),
       ingameName: data.get(#ingameName, or: $value.ingameName),
       avatar: data.get(#avatar, or: $value.avatar),
-      repoutation: data.get(#repoutation, or: $value.repoutation),
+      reputation: data.get(#reputation, or: $value.reputation),
       locale: data.get(#locale, or: $value.locale),
       platform: data.get(#platform, or: $value.platform),
       crossplay: data.get(#crossplay, or: $value.crossplay),
@@ -1141,7 +1133,6 @@ class _UserPrivateCopyWithImpl<$R, $Out>
       background: data.get(#background, or: $value.background),
       about: data.get(#about, or: $value.about),
       aboutRaw: data.get(#aboutRaw, or: $value.aboutRaw),
-      reputation: data.get(#reputation, or: $value.reputation),
       masteryRank: data.get(#masteryRank, or: $value.masteryRank),
       credits: data.get(#credits, or: $value.credits),
       theme: data.get(#theme, or: $value.theme),

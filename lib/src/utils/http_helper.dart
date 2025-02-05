@@ -19,16 +19,13 @@ abstract class HttpHelpers {
   ///
   /// [MarketPlatform] is required for all calls.
   /// [language] will default to english/international if null on Warframe Market's end.
-  /// [token] can be ommited if you want to make calls that don't require auth.
   static Map<String, String> headers({
     required MarketPlatform platform,
     String? language,
-    String? token,
   }) {
     return <String, String>{
       'Platform': platform.toString().split('.').last,
       if (language != null) 'Language': language,
-      if (token != null) 'Authorization': token,
       'Content-Type': 'application/json',
     };
   }

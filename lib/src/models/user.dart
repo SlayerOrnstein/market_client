@@ -24,7 +24,7 @@ abstract class User {
     required this.id,
     required this.ingameName,
     required this.avatar,
-    required this.repoutation,
+    required this.reputation,
     required this.locale,
     required this.platform,
     required this.crossplay,
@@ -43,7 +43,7 @@ abstract class User {
   final String? avatar;
 
   /// Reputation score.
-  final int repoutation;
+  final int reputation;
 
   /// Preffered communication locale
   final String locale;
@@ -75,7 +75,7 @@ class UserShort extends User with UserShortMappable {
     required super.id,
     required super.ingameName,
     required super.avatar,
-    required super.repoutation,
+    required super.reputation,
     required super.locale,
     required super.platform,
     required super.crossplay,
@@ -98,7 +98,7 @@ class UserPublic extends User with UserPublicMappable {
     required super.id,
     required super.ingameName,
     required super.avatar,
-    required super.repoutation,
+    required super.reputation,
     required super.locale,
     required super.platform,
     required super.crossplay,
@@ -171,7 +171,7 @@ class UserPrivate extends User with UserPrivateMappable {
     required super.id,
     required super.ingameName,
     required super.avatar,
-    required super.repoutation,
+    required super.reputation,
     required super.locale,
     required super.platform,
     required super.crossplay,
@@ -182,7 +182,6 @@ class UserPrivate extends User with UserPrivateMappable {
     this.background,
     this.about,
     this.aboutRaw,
-    required this.reputation,
     required this.masteryRank,
     required this.credits,
     required this.theme,
@@ -218,9 +217,6 @@ class UserPrivate extends User with UserPrivateMappable {
 
   /// Optional about text in raw markdown
   final String? aboutRaw;
-
-  /// Reputation score
-  final int reputation;
 
   /// In-game mastery level
   final int masteryRank;

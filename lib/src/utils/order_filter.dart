@@ -11,16 +11,23 @@ part 'order_filter.mapper.dart';
 class OrderFilter with OrderFilterMappable {
   /// {@macro order_template}
   OrderFilter({
-    this.rank,
-    this.rankLt,
-    this.charges,
-    this.chargesLt,
-    this.amberStars,
-    this.amberLt,
-    this.cyanStars,
-    this.cyanStarsLt,
+    int? rank,
+    int? rankLt,
+    int? charges,
+    int? chargesLt,
+    int? amberStars,
+    int? amberStarsLt,
+    int? cyanStars,
+    int? cyanStarsLt,
     this.subtype,
-  });
+  })  : rank = _validate(rank, 'rank'),
+        rankLt = _validate(rankLt, 'rankLt'),
+        charges = _validate(charges, 'charges'),
+        chargesLt = _validate(chargesLt, 'chargesLt'),
+        amberStars = _validate(amberStars, 'amberStarts'),
+        amberStarsLt = _validate(amberStarsLt, 'amberLt'),
+        cyanStars = _validate(cyanStars, 'cyanStars'),
+        cyanStarsLt = _validate(cyanStarsLt, 'cyanstarsLt');
 
   /// Filter orders by the **exact** rank specfied.
   final int? rank;
@@ -40,7 +47,7 @@ class OrderFilter with OrderFilterMappable {
 
   /// Filters orders where the number of amber stars is **less than** the
   /// specified value.
-  final int? amberLt;
+  final int? amberStarsLt;
 
   /// Filters orders by the **exact** number of cyan stars.
   final int? cyanStars;
@@ -51,4 +58,12 @@ class OrderFilter with OrderFilterMappable {
 
   /// Controls the filtering of orders based on item [subtype] field.
   final String? subtype;
+
+  static int? _validate(int? value, String name) {
+    if (value?.isNegative ?? false) {
+      throw ArgumentError.value(value, name, 'Must be non-negative');
+    }
+
+    return value;
+  }
 }

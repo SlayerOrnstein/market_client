@@ -35,9 +35,9 @@ class OrderFilterMapper extends ClassMapperBase<OrderFilter> {
   static int? _$amberStars(OrderFilter v) => v.amberStars;
   static const Field<OrderFilter, int> _f$amberStars =
       Field('amberStars', _$amberStars, opt: true);
-  static int? _$amberLt(OrderFilter v) => v.amberLt;
-  static const Field<OrderFilter, int> _f$amberLt =
-      Field('amberLt', _$amberLt, opt: true);
+  static int? _$amberStarsLt(OrderFilter v) => v.amberStarsLt;
+  static const Field<OrderFilter, int> _f$amberStarsLt =
+      Field('amberStarsLt', _$amberStarsLt, opt: true);
   static int? _$cyanStars(OrderFilter v) => v.cyanStars;
   static const Field<OrderFilter, int> _f$cyanStars =
       Field('cyanStars', _$cyanStars, opt: true);
@@ -55,7 +55,7 @@ class OrderFilterMapper extends ClassMapperBase<OrderFilter> {
     #charges: _f$charges,
     #chargesLt: _f$chargesLt,
     #amberStars: _f$amberStars,
-    #amberLt: _f$amberLt,
+    #amberStarsLt: _f$amberStarsLt,
     #cyanStars: _f$cyanStars,
     #cyanStarsLt: _f$cyanStarsLt,
     #subtype: _f$subtype,
@@ -70,7 +70,7 @@ class OrderFilterMapper extends ClassMapperBase<OrderFilter> {
         charges: data.dec(_f$charges),
         chargesLt: data.dec(_f$chargesLt),
         amberStars: data.dec(_f$amberStars),
-        amberLt: data.dec(_f$amberLt),
+        amberStarsLt: data.dec(_f$amberStarsLt),
         cyanStars: data.dec(_f$cyanStars),
         cyanStarsLt: data.dec(_f$cyanStarsLt),
         subtype: data.dec(_f$subtype));
@@ -133,7 +133,7 @@ abstract class OrderFilterCopyWith<$R, $In extends OrderFilter, $Out>
       int? charges,
       int? chargesLt,
       int? amberStars,
-      int? amberLt,
+      int? amberStarsLt,
       int? cyanStars,
       int? cyanStarsLt,
       String? subtype});
@@ -155,7 +155,7 @@ class _OrderFilterCopyWithImpl<$R, $Out>
           Object? charges = $none,
           Object? chargesLt = $none,
           Object? amberStars = $none,
-          Object? amberLt = $none,
+          Object? amberStarsLt = $none,
           Object? cyanStars = $none,
           Object? cyanStarsLt = $none,
           Object? subtype = $none}) =>
@@ -165,7 +165,7 @@ class _OrderFilterCopyWithImpl<$R, $Out>
         if (charges != $none) #charges: charges,
         if (chargesLt != $none) #chargesLt: chargesLt,
         if (amberStars != $none) #amberStars: amberStars,
-        if (amberLt != $none) #amberLt: amberLt,
+        if (amberStarsLt != $none) #amberStarsLt: amberStarsLt,
         if (cyanStars != $none) #cyanStars: cyanStars,
         if (cyanStarsLt != $none) #cyanStarsLt: cyanStarsLt,
         if (subtype != $none) #subtype: subtype
@@ -177,7 +177,7 @@ class _OrderFilterCopyWithImpl<$R, $Out>
       charges: data.get(#charges, or: $value.charges),
       chargesLt: data.get(#chargesLt, or: $value.chargesLt),
       amberStars: data.get(#amberStars, or: $value.amberStars),
-      amberLt: data.get(#amberLt, or: $value.amberLt),
+      amberStarsLt: data.get(#amberStarsLt, or: $value.amberStarsLt),
       cyanStars: data.get(#cyanStars, or: $value.cyanStars),
       cyanStarsLt: data.get(#cyanStarsLt, or: $value.cyanStarsLt),
       subtype: data.get(#subtype, or: $value.subtype));

@@ -69,7 +69,7 @@ class NemesisWeapon with NemesisWeaponMappable {
   final int reqMasteryRank;
 
   /// Localized text.
-  final Map<String, dynamic> i18n;
+  final Map<String, NemesisI18n> i18n;
 }
 
 /// {@template nemesis_ephemera}

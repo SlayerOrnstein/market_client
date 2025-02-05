@@ -157,6 +157,7 @@ class NemesisWeaponMapper extends ClassMapperBase<NemesisWeapon> {
   static NemesisWeaponMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = NemesisWeaponMapper._());
+      NemesisI18nMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -174,8 +175,8 @@ class NemesisWeaponMapper extends ClassMapperBase<NemesisWeapon> {
   static int _$reqMasteryRank(NemesisWeapon v) => v.reqMasteryRank;
   static const Field<NemesisWeapon, int> _f$reqMasteryRank =
       Field('reqMasteryRank', _$reqMasteryRank);
-  static Map<String, dynamic> _$i18n(NemesisWeapon v) => v.i18n;
-  static const Field<NemesisWeapon, Map<String, dynamic>> _f$i18n =
+  static Map<String, NemesisI18n> _$i18n(NemesisWeapon v) => v.i18n;
+  static const Field<NemesisWeapon, Map<String, NemesisI18n>> _f$i18n =
       Field('i18n', _$i18n);
 
   @override
@@ -251,14 +252,14 @@ extension NemesisWeaponValueCopy<$R, $Out>
 
 abstract class NemesisWeaponCopyWith<$R, $In extends NemesisWeapon, $Out>
     implements ClassCopyWith<$R, $In, $Out> {
-  MapCopyWith<$R, String, dynamic, ObjectCopyWith<$R, dynamic, dynamic>>
-      get i18n;
+  MapCopyWith<$R, String, NemesisI18n,
+      NemesisI18nCopyWith<$R, NemesisI18n, NemesisI18n>> get i18n;
   $R call(
       {String? id,
       String? slug,
       String? gameRef,
       int? reqMasteryRank,
-      Map<String, dynamic>? i18n});
+      Map<String, NemesisI18n>? i18n});
   NemesisWeaponCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -271,16 +272,17 @@ class _NemesisWeaponCopyWithImpl<$R, $Out>
   late final ClassMapperBase<NemesisWeapon> $mapper =
       NemesisWeaponMapper.ensureInitialized();
   @override
-  MapCopyWith<$R, String, dynamic, ObjectCopyWith<$R, dynamic, dynamic>>
-      get i18n => MapCopyWith($value.i18n,
-          (v, t) => ObjectCopyWith(v, $identity, t), (v) => call(i18n: v));
+  MapCopyWith<$R, String, NemesisI18n,
+          NemesisI18nCopyWith<$R, NemesisI18n, NemesisI18n>>
+      get i18n => MapCopyWith(
+          $value.i18n, (v, t) => v.copyWith.$chain(t), (v) => call(i18n: v));
   @override
   $R call(
           {String? id,
           String? slug,
           String? gameRef,
           int? reqMasteryRank,
-          Map<String, dynamic>? i18n}) =>
+          Map<String, NemesisI18n>? i18n}) =>
       $apply(FieldCopyWithData({
         if (id != null) #id: id,
         if (slug != null) #slug: slug,

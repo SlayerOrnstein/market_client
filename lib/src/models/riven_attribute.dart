@@ -27,7 +27,7 @@ class RivenAttribute with RivenAttributeMappable {
   });
 
   /// [RivenAttribute] from map
-  factory RivenAttribute.fromJson(Map<String, dynamic> map) {
+  factory RivenAttribute.fromMap(Map<String, dynamic> map) {
     return RivenAttributeMapper.fromMap(map);
   }
 

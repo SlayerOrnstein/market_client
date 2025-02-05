@@ -34,6 +34,6 @@ class RivenEndpoint {
     final body = HttpHelpers.parseResponse<List<dynamic>>(response.body);
     final attributes = List<Map<String, dynamic>>.from(body.data);
 
-    return attributes.map(RivenAttribute.fromJson).toList();
+    return attributes.map(RivenAttribute.fromMap).toList();
   }
 }
