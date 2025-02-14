@@ -1,9 +1,12 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:market_client/market_client.dart';
+import 'package:market_client/src/utils/utils.dart';
 
 const String _basePath = 'warframe.market';
+
+/// Response structure returned by WFM
+typedef MarketResponse<T> = ({String apiVersion, T data, dynamic error});
 
 /// An abstract class for functions to help with http related jobs.
 abstract class HttpHelpers {
@@ -16,26 +19,29 @@ abstract class HttpHelpers {
   ///
   /// [MarketPlatform] is required for all calls.
   /// [language] will default to english/international if null on Warframe Market's end.
-  /// [token] can be ommited if you want to make calls that don't require auth.
   static Map<String, String> headers({
     required MarketPlatform platform,
     String? language,
-    String? token,
   }) {
     return <String, String>{
       'Platform': platform.toString().split('.').last,
       if (language != null) 'Language': language,
-      if (token != null) 'Authorization': token,
       'Content-Type': 'application/json',
     };
   }
 
   /// Returns the response body into a Map object of Warframe Market's response.
-  static Map<String, dynamic> parseResponse(String body) {
-    return json.decode(body) as Map<String, dynamic>;
+  static MarketResponse<T> parseResponse<T>(String body) {
+    final json = jsonDecode(body) as Map<String, dynamic>;
+
+    return (
+      apiVersion: json['apiVersion'] as String,
+      data: json['data'] as T,
+      error: json['error']
+    );
   }
 
-  // ignore: public_member_api_docs
+  /// Utility function to throw using statusCode
   static void checkStatusCode(int statusCode, {String? reason}) {
     if (statusCode == 200) return;
 

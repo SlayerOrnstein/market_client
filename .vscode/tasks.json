@@ -13,6 +13,20 @@
 			"problemMatcher": [],
 			"label": "dart: dart run build_runner watch",
 			"detail": "",
+			"group": "build"
+		},
+		{
+			"type": "dart",
+			"command": "dart",
+			"cwd": "",
+			"args": [
+				"run",
+				"build_runner",
+				"build"
+			],
+			"problemMatcher": [],
+			"label": "dart: dart run build_runner build",
+			"detail": "",
 			"group": {
 				"kind": "build",
 				"isDefault": true
