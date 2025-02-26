@@ -1,26 +1,12 @@
+// Example file
+// ignore_for_file: avoid_print
+
 import 'package:market_client/market_client.dart';
-import 'package:web_socket_client/web_socket_client.dart';
 
 Future<void> main() async {
   final httpClient = MarketHttpClient();
+  final client = MarketClient(httpClient);
+  final recent = await client.orders.fetchRecentOrders();
 
-  final uri = Uri(
-    scheme: 'wss',
-    host: 'warframe.market',
-    path: 'socket',
-    queryParameters: {'platform': httpClient.platform.name},
-  );
-
-  final marketWebsocket = MarketWebsocket(WebSocket(uri));
-
-  final client = MarketClient(httpClient, marketWebsocket);
-  final recentOrders = await client.orders.fetchRecentOrders();
-
-  for (final order in recentOrders.sellOrders) {
-    // ignore: avoid_print
-    print(order.id);
-  }
-
-  // ignore: avoid_print
-  client.orders.newOrders().listen((event) => print(event.id));
+  print(recent.first.id);
 }

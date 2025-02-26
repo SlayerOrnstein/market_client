@@ -1,4 +1,13 @@
 {
     "editor.formatOnSave": true,
-    "editor.formatOnPaste": true
+    "editor.formatOnPaste": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "always"
+    },
+    "dart.lineLength": 120,
+    "[dart]": {
+        "editor.rulers": [
+            120,
+        ]
+    }
 }

@@ -18,7 +18,5 @@ class FetchDataException implements Exception {
   final String? message;
 
   @override
-  String toString() {
-    return '$message\nStatus code: $statusCode';
-  }
+  String toString() => '$message\nStatus code: $statusCode';
 }
