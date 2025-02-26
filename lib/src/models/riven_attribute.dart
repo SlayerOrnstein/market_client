@@ -3,6 +3,7 @@ import 'package:dart_mappable/dart_mappable.dart';
 part 'riven_attribute.mapper.dart';
 
 /// Localized text for riven attribute
+@MappableRecord()
 typedef RivenAttributeI18n = ({String effect, String icon, String thumb});
 
 /// {@template riven_attribute}

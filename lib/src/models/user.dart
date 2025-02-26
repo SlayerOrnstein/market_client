@@ -4,6 +4,7 @@ import 'package:market_client/src/utils/utils.dart';
 part 'user.mapper.dart';
 
 /// User status.
+@MappableEnum()
 enum UserStatus {
   /// User is online and in-game.
   ingame,
@@ -13,6 +14,25 @@ enum UserStatus {
 
   /// User is offline.
   offline,
+}
+
+/// Subscription tier, form Patreon \ Afdian \ Nitropay
+@MappableEnum()
+enum SubscriptionTier {
+  /// Not subscribed
+  none,
+
+  /// Bronze tier
+  bronze,
+
+  /// Silver tier
+  silver,
+
+  /// Gold tier
+  gold,
+
+  /// Diamond tier
+  diamond,
 }
 
 /// {@template user}
@@ -57,7 +77,6 @@ abstract class User {
   /// Current user status
   final UserStatus status;
 
-  // TODO(SlayerOrnstein): ActivityType needs a hook to handle empty strings
   /// Current activity the user is engaged in.
   final Activity activity;
 
@@ -109,9 +128,9 @@ class UserPublic extends User with UserPublicMappable {
     required this.about,
     required this.masteryLevel,
     required this.achievementShowcase,
-    required this.banned,
+    required this.isBanned,
     required this.banUntil,
-    required this.warned,
+    required this.wasWarned,
     required this.warnMessage,
     required this.banMessage,
   });
@@ -131,13 +150,15 @@ class UserPublic extends User with UserPublicMappable {
   final List<Achievement> achievementShowcase;
 
   /// ndicates whether the user is currently banned.
-  final bool? banned;
+  @MappableField(key: 'banned')
+  final bool? isBanned;
 
   /// End date of the current ban, if applicable.
   final DateTime? banUntil;
 
   /// Indicates whether the user has been warned.
-  final bool? warned;
+  @MappableField(key: 'warned')
+  final bool? wasWarned;
 
   /// Warning message if any.
   final String? warnMessage;
@@ -147,6 +168,7 @@ class UserPublic extends User with UserPublicMappable {
 }
 
 /// User's role.
+@MappableEnum()
 enum Role {
   /// Anonymous user.
   anonymous,
@@ -158,7 +180,7 @@ enum Role {
   moderator,
 
   /// This user is an admin.
-  admin
+  admin,
 }
 
 /// {@template current_user}
@@ -188,10 +210,11 @@ class UserPrivate extends User with UserPrivateMappable {
     required this.achievementShowcase,
     required this.verification,
     required this.checkCode,
-    required this.subscription,
-    this.warned,
+    required this.tier,
+    required this.isSubscribed,
+    this.wasWarned,
     this.warnMessage,
-    this.banned,
+    this.isBanned,
     this.banMessage,
     required this.reviewsLeft,
     required this.unreadMessages,
@@ -236,19 +259,23 @@ class UserPrivate extends User with UserPrivateMappable {
   /// Unique check code for the user.
   final String checkCode;
 
-  // TODO(SlayerOrnstein): implement tier
+  /// User subscription tier
+  final SubscriptionTier tier;
 
   /// Subscription status.
-  final bool subscription;
+  @MappableField(key: 'subscription')
+  final bool isSubscribed;
 
   /// Whether the user was warned or not.
-  final bool? warned;
+  @MappableField(key: 'warned')
+  final bool? wasWarned;
 
   /// Warning message.
   final String? warnMessage;
 
   /// Whether the user was banned or not.
-  final bool? banned;
+  @MappableField(key: 'banned')
+  final bool? isBanned;
 
   /// Reseaon for user being banned.
   final String? banMessage;
@@ -283,6 +310,7 @@ class UserPrivate extends User with UserPrivateMappable {
 }
 
 /// User patreon badge.
+@MappableEnum()
 enum PatreonBadge {
   /// Bronze badge.
   bronze,
@@ -355,6 +383,7 @@ class LinkedAccounts with LinkedAccountsMappable {
 }
 
 /// AchievementI18n holds localized information for an achievement.
+@MappableRecord()
 typedef AchievementI18n = ({String name, String description});
 
 /// {@template achievement}
@@ -390,19 +419,32 @@ class Achievement with AchievementMappable {
   final AchievementI18n i18n;
 }
 
+/// Type of activity
+@MappableEnum()
+enum ActivityType {
+  /// User is on a mission
+  @MappableValue('on_mission')
+  onMission,
+
+  /// User is in a dojo
+  dojo,
+
+  /// Unknown activity type
+  unknown,
+
+  /// Nothing
+  @MappableValue('')
+  none,
+}
+
 /// {@template activity}
 /// Details about current activity the user is engaged in.
 /// {@endtemplate}
 @MappableClass()
 class Activity with ActivityMappable {
   /// {@macro activity}
-  const Activity({
-    required this.type,
-    this.details,
-    this.startedAt,
-  });
+  const Activity({required this.type, this.details, this.startedAt});
 
-  // TODO(SlayerOrnstein): Will need to use an enum at some point
   /// Name of the activity.
   ///
   /// i.e. 'on mission', 'dojo'.

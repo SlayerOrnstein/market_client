@@ -13,7 +13,7 @@ class RivenAttributeMapper extends ClassMapperBase<RivenAttribute> {
   static RivenAttributeMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = RivenAttributeMapper._());
-      _t$_R0Mapper.ensureInitialized();
+      RivenAttributeI18nMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -233,44 +233,45 @@ class _RivenAttributeCopyWithImpl<$R, $Out>
       _RivenAttributeCopyWithImpl($value, $cast, t);
 }
 
-typedef _t$_R0<A, B, C> = ({A effect, B icon, C thumb});
+class RivenAttributeI18nMapper extends RecordMapperBase<RivenAttributeI18n> {
+  static RivenAttributeI18nMapper? _instance;
+  RivenAttributeI18nMapper._();
 
-class _t$_R0Mapper extends RecordMapperBase<_t$_R0> {
-  static _t$_R0Mapper? _instance;
-  _t$_R0Mapper._();
-
-  static _t$_R0Mapper ensureInitialized() {
+  static RivenAttributeI18nMapper ensureInitialized() {
     if (_instance == null) {
-      MapperContainer.globals.use(_instance = _t$_R0Mapper._());
+      MapperContainer.globals.use(_instance = RivenAttributeI18nMapper._());
       MapperBase.addType(<A, B, C>(f) => f<({A effect, B icon, C thumb})>());
     }
     return _instance!;
   }
 
-  static dynamic _$effect(_t$_R0 v) => v.effect;
-  static dynamic _arg$effect<A, B, C>(f) => f<A>();
-  static const Field<_t$_R0, dynamic> _f$effect =
-      Field('effect', _$effect, arg: _arg$effect);
-  static dynamic _$icon(_t$_R0 v) => v.icon;
-  static dynamic _arg$icon<A, B, C>(f) => f<B>();
-  static const Field<_t$_R0, dynamic> _f$icon =
-      Field('icon', _$icon, arg: _arg$icon);
-  static dynamic _$thumb(_t$_R0 v) => v.thumb;
-  static dynamic _arg$thumb<A, B, C>(f) => f<C>();
-  static const Field<_t$_R0, dynamic> _f$thumb =
-      Field('thumb', _$thumb, arg: _arg$thumb);
+  static String _$effect(RivenAttributeI18n v) => v.effect;
+  static const Field<RivenAttributeI18n, String> _f$effect =
+      Field('effect', _$effect);
+  static String _$icon(RivenAttributeI18n v) => v.icon;
+  static const Field<RivenAttributeI18n, String> _f$icon =
+      Field('icon', _$icon);
+  static String _$thumb(RivenAttributeI18n v) => v.thumb;
+  static const Field<RivenAttributeI18n, String> _f$thumb =
+      Field('thumb', _$thumb);
 
   @override
-  final MappableFields<_t$_R0> fields = const {
+  final MappableFields<RivenAttributeI18n> fields = const {
     #effect: _f$effect,
     #icon: _f$icon,
     #thumb: _f$thumb,
   };
 
   @override
-  Function get typeFactory => <A, B, C>(f) => f<_t$_R0<A, B, C>>();
+  Function get typeFactory => (f) => f<RivenAttributeI18n>();
 
-  static _t$_R0<A, B, C> _instantiate<A, B, C>(DecodingData<_t$_R0> data) {
+  @override
+  List<Type> apply(MappingContext context) {
+    return [];
+  }
+
+  static RivenAttributeI18n _instantiate(
+      DecodingData<RivenAttributeI18n> data) {
     return (
       effect: data.dec(_f$effect),
       icon: data.dec(_f$icon),
@@ -281,11 +282,64 @@ class _t$_R0Mapper extends RecordMapperBase<_t$_R0> {
   @override
   final Function instantiate = _instantiate;
 
-  static _t$_R0<A, B, C> fromMap<A, B, C>(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<_t$_R0<A, B, C>>(map);
+  static RivenAttributeI18n fromMap(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<RivenAttributeI18n>(map);
   }
 
-  static _t$_R0<A, B, C> fromJson<A, B, C>(String json) {
-    return ensureInitialized().decodeJson<_t$_R0<A, B, C>>(json);
+  static RivenAttributeI18n fromJson(String json) {
+    return ensureInitialized().decodeJson<RivenAttributeI18n>(json);
   }
+}
+
+extension RivenAttributeI18nMappable on RivenAttributeI18n {
+  Map<String, dynamic> toMap() {
+    return RivenAttributeI18nMapper.ensureInitialized().encodeMap(this);
+  }
+
+  String toJson() {
+    return RivenAttributeI18nMapper.ensureInitialized().encodeJson(this);
+  }
+
+  RivenAttributeI18nCopyWith<RivenAttributeI18n> get copyWith =>
+      _RivenAttributeI18nCopyWithImpl(this, $identity, $identity);
+}
+
+extension RivenAttributeI18nValueCopy<$R>
+    on ObjectCopyWith<$R, RivenAttributeI18n, RivenAttributeI18n> {
+  RivenAttributeI18nCopyWith<$R> get $asRivenAttributeI18n =>
+      $base.as((v, t, t2) => _RivenAttributeI18nCopyWithImpl(v, t, t2));
+}
+
+abstract class RivenAttributeI18nCopyWith<$R>
+    implements RecordCopyWith<$R, RivenAttributeI18n> {
+  $R call({String? effect, String? icon, String? thumb});
+  RivenAttributeI18nCopyWith<$R2> $chain<$R2>(Then<RivenAttributeI18n, $R2> t);
+}
+
+class _RivenAttributeI18nCopyWithImpl<$R>
+    extends RecordCopyWithBase<$R, RivenAttributeI18n>
+    implements RivenAttributeI18nCopyWith<$R> {
+  _RivenAttributeI18nCopyWithImpl(super.value, super.then, super.then2);
+
+  @override
+  late final RecordMapperBase<RivenAttributeI18n> $mapper =
+      RivenAttributeI18nMapper.ensureInitialized();
+  @override
+  $R call({String? effect, String? icon, String? thumb}) =>
+      $apply(FieldCopyWithData({
+        if (effect != null) #effect: effect,
+        if (icon != null) #icon: icon,
+        if (thumb != null) #thumb: thumb
+      }));
+  @override
+  RivenAttributeI18n $make(CopyWithData data) => (
+        effect: data.get(#effect, or: $value.effect),
+        icon: data.get(#icon, or: $value.icon),
+        thumb: data.get(#thumb, or: $value.thumb)
+      );
+
+  @override
+  RivenAttributeI18nCopyWith<$R2> $chain<$R2>(
+          Then<RivenAttributeI18n, $R2> t) =>
+      _RivenAttributeI18nCopyWithImpl($value, $cast, t);
 }

@@ -6,6 +6,276 @@
 
 part of 'user.dart';
 
+class UserStatusMapper extends EnumMapper<UserStatus> {
+  UserStatusMapper._();
+
+  static UserStatusMapper? _instance;
+  static UserStatusMapper ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(_instance = UserStatusMapper._());
+    }
+    return _instance!;
+  }
+
+  static UserStatus fromValue(dynamic value) {
+    ensureInitialized();
+    return MapperContainer.globals.fromValue(value);
+  }
+
+  @override
+  UserStatus decode(dynamic value) {
+    switch (value) {
+      case 'ingame':
+        return UserStatus.ingame;
+      case 'online':
+        return UserStatus.online;
+      case 'offline':
+        return UserStatus.offline;
+      default:
+        throw MapperException.unknownEnumValue(value);
+    }
+  }
+
+  @override
+  dynamic encode(UserStatus self) {
+    switch (self) {
+      case UserStatus.ingame:
+        return 'ingame';
+      case UserStatus.online:
+        return 'online';
+      case UserStatus.offline:
+        return 'offline';
+    }
+  }
+}
+
+extension UserStatusMapperExtension on UserStatus {
+  String toValue() {
+    UserStatusMapper.ensureInitialized();
+    return MapperContainer.globals.toValue<UserStatus>(this) as String;
+  }
+}
+
+class SubscriptionTierMapper extends EnumMapper<SubscriptionTier> {
+  SubscriptionTierMapper._();
+
+  static SubscriptionTierMapper? _instance;
+  static SubscriptionTierMapper ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(_instance = SubscriptionTierMapper._());
+    }
+    return _instance!;
+  }
+
+  static SubscriptionTier fromValue(dynamic value) {
+    ensureInitialized();
+    return MapperContainer.globals.fromValue(value);
+  }
+
+  @override
+  SubscriptionTier decode(dynamic value) {
+    switch (value) {
+      case 'none':
+        return SubscriptionTier.none;
+      case 'bronze':
+        return SubscriptionTier.bronze;
+      case 'silver':
+        return SubscriptionTier.silver;
+      case 'gold':
+        return SubscriptionTier.gold;
+      case 'diamond':
+        return SubscriptionTier.diamond;
+      default:
+        throw MapperException.unknownEnumValue(value);
+    }
+  }
+
+  @override
+  dynamic encode(SubscriptionTier self) {
+    switch (self) {
+      case SubscriptionTier.none:
+        return 'none';
+      case SubscriptionTier.bronze:
+        return 'bronze';
+      case SubscriptionTier.silver:
+        return 'silver';
+      case SubscriptionTier.gold:
+        return 'gold';
+      case SubscriptionTier.diamond:
+        return 'diamond';
+    }
+  }
+}
+
+extension SubscriptionTierMapperExtension on SubscriptionTier {
+  String toValue() {
+    SubscriptionTierMapper.ensureInitialized();
+    return MapperContainer.globals.toValue<SubscriptionTier>(this) as String;
+  }
+}
+
+class RoleMapper extends EnumMapper<Role> {
+  RoleMapper._();
+
+  static RoleMapper? _instance;
+  static RoleMapper ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(_instance = RoleMapper._());
+    }
+    return _instance!;
+  }
+
+  static Role fromValue(dynamic value) {
+    ensureInitialized();
+    return MapperContainer.globals.fromValue(value);
+  }
+
+  @override
+  Role decode(dynamic value) {
+    switch (value) {
+      case 'anonymous':
+        return Role.anonymous;
+      case 'user':
+        return Role.user;
+      case 'moderator':
+        return Role.moderator;
+      case 'admin':
+        return Role.admin;
+      default:
+        throw MapperException.unknownEnumValue(value);
+    }
+  }
+
+  @override
+  dynamic encode(Role self) {
+    switch (self) {
+      case Role.anonymous:
+        return 'anonymous';
+      case Role.user:
+        return 'user';
+      case Role.moderator:
+        return 'moderator';
+      case Role.admin:
+        return 'admin';
+    }
+  }
+}
+
+extension RoleMapperExtension on Role {
+  String toValue() {
+    RoleMapper.ensureInitialized();
+    return MapperContainer.globals.toValue<Role>(this) as String;
+  }
+}
+
+class PatreonBadgeMapper extends EnumMapper<PatreonBadge> {
+  PatreonBadgeMapper._();
+
+  static PatreonBadgeMapper? _instance;
+  static PatreonBadgeMapper ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(_instance = PatreonBadgeMapper._());
+    }
+    return _instance!;
+  }
+
+  static PatreonBadge fromValue(dynamic value) {
+    ensureInitialized();
+    return MapperContainer.globals.fromValue(value);
+  }
+
+  @override
+  PatreonBadge decode(dynamic value) {
+    switch (value) {
+      case 'bronze':
+        return PatreonBadge.bronze;
+      case 'silver':
+        return PatreonBadge.silver;
+      case 'gold':
+        return PatreonBadge.gold;
+      case 'platinum':
+        return PatreonBadge.platinum;
+      default:
+        throw MapperException.unknownEnumValue(value);
+    }
+  }
+
+  @override
+  dynamic encode(PatreonBadge self) {
+    switch (self) {
+      case PatreonBadge.bronze:
+        return 'bronze';
+      case PatreonBadge.silver:
+        return 'silver';
+      case PatreonBadge.gold:
+        return 'gold';
+      case PatreonBadge.platinum:
+        return 'platinum';
+    }
+  }
+}
+
+extension PatreonBadgeMapperExtension on PatreonBadge {
+  String toValue() {
+    PatreonBadgeMapper.ensureInitialized();
+    return MapperContainer.globals.toValue<PatreonBadge>(this) as String;
+  }
+}
+
+class ActivityTypeMapper extends EnumMapper<ActivityType> {
+  ActivityTypeMapper._();
+
+  static ActivityTypeMapper? _instance;
+  static ActivityTypeMapper ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(_instance = ActivityTypeMapper._());
+    }
+    return _instance!;
+  }
+
+  static ActivityType fromValue(dynamic value) {
+    ensureInitialized();
+    return MapperContainer.globals.fromValue(value);
+  }
+
+  @override
+  ActivityType decode(dynamic value) {
+    switch (value) {
+      case 'on_mission':
+        return ActivityType.onMission;
+      case 'dojo':
+        return ActivityType.dojo;
+      case 'unknown':
+        return ActivityType.unknown;
+      case '':
+        return ActivityType.none;
+      default:
+        throw MapperException.unknownEnumValue(value);
+    }
+  }
+
+  @override
+  dynamic encode(ActivityType self) {
+    switch (self) {
+      case ActivityType.onMission:
+        return 'on_mission';
+      case ActivityType.dojo:
+        return 'dojo';
+      case ActivityType.unknown:
+        return 'unknown';
+      case ActivityType.none:
+        return '';
+    }
+  }
+}
+
+extension ActivityTypeMapperExtension on ActivityType {
+  dynamic toValue() {
+    ActivityTypeMapper.ensureInitialized();
+    return MapperContainer.globals.toValue<ActivityType>(this);
+  }
+}
+
 class UserShortMapper extends ClassMapperBase<UserShort> {
   UserShortMapper._();
 
@@ -13,6 +283,7 @@ class UserShortMapper extends ClassMapperBase<UserShort> {
   static UserShortMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = UserShortMapper._());
+      UserStatusMapper.ensureInitialized();
       ActivityMapper.ensureInitialized();
     }
     return _instance!;
@@ -324,6 +595,7 @@ class UserPublicMapper extends ClassMapperBase<UserPublic> {
   static UserPublicMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = UserPublicMapper._());
+      UserStatusMapper.ensureInitialized();
       ActivityMapper.ensureInitialized();
       AchievementMapper.ensureInitialized();
     }
@@ -372,13 +644,15 @@ class UserPublicMapper extends ClassMapperBase<UserPublic> {
       v.achievementShowcase;
   static const Field<UserPublic, List<Achievement>> _f$achievementShowcase =
       Field('achievementShowcase', _$achievementShowcase);
-  static bool? _$banned(UserPublic v) => v.banned;
-  static const Field<UserPublic, bool> _f$banned = Field('banned', _$banned);
+  static bool? _$isBanned(UserPublic v) => v.isBanned;
+  static const Field<UserPublic, bool> _f$isBanned =
+      Field('isBanned', _$isBanned, key: r'banned');
   static DateTime? _$banUntil(UserPublic v) => v.banUntil;
   static const Field<UserPublic, DateTime> _f$banUntil =
       Field('banUntil', _$banUntil);
-  static bool? _$warned(UserPublic v) => v.warned;
-  static const Field<UserPublic, bool> _f$warned = Field('warned', _$warned);
+  static bool? _$wasWarned(UserPublic v) => v.wasWarned;
+  static const Field<UserPublic, bool> _f$wasWarned =
+      Field('wasWarned', _$wasWarned, key: r'warned');
   static String? _$warnMessage(UserPublic v) => v.warnMessage;
   static const Field<UserPublic, String> _f$warnMessage =
       Field('warnMessage', _$warnMessage);
@@ -402,9 +676,9 @@ class UserPublicMapper extends ClassMapperBase<UserPublic> {
     #about: _f$about,
     #masteryLevel: _f$masteryLevel,
     #achievementShowcase: _f$achievementShowcase,
-    #banned: _f$banned,
+    #isBanned: _f$isBanned,
     #banUntil: _f$banUntil,
-    #warned: _f$warned,
+    #wasWarned: _f$wasWarned,
     #warnMessage: _f$warnMessage,
     #banMessage: _f$banMessage,
   };
@@ -427,9 +701,9 @@ class UserPublicMapper extends ClassMapperBase<UserPublic> {
         about: data.dec(_f$about),
         masteryLevel: data.dec(_f$masteryLevel),
         achievementShowcase: data.dec(_f$achievementShowcase),
-        banned: data.dec(_f$banned),
+        isBanned: data.dec(_f$isBanned),
         banUntil: data.dec(_f$banUntil),
-        warned: data.dec(_f$warned),
+        wasWarned: data.dec(_f$wasWarned),
         warnMessage: data.dec(_f$warnMessage),
         banMessage: data.dec(_f$banMessage));
   }
@@ -504,9 +778,9 @@ abstract class UserPublicCopyWith<$R, $In extends UserPublic, $Out>
       String? about,
       int? masteryLevel,
       List<Achievement>? achievementShowcase,
-      bool? banned,
+      bool? isBanned,
       DateTime? banUntil,
-      bool? warned,
+      bool? wasWarned,
       String? warnMessage,
       String? banMessage});
   UserPublicCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
@@ -544,9 +818,9 @@ class _UserPublicCopyWithImpl<$R, $Out>
           Object? about = $none,
           Object? masteryLevel = $none,
           List<Achievement>? achievementShowcase,
-          Object? banned = $none,
+          Object? isBanned = $none,
           Object? banUntil = $none,
-          Object? warned = $none,
+          Object? wasWarned = $none,
           Object? warnMessage = $none,
           Object? banMessage = $none}) =>
       $apply(FieldCopyWithData({
@@ -565,9 +839,9 @@ class _UserPublicCopyWithImpl<$R, $Out>
         if (masteryLevel != $none) #masteryLevel: masteryLevel,
         if (achievementShowcase != null)
           #achievementShowcase: achievementShowcase,
-        if (banned != $none) #banned: banned,
+        if (isBanned != $none) #isBanned: isBanned,
         if (banUntil != $none) #banUntil: banUntil,
-        if (warned != $none) #warned: warned,
+        if (wasWarned != $none) #wasWarned: wasWarned,
         if (warnMessage != $none) #warnMessage: warnMessage,
         if (banMessage != $none) #banMessage: banMessage
       }));
@@ -588,9 +862,9 @@ class _UserPublicCopyWithImpl<$R, $Out>
       masteryLevel: data.get(#masteryLevel, or: $value.masteryLevel),
       achievementShowcase:
           data.get(#achievementShowcase, or: $value.achievementShowcase),
-      banned: data.get(#banned, or: $value.banned),
+      isBanned: data.get(#isBanned, or: $value.isBanned),
       banUntil: data.get(#banUntil, or: $value.banUntil),
-      warned: data.get(#warned, or: $value.warned),
+      wasWarned: data.get(#wasWarned, or: $value.wasWarned),
       warnMessage: data.get(#warnMessage, or: $value.warnMessage),
       banMessage: data.get(#banMessage, or: $value.banMessage));
 
@@ -607,7 +881,7 @@ class AchievementMapper extends ClassMapperBase<Achievement> {
   static AchievementMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = AchievementMapper._());
-      _t$_R0Mapper.ensureInitialized();
+      AchievementI18nMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -743,6 +1017,103 @@ class _AchievementCopyWithImpl<$R, $Out>
       _AchievementCopyWithImpl($value, $cast, t);
 }
 
+class AchievementI18nMapper extends RecordMapperBase<AchievementI18n> {
+  static AchievementI18nMapper? _instance;
+  AchievementI18nMapper._();
+
+  static AchievementI18nMapper ensureInitialized() {
+    if (_instance == null) {
+      MapperContainer.globals.use(_instance = AchievementI18nMapper._());
+      MapperBase.addType(<A, B>(f) => f<({A description, B name})>());
+    }
+    return _instance!;
+  }
+
+  static String _$name(AchievementI18n v) => v.name;
+  static const Field<AchievementI18n, String> _f$name = Field('name', _$name);
+  static String _$description(AchievementI18n v) => v.description;
+  static const Field<AchievementI18n, String> _f$description =
+      Field('description', _$description);
+
+  @override
+  final MappableFields<AchievementI18n> fields = const {
+    #name: _f$name,
+    #description: _f$description,
+  };
+
+  @override
+  Function get typeFactory => (f) => f<AchievementI18n>();
+
+  @override
+  List<Type> apply(MappingContext context) {
+    return [];
+  }
+
+  static AchievementI18n _instantiate(DecodingData<AchievementI18n> data) {
+    return (name: data.dec(_f$name), description: data.dec(_f$description));
+  }
+
+  @override
+  final Function instantiate = _instantiate;
+
+  static AchievementI18n fromMap(Map<String, dynamic> map) {
+    return ensureInitialized().decodeMap<AchievementI18n>(map);
+  }
+
+  static AchievementI18n fromJson(String json) {
+    return ensureInitialized().decodeJson<AchievementI18n>(json);
+  }
+}
+
+extension AchievementI18nMappable on AchievementI18n {
+  Map<String, dynamic> toMap() {
+    return AchievementI18nMapper.ensureInitialized().encodeMap(this);
+  }
+
+  String toJson() {
+    return AchievementI18nMapper.ensureInitialized().encodeJson(this);
+  }
+
+  AchievementI18nCopyWith<AchievementI18n> get copyWith =>
+      _AchievementI18nCopyWithImpl(this, $identity, $identity);
+}
+
+extension AchievementI18nValueCopy<$R>
+    on ObjectCopyWith<$R, AchievementI18n, AchievementI18n> {
+  AchievementI18nCopyWith<$R> get $asAchievementI18n =>
+      $base.as((v, t, t2) => _AchievementI18nCopyWithImpl(v, t, t2));
+}
+
+abstract class AchievementI18nCopyWith<$R>
+    implements RecordCopyWith<$R, AchievementI18n> {
+  $R call({String? name, String? description});
+  AchievementI18nCopyWith<$R2> $chain<$R2>(Then<AchievementI18n, $R2> t);
+}
+
+class _AchievementI18nCopyWithImpl<$R>
+    extends RecordCopyWithBase<$R, AchievementI18n>
+    implements AchievementI18nCopyWith<$R> {
+  _AchievementI18nCopyWithImpl(super.value, super.then, super.then2);
+
+  @override
+  late final RecordMapperBase<AchievementI18n> $mapper =
+      AchievementI18nMapper.ensureInitialized();
+  @override
+  $R call({String? name, String? description}) => $apply(FieldCopyWithData({
+        if (name != null) #name: name,
+        if (description != null) #description: description
+      }));
+  @override
+  AchievementI18n $make(CopyWithData data) => (
+        name: data.get(#name, or: $value.name),
+        description: data.get(#description, or: $value.description)
+      );
+
+  @override
+  AchievementI18nCopyWith<$R2> $chain<$R2>(Then<AchievementI18n, $R2> t) =>
+      _AchievementI18nCopyWithImpl($value, $cast, t);
+}
+
 class UserPrivateMapper extends ClassMapperBase<UserPrivate> {
   UserPrivateMapper._();
 
@@ -750,8 +1121,11 @@ class UserPrivateMapper extends ClassMapperBase<UserPrivate> {
   static UserPrivateMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = UserPrivateMapper._());
+      UserStatusMapper.ensureInitialized();
       ActivityMapper.ensureInitialized();
+      RoleMapper.ensureInitialized();
       AchievementMapper.ensureInitialized();
+      SubscriptionTierMapper.ensureInitialized();
       LinkedAccountsMapper.ensureInitialized();
     }
     return _instance!;
@@ -815,18 +1189,21 @@ class UserPrivateMapper extends ClassMapperBase<UserPrivate> {
   static String _$checkCode(UserPrivate v) => v.checkCode;
   static const Field<UserPrivate, String> _f$checkCode =
       Field('checkCode', _$checkCode);
-  static bool _$subscription(UserPrivate v) => v.subscription;
-  static const Field<UserPrivate, bool> _f$subscription =
-      Field('subscription', _$subscription);
-  static bool? _$warned(UserPrivate v) => v.warned;
-  static const Field<UserPrivate, bool> _f$warned =
-      Field('warned', _$warned, opt: true);
+  static SubscriptionTier _$tier(UserPrivate v) => v.tier;
+  static const Field<UserPrivate, SubscriptionTier> _f$tier =
+      Field('tier', _$tier);
+  static bool _$isSubscribed(UserPrivate v) => v.isSubscribed;
+  static const Field<UserPrivate, bool> _f$isSubscribed =
+      Field('isSubscribed', _$isSubscribed, key: r'subscription');
+  static bool? _$wasWarned(UserPrivate v) => v.wasWarned;
+  static const Field<UserPrivate, bool> _f$wasWarned =
+      Field('wasWarned', _$wasWarned, key: r'warned', opt: true);
   static String? _$warnMessage(UserPrivate v) => v.warnMessage;
   static const Field<UserPrivate, String> _f$warnMessage =
       Field('warnMessage', _$warnMessage, opt: true);
-  static bool? _$banned(UserPrivate v) => v.banned;
-  static const Field<UserPrivate, bool> _f$banned =
-      Field('banned', _$banned, opt: true);
+  static bool? _$isBanned(UserPrivate v) => v.isBanned;
+  static const Field<UserPrivate, bool> _f$isBanned =
+      Field('isBanned', _$isBanned, key: r'banned', opt: true);
   static String? _$banMessage(UserPrivate v) => v.banMessage;
   static const Field<UserPrivate, String> _f$banMessage =
       Field('banMessage', _$banMessage, opt: true);
@@ -847,13 +1224,13 @@ class UserPrivateMapper extends ClassMapperBase<UserPrivate> {
       Field('deleteAt', _$deleteAt, opt: true);
   static LinkedAccounts _$linkedAccounts(UserPrivate v) => v.linkedAccounts;
   static const Field<UserPrivate, LinkedAccounts> _f$linkedAccounts =
-      Field('linkedAccounts', _$linkedAccounts, key: 'linked_accounts');
+      Field('linkedAccounts', _$linkedAccounts, key: r'linked_accounts');
   static bool _$hasEmail(UserPrivate v) => v.hasEmail;
   static const Field<UserPrivate, bool> _f$hasEmail =
       Field('hasEmail', _$hasEmail);
   static int _$writtenReviews(UserPrivate v) => v.writtenReviews;
   static const Field<UserPrivate, int> _f$writtenReviews =
-      Field('writtenReviews', _$writtenReviews, key: 'written_reviews');
+      Field('writtenReviews', _$writtenReviews, key: r'written_reviews');
 
   @override
   final MappableFields<UserPrivate> fields = const {
@@ -877,10 +1254,11 @@ class UserPrivateMapper extends ClassMapperBase<UserPrivate> {
     #achievementShowcase: _f$achievementShowcase,
     #verification: _f$verification,
     #checkCode: _f$checkCode,
-    #subscription: _f$subscription,
-    #warned: _f$warned,
+    #tier: _f$tier,
+    #isSubscribed: _f$isSubscribed,
+    #wasWarned: _f$wasWarned,
     #warnMessage: _f$warnMessage,
-    #banned: _f$banned,
+    #isBanned: _f$isBanned,
     #banMessage: _f$banMessage,
     #reviewsLeft: _f$reviewsLeft,
     #unreadMessages: _f$unreadMessages,
@@ -916,10 +1294,11 @@ class UserPrivateMapper extends ClassMapperBase<UserPrivate> {
         achievementShowcase: data.dec(_f$achievementShowcase),
         verification: data.dec(_f$verification),
         checkCode: data.dec(_f$checkCode),
-        subscription: data.dec(_f$subscription),
-        warned: data.dec(_f$warned),
+        tier: data.dec(_f$tier),
+        isSubscribed: data.dec(_f$isSubscribed),
+        wasWarned: data.dec(_f$wasWarned),
         warnMessage: data.dec(_f$warnMessage),
-        banned: data.dec(_f$banned),
+        isBanned: data.dec(_f$isBanned),
         banMessage: data.dec(_f$banMessage),
         reviewsLeft: data.dec(_f$reviewsLeft),
         unreadMessages: data.dec(_f$unreadMessages),
@@ -1007,10 +1386,11 @@ abstract class UserPrivateCopyWith<$R, $In extends UserPrivate, $Out>
       Achievement? achievementShowcase,
       bool? verification,
       String? checkCode,
-      bool? subscription,
-      bool? warned,
+      SubscriptionTier? tier,
+      bool? isSubscribed,
+      bool? wasWarned,
       String? warnMessage,
-      bool? banned,
+      bool? isBanned,
       String? banMessage,
       int? reviewsLeft,
       int? unreadMessages,
@@ -1068,10 +1448,11 @@ class _UserPrivateCopyWithImpl<$R, $Out>
           Achievement? achievementShowcase,
           bool? verification,
           String? checkCode,
-          bool? subscription,
-          Object? warned = $none,
+          SubscriptionTier? tier,
+          bool? isSubscribed,
+          Object? wasWarned = $none,
           Object? warnMessage = $none,
-          Object? banned = $none,
+          Object? isBanned = $none,
           Object? banMessage = $none,
           int? reviewsLeft,
           int? unreadMessages,
@@ -1103,10 +1484,11 @@ class _UserPrivateCopyWithImpl<$R, $Out>
           #achievementShowcase: achievementShowcase,
         if (verification != null) #verification: verification,
         if (checkCode != null) #checkCode: checkCode,
-        if (subscription != null) #subscription: subscription,
-        if (warned != $none) #warned: warned,
+        if (tier != null) #tier: tier,
+        if (isSubscribed != null) #isSubscribed: isSubscribed,
+        if (wasWarned != $none) #wasWarned: wasWarned,
         if (warnMessage != $none) #warnMessage: warnMessage,
-        if (banned != $none) #banned: banned,
+        if (isBanned != $none) #isBanned: isBanned,
         if (banMessage != $none) #banMessage: banMessage,
         if (reviewsLeft != null) #reviewsLeft: reviewsLeft,
         if (unreadMessages != null) #unreadMessages: unreadMessages,
@@ -1140,10 +1522,11 @@ class _UserPrivateCopyWithImpl<$R, $Out>
           data.get(#achievementShowcase, or: $value.achievementShowcase),
       verification: data.get(#verification, or: $value.verification),
       checkCode: data.get(#checkCode, or: $value.checkCode),
-      subscription: data.get(#subscription, or: $value.subscription),
-      warned: data.get(#warned, or: $value.warned),
+      tier: data.get(#tier, or: $value.tier),
+      isSubscribed: data.get(#isSubscribed, or: $value.isSubscribed),
+      wasWarned: data.get(#wasWarned, or: $value.wasWarned),
       warnMessage: data.get(#warnMessage, or: $value.warnMessage),
-      banned: data.get(#banned, or: $value.banned),
+      isBanned: data.get(#isBanned, or: $value.isBanned),
       banMessage: data.get(#banMessage, or: $value.banMessage),
       reviewsLeft: data.get(#reviewsLeft, or: $value.reviewsLeft),
       unreadMessages: data.get(#unreadMessages, or: $value.unreadMessages),
@@ -1178,15 +1561,15 @@ class LinkedAccountsMapper extends ClassMapperBase<LinkedAccounts> {
   static bool _$steamProfile(LinkedAccounts v) => v.steamProfile;
   static const Field<LinkedAccounts, bool> _f$steamProfile = Field(
       'steamProfile', _$steamProfile,
-      key: 'steam_profile', opt: true, def: false);
+      key: r'steam_profile', opt: true, def: false);
   static bool _$patreonProfile(LinkedAccounts v) => v.patreonProfile;
   static const Field<LinkedAccounts, bool> _f$patreonProfile = Field(
       'patreonProfile', _$patreonProfile,
-      key: 'patreon_profile', opt: true, def: false);
+      key: r'patreon_profile', opt: true, def: false);
   static bool _$xboxProfile(LinkedAccounts v) => v.xboxProfile;
   static const Field<LinkedAccounts, bool> _f$xboxProfile = Field(
       'xboxProfile', _$xboxProfile,
-      key: 'xbox_profile', opt: true, def: false);
+      key: r'xbox_profile', opt: true, def: false);
 
   @override
   final MappableFields<LinkedAccounts> fields = const {
@@ -1296,6 +1679,7 @@ class PatreonProfileMapper extends ClassMapperBase<PatreonProfile> {
   static PatreonProfileMapper ensureInitialized() {
     if (_instance == null) {
       MapperContainer.globals.use(_instance = PatreonProfileMapper._());
+      PatreonBadgeMapper.ensureInitialized();
     }
     return _instance!;
   }
@@ -1305,13 +1689,13 @@ class PatreonProfileMapper extends ClassMapperBase<PatreonProfile> {
 
   static bool _$patreonFounder(PatreonProfile v) => v.patreonFounder;
   static const Field<PatreonProfile, bool> _f$patreonFounder =
-      Field('patreonFounder', _$patreonFounder, key: 'patreon_founder');
+      Field('patreonFounder', _$patreonFounder, key: r'patreon_founder');
   static bool _$subscription(PatreonProfile v) => v.subscription;
   static const Field<PatreonProfile, bool> _f$subscription =
       Field('subscription', _$subscription);
   static PatreonBadge _$patreonBadge(PatreonProfile v) => v.patreonBadge;
   static const Field<PatreonProfile, PatreonBadge> _f$patreonBadge =
-      Field('patreonBadge', _$patreonBadge, key: 'patreon_badge');
+      Field('patreonBadge', _$patreonBadge, key: r'patreon_badge');
 
   @override
   final MappableFields<PatreonProfile> fields = const {
@@ -1416,52 +1800,4 @@ class _PatreonProfileCopyWithImpl<$R, $Out>
   PatreonProfileCopyWith<$R2, PatreonProfile, $Out2> $chain<$R2, $Out2>(
           Then<$Out2, $R2> t) =>
       _PatreonProfileCopyWithImpl($value, $cast, t);
-}
-
-typedef _t$_R0<A, B> = ({A description, B name});
-
-class _t$_R0Mapper extends RecordMapperBase<_t$_R0> {
-  static _t$_R0Mapper? _instance;
-  _t$_R0Mapper._();
-
-  static _t$_R0Mapper ensureInitialized() {
-    if (_instance == null) {
-      MapperContainer.globals.use(_instance = _t$_R0Mapper._());
-      MapperBase.addType(<A, B>(f) => f<({A description, B name})>());
-    }
-    return _instance!;
-  }
-
-  static dynamic _$description(_t$_R0 v) => v.description;
-  static dynamic _arg$description<A, B>(f) => f<A>();
-  static const Field<_t$_R0, dynamic> _f$description =
-      Field('description', _$description, arg: _arg$description);
-  static dynamic _$name(_t$_R0 v) => v.name;
-  static dynamic _arg$name<A, B>(f) => f<B>();
-  static const Field<_t$_R0, dynamic> _f$name =
-      Field('name', _$name, arg: _arg$name);
-
-  @override
-  final MappableFields<_t$_R0> fields = const {
-    #description: _f$description,
-    #name: _f$name,
-  };
-
-  @override
-  Function get typeFactory => <A, B>(f) => f<_t$_R0<A, B>>();
-
-  static _t$_R0<A, B> _instantiate<A, B>(DecodingData<_t$_R0> data) {
-    return (description: data.dec(_f$description), name: data.dec(_f$name));
-  }
-
-  @override
-  final Function instantiate = _instantiate;
-
-  static _t$_R0<A, B> fromMap<A, B>(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<_t$_R0<A, B>>(map);
-  }
-
-  static _t$_R0<A, B> fromJson<A, B>(String json) {
-    return ensureInitialized().decodeJson<_t$_R0<A, B>>(json);
-  }
 }
