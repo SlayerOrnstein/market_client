@@ -20,8 +20,7 @@ void main() {
   tearDown(() => reset(client));
 
   test('Make sure short items are parsed correctly', () async {
-    when(() => client.get('/items'))
-        .thenAnswer((_) async => Response(apiResponse([itemShort]), 200));
+    when(() => client.get('/items')).thenAnswer((_) async => Response(apiResponse([itemShort]), 200));
 
     final items = await itemsEndpoint.fetchItems();
 
@@ -29,8 +28,7 @@ void main() {
   });
 
   test('Make sure full items are parsed correctly', () async {
-    when(() => client.get('/item/abating_link'))
-        .thenAnswer((_) async => Response(apiResponse(itemFull), 200));
+    when(() => client.get('/item/abating_link')).thenAnswer((_) async => Response(apiResponse(itemFull), 200));
 
     final res = await itemsEndpoint.fetchItem('abating_link');
 

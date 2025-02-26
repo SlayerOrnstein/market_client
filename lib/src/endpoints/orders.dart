@@ -25,14 +25,10 @@ class OrdersEndpoint {
 
   /// Get a list of all orders for an item from users who were/are online
   /// within the last 7 days.
-  Future<List<OrderWithUser>> fetchItemOrders(
-    String slug, {
-    OrderFilter? filter,
-  }) async {
+  Future<List<OrderWithUser>> fetchItemOrders(String slug, {OrderFilter? filter}) async {
     final response = await _client.get(
       '/orders/items/$slug',
-      queryParameters: (filter?.toMap()?..removeWhere((k, v) => v == null))
-          ?.map((k, v) => MapEntry(k, v.toString())),
+      queryParameters: (filter?.toMap()?..removeWhere((k, v) => v == null))?.map((k, v) => MapEntry(k, v.toString())),
     );
 
     final body = HttpHelpers.parseResponse<List<dynamic>>(response.body);
@@ -42,12 +38,8 @@ class OrdersEndpoint {
   }
 
   /// Get public orders from a specified user.
-  Future<List<Order>> fetchUserOrders(
-    String slug, {
-    bool isUserId = false,
-  }) async {
-    final response =
-        await _client.get('/orders/${isUserId ? 'userId' : 'user'}/$slug');
+  Future<List<Order>> fetchUserOrders(String slug, {bool isUserId = false}) async {
+    final response = await _client.get('/orders/${isUserId ? 'userId' : 'user'}/$slug');
 
     final body = HttpHelpers.parseResponse<List<dynamic>>(response.body);
     final orders = List<Map<String, dynamic>>.from(body.data);

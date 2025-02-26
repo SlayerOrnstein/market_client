@@ -16,8 +16,7 @@ class MarketClient {
   ItemsEndpoint get items => ItemsEndpoint(_client);
 
   /// Get litch/sister/Technocyte weapons, ephemeras, and quirks.
-  NemesisEndpoint nemesis(NemesisType type) =>
-      NemesisEndpoint(type: type, client: _client);
+  NemesisEndpoint nemesis(NemesisType type) => NemesisEndpoint(type: type, client: _client);
 
   /// Get Riven weapon(s) and atrributes
   RivenEndpoint get rivens => RivenEndpoint(_client);

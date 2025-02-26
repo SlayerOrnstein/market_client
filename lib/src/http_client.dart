@@ -12,11 +12,8 @@ const _version = 'v2';
 /// {@endtemplate}
 class MarketHttpClient {
   /// {@macro guest_client}
-  MarketHttpClient({
-    this.language = 'en',
-    this.platform = MarketPlatform.pc,
-    http.Client? client,
-  }) : client = client ?? RetryClient(http.Client());
+  MarketHttpClient({this.language = 'en', this.platform = MarketPlatform.pc, http.Client? client})
+    : client = client ?? RetryClient(http.Client());
 
   /// The language used in request
   ///
@@ -33,19 +30,9 @@ class MarketHttpClient {
   late final http.Client client;
 
   /// Sends a GET  request.
-  Future<http.Response> get(
-    String path, {
-    Map<String, String>? queryParameters,
-    Map<String, String>? headers,
-  }) async {
+  Future<http.Response> get(String path, {Map<String, String>? queryParameters, Map<String, String>? headers}) async {
     final uri = Uri.https(_root, '/$_version$path', queryParameters);
-    final res = await client.get(
-      uri,
-      headers: HttpHelpers.headers(
-        platform: platform,
-        language: language,
-      ),
-    );
+    final res = await client.get(uri, headers: HttpHelpers.headers(platform: platform, language: language));
 
     HttpHelpers.checkStatusCode(res.statusCode, reason: res.body);
 

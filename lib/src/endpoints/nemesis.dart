@@ -8,7 +8,7 @@ enum NemesisType {
   lich,
 
   /// Sister of Parvos
-  sister
+  sister,
 }
 
 /// {@template nemesis_endpoint}
@@ -16,8 +16,7 @@ enum NemesisType {
 /// {@endtemplate}
 class NemesisEndpoint {
   /// {@macro nemesis_endpoint}
-  const NemesisEndpoint({required this.type, required MarketHttpClient client})
-      : _client = client;
+  const NemesisEndpoint({required this.type, required MarketHttpClient client}) : _client = client;
 
   /// Nemesis type that all request will be made for
   final NemesisType type;

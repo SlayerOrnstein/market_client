@@ -31,12 +31,8 @@ class ItemsEndpoint {
   Future<({String id, List<ItemFull> items})> fetchItemSet(String slug) async {
     final response = await _client.get('/item/$slug/set');
     final body = HttpHelpers.parseResponse<Map<String, dynamic>>(response.body);
-    final items =
-        List<Map<String, dynamic>>.from(body.data['items'] as List<dynamic>);
+    final items = List<Map<String, dynamic>>.from(body.data['items'] as List<dynamic>);
 
-    return (
-      id: body.data['id'] as String,
-      items: items.map(ItemFull.fromMap).toList()
-    );
+    return (id: body.data['id'] as String, items: items.map(ItemFull.fromMap).toList());
   }
 }

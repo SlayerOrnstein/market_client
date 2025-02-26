@@ -86,9 +86,7 @@ class Order with OrderMappable {
 /// about an owner.
 /// {@endtemplate}
 @MappableClass()
-class OrderWithUser extends Order
-    with OrderWithUserMappable
-    implements Comparable<OrderWithUser> {
+class OrderWithUser extends Order with OrderWithUserMappable implements Comparable<OrderWithUser> {
   /// {@macro order_with_user}
   const OrderWithUser({
     required super.id,
@@ -132,9 +130,7 @@ class OrderWithUser extends Order
     }
 
     if (user.status == other.user.status) {
-      return type == OrderType.sell
-          ? platinum.compareTo(other.platinum)
-          : other.platinum.compareTo(platinum);
+      return type == OrderType.sell ? platinum.compareTo(other.platinum) : other.platinum.compareTo(platinum);
     }
 
     if (user.status.index > other.user.status.index) {

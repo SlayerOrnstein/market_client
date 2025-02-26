@@ -11,8 +11,7 @@ const rivenItem = {
       'itemName': 'Kulstar',
       'wikiLink': 'https://warframe.fandom.com/wiki/Kulstar',
       'icon': 'items/images/en/kulstar.92736ca911a3b84f99bc9e50f24369f0.png',
-      'thumb':
-          'items/images/en/thumbs/kulstar.92736ca911a3b84f99bc9e50f24369f0.128x128.png',
+      'thumb': 'items/images/en/thumbs/kulstar.92736ca911a3b84f99bc9e50f24369f0.128x128.png',
     },
   },
 };

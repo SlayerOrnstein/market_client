@@ -119,12 +119,7 @@ class NemesisEphemera with NemesisEphemeraMappable {
 @MappableClass(ignoreNull: true)
 class NemesisQuirk with NemesisQuirkMappable {
   /// {@macro nemesis_quirk}
-  const NemesisQuirk({
-    required this.id,
-    required this.slug,
-    required this.group,
-    required this.i18n,
-  });
+  const NemesisQuirk({required this.id, required this.slug, required this.group, required this.i18n});
 
   /// [NemesisQuirk] from a json map
   factory NemesisQuirk.fromJson(Map<String, dynamic> map) {

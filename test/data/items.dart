@@ -6,10 +6,8 @@ const itemShort = {
   'i18n': {
     'en': {
       'name': 'Secura Dual Cestra',
-      'icon':
-          'items/images/en/secura_dual_cestra.3d47a4ec6675ff774bb0da9b16c53e0e.png',
-      'thumb':
-          'items/images/en/thumbs/secura_dual_cestra.3d47a4ec6675ff774bb0da9b16c53e0e.128x128.png',
+      'icon': 'items/images/en/secura_dual_cestra.3d47a4ec6675ff774bb0da9b16c53e0e.png',
+      'thumb': 'items/images/en/thumbs/secura_dual_cestra.3d47a4ec6675ff774bb0da9b16c53e0e.128x128.png',
     },
   },
   'maxRank': 8,
@@ -41,13 +39,12 @@ const itemFull = {
   'i18n': {
     'en': {
       'name': 'Abating Link',
-      'description': 'Link Augment: Reduces Armor Rating by 60% on '
+      'description':
+          'Link Augment: Reduces Armor Rating by 60% on '
           'enemies targeted by Link.',
       'wikiLink': 'https://warframe.fandom.com/wiki/Abating_Link',
-      'icon':
-          'items/images/en/abating_link.c547fa09315093a5ba6c609a9b195580.png',
-      'thumb':
-          'items/images/en/thumbs/abating_link.c547fa09315093a5ba6c609a9b195580.128x128.png',
+      'icon': 'items/images/en/abating_link.c547fa09315093a5ba6c609a9b195580.png',
+      'thumb': 'items/images/en/thumbs/abating_link.c547fa09315093a5ba6c609a9b195580.128x128.png',
       'subIcon': 'sub_icons/blueprint_128x128.png',
     },
   },

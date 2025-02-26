@@ -20,8 +20,7 @@ void main() {
   tearDown(() => reset(client));
 
   test('fetchRivens() => Get list of rivens', () async {
-    when(() => client.get('/riven/weapons'))
-        .thenAnswer((_) async => Response(apiResponse([rivenItem]), 200));
+    when(() => client.get('/riven/weapons')).thenAnswer((_) async => Response(apiResponse([rivenItem]), 200));
 
     final rivs = await rivens.fetchRivens();
 
@@ -29,8 +28,7 @@ void main() {
   });
 
   test('fetchRiven(slug) => Get a Riven', () async {
-    when(() => client.get('/riven/weapon/kulstar'))
-        .thenAnswer((_) async => Response(apiResponse(rivenItem), 200));
+    when(() => client.get('/riven/weapon/kulstar')).thenAnswer((_) async => Response(apiResponse(rivenItem), 200));
 
     final riven = await rivens.fetchRiven('kulstar');
 
@@ -38,8 +36,7 @@ void main() {
   });
 
   test('fetchRivenAttributes() => Get list of riven attributes', () async {
-    when(() => client.get('/riven/attributes'))
-        .thenAnswer((_) async => Response(apiResponse([rivenAttribute]), 200));
+    when(() => client.get('/riven/attributes')).thenAnswer((_) async => Response(apiResponse([rivenAttribute]), 200));
 
     final attributes = await rivens.fetchRivenAttributes();
 

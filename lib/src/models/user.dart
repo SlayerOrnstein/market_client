@@ -331,15 +331,10 @@ enum PatreonBadge {
 @MappableClass()
 class PatreonProfile with PatreonProfileMappable {
   /// {@macro patreon_profile}
-  const PatreonProfile({
-    required this.patreonFounder,
-    required this.subscription,
-    required this.patreonBadge,
-  });
+  const PatreonProfile({required this.patreonFounder, required this.subscription, required this.patreonBadge});
 
   /// Creates a PatreonProfile from Json map
-  factory PatreonProfile.fromJson(String json) =>
-      PatreonProfileMapper.fromJson(json);
+  factory PatreonProfile.fromJson(String json) => PatreonProfileMapper.fromJson(json);
 
   /// User is a patreon founder.
   @MappableField(key: 'patreon_founder')
@@ -359,15 +354,10 @@ class PatreonProfile with PatreonProfileMappable {
 @MappableClass()
 class LinkedAccounts with LinkedAccountsMappable {
   /// {@macro linked_accounts}
-  const LinkedAccounts({
-    this.steamProfile = false,
-    this.patreonProfile = false,
-    this.xboxProfile = false,
-  });
+  const LinkedAccounts({this.steamProfile = false, this.patreonProfile = false, this.xboxProfile = false});
 
   /// Creates a LinkedAccount from Json map.
-  factory LinkedAccounts.fromJson(String json) =>
-      LinkedAccountsMapper.fromJson(json);
+  factory LinkedAccounts.fromJson(String json) => LinkedAccountsMapper.fromJson(json);
 
   /// User has linked their steam profile.
   @MappableField(key: 'steam_profile')

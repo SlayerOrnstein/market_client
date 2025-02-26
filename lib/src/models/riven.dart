@@ -21,7 +21,7 @@ enum RivenType {
   shotgun,
 
   /// Zaw Riven type
-  zaw
+  zaw,
 }
 
 /// {@template riven}
@@ -75,12 +75,7 @@ class Riven with RivenMappable {
 @MappableClass()
 class RivenI18n with RivenI18nMappable {
   /// {@macro riven_i18n}
-  const RivenI18n({
-    required this.itemName,
-    required this.wikiLink,
-    required this.icon,
-    required this.thumb,
-  });
+  const RivenI18n({required this.itemName, required this.wikiLink, required this.icon, required this.thumb});
 
   /// Localized item name
   final String itemName;

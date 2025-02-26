@@ -20,14 +20,14 @@ class OrderFilter with OrderFilterMappable {
     int? cyanStars,
     int? cyanStarsLt,
     this.subtype,
-  })  : rank = _validate(rank, 'rank'),
-        rankLt = _validate(rankLt, 'rankLt'),
-        charges = _validate(charges, 'charges'),
-        chargesLt = _validate(chargesLt, 'chargesLt'),
-        amberStars = _validate(amberStars, 'amberStarts'),
-        amberStarsLt = _validate(amberStarsLt, 'amberLt'),
-        cyanStars = _validate(cyanStars, 'cyanStars'),
-        cyanStarsLt = _validate(cyanStarsLt, 'cyanstarsLt');
+  }) : rank = _validate(rank, 'rank'),
+       rankLt = _validate(rankLt, 'rankLt'),
+       charges = _validate(charges, 'charges'),
+       chargesLt = _validate(chargesLt, 'chargesLt'),
+       amberStars = _validate(amberStars, 'amberStarts'),
+       amberStarsLt = _validate(amberStarsLt, 'amberLt'),
+       cyanStars = _validate(cyanStars, 'cyanStars'),
+       cyanStarsLt = _validate(cyanStarsLt, 'cyanstarsLt');
 
   /// Filter orders by the **exact** rank specfied.
   final int? rank;

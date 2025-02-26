@@ -8,87 +8,70 @@ import '../data/api_response.dart';
 import '../data/nemesis.dart';
 import '../mocks.dart';
 
-typedef NemesisData = ({
-  Map<String, dynamic> weapon,
-  Map<String, dynamic> ephemera,
-  Map<String, dynamic> quirk
-});
+typedef NemesisData = ({Map<String, dynamic> weapon, Map<String, dynamic> ephemera, Map<String, dynamic> quirk});
 
 void main() {
   const responses = <NemesisType, NemesisData>{
-    NemesisType.lich: (
-      weapon: lichWeapon,
-      ephemera: lichEphemera,
-      quirk: lichQuirk
-    ),
-    NemesisType.sister: (
-      weapon: sisterWeapon,
-      ephemera: sisterEphemera,
-      quirk: sisterQuirk
-    ),
+    NemesisType.lich: (weapon: lichWeapon, ephemera: lichEphemera, quirk: lichQuirk),
+    NemesisType.sister: (weapon: sisterWeapon, ephemera: sisterEphemera, quirk: sisterQuirk),
   };
 
   for (final type in NemesisType.values) {
     // Throw if data doesn't exist, reminds me to add data for it
     final data = responses[type]!;
 
-    group(
-      '${type.name} endpoints',
-      () {
-        late MarketHttpClient client;
-        late NemesisEndpoint endpoint;
+    group('${type.name} endpoints', () {
+      late MarketHttpClient client;
+      late NemesisEndpoint endpoint;
 
-        setUp(() {
-          client = MockMarketHttpClient();
-          endpoint = NemesisEndpoint(type: type, client: client);
-        });
+      setUp(() {
+        client = MockMarketHttpClient();
+        endpoint = NemesisEndpoint(type: type, client: client);
+      });
 
-        tearDown(() => reset(client));
+      tearDown(() => reset(client));
 
-        test('fetchWeapons() => Get list of nemesis weapons', () async {
-          when(() => client.get('/${type.name}/weapons')).thenAnswer(
-            (_) async => Response(apiResponse([data.weapon]), 200),
-          );
+      test('fetchWeapons() => Get list of nemesis weapons', () async {
+        when(
+          () => client.get('/${type.name}/weapons'),
+        ).thenAnswer((_) async => Response(apiResponse([data.weapon]), 200));
 
-          final weapons = await endpoint.fetchWeapons();
+        final weapons = await endpoint.fetchWeapons();
 
-          expect(weapons.map((w) => w.toMap()).toList(), equals([data.weapon]));
-        });
+        expect(weapons.map((w) => w.toMap()).toList(), equals([data.weapon]));
+      });
 
-        test('fetchWeapon(slug) => Get one nemesis weapon', () async {
-          final slug = data.weapon['slug'] as String;
+      test('fetchWeapon(slug) => Get one nemesis weapon', () async {
+        final slug = data.weapon['slug'] as String;
 
-          when(() => client.get('/${type.name}/weapon/$slug'))
-              .thenAnswer((_) async => Response(apiResponse(data.weapon), 200));
+        when(
+          () => client.get('/${type.name}/weapon/$slug'),
+        ).thenAnswer((_) async => Response(apiResponse(data.weapon), 200));
 
-          final weapon = await endpoint.fetchWeapon(slug);
+        final weapon = await endpoint.fetchWeapon(slug);
 
-          expect(weapon.toMap(), equals(data.weapon));
-        });
+        expect(weapon.toMap(), equals(data.weapon));
+      });
 
-        test('fetchEphemeras() => Get list of nemesis ephemeras', () async {
-          when(() => client.get('/${type.name}/ephemeras')).thenAnswer(
-            (_) async => Response(apiResponse([data.ephemera]), 200),
-          );
+      test('fetchEphemeras() => Get list of nemesis ephemeras', () async {
+        when(
+          () => client.get('/${type.name}/ephemeras'),
+        ).thenAnswer((_) async => Response(apiResponse([data.ephemera]), 200));
 
-          final ephemeras = await endpoint.fetchEphemeras();
+        final ephemeras = await endpoint.fetchEphemeras();
 
-          expect(
-            ephemeras.map((i) => i.toMap()).toList(),
-            equals([data.ephemera]),
-          );
-        });
+        expect(ephemeras.map((i) => i.toMap()).toList(), equals([data.ephemera]));
+      });
 
-        test('fetchQuirks() => Get list of nemesis quirks', () async {
-          when(() => client.get('/${type.name}/quirks')).thenAnswer(
-            (_) async => Response(apiResponse([data.quirk]), 200),
-          );
+      test('fetchQuirks() => Get list of nemesis quirks', () async {
+        when(
+          () => client.get('/${type.name}/quirks'),
+        ).thenAnswer((_) async => Response(apiResponse([data.quirk]), 200));
 
-          final quirks = await endpoint.fetchQuirks();
+        final quirks = await endpoint.fetchQuirks();
 
-          expect(quirks.map((i) => i.toMap()).toList(), equals([data.quirk]));
-        });
-      },
-    );
+        expect(quirks.map((i) => i.toMap()).toList(), equals([data.quirk]));
+      });
+    });
   }
 }

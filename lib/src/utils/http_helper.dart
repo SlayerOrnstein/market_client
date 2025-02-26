@@ -19,10 +19,7 @@ abstract class HttpHelpers {
   ///
   /// [MarketPlatform] is required for all calls.
   /// [language] will default to english/international if null on Warframe Market's end.
-  static Map<String, String> headers({
-    required MarketPlatform platform,
-    String? language,
-  }) {
+  static Map<String, String> headers({required MarketPlatform platform, String? language}) {
     return <String, String>{
       'Platform': platform.toString().split('.').last,
       if (language != null) 'Language': language,
@@ -34,11 +31,7 @@ abstract class HttpHelpers {
   static MarketResponse<T> parseResponse<T>(String body) {
     final json = jsonDecode(body) as Map<String, dynamic>;
 
-    return (
-      apiVersion: json['apiVersion'] as String,
-      data: json['data'] as T,
-      error: json['error']
-    );
+    return (apiVersion: json['apiVersion'] as String, data: json['data'] as T, error: json['error']);
   }
 
   /// Utility function to throw using statusCode
@@ -48,7 +41,7 @@ abstract class HttpHelpers {
     throw switch (statusCode) {
       HttpStatus.badRequest => BadRequestException(),
       HttpStatus.unauthorized => UnauthorisedException(),
-      _ => throw FetchDataException(statusCode, reason)
+      _ => throw FetchDataException(statusCode, reason),
     };
   }
 }
