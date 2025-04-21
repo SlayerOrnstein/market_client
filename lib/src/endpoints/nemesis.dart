@@ -1,4 +1,4 @@
-import 'package:market_client/src/http_client.dart';
+import 'package:market_client/src/endpoints/base_endpoint.dart';
 import 'package:market_client/src/models/models.dart';
 import 'package:market_client/src/utils/utils.dart';
 
@@ -14,18 +14,16 @@ enum NemesisType {
 /// {@template nemesis_endpoint}
 /// Endpoints to make litch/sister/Technocyte calls
 /// {@endtemplate}
-class NemesisEndpoint {
+class Nemesis extends BaseEndpoint {
   /// {@macro nemesis_endpoint}
-  const NemesisEndpoint({required this.type, required MarketHttpClient client}) : _client = client;
+  const Nemesis(super.client, {this.type = NemesisType.lich});
 
   /// Nemesis type that all request will be made for
   final NemesisType type;
 
-  final MarketHttpClient _client;
-
   /// Get list of all tradable [NemesisType] weapons
   Future<List<NemesisWeapon>> fetchWeapons() async {
-    final response = await _client.get('/${type.name}/weapons');
+    final response = await client.get('/${type.name}/weapons');
     final body = HttpHelpers.parseResponse<List<dynamic>>(response.body);
     final weapons = List<Map<String, dynamic>>.from(body.data);
 
@@ -34,7 +32,7 @@ class NemesisEndpoint {
 
   /// Get [NemesisType] weapon
   Future<NemesisWeapon> fetchWeapon(String slug) async {
-    final response = await _client.get('/${type.name}/weapon/$slug');
+    final response = await client.get('/${type.name}/weapon/$slug');
     final body = HttpHelpers.parseResponse<Map<String, dynamic>>(response.body);
 
     return NemesisWeapon.fromJson(body.data);
@@ -42,7 +40,7 @@ class NemesisEndpoint {
 
   /// Get list of all tradable [NemesisType] ephemeras
   Future<List<NemesisEphemera>> fetchEphemeras() async {
-    final response = await _client.get('/${type.name}/ephemeras');
+    final response = await client.get('/${type.name}/ephemeras');
     final body = HttpHelpers.parseResponse<List<dynamic>>(response.body);
     final ephemeras = List<Map<String, dynamic>>.from(body.data);
 
@@ -51,7 +49,7 @@ class NemesisEndpoint {
 
   /// Get list of all tradable [NemesisType] quirks
   Future<List<NemesisQuirk>> fetchQuirks() async {
-    final response = await _client.get('/${type.name}/quirks');
+    final response = await client.get('/${type.name}/quirks');
     final body = HttpHelpers.parseResponse<List<dynamic>>(response.body);
     final quirks = List<Map<String, dynamic>>.from(body.data);
 

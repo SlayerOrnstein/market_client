@@ -4,15 +4,12 @@ import 'package:market_client/src/utils/utils.dart';
 
 part 'order.mapper.dart';
 
-/// {@template order}
-/// Just an order, that’s it.
-/// Without specifying the owner, used in cases where you already know who the
-/// owner of the order is, such as in a user profile or your own profile.
+/// {@template base_order}
+/// Base order class
 /// {@endtemplate}
-@MappableClass()
-class Order with OrderMappable {
-  /// {@macro order}
-  const Order({
+abstract class BaseOrder {
+  /// {@macro base_order}
+  const BaseOrder({
     required this.id,
     required this.type,
     required this.platinum,
@@ -24,14 +21,10 @@ class Order with OrderMappable {
     required this.amberStars,
     required this.cyanStars,
     required this.visible,
-    required this.creationAt,
-    required this.updateAt,
+    required this.createdAt,
+    required this.updatedAt,
     required this.itemId,
-    required this.group,
   });
-
-  /// [Order] from a [Map]
-  factory Order.fromMap(Map<String, dynamic> map) => OrderMapper.fromMap(map);
 
   /// Order id.
   final String id;
@@ -60,22 +53,52 @@ class Order with OrderMappable {
   final String? subtype;
 
   /// Denotes the count of amber stars in a sculpture order.
-  final int amberStars;
+  final int? amberStars;
 
   /// Denotes the count of cyan stars in a sculpture order.
-  final int cyanStars;
+  final int? cyanStars;
 
   /// Indicates whether the order is publicly visible or not.
   final bool visible;
 
   /// The date this order was created on
-  final DateTime creationAt;
+  final DateTime createdAt;
 
   /// THe last time this order was updated.
-  final DateTime updateAt;
+  final DateTime updatedAt;
 
   /// Is the unique identifier of the item involved in the order.
   final String? itemId;
+}
+
+/// {@template order}
+/// Just an order, that’s it.
+/// Without specifying the owner, used in cases where you already know who the
+/// owner of the order is, such as in a user profile or your own profile.
+/// {@endtemplate}
+@MappableClass()
+class Order extends BaseOrder with OrderMappable {
+  /// {@macro order}
+  const Order({
+    required super.id,
+    required super.type,
+    required super.platinum,
+    required super.quantity,
+    required super.perTrade,
+    required super.rank,
+    required super.charges,
+    required super.subtype,
+    required super.amberStars,
+    required super.cyanStars,
+    required super.visible,
+    required super.createdAt,
+    required super.updatedAt,
+    required super.itemId,
+    required this.group,
+  });
+
+  /// [Order] from a [Map]
+  factory Order.fromMap(Map<String, dynamic> map) => OrderMapper.fromMap(map);
 
   /// User defined group to which the order belongs to.
   final String group;
@@ -86,7 +109,7 @@ class Order with OrderMappable {
 /// about an owner.
 /// {@endtemplate}
 @MappableClass()
-class OrderWithUser extends Order with OrderWithUserMappable implements Comparable<OrderWithUser> {
+class OrderWithUser extends BaseOrder with OrderWithUserMappable implements Comparable<OrderWithUser> {
   /// {@macro order_with_user}
   const OrderWithUser({
     required super.id,
@@ -100,16 +123,15 @@ class OrderWithUser extends Order with OrderWithUserMappable implements Comparab
     required super.amberStars,
     required super.cyanStars,
     required super.visible,
-    required super.creationAt,
-    required super.updateAt,
+    required super.createdAt,
+    required super.updatedAt,
     required super.itemId,
-    required super.group,
     required this.user,
   });
 
   /// [OrderWithUser] from a [Map]
   factory OrderWithUser.fromMap(Map<String, dynamic> map) {
-    return OrderWithUser.fromMap(map);
+    return OrderWithUserMapper.fromMap(map);
   }
 
   /// Represents the user who created the order, with basic profile

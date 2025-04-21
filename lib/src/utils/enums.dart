@@ -1,4 +1,9 @@
+import 'package:dart_mappable/dart_mappable.dart';
+
+part 'enums.mapper.dart';
+
 /// Game platforms that Warframe Market supports
+@MappableEnum()
 enum MarketPlatform {
   /// The PC platform, consist of steam users, and at one time dicord users
   pc,
@@ -13,9 +18,13 @@ enum MarketPlatform {
 
   /// Microsoft Xbox series, not including the Xbox 360 or OG Xbox.
   xbox,
+
+  /// Mobile platform (Android/iOS)
+  mobile,
 }
 
 /// Level of rarity for an item
+@MappableEnum()
 enum Rarity {
   /// Item drops commonly.
   common,
@@ -34,15 +43,22 @@ enum Rarity {
 }
 
 /// Item order type.
+@MappableEnum()
 enum OrderType {
   /// Item is for sale.
-  sell,
+  sell('WTS'),
 
   /// An order to buy said item.
-  buy,
+  buy('WTB');
+
+  const OrderType(this.inGameName);
+
+  /// How this is referenced in-game
+  final String inGameName;
 }
 
 /// Enemy factions
+@MappableEnum()
 enum Faction {
   /// Infested
   infested,

@@ -5,7 +5,7 @@ import 'package:http/retry.dart';
 import 'package:market_client/src/utils/utils.dart';
 
 const _root = 'api.warframe.market';
-const _version = 'v2';
+const _apiVersion = 'v2';
 
 /// {@template guest_client}
 /// The Client that makes the raw calls to Warframe market
@@ -13,7 +13,7 @@ const _version = 'v2';
 class MarketHttpClient {
   /// {@macro guest_client}
   MarketHttpClient({this.language = 'en', this.platform = MarketPlatform.pc, http.Client? client})
-    : client = client ?? RetryClient(http.Client());
+    : _inner = client ?? http.Client();
 
   /// The language used in request
   ///
@@ -27,62 +27,15 @@ class MarketHttpClient {
   /// The [http.Client] used internally to make http request.
   ///
   /// If no [http.Client] is supplied a [RetryClient] is used.
-  late final http.Client client;
+  final http.Client _inner;
 
   /// Sends a GET  request.
-  Future<http.Response> get(String path, {Map<String, String>? queryParameters, Map<String, String>? headers}) async {
-    final uri = Uri.https(_root, '/$_version$path', queryParameters);
-    final res = await client.get(uri, headers: HttpHelpers.headers(platform: platform, language: language));
+  Future<http.Response> get(String path, {Map<String, String>? queryParameters, MarketHeaderOptions? headers}) async {
+    final uri = Uri.https(_root, '/$_apiVersion$path', queryParameters);
+    final res = await _inner.get(uri, headers: HttpHelpers.headers(headers));
 
-    HttpHelpers.checkStatusCode(res.statusCode, reason: res.body);
+    HttpHelpers.checkStatusCode(res.statusCode, response: res.body);
 
     return res;
   }
-
-  // /// Sends a POST request.
-  // Future<http.Response> post(
-  //   String path, {
-  //   Map<String, String>? headers,
-  //   Map<String, String>? queryParameters,
-  //   Object? body,
-  // }) async {
-  //   final uri = Uri.https(_root, '/$_version$path', queryParameters);
-
-  //   final res = await client.post(
-  //     uri,
-  //     headers: HttpHelpers.headers(
-  //       platform: platform,
-  //       language: language,
-  //       token: token,
-  //     ),
-  //     body: json.encode(body),
-  //   );
-
-  //   HttpHelpers.checkStatusCode(res.statusCode);
-
-  //   return res;
-  // }
-
-  // /// Sends a DELETE request.
-  // Future<Map<String, dynamic>> delete(
-  //   String path, {
-  //   Map<String, String>? headers,
-  //   Map<String, String>? queryParameters,
-  //   Object? body,
-  // }) async {
-  //   final uri = Uri.https(_root, '/$_version$path', queryParameters);
-  //   final res = await client.delete(
-  //     uri,
-  //     headers: HttpHelpers.headers(
-  //       platform: platform,
-  //       language: language,
-  //       token: token,
-  //     ),
-  //     body: body,
-  //   );
-
-  //   HttpHelpers.checkStatusCode(res.statusCode);
-
-  //   return HttpHelpers.parseResponse(res.body);
-  // }
 }

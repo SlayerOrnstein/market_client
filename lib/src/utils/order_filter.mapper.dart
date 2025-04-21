@@ -21,23 +21,32 @@ class OrderFilterMapper extends ClassMapperBase<OrderFilter> {
   final String id = 'OrderFilter';
 
   static int? _$rank(OrderFilter v) => v.rank;
-  static const Field<OrderFilter, int> _f$rank = Field('rank', _$rank, opt: true);
+  static const Field<OrderFilter, int> _f$rank =
+      Field('rank', _$rank, opt: true);
   static int? _$rankLt(OrderFilter v) => v.rankLt;
-  static const Field<OrderFilter, int> _f$rankLt = Field('rankLt', _$rankLt, opt: true);
+  static const Field<OrderFilter, int> _f$rankLt =
+      Field('rankLt', _$rankLt, opt: true);
   static int? _$charges(OrderFilter v) => v.charges;
-  static const Field<OrderFilter, int> _f$charges = Field('charges', _$charges, opt: true);
+  static const Field<OrderFilter, int> _f$charges =
+      Field('charges', _$charges, opt: true);
   static int? _$chargesLt(OrderFilter v) => v.chargesLt;
-  static const Field<OrderFilter, int> _f$chargesLt = Field('chargesLt', _$chargesLt, opt: true);
+  static const Field<OrderFilter, int> _f$chargesLt =
+      Field('chargesLt', _$chargesLt, opt: true);
   static int? _$amberStars(OrderFilter v) => v.amberStars;
-  static const Field<OrderFilter, int> _f$amberStars = Field('amberStars', _$amberStars, opt: true);
+  static const Field<OrderFilter, int> _f$amberStars =
+      Field('amberStars', _$amberStars, opt: true);
   static int? _$amberStarsLt(OrderFilter v) => v.amberStarsLt;
-  static const Field<OrderFilter, int> _f$amberStarsLt = Field('amberStarsLt', _$amberStarsLt, opt: true);
+  static const Field<OrderFilter, int> _f$amberStarsLt =
+      Field('amberStarsLt', _$amberStarsLt, opt: true);
   static int? _$cyanStars(OrderFilter v) => v.cyanStars;
-  static const Field<OrderFilter, int> _f$cyanStars = Field('cyanStars', _$cyanStars, opt: true);
+  static const Field<OrderFilter, int> _f$cyanStars =
+      Field('cyanStars', _$cyanStars, opt: true);
   static int? _$cyanStarsLt(OrderFilter v) => v.cyanStarsLt;
-  static const Field<OrderFilter, int> _f$cyanStarsLt = Field('cyanStarsLt', _$cyanStarsLt, opt: true);
+  static const Field<OrderFilter, int> _f$cyanStarsLt =
+      Field('cyanStarsLt', _$cyanStarsLt, opt: true);
   static String? _$subtype(OrderFilter v) => v.subtype;
-  static const Field<OrderFilter, String> _f$subtype = Field('subtype', _$subtype, opt: true);
+  static const Field<OrderFilter, String> _f$subtype =
+      Field('subtype', _$subtype, opt: true);
 
   @override
   final MappableFields<OrderFilter> fields = const {
@@ -56,16 +65,15 @@ class OrderFilterMapper extends ClassMapperBase<OrderFilter> {
 
   static OrderFilter _instantiate(DecodingData data) {
     return OrderFilter(
-      rank: data.dec(_f$rank),
-      rankLt: data.dec(_f$rankLt),
-      charges: data.dec(_f$charges),
-      chargesLt: data.dec(_f$chargesLt),
-      amberStars: data.dec(_f$amberStars),
-      amberStarsLt: data.dec(_f$amberStarsLt),
-      cyanStars: data.dec(_f$cyanStars),
-      cyanStarsLt: data.dec(_f$cyanStarsLt),
-      subtype: data.dec(_f$subtype),
-    );
+        rank: data.dec(_f$rank),
+        rankLt: data.dec(_f$rankLt),
+        charges: data.dec(_f$charges),
+        chargesLt: data.dec(_f$chargesLt),
+        amberStars: data.dec(_f$amberStars),
+        amberStarsLt: data.dec(_f$amberStarsLt),
+        cyanStars: data.dec(_f$cyanStars),
+        cyanStarsLt: data.dec(_f$cyanStarsLt),
+        subtype: data.dec(_f$subtype));
   }
 
   @override
@@ -82,23 +90,28 @@ class OrderFilterMapper extends ClassMapperBase<OrderFilter> {
 
 mixin OrderFilterMappable {
   String toJson() {
-    return OrderFilterMapper.ensureInitialized().encodeJson<OrderFilter>(this as OrderFilter);
+    return OrderFilterMapper.ensureInitialized()
+        .encodeJson<OrderFilter>(this as OrderFilter);
   }
 
   Map<String, dynamic> toMap() {
-    return OrderFilterMapper.ensureInitialized().encodeMap<OrderFilter>(this as OrderFilter);
+    return OrderFilterMapper.ensureInitialized()
+        .encodeMap<OrderFilter>(this as OrderFilter);
   }
 
   OrderFilterCopyWith<OrderFilter, OrderFilter, OrderFilter> get copyWith =>
-      _OrderFilterCopyWithImpl(this as OrderFilter, $identity, $identity);
+      _OrderFilterCopyWithImpl<OrderFilter, OrderFilter>(
+          this as OrderFilter, $identity, $identity);
   @override
   String toString() {
-    return OrderFilterMapper.ensureInitialized().stringifyValue(this as OrderFilter);
+    return OrderFilterMapper.ensureInitialized()
+        .stringifyValue(this as OrderFilter);
   }
 
   @override
   bool operator ==(Object other) {
-    return OrderFilterMapper.ensureInitialized().equalsValue(this as OrderFilter, other);
+    return OrderFilterMapper.ensureInitialized()
+        .equalsValue(this as OrderFilter, other);
   }
 
   @override
@@ -107,70 +120,71 @@ mixin OrderFilterMappable {
   }
 }
 
-extension OrderFilterValueCopy<$R, $Out> on ObjectCopyWith<$R, OrderFilter, $Out> {
+extension OrderFilterValueCopy<$R, $Out>
+    on ObjectCopyWith<$R, OrderFilter, $Out> {
   OrderFilterCopyWith<$R, OrderFilter, $Out> get $asOrderFilter =>
-      $base.as((v, t, t2) => _OrderFilterCopyWithImpl(v, t, t2));
+      $base.as((v, t, t2) => _OrderFilterCopyWithImpl<$R, $Out>(v, t, t2));
 }
 
-abstract class OrderFilterCopyWith<$R, $In extends OrderFilter, $Out> implements ClassCopyWith<$R, $In, $Out> {
-  $R call({
-    int? rank,
-    int? rankLt,
-    int? charges,
-    int? chargesLt,
-    int? amberStars,
-    int? amberStarsLt,
-    int? cyanStars,
-    int? cyanStarsLt,
-    String? subtype,
-  });
+abstract class OrderFilterCopyWith<$R, $In extends OrderFilter, $Out>
+    implements ClassCopyWith<$R, $In, $Out> {
+  $R call(
+      {int? rank,
+      int? rankLt,
+      int? charges,
+      int? chargesLt,
+      int? amberStars,
+      int? amberStarsLt,
+      int? cyanStars,
+      int? cyanStarsLt,
+      String? subtype});
   OrderFilterCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
-class _OrderFilterCopyWithImpl<$R, $Out> extends ClassCopyWithBase<$R, OrderFilter, $Out>
+class _OrderFilterCopyWithImpl<$R, $Out>
+    extends ClassCopyWithBase<$R, OrderFilter, $Out>
     implements OrderFilterCopyWith<$R, OrderFilter, $Out> {
   _OrderFilterCopyWithImpl(super.value, super.then, super.then2);
 
   @override
-  late final ClassMapperBase<OrderFilter> $mapper = OrderFilterMapper.ensureInitialized();
+  late final ClassMapperBase<OrderFilter> $mapper =
+      OrderFilterMapper.ensureInitialized();
   @override
-  $R call({
-    Object? rank = $none,
-    Object? rankLt = $none,
-    Object? charges = $none,
-    Object? chargesLt = $none,
-    Object? amberStars = $none,
-    Object? amberStarsLt = $none,
-    Object? cyanStars = $none,
-    Object? cyanStarsLt = $none,
-    Object? subtype = $none,
-  }) => $apply(
-    FieldCopyWithData({
-      if (rank != $none) #rank: rank,
-      if (rankLt != $none) #rankLt: rankLt,
-      if (charges != $none) #charges: charges,
-      if (chargesLt != $none) #chargesLt: chargesLt,
-      if (amberStars != $none) #amberStars: amberStars,
-      if (amberStarsLt != $none) #amberStarsLt: amberStarsLt,
-      if (cyanStars != $none) #cyanStars: cyanStars,
-      if (cyanStarsLt != $none) #cyanStarsLt: cyanStarsLt,
-      if (subtype != $none) #subtype: subtype,
-    }),
-  );
+  $R call(
+          {Object? rank = $none,
+          Object? rankLt = $none,
+          Object? charges = $none,
+          Object? chargesLt = $none,
+          Object? amberStars = $none,
+          Object? amberStarsLt = $none,
+          Object? cyanStars = $none,
+          Object? cyanStarsLt = $none,
+          Object? subtype = $none}) =>
+      $apply(FieldCopyWithData({
+        if (rank != $none) #rank: rank,
+        if (rankLt != $none) #rankLt: rankLt,
+        if (charges != $none) #charges: charges,
+        if (chargesLt != $none) #chargesLt: chargesLt,
+        if (amberStars != $none) #amberStars: amberStars,
+        if (amberStarsLt != $none) #amberStarsLt: amberStarsLt,
+        if (cyanStars != $none) #cyanStars: cyanStars,
+        if (cyanStarsLt != $none) #cyanStarsLt: cyanStarsLt,
+        if (subtype != $none) #subtype: subtype
+      }));
   @override
   OrderFilter $make(CopyWithData data) => OrderFilter(
-    rank: data.get(#rank, or: $value.rank),
-    rankLt: data.get(#rankLt, or: $value.rankLt),
-    charges: data.get(#charges, or: $value.charges),
-    chargesLt: data.get(#chargesLt, or: $value.chargesLt),
-    amberStars: data.get(#amberStars, or: $value.amberStars),
-    amberStarsLt: data.get(#amberStarsLt, or: $value.amberStarsLt),
-    cyanStars: data.get(#cyanStars, or: $value.cyanStars),
-    cyanStarsLt: data.get(#cyanStarsLt, or: $value.cyanStarsLt),
-    subtype: data.get(#subtype, or: $value.subtype),
-  );
+      rank: data.get(#rank, or: $value.rank),
+      rankLt: data.get(#rankLt, or: $value.rankLt),
+      charges: data.get(#charges, or: $value.charges),
+      chargesLt: data.get(#chargesLt, or: $value.chargesLt),
+      amberStars: data.get(#amberStars, or: $value.amberStars),
+      amberStarsLt: data.get(#amberStarsLt, or: $value.amberStarsLt),
+      cyanStars: data.get(#cyanStars, or: $value.cyanStars),
+      cyanStarsLt: data.get(#cyanStarsLt, or: $value.cyanStarsLt),
+      subtype: data.get(#subtype, or: $value.subtype));
 
   @override
-  OrderFilterCopyWith<$R2, OrderFilter, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t) =>
-      _OrderFilterCopyWithImpl($value, $cast, t);
+  OrderFilterCopyWith<$R2, OrderFilter, $Out2> $chain<$R2, $Out2>(
+          Then<$Out2, $R2> t) =>
+      _OrderFilterCopyWithImpl<$R2, $Out2>($value, $cast, t);
 }

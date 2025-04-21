@@ -7,7 +7,7 @@ part 'order_filter.mapper.dart';
 ///
 /// All **less than** values take precedence over *exact* values
 /// {@endtemplate}
-@MappableClass()
+@MappableClass(ignoreNull: true)
 class OrderFilter with OrderFilterMappable {
   /// {@macro order_template}
   OrderFilter({
@@ -60,10 +60,11 @@ class OrderFilter with OrderFilterMappable {
   final String? subtype;
 
   static int? _validate(int? value, String name) {
-    if (value?.isNegative ?? false) {
-      throw ArgumentError.value(value, name, 'Must be non-negative');
-    }
+    if (value?.isNegative ?? false) throw ArgumentError.value(value, name, 'Must be non-negative');
 
     return value;
   }
+
+  /// Returns [toMap] as a [Map<String, String>]
+  Map<String, String> toQuery() => toMap().map((k, v) => MapEntry(k, v.toString()));
 }

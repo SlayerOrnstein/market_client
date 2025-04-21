@@ -10,11 +10,11 @@ import '../mocks.dart';
 
 void main() {
   late MarketHttpClient client;
-  late ItemsEndpoint itemsEndpoint;
+  late Items itemsEndpoint;
 
   setUp(() {
     client = MockMarketHttpClient();
-    itemsEndpoint = ItemsEndpoint(client);
+    itemsEndpoint = Items(client);
   });
 
   tearDown(() => reset(client));

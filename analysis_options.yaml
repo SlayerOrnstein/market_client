@@ -9,5 +9,5 @@ analyzer:
 
 linter:
   rules:
-    always_put_required_named_parameters_first: false
+    always_put_required_named_parameters_first: false # I like to set them in the order I declare them in the class
     lines_longer_than_80_chars: false

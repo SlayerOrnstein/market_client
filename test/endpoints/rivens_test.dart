@@ -10,11 +10,11 @@ import '../mocks.dart';
 
 void main() {
   late MarketHttpClient client;
-  late RivenEndpoint rivens;
+  late Rivens rivens;
 
   setUp(() {
     client = MockMarketHttpClient();
-    rivens = RivenEndpoint(client);
+    rivens = Rivens(client);
   });
 
   tearDown(() => reset(client));

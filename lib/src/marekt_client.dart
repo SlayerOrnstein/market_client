@@ -5,19 +5,20 @@ import 'package:market_client/market_client.dart';
 /// {@endtemplate}
 class MarketClient {
   /// {@macro market_client}
-  const MarketClient(MarketHttpClient client) : _client = client;
+  const MarketClient(this.client);
 
-  final MarketHttpClient _client;
+  /// [MarketHttpClient] to use for all endpoints
+  final MarketHttpClient client;
 
   /// Get order(s)
-  OrdersEndpoint get orders => OrdersEndpoint(_client);
+  Orders get orders => Orders(client);
 
   /// Get item(s)
-  ItemsEndpoint get items => ItemsEndpoint(_client);
+  Items get items => Items(client);
 
   /// Get litch/sister/Technocyte weapons, ephemeras, and quirks.
-  NemesisEndpoint nemesis(NemesisType type) => NemesisEndpoint(type: type, client: _client);
+  Nemesis nemesis(NemesisType type) => Nemesis(client, type: type);
 
   /// Get Riven weapon(s) and atrributes
-  RivenEndpoint get rivens => RivenEndpoint(_client);
+  Rivens get rivens => Rivens(client);
 }

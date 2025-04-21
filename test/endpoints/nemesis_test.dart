@@ -22,11 +22,11 @@ void main() {
 
     group('${type.name} endpoints', () {
       late MarketHttpClient client;
-      late NemesisEndpoint endpoint;
+      late Nemesis endpoint;
 
       setUp(() {
         client = MockMarketHttpClient();
-        endpoint = NemesisEndpoint(type: type, client: client);
+        endpoint = Nemesis(client, type: type);
       });
 
       tearDown(() => reset(client));
