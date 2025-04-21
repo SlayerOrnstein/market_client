@@ -5,24 +5,20 @@ import 'package:market_client/market_client.dart';
 /// {@endtemplate}
 class MarketClient {
   /// {@macro market_client}
-  const MarketClient(MarketHttpClient client, MarketWebsocket marketWebsocket)
-      : _client = client,
-        _marketWebsocket = marketWebsocket;
+  const MarketClient(this.client);
 
-  final MarketHttpClient _client;
-  final MarketWebsocket _marketWebsocket;
+  /// [MarketHttpClient] to use for all endpoints
+  final MarketHttpClient client;
 
-  /// endpoints to retrieve publicly available orders and new orders.
-  OrdersEndpoint get orders => OrdersEndpoint(_client, _marketWebsocket);
+  /// Get order(s)
+  Orders get orders => Orders(client);
 
-  /// Get orders on market items.
-  ///
-  /// Can also retrieve a list of items that warframe market currently allows.
-  ItemsEndpoint get items => ItemsEndpoint(_client);
+  /// Get item(s)
+  Items get items => Items(client);
 
-  /// User specfic endpoints.
-  AuthEndpoint get auth => AuthEndpoint(_client);
+  /// Get litch/sister/Technocyte weapons, ephemeras, and quirks.
+  Nemesis nemesis(NemesisType type) => Nemesis(client, type: type);
 
-  /// Get and updated count of online and registered users.
-  Stream<OnlineCount> get onlineCount => _marketWebsocket.onlineCount();
+  /// Get Riven weapon(s) and atrributes
+  Rivens get rivens => Rivens(client);
 }

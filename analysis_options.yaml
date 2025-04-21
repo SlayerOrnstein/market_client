@@ -1,5 +1,13 @@
-include: package:very_good_analysis/analysis_options.5.0.0.yaml
+include: package:very_good_analysis/analysis_options.yaml
+
+formatter:
+  page_width: 120
 
 analyzer:
   exclude:
-    - lib/src/models/*.g.dart
+    - lib/src/models/*.mapper.dart
+
+linter:
+  rules:
+    always_put_required_named_parameters_first: false # I like to set them in the order I declare them in the class
+    lines_longer_than_80_chars: false

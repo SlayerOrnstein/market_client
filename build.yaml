@@ -1,22 +1,13 @@
-targets:
-  $default:
-    builders:
-      json_serializable:
-        options:
-          # Options configure how source code is generated for every
-          # `@JsonSerializable`-annotated class in the package.
-          #
-          # The default value for each is listed.
-          any_map: false
-          checked: false
-          constructor: ""
-          create_factory: true
-          create_field_map: false
-          create_per_field_to_json: false
-          create_to_json: true
-          disallow_unrecognized_keys: false
-          explicit_to_json: true
-          field_rename: none
-          generic_argument_factories: false
-          ignore_unannotated: false
-          include_if_null: false
+global_options:
+  dart_mappable_builder:
+    options:
+      # the case style for the map keys, defaults to 'none'
+      caseStyle: none # or 'camelCase', 'snakeCase', etc.
+      # the case style for stringified enum values, defaults to 'none'
+      enumCaseStyle: none # or 'camelCase', 'snakeCase', etc.
+      # if true removes all map keys with null values
+      ignoreNull: true
+      # used as property name for type discriminators
+      discriminatorKey: type
+      # used to specify which methods to generate (all by default)
+      generateMethods: [decode, encode, copy, stringify, equals]
