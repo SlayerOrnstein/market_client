@@ -70,40 +70,88 @@
     <section class="summary offset-anchor" id="classes">
       <h2>Classes</h2>
       <dl>
-          <dt id="AuthEndpoint">
-  <span class="name "><a href="../market_client/AuthEndpoint-class.html">AuthEndpoint</a></span> 
+          <dt id="Achievement">
+  <span class="name "><a href="../market_client/Achievement-class.html">Achievement</a></span> 
 
 </dt>
 <dd>
-  Login, logout, registration and password reset.
+  Achievement represents a specific achievement.
 </dd>
 
-          <dt id="CurrentUser">
-  <span class="name "><a href="../market_client/CurrentUser-class.html">CurrentUser</a></span> 
+          <dt id="AchievementCopyWith">
+  <span class="name "><a href="../market_client/AchievementCopyWith-class.html">AchievementCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter">$In extends <a href="../market_client/Achievement-class.html">Achievement</a></span>, <span class="type-parameter">$Out</span>&gt;</span></span> 
 
 </dt>
 <dd>
-  CurrentUser description
+  
 </dd>
 
-          <dt id="DateTimeWithOffset">
-  <span class="name "><a href="../market_client/DateTimeWithOffset-class.html">DateTimeWithOffset</a></span> 
+          <dt id="AchievementI18nCopyWith">
+  <span class="name "><a href="../market_client/AchievementI18nCopyWith-class.html">AchievementI18nCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>&gt;</span></span> 
 
 </dt>
 <dd>
-  Converts Darts 'Z' datetime to one with an offset.
+  
 </dd>
 
-          <dt id="HttpHelpers">
-  <span class="name "><a href="../market_client/HttpHelpers-class.html">HttpHelpers</a></span> 
+          <dt id="AchievementI18nMapper">
+  <span class="name "><a href="../market_client/AchievementI18nMapper-class.html">AchievementI18nMapper</a></span> 
 
 </dt>
 <dd>
-  An abstract class for functions to help with http related jobs.
+  
 </dd>
 
-          <dt id="ItemCommon">
-  <span class="name "><a href="../market_client/ItemCommon-class.html">ItemCommon</a></span> 
+          <dt id="AchievementMapper">
+  <span class="name "><a href="../market_client/AchievementMapper-class.html">AchievementMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="Activity">
+  <span class="name "><a href="../market_client/Activity-class.html">Activity</a></span> 
+
+</dt>
+<dd>
+  Details about current activity the user is engaged in.
+</dd>
+
+          <dt id="ActivityCopyWith">
+  <span class="name "><a href="../market_client/ActivityCopyWith-class.html">ActivityCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter">$In extends <a href="../market_client/Activity-class.html">Activity</a></span>, <span class="type-parameter">$Out</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="ActivityMapper">
+  <span class="name "><a href="../market_client/ActivityMapper-class.html">ActivityMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="ActivityTypeMapper">
+  <span class="name "><a href="../market_client/ActivityTypeMapper-class.html">ActivityTypeMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="BaseOrder">
+  <span class="name "><a href="../market_client/BaseOrder-class.html">BaseOrder</a></span> 
+
+</dt>
+<dd>
+  Base order class
+</dd>
+
+          <dt id="Item">
+  <span class="name "><a href="../market_client/Item-class.html">Item</a></span> 
 
 </dt>
 <dd>
@@ -115,11 +163,51 @@
 
 </dt>
 <dd>
-  ItemFull description
+  Full item model with all possible fields
 </dd>
 
-          <dt id="ItemsEndpoint">
-  <span class="name "><a href="../market_client/ItemsEndpoint-class.html">ItemsEndpoint</a></span> 
+          <dt id="ItemFullCopyWith">
+  <span class="name "><a href="../market_client/ItemFullCopyWith-class.html">ItemFullCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter">$In extends <a href="../market_client/ItemFull-class.html">ItemFull</a></span>, <span class="type-parameter">$Out</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="ItemFullMapper">
+  <span class="name "><a href="../market_client/ItemFullMapper-class.html">ItemFullMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="ItemI18n">
+  <span class="name "><a href="../market_client/ItemI18n-class.html">ItemI18n</a></span> 
+
+</dt>
+<dd>
+  Localized text for an item
+</dd>
+
+          <dt id="ItemI18nCopyWith">
+  <span class="name "><a href="../market_client/ItemI18nCopyWith-class.html">ItemI18nCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter">$In extends <a href="../market_client/ItemI18n-class.html">ItemI18n</a></span>, <span class="type-parameter">$Out</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="ItemI18nMapper">
+  <span class="name "><a href="../market_client/ItemI18nMapper-class.html">ItemI18nMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="Items">
+  <span class="name "><a href="../market_client/Items-class.html">Items</a></span> 
 
 </dt>
 <dd>
@@ -131,23 +219,24 @@
 
 </dt>
 <dd>
-  A short data model of the item
+  Represent trimmed Item model, only used to build initial local copy of
+tradable items list on a client.
 </dd>
 
-          <dt id="LangDrop">
-  <span class="name "><a href="../market_client/LangDrop-class.html">LangDrop</a></span> 
+          <dt id="ItemShortCopyWith">
+  <span class="name "><a href="../market_client/ItemShortCopyWith-class.html">ItemShortCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter">$In extends <a href="../market_client/ItemShort-class.html">ItemShort</a></span>, <span class="type-parameter">$Out</span>&gt;</span></span> 
 
 </dt>
 <dd>
-  Translated data for an item drop source.
+  
 </dd>
 
-          <dt id="LangInItem">
-  <span class="name "><a href="../market_client/LangInItem-class.html">LangInItem</a></span> 
+          <dt id="ItemShortMapper">
+  <span class="name "><a href="../market_client/ItemShortMapper-class.html">ItemShortMapper</a></span> 
 
 </dt>
 <dd>
-  Contains translated information on an item.
+  
 </dd>
 
           <dt id="LinkedAccounts">
@@ -158,12 +247,20 @@
   User linked  accounts.
 </dd>
 
-          <dt id="Location">
-  <span class="name "><a href="../market_client/Location-class.html">Location</a></span> 
+          <dt id="LinkedAccountsCopyWith">
+  <span class="name "><a href="../market_client/LinkedAccountsCopyWith-class.html">LinkedAccountsCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter">$In extends <a href="../market_client/LinkedAccounts-class.html">LinkedAccounts</a></span>, <span class="type-parameter">$Out</span>&gt;</span></span> 
 
 </dt>
 <dd>
-  Location description
+  
+</dd>
+
+          <dt id="LinkedAccountsMapper">
+  <span class="name "><a href="../market_client/LinkedAccountsMapper-class.html">LinkedAccountsMapper</a></span> 
+
+</dt>
+<dd>
+  
 </dd>
 
           <dt id="MarketClient">
@@ -182,68 +279,175 @@
   The Client that makes the raw calls to Warframe market
 </dd>
 
-          <dt id="MarketWebsocket">
-  <span class="name "><a href="../market_client/MarketWebsocket-class.html">MarketWebsocket</a></span> 
+          <dt id="Nemesis">
+  <span class="name "><a href="../market_client/Nemesis-class.html">Nemesis</a></span> 
 
 </dt>
 <dd>
-  Basic functions to listen to the websocket provided by Warframe.market.
+  Endpoints to make litch/sister/Technocyte calls
 </dd>
 
-          <dt id="MostRecentOrders">
-  <span class="name "><a href="../market_client/MostRecentOrders-class.html">MostRecentOrders</a></span> 
+          <dt id="NemesisEphemera">
+  <span class="name "><a href="../market_client/NemesisEphemera-class.html">NemesisEphemera</a></span> 
 
 </dt>
 <dd>
-  Instance containing both sell and buy orders.
+  Data model for litch/sister/Technocyte ephemera
 </dd>
 
-          <dt id="Npc">
-  <span class="name "><a href="../market_client/Npc-class.html">Npc</a></span> 
-
-</dt>
-<dd>
-  Npc description
-</dd>
-
-          <dt id="OnlineCount">
-  <span class="name "><a href="../market_client/OnlineCount-class.html">OnlineCount</a></span> 
-
-</dt>
-<dd>
-  Represents the total number of online users and registered users.
-</dd>
-
-          <dt id="OrderCommon">
-  <span class="name "><a href="../market_client/OrderCommon-class.html">OrderCommon</a></span> 
-
-</dt>
-<dd>
-  Common order data.
-</dd>
-
-          <dt id="OrderFull">
-  <span class="name "><a href="../market_client/OrderFull-class.html">OrderFull</a></span> 
+          <dt id="NemesisEphemeraCopyWith">
+  <span class="name "><a href="../market_client/NemesisEphemeraCopyWith-class.html">NemesisEphemeraCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter">$In extends <a href="../market_client/NemesisEphemera-class.html">NemesisEphemera</a></span>, <span class="type-parameter">$Out</span>&gt;</span></span> 
 
 </dt>
 <dd>
   
 </dd>
 
-          <dt id="OrderRow">
-  <span class="name "><a href="../market_client/OrderRow-class.html">OrderRow</a></span> 
+          <dt id="NemesisEphemeraMapper">
+  <span class="name "><a href="../market_client/NemesisEphemeraMapper-class.html">NemesisEphemeraMapper</a></span> 
 
 </dt>
 <dd>
-  Short version of <a href="../market_client/OrderFull-class.html">OrderFull</a> without the item.
+  
 </dd>
 
-          <dt id="OrdersEndpoint">
-  <span class="name "><a href="../market_client/OrdersEndpoint-class.html">OrdersEndpoint</a></span> 
+          <dt id="NemesisI18n">
+  <span class="name "><a href="../market_client/NemesisI18n-class.html">NemesisI18n</a></span> 
+
+</dt>
+<dd>
+  Localized text for <a href="../market_client/NemesisWeapon-class.html">NemesisWeapon</a>
+</dd>
+
+          <dt id="NemesisI18nCopyWith">
+  <span class="name "><a href="../market_client/NemesisI18nCopyWith-class.html">NemesisI18nCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter">$In extends <a href="../market_client/NemesisI18n-class.html">NemesisI18n</a></span>, <span class="type-parameter">$Out</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="NemesisI18nMapper">
+  <span class="name "><a href="../market_client/NemesisI18nMapper-class.html">NemesisI18nMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="NemesisQuirk">
+  <span class="name "><a href="../market_client/NemesisQuirk-class.html">NemesisQuirk</a></span> 
+
+</dt>
+<dd>
+  Data model for litch/sister/Technocyte quirk
+</dd>
+
+          <dt id="NemesisQuirkCopyWith">
+  <span class="name "><a href="../market_client/NemesisQuirkCopyWith-class.html">NemesisQuirkCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter">$In extends <a href="../market_client/NemesisQuirk-class.html">NemesisQuirk</a></span>, <span class="type-parameter">$Out</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="NemesisQuirkMapper">
+  <span class="name "><a href="../market_client/NemesisQuirkMapper-class.html">NemesisQuirkMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="NemesisWeapon">
+  <span class="name "><a href="../market_client/NemesisWeapon-class.html">NemesisWeapon</a></span> 
+
+</dt>
+<dd>
+  Data class for litch/sister/Technocyte weapon
+</dd>
+
+          <dt id="NemesisWeaponCopyWith">
+  <span class="name "><a href="../market_client/NemesisWeaponCopyWith-class.html">NemesisWeaponCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter">$In extends <a href="../market_client/NemesisWeapon-class.html">NemesisWeapon</a></span>, <span class="type-parameter">$Out</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="NemesisWeaponMapper">
+  <span class="name "><a href="../market_client/NemesisWeaponMapper-class.html">NemesisWeaponMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="Order">
+  <span class="name "><a href="../market_client/Order-class.html">Order</a></span> 
+
+</dt>
+<dd>
+  Just an order, that’s it.
+Without specifying the owner, used in cases where you already know who the
+owner of the order is, such as in a user profile or your own profile.
+</dd>
+
+          <dt id="OrderCopyWith">
+  <span class="name "><a href="../market_client/OrderCopyWith-class.html">OrderCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter">$In extends <a href="../market_client/Order-class.html">Order</a></span>, <span class="type-parameter">$Out</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="OrderMapper">
+  <span class="name "><a href="../market_client/OrderMapper-class.html">OrderMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="Orders">
+  <span class="name "><a href="../market_client/Orders-class.html">Orders</a></span> 
 
 </dt>
 <dd>
   Contains functions to retrive new and recent orders.
+</dd>
+
+          <dt id="OrderWithUser">
+  <span class="name "><a href="../market_client/OrderWithUser-class.html">OrderWithUser</a></span> 
+
+</dt>
+<dd>
+  This is a typical order model found in most requests, including a record
+about an owner.
+</dd>
+
+          <dt id="OrderWithUserCopyWith">
+  <span class="name "><a href="../market_client/OrderWithUserCopyWith-class.html">OrderWithUserCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter">$In extends <a href="../market_client/OrderWithUser-class.html">OrderWithUser</a></span>, <span class="type-parameter">$Out</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="OrderWithUserMapper">
+  <span class="name "><a href="../market_client/OrderWithUserMapper-class.html">OrderWithUserMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="PatreonBadgeMapper">
+  <span class="name "><a href="../market_client/PatreonBadgeMapper-class.html">PatreonBadgeMapper</a></span> 
+
+</dt>
+<dd>
+  
 </dd>
 
           <dt id="PatreonProfile">
@@ -254,20 +458,196 @@
   User Patreon profile
 </dd>
 
-          <dt id="RegistrationRequest">
-  <span class="name "><a href="../market_client/RegistrationRequest-class.html">RegistrationRequest</a></span> 
+          <dt id="PatreonProfileCopyWith">
+  <span class="name "><a href="../market_client/PatreonProfileCopyWith-class.html">PatreonProfileCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter">$In extends <a href="../market_client/PatreonProfile-class.html">PatreonProfile</a></span>, <span class="type-parameter">$Out</span>&gt;</span></span> 
 
 </dt>
 <dd>
-  This is the required information needed to register a new user.
+  
 </dd>
 
-          <dt id="SignInRequest">
-  <span class="name "><a href="../market_client/SignInRequest-class.html">SignInRequest</a></span> 
+          <dt id="PatreonProfileMapper">
+  <span class="name "><a href="../market_client/PatreonProfileMapper-class.html">PatreonProfileMapper</a></span> 
 
 </dt>
 <dd>
-  SignInRequest description
+  
+</dd>
+
+          <dt id="Riven">
+  <span class="name "><a href="../market_client/Riven-class.html">Riven</a></span> 
+
+</dt>
+<dd>
+  Riven Weapon
+</dd>
+
+          <dt id="RivenAttribute">
+  <span class="name "><a href="../market_client/RivenAttribute-class.html">RivenAttribute</a></span> 
+
+</dt>
+<dd>
+  Full riven attribute with all possible fields.
+</dd>
+
+          <dt id="RivenAttributeCopyWith">
+  <span class="name "><a href="../market_client/RivenAttributeCopyWith-class.html">RivenAttributeCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter">$In extends <a href="../market_client/RivenAttribute-class.html">RivenAttribute</a></span>, <span class="type-parameter">$Out</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="RivenAttributeI18nCopyWith">
+  <span class="name "><a href="../market_client/RivenAttributeI18nCopyWith-class.html">RivenAttributeI18nCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="RivenAttributeI18nMapper">
+  <span class="name "><a href="../market_client/RivenAttributeI18nMapper-class.html">RivenAttributeI18nMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="RivenAttributeMapper">
+  <span class="name "><a href="../market_client/RivenAttributeMapper-class.html">RivenAttributeMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="RivenCopyWith">
+  <span class="name "><a href="../market_client/RivenCopyWith-class.html">RivenCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter">$In extends <a href="../market_client/Riven-class.html">Riven</a></span>, <span class="type-parameter">$Out</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="RivenI18n">
+  <span class="name "><a href="../market_client/RivenI18n-class.html">RivenI18n</a></span> 
+
+</dt>
+<dd>
+  Localized text for the <a href="../market_client/Riven-class.html">Riven</a> instance
+</dd>
+
+          <dt id="RivenI18nCopyWith">
+  <span class="name "><a href="../market_client/RivenI18nCopyWith-class.html">RivenI18nCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter">$In extends <a href="../market_client/RivenI18n-class.html">RivenI18n</a></span>, <span class="type-parameter">$Out</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="RivenI18nMapper">
+  <span class="name "><a href="../market_client/RivenI18nMapper-class.html">RivenI18nMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="RivenMapper">
+  <span class="name "><a href="../market_client/RivenMapper-class.html">RivenMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="Rivens">
+  <span class="name "><a href="../market_client/Rivens-class.html">Rivens</a></span> 
+
+</dt>
+<dd>
+  Entry point for riven endpoint
+</dd>
+
+          <dt id="RivenTypeMapper">
+  <span class="name "><a href="../market_client/RivenTypeMapper-class.html">RivenTypeMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="RoleMapper">
+  <span class="name "><a href="../market_client/RoleMapper-class.html">RoleMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="SubscriptionTierMapper">
+  <span class="name "><a href="../market_client/SubscriptionTierMapper-class.html">SubscriptionTierMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="User">
+  <span class="name "><a href="../market_client/User-class.html">User</a></span> 
+
+</dt>
+<dd>
+  Base user class
+</dd>
+
+          <dt id="UserPrivate">
+  <span class="name "><a href="../market_client/UserPrivate-class.html">UserPrivate</a></span> 
+
+</dt>
+<dd>
+  CurrentUser description
+</dd>
+
+          <dt id="UserPrivateCopyWith">
+  <span class="name "><a href="../market_client/UserPrivateCopyWith-class.html">UserPrivateCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter">$In extends <a href="../market_client/UserPrivate-class.html">UserPrivate</a></span>, <span class="type-parameter">$Out</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="UserPrivateMapper">
+  <span class="name "><a href="../market_client/UserPrivateMapper-class.html">UserPrivateMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="UserPublic">
+  <span class="name "><a href="../market_client/UserPublic-class.html">UserPublic</a></span> 
+
+</dt>
+<dd>
+  Public user profile
+</dd>
+
+          <dt id="UserPublicCopyWith">
+  <span class="name "><a href="../market_client/UserPublicCopyWith-class.html">UserPublicCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter">$In extends <a href="../market_client/UserPublic-class.html">UserPublic</a></span>, <span class="type-parameter">$Out</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="UserPublicMapper">
+  <span class="name "><a href="../market_client/UserPublicMapper-class.html">UserPublicMapper</a></span> 
+
+</dt>
+<dd>
+  
 </dd>
 
           <dt id="UserShort">
@@ -278,50 +658,50 @@
   UserShort description
 </dd>
 
+          <dt id="UserShortCopyWith">
+  <span class="name "><a href="../market_client/UserShortCopyWith-class.html">UserShortCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter">$In extends <a href="../market_client/UserShort-class.html">UserShort</a></span>, <span class="type-parameter">$Out</span>&gt;</span></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="UserShortMapper">
+  <span class="name "><a href="../market_client/UserShortMapper-class.html">UserShortMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="UserStatusMapper">
+  <span class="name "><a href="../market_client/UserStatusMapper-class.html">UserStatusMapper</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
       </dl>
     </section>
 
     <section class="summary offset-anchor" id="enums">
       <h2>Enums</h2>
       <dl>
-          <dt id="AuthType">
-  <span class="name "><a href="../market_client/AuthType.html">AuthType</a></span> 
+          <dt id="ActivityType">
+  <span class="name "><a href="../market_client/ActivityType.html">ActivityType</a></span> 
 
 </dt>
 <dd>
-  Authorization type
+  Type of activity
 </dd>
 
-          <dt id="Faction">
-  <span class="name "><a href="../market_client/Faction.html">Faction</a></span> 
+          <dt id="NemesisType">
+  <span class="name "><a href="../market_client/NemesisType.html">NemesisType</a></span> 
 
 </dt>
 <dd>
-  Enemy factions
-</dd>
-
-          <dt id="MarketPlatform">
-  <span class="name "><a href="../market_client/MarketPlatform.html">MarketPlatform</a></span> 
-
-</dt>
-<dd>
-  Game platforms that Warframe Market supports
-</dd>
-
-          <dt id="MarketWebsocketTypes">
-  <span class="name "><a href="../market_client/MarketWebsocketTypes.html">MarketWebsocketTypes</a></span> 
-
-</dt>
-<dd>
-  Conains marcket websocket events.
-</dd>
-
-          <dt id="OrderType">
-  <span class="name "><a href="../market_client/OrderType.html">OrderType</a></span> 
-
-</dt>
-<dd>
-  Item order type.
+  Nemesis type
 </dd>
 
           <dt id="PatreonBadge">
@@ -332,12 +712,12 @@
   User patreon badge.
 </dd>
 
-          <dt id="Rarity">
-  <span class="name "><a href="../market_client/Rarity.html">Rarity</a></span> 
+          <dt id="RivenType">
+  <span class="name "><a href="../market_client/RivenType.html">RivenType</a></span> 
 
 </dt>
 <dd>
-  Level of rarity for an item
+  Riven types
 </dd>
 
           <dt id="Role">
@@ -346,6 +726,14 @@
 </dt>
 <dd>
   User's role.
+</dd>
+
+          <dt id="SubscriptionTier">
+  <span class="name "><a href="../market_client/SubscriptionTier.html">SubscriptionTier</a></span> 
+
+</dt>
+<dd>
+  Subscription tier, form Patreon \ Afdian \ Nitropay
 </dd>
 
           <dt id="UserStatus">
@@ -359,60 +747,500 @@
       </dl>
     </section>
 
+    <section class="summary offset-anchor" id="mixins">
+      <h2>Mixins</h2>
+      <dl>
+          <dt id="AchievementMappable">
+  <span class="name "><a href="../market_client/AchievementMappable-mixin.html">AchievementMappable</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="ActivityMappable">
+  <span class="name "><a href="../market_client/ActivityMappable-mixin.html">ActivityMappable</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="ItemFullMappable">
+  <span class="name "><a href="../market_client/ItemFullMappable-mixin.html">ItemFullMappable</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="ItemI18nMappable">
+  <span class="name "><a href="../market_client/ItemI18nMappable-mixin.html">ItemI18nMappable</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="ItemShortMappable">
+  <span class="name "><a href="../market_client/ItemShortMappable-mixin.html">ItemShortMappable</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="LinkedAccountsMappable">
+  <span class="name "><a href="../market_client/LinkedAccountsMappable-mixin.html">LinkedAccountsMappable</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="NemesisEphemeraMappable">
+  <span class="name "><a href="../market_client/NemesisEphemeraMappable-mixin.html">NemesisEphemeraMappable</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="NemesisI18nMappable">
+  <span class="name "><a href="../market_client/NemesisI18nMappable-mixin.html">NemesisI18nMappable</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="NemesisQuirkMappable">
+  <span class="name "><a href="../market_client/NemesisQuirkMappable-mixin.html">NemesisQuirkMappable</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="NemesisWeaponMappable">
+  <span class="name "><a href="../market_client/NemesisWeaponMappable-mixin.html">NemesisWeaponMappable</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="OrderMappable">
+  <span class="name "><a href="../market_client/OrderMappable-mixin.html">OrderMappable</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="OrderWithUserMappable">
+  <span class="name "><a href="../market_client/OrderWithUserMappable-mixin.html">OrderWithUserMappable</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="PatreonProfileMappable">
+  <span class="name "><a href="../market_client/PatreonProfileMappable-mixin.html">PatreonProfileMappable</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="RivenAttributeMappable">
+  <span class="name "><a href="../market_client/RivenAttributeMappable-mixin.html">RivenAttributeMappable</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="RivenI18nMappable">
+  <span class="name "><a href="../market_client/RivenI18nMappable-mixin.html">RivenI18nMappable</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="RivenMappable">
+  <span class="name "><a href="../market_client/RivenMappable-mixin.html">RivenMappable</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="UserPrivateMappable">
+  <span class="name "><a href="../market_client/UserPrivateMappable-mixin.html">UserPrivateMappable</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="UserPublicMappable">
+  <span class="name "><a href="../market_client/UserPublicMappable-mixin.html">UserPublicMappable</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="UserShortMappable">
+  <span class="name "><a href="../market_client/UserShortMappable-mixin.html">UserShortMappable</a></span> 
+
+</dt>
+<dd>
+  
+</dd>
+
+      </dl>
+    </section>
+
+
+    <section class="summary offset-anchor" id="extensions">
+      <h2>Extensions</h2>
+      <dl>
+          <dt id="AchievementI18nMappable">
+  <span class="name "><a href="../market_client/AchievementI18nMappable.html">AchievementI18nMappable</a></span>
+  on <a href="../market_client/AchievementI18n.html">AchievementI18n</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="AchievementI18nValueCopy">
+  <span class="name "><a href="../market_client/AchievementI18nValueCopy.html">AchievementI18nValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/AchievementI18n.html">AchievementI18n</a></span>, <span class="type-parameter"><a href="../market_client/AchievementI18n.html">AchievementI18n</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="AchievementValueCopy">
+  <span class="name "><a href="../market_client/AchievementValueCopy.html">AchievementValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/Achievement-class.html">Achievement</a></span>, <span class="type-parameter">$Out</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="ActivityTypeMapperExtension">
+  <span class="name "><a href="../market_client/ActivityTypeMapperExtension.html">ActivityTypeMapperExtension</a></span>
+  on <a href="../market_client/ActivityType.html">ActivityType</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="ActivityValueCopy">
+  <span class="name "><a href="../market_client/ActivityValueCopy.html">ActivityValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/Activity-class.html">Activity</a></span>, <span class="type-parameter">$Out</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="ItemFullValueCopy">
+  <span class="name "><a href="../market_client/ItemFullValueCopy.html">ItemFullValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/ItemFull-class.html">ItemFull</a></span>, <span class="type-parameter">$Out</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="ItemI18nValueCopy">
+  <span class="name "><a href="../market_client/ItemI18nValueCopy.html">ItemI18nValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/ItemI18n-class.html">ItemI18n</a></span>, <span class="type-parameter">$Out</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="ItemShortValueCopy">
+  <span class="name "><a href="../market_client/ItemShortValueCopy.html">ItemShortValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/ItemShort-class.html">ItemShort</a></span>, <span class="type-parameter">$Out</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="LinkedAccountsValueCopy">
+  <span class="name "><a href="../market_client/LinkedAccountsValueCopy.html">LinkedAccountsValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/LinkedAccounts-class.html">LinkedAccounts</a></span>, <span class="type-parameter">$Out</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="NemesisEphemeraValueCopy">
+  <span class="name "><a href="../market_client/NemesisEphemeraValueCopy.html">NemesisEphemeraValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/NemesisEphemera-class.html">NemesisEphemera</a></span>, <span class="type-parameter">$Out</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="NemesisI18nValueCopy">
+  <span class="name "><a href="../market_client/NemesisI18nValueCopy.html">NemesisI18nValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/NemesisI18n-class.html">NemesisI18n</a></span>, <span class="type-parameter">$Out</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="NemesisQuirkValueCopy">
+  <span class="name "><a href="../market_client/NemesisQuirkValueCopy.html">NemesisQuirkValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/NemesisQuirk-class.html">NemesisQuirk</a></span>, <span class="type-parameter">$Out</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="NemesisWeaponValueCopy">
+  <span class="name "><a href="../market_client/NemesisWeaponValueCopy.html">NemesisWeaponValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/NemesisWeapon-class.html">NemesisWeapon</a></span>, <span class="type-parameter">$Out</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="OrderValueCopy">
+  <span class="name "><a href="../market_client/OrderValueCopy.html">OrderValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/Order-class.html">Order</a></span>, <span class="type-parameter">$Out</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="OrderWithUserValueCopy">
+  <span class="name "><a href="../market_client/OrderWithUserValueCopy.html">OrderWithUserValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/OrderWithUser-class.html">OrderWithUser</a></span>, <span class="type-parameter">$Out</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="PatreonBadgeMapperExtension">
+  <span class="name "><a href="../market_client/PatreonBadgeMapperExtension.html">PatreonBadgeMapperExtension</a></span>
+  on <a href="../market_client/PatreonBadge.html">PatreonBadge</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="PatreonProfileValueCopy">
+  <span class="name "><a href="../market_client/PatreonProfileValueCopy.html">PatreonProfileValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/PatreonProfile-class.html">PatreonProfile</a></span>, <span class="type-parameter">$Out</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="RivenAttributeI18nMappable">
+  <span class="name "><a href="../market_client/RivenAttributeI18nMappable.html">RivenAttributeI18nMappable</a></span>
+  on <a href="../market_client/RivenAttributeI18n.html">RivenAttributeI18n</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="RivenAttributeI18nValueCopy">
+  <span class="name "><a href="../market_client/RivenAttributeI18nValueCopy.html">RivenAttributeI18nValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/RivenAttributeI18n.html">RivenAttributeI18n</a></span>, <span class="type-parameter"><a href="../market_client/RivenAttributeI18n.html">RivenAttributeI18n</a></span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="RivenAttributeValueCopy">
+  <span class="name "><a href="../market_client/RivenAttributeValueCopy.html">RivenAttributeValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/RivenAttribute-class.html">RivenAttribute</a></span>, <span class="type-parameter">$Out</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="RivenI18nValueCopy">
+  <span class="name "><a href="../market_client/RivenI18nValueCopy.html">RivenI18nValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/RivenI18n-class.html">RivenI18n</a></span>, <span class="type-parameter">$Out</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="RivenTypeMapperExtension">
+  <span class="name "><a href="../market_client/RivenTypeMapperExtension.html">RivenTypeMapperExtension</a></span>
+  on <a href="../market_client/RivenType.html">RivenType</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="RivenValueCopy">
+  <span class="name "><a href="../market_client/RivenValueCopy.html">RivenValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/Riven-class.html">Riven</a></span>, <span class="type-parameter">$Out</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="RoleMapperExtension">
+  <span class="name "><a href="../market_client/RoleMapperExtension.html">RoleMapperExtension</a></span>
+  on <a href="../market_client/Role.html">Role</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="SubscriptionTierMapperExtension">
+  <span class="name "><a href="../market_client/SubscriptionTierMapperExtension.html">SubscriptionTierMapperExtension</a></span>
+  on <a href="../market_client/SubscriptionTier.html">SubscriptionTier</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="UserPrivateValueCopy">
+  <span class="name "><a href="../market_client/UserPrivateValueCopy.html">UserPrivateValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/UserPrivate-class.html">UserPrivate</a></span>, <span class="type-parameter">$Out</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="UserPublicValueCopy">
+  <span class="name "><a href="../market_client/UserPublicValueCopy.html">UserPublicValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/UserPublic-class.html">UserPublic</a></span>, <span class="type-parameter">$Out</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="UserShortValueCopy">
+  <span class="name "><a href="../market_client/UserShortValueCopy.html">UserShortValueCopy</a></span>
+  on <a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/ObjectCopyWith-class.html">ObjectCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter">$R</span>, <span class="type-parameter"><a href="../market_client/UserShort-class.html">UserShort</a></span>, <span class="type-parameter">$Out</span>&gt;</span>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+          <dt id="UserStatusMapperExtension">
+  <span class="name "><a href="../market_client/UserStatusMapperExtension.html">UserStatusMapperExtension</a></span>
+  on <a href="../market_client/UserStatus.html">UserStatus</a>
+  
+
+</dt>
+<dd>
+  
+</dd>
+
+      </dl>
+    </section>
 
 
 
 
-
-    <section class="summary offset-anchor" id="functions">
-      <h2>Functions</h2>
-      <dl class="callables">
-          <dt id="websocketMarketUri" class="callable">
-  <span class="name"><a href="../market_client/websocketMarketUri.html">websocketMarketUri</a></span><span class="signature">(<wbr><span class="parameter" id="websocketMarketUri-param-platform"><span class="type-annotation"><a href="../market_client/MarketPlatform.html">MarketPlatform</a></span> <span class="parameter-name">platform</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.7.0/dart-core/Uri-class.html">Uri</a></span>
+    <section class="summary offset-anchor" id="typedefs">
+      <h2>Typedefs</h2>
+      <dl>
+          
+  <dt id="AchievementI18n" class="">
+  <span class="name"><a href="../market_client/AchievementI18n.html">AchievementI18n</a></span>
+    = (<span class="field">{<span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span> <span class="field-name">description</span>, </span><span class="field"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span> <span class="field-name">name</span>}</span>)
   </span>
   
 
 </dt>
 <dd>
-  Creates an websocket URI with the given <a href="../market_client/MarketPlatform.html">MarketPlatform</a>
+  AchievementI18n holds localized information for an achievement.
   
 
 </dd>
 
+
+          
+  <dt id="RivenAttributeI18n" class="">
+  <span class="name"><a href="../market_client/RivenAttributeI18n.html">RivenAttributeI18n</a></span>
+    = (<span class="field">{<span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span> <span class="field-name">effect</span>, </span><span class="field"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span> <span class="field-name">icon</span>, </span><span class="field"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span> <span class="field-name">thumb</span>}</span>)
+  </span>
+  
+
+</dt>
+<dd>
+  Localized text for riven attribute
+  
+
+</dd>
+
+
       </dl>
     </section>
 
-
-    <section class="summary offset-anchor" id="exceptions">
-      <h2>Exceptions / Errors</h2>
-      <dl>
-          <dt id="BadRequestException">
-  <span class="name "><a href="../market_client/BadRequestException-class.html">BadRequestException</a></span> 
-
-</dt>
-<dd>
-  Your request was bad and you should find out why.
-</dd>
-
-          <dt id="FetchDataException">
-  <span class="name "><a href="../market_client/FetchDataException-class.html">FetchDataException</a></span> 
-
-</dt>
-<dd>
-  Server denied your advances.
-</dd>
-
-          <dt id="UnauthorisedException">
-  <span class="name "><a href="../market_client/UnauthorisedException-class.html">UnauthorisedException</a></span> 
-
-</dt>
-<dd>
-  You have no power here
-</dd>
-
-      </dl>
-    </section>
   </div> <!-- /.main-content -->
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
     <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->

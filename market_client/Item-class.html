@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="API docs for the Item class from the market_client library, for the Dart programming language.">
+  <title>Item class - market_client library - Dart API</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="../" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="../index.html">market_client</a></li>
+    <li><a href="../market_client/">market_client.dart</a></li>
+    <li class="self-crumb">Item class</li>
+  </ol>
+  <div class="self-name">Item</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button" title="Toggle brightness">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        dark_mode
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        light_mode
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+<div
+    id="dartdoc-main-content"
+    class="main-content"
+    data-above-sidebar="market_client&#47;market_client-library-sidebar.html"
+    data-below-sidebar="market_client&#47;Item-class-sidebar.html">
+    <div>
+<h1><span class="kind-class">Item</span> class 
+    <a href="https://dart.dev/language/class-modifiers#abstract" class="feature feature-abstract" title="This type can not be directly constructed.">abstract</a>
+ 
+</h1></div>
+
+    
+<section class="desc markdown">
+  <p>Common fields for <a href="../market_client/ItemShort-class.html">ItemShort</a> and <a href="../market_client/ItemFull-class.html">ItemFull</a></p>
+</section>
+
+
+    <section>
+      <dl class="dl-horizontal">
+        
+
+        
+        
+
+          <dt>Implementers</dt>
+          <dd><ul class="comma-separated clazz-relationships">
+              <li><a href="../market_client/ItemFull-class.html">ItemFull</a></li>
+              <li><a href="../market_client/ItemShort-class.html">ItemShort</a></li>
+          </ul></dd>
+
+        
+        
+
+
+      </dl>
+    </section>
+
+    
+  <section class="summary offset-anchor" id="constructors">
+    <h2>Constructors</h2>
+    <dl class="constructor-summary-list">
+        <dt id="Item.new" class="callable">
+          <span class="name"><a href="../market_client/Item/Item.html">Item.new</a></span><span class="signature">({<span class="parameter" id="-param-id"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span> <span class="parameter-name">id</span>, </span><span class="parameter" id="-param-slug"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span> <span class="parameter-name">slug</span>, </span><span class="parameter" id="-param-gameRef"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span> <span class="parameter-name">gameRef</span>, </span><span class="parameter" id="-param-i18n"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="../market_client/ItemI18n-class.html">ItemI18n</a></span>&gt;</span></span> <span class="parameter-name">i18n</span>, </span><span class="parameter" id="-param-tags"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span>&gt;</span></span> <span class="parameter-name">tags</span>, </span><span class="parameter" id="-param-maxRank"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">maxRank</span>, </span><span class="parameter" id="-param-maxCharges"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">maxCharges</span>, </span><span class="parameter" id="-param-vaulted"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">vaulted</span>, </span><span class="parameter" id="-param-bulkTradable"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">bulkTradable</span>, </span><span class="parameter" id="-param-ducats"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">ducats</span>, </span><span class="parameter" id="-param-maxAmberStars"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">maxAmberStars</span>, </span><span class="parameter" id="-param-maxCyanStars"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">maxCyanStars</span>, </span><span class="parameter" id="-param-baseEndo"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">baseEndo</span>, </span><span class="parameter" id="-param-endoMultiplier"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">endoMultiplier</span>, </span><span class="parameter" id="-param-subtypes"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">subtypes</span></span>})</span>
+        </dt>
+        <dd>
+          Common fields for <a href="../market_client/ItemShort-class.html">ItemShort</a> and <a href="../market_client/ItemFull-class.html">ItemFull</a>
+            <div class="constructor-modifier features">const</div>
+        </dd>
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor"
+      id="instance-properties">
+    <h2>Properties</h2>
+    <dl class="properties">
+        <dt id="baseEndo" class="property">
+  <span class="name"><a href="../market_client/Item/baseEndo.html">baseEndo</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/int-class.html">int</a>?</span>
+  
+
+</dt>
+<dd>
+  Base endo value of the item
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="bulkTradable" class="property">
+  <span class="name"><a href="../market_client/Item/bulkTradable.html">bulkTradable</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/bool-class.html">bool</a>?</span>
+  
+
+</dt>
+<dd>
+  Whether the item can be traded in bulk or not.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="ducats" class="property">
+  <span class="name"><a href="../market_client/Item/ducats.html">ducats</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/int-class.html">int</a>?</span>
+  
+
+</dt>
+<dd>
+  Ducats that the item can be traded for in-game.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="endoMultiplier" class="property">
+  <span class="name"><a href="../market_client/Item/endoMultiplier.html">endoMultiplier</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/int-class.html">int</a>?</span>
+  
+
+</dt>
+<dd>
+  Multiplier for the endo value.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="gameRef" class="property">
+  <span class="name"><a href="../market_client/Item/gameRef.html">gameRef</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  Reference to the item in-game.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="hashCode" class="property inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.7.3/dart-core/Object/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/int-class.html">int</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  The hash code for this object.
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="i18n" class="property">
+  <span class="name"><a href="../market_client/Item/i18n.html">i18n</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="../market_client/ItemI18n-class.html">ItemI18n</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  Localized text for the item in various languages
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="id" class="property">
+  <span class="name"><a href="../market_client/Item/id.html">id</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  Unique identifier of the item
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="maxAmberStars" class="property">
+  <span class="name"><a href="../market_client/Item/maxAmberStars.html">maxAmberStars</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/int-class.html">int</a>?</span>
+  
+
+</dt>
+<dd>
+  Amount of installed amber stars.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="maxCharges" class="property">
+  <span class="name"><a href="../market_client/Item/maxCharges.html">maxCharges</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/int-class.html">int</a>?</span>
+  
+
+</dt>
+<dd>
+  Maximum chanrges the item can achieve, used for requiem mods.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="maxCyanStars" class="property">
+  <span class="name"><a href="../market_client/Item/maxCyanStars.html">maxCyanStars</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/int-class.html">int</a>?</span>
+  
+
+</dt>
+<dd>
+  Amount of installed cyan stars.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="maxRank" class="property">
+  <span class="name"><a href="../market_client/Item/maxRank.html">maxRank</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/int-class.html">int</a>?</span>
+  
+
+</dt>
+<dd>
+  Mmaximum rank the item can achieve.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="runtimeType" class="property inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.7.3/dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/Type-class.html">Type</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  A representation of the runtime type of the object.
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="slug" class="property">
+  <span class="name"><a href="../market_client/Item/slug.html">slug</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span>
+  
+
+</dt>
+<dd>
+  URL friendly name of the item.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="subtypes" class="property">
+  <span class="name"><a href="../market_client/Item/subtypes.html">subtypes</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span>&gt;</span>?</span>
+  
+
+</dt>
+<dd>
+  Defines the specific subtype or category of the item.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="tags" class="property">
+  <span class="name"><a href="../market_client/Item/tags.html">tags</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd>
+  Item tags.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="vaulted" class="property">
+  <span class="name"><a href="../market_client/Item/vaulted.html">vaulted</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/bool-class.html">bool</a>?</span>
+  
+
+</dt>
+<dd>
+  Whether the item is vaulted.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+
+    
+  <section
+      class="summary offset-anchor inherited"
+      id="instance-methods">
+    <h2>Methods</h2>
+    <dl class="callables">
+        <dt id="noSuchMethod" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.7.3/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+    <span class="returntype parameter">&#8594; dynamic</span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  Invoked when a nonexistent method or property is accessed.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="toString" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.7.3/dart-core/Object/toString.html">toString</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  A string representation of this object.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+  <section
+      class="summary offset-anchor inherited"
+      id="operators">
+    <h2>Operators</h2>
+    <dl class="callables">
+        <dt id="operator ==" class="callable inherited">
+  <span class="name"><a href="https://api.dart.dev/stable/3.7.3/dart-core/Object/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  The equality operator.
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+    </dl>
+  </section>
+    
+    
+    
+
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="../index.html">market_client</a></li>
+    <li><a href="../market_client/">market_client</a></li>
+    <li class="self-crumb">Item class</li>
+</ol>
+
+    <h5>market_client library</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div><!--/.sidebar-offcanvas-->
+</main>
+<footer>
+  <span class="no-break">
+    market_client
+      4.4.0
+  </span>
+  
+</footer>
+
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+

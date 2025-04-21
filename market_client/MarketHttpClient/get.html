@@ -57,10 +57,10 @@
 
     <section class="multi-line-signature">
       
-<span class="returntype"><a href="https://api.dart.dev/stable/3.7.0/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/http/1.3.0/http/Response-class.html">Response</a></span>&gt;</span></span>
-<span class="name ">get</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="get-param-path"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a></span> <span class="parameter-name">path</span>, {</span></li>
-<li><span class="parameter" id="get-param-queryParameters"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">queryParameters</span>, </span></li>
-<li><span class="parameter" id="get-param-headers"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">headers</span>, </span></li>
+<span class="returntype"><a href="https://api.dart.dev/stable/3.7.3/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://pub.dev/documentation/http/1.3.0/http/Response-class.html">Response</a></span>&gt;</span></span>
+<span class="name ">get</span>(<wbr><ol class="parameter-list"> <li><span class="parameter" id="get-param-path"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span> <span class="parameter-name">path</span>, {</span></li>
+<li><span class="parameter" id="get-param-queryParameters"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span>&gt;</span>?</span> <span class="parameter-name">queryParameters</span>, </span></li>
+<li><span class="parameter" id="get-param-headers"><span class="type-annotation">MarketHeaderOptions?</span> <span class="parameter-name">headers</span>, </span></li>
 </ol>})
 
       
@@ -75,22 +75,11 @@
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;http.Response&gt; get(
-  String path, {
-  Map&lt;String, String&gt;? queryParameters,
-  Map&lt;String, String&gt;? headers,
-}) async {
-  final uri = Uri.https(_root, &#39;&#47;$_version$path&#39;, queryParameters);
-  final res = await client.get(
-    uri,
-    headers: HttpHelpers.headers(
-      platform: platform,
-      language: language,
-      token: token,
-    ),
-  );
+  <pre class="language-dart"><code class="language-dart">Future&lt;http.Response&gt; get(String path, {Map&lt;String, String&gt;? queryParameters, MarketHeaderOptions? headers}) async {
+  final uri = Uri.https(_root, &#39;&#47;$_apiVersion$path&#39;, queryParameters);
+  final res = await _inner.get(uri, headers: HttpHelpers.headers(headers));
 
-  HttpHelpers.checkStatusCode(res.statusCode, reason: res.body);
+  HttpHelpers.checkStatusCode(res.statusCode, response: res.body);
 
   return res;
 }</code></pre>

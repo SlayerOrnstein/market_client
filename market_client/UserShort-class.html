@@ -67,14 +67,20 @@
   <dt>Inheritance</dt>
   <dd>
     <ul class="gt-separated dark clazz-relationships">
-      <li><a href="https://api.dart.dev/stable/3.7.0/dart-core/Object-class.html">Object</a></li>
-        <li><a href="https://pub.dev/documentation/equatable/2.0.7/equatable/Equatable-class.html">Equatable</a></li>
+      <li><a href="https://api.dart.dev/stable/3.7.3/dart-core/Object-class.html">Object</a></li>
+        <li><a href="../market_client/User-class.html">User</a></li>
       <li>UserShort</li>
     </ul>
   </dd>
 
         
         
+  <dt>Mixed-in types</dt>
+  <dd>
+    <ul class="comma-separated clazz-relationships">
+        <li><a href="../market_client/UserShortMappable-mixin.html">UserShortMappable</a></li>
+    </ul>
+  </dd>
 
 
         
@@ -82,7 +88,7 @@
   <dt>Annotations</dt>
   <dd>
     <ul class="annotation-list clazz-relationships">
-        <li>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonSerializable-class.html">JsonSerializable</a>(includeIfNull: true)</li>
+        <li>@<a href="https://pub.dev/documentation/dart_mappable/4.5.0/dart_mappable/MappableClass-class.html">MappableClass</a>()</li>
     </ul>
   </dd>
 
@@ -94,15 +100,15 @@
   <section class="summary offset-anchor" id="constructors">
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
-        <dt id="UserShort" class="callable">
-          <span class="name"><a href="../market_client/UserShort/UserShort.html">UserShort</a></span><span class="signature">({<span class="parameter" id="-param-id"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a></span> <span class="parameter-name">id</span>, </span><span class="parameter" id="-param-ingameName"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a></span> <span class="parameter-name">ingameName</span>, </span><span class="parameter" id="-param-status"><span>required</span> <span class="type-annotation"><a href="../market_client/UserStatus.html">UserStatus</a></span> <span class="parameter-name">status</span>, </span><span class="parameter" id="-param-region"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a></span> <span class="parameter-name">region</span>, </span><span class="parameter" id="-param-locale"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a></span> <span class="parameter-name">locale</span>, </span><span class="parameter" id="-param-reputation"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/int-class.html">int</a></span> <span class="parameter-name">reputation</span>, </span><span class="parameter" id="-param-avatar"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">avatar</span>, </span><span class="parameter" id="-param-lastSeen"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/DateTime-class.html">DateTime</a>?</span> <span class="parameter-name">lastSeen</span></span>})</span>
+        <dt id="UserShort.new" class="callable">
+          <span class="name"><a href="../market_client/UserShort/UserShort.html">UserShort.new</a></span><span class="signature">({<span class="parameter" id="-param-id"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span> <span class="parameter-name">id</span>, </span><span class="parameter" id="-param-ingameName"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span> <span class="parameter-name">ingameName</span>, </span><span class="parameter" id="-param-avatar"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">avatar</span>, </span><span class="parameter" id="-param-reputation"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/int-class.html">int</a></span> <span class="parameter-name">reputation</span>, </span><span class="parameter" id="-param-locale"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span> <span class="parameter-name">locale</span>, </span><span class="parameter" id="-param-platform"><span>required</span> <span class="type-annotation">MarketPlatform</span> <span class="parameter-name">platform</span>, </span><span class="parameter" id="-param-crossplay"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">crossplay</span>, </span><span class="parameter" id="-param-status"><span>required</span> <span class="type-annotation"><a href="../market_client/UserStatus.html">UserStatus</a></span> <span class="parameter-name">status</span>, </span><span class="parameter" id="-param-activity"><span>required</span> <span class="type-annotation"><a href="../market_client/Activity-class.html">Activity</a></span> <span class="parameter-name">activity</span>, </span><span class="parameter" id="-param-lastSeen"><span>required</span> <span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/DateTime-class.html">DateTime</a></span> <span class="parameter-name">lastSeen</span></span>})</span>
         </dt>
         <dd>
           UserShort description
             <div class="constructor-modifier features">const</div>
         </dd>
         <dt id="UserShort.fromJson" class="callable">
-          <span class="name"><a href="../market_client/UserShort/UserShort.fromJson.html">UserShort.fromJson</a></span><span class="signature">(<span class="parameter" id="fromJson-param-data"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">data</span></span>)</span>
+          <span class="name"><a href="../market_client/UserShort/UserShort.fromJson.html">UserShort.fromJson</a></span><span class="signature">(<span class="parameter" id="fromJson-param-json"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span> <span class="parameter-name">json</span></span>)</span>
         </dt>
         <dd>
           Creates a UserShort from Json map
@@ -112,25 +118,61 @@
   </section>
     
   <section
-      class="summary offset-anchor"
+      class="summary offset-anchor inherited"
       id="instance-properties">
     <h2>Properties</h2>
     <dl class="properties">
-        <dt id="avatar" class="property">
-  <span class="name"><a href="../market_client/UserShort/avatar.html">avatar</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a>?</span>
+        <dt id="activity" class="property inherited">
+  <span class="name"><a href="../market_client/User/activity.html">activity</a></span>
+  <span class="signature">&#8594; <a href="../market_client/Activity-class.html">Activity</a></span>
   
 
 </dt>
-<dd>
-  A description for avatar
-  <div class="features"><span class="feature">final</span></div>
+<dd class="inherited">
+  Current activity the user is engaged in.
+  <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="avatar" class="property inherited">
+  <span class="name"><a href="../market_client/User/avatar.html">avatar</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a>?</span>
+  
+
+</dt>
+<dd class="inherited">
+  Optional lint to the user's avatar image.
+  <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="copyWith" class="property inherited">
+  <span class="name"><a href="../market_client/UserShortMappable/copyWith.html">copyWith</a></span>
+  <span class="signature">&#8594; <a href="../market_client/UserShortCopyWith-class.html">UserShortCopyWith</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../market_client/UserShort-class.html">UserShort</a></span>, <span class="type-parameter"><a href="../market_client/UserShort-class.html">UserShort</a></span>, <span class="type-parameter"><a href="../market_client/UserShort-class.html">UserShort</a></span>&gt;</span></span>
+  
+
+</dt>
+<dd class="inherited">
+  
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="crossplay" class="property inherited">
+  <span class="name"><a href="../market_client/User/crossplay.html">crossplay</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  Does the user want to trade between platforms
+  <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
 
 </dd>
 
         <dt id="hashCode" class="property inherited">
-  <span class="name"><a href="https://pub.dev/documentation/equatable/2.0.7/equatable/Equatable/hashCode.html">hashCode</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.0/dart-core/int-class.html">int</a></span>
+  <span class="name"><a href="../market_client/UserShortMappable/hashCode.html">hashCode</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/int-class.html">int</a></span>
   
 
 </dt>
@@ -140,94 +182,81 @@
 
 </dd>
 
-        <dt id="id" class="property">
-  <span class="name"><a href="../market_client/UserShort/id.html">id</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a></span>
+        <dt id="id" class="property inherited">
+  <span class="name"><a href="../market_client/User/id.html">id</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span>
   
 
 </dt>
-<dd>
-  A description for id
-  <div class="features"><span class="feature">final</span></div>
+<dd class="inherited">
+  Unique identifier of the user.
+  <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
 
 </dd>
 
-        <dt id="ingameName" class="property">
-  <span class="name"><a href="../market_client/UserShort/ingameName.html">ingameName</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a></span>
+        <dt id="ingameName" class="property inherited">
+  <span class="name"><a href="../market_client/User/ingameName.html">ingameName</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span>
   
 
 </dt>
-<dd>
-  A description for ingameName
-  <div class="features"><span class="feature">final</span></div>
+<dd class="inherited">
+  User's in-game namae.
+  <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
 
 </dd>
 
-        <dt id="lastSeen" class="property">
-  <span class="name"><a href="../market_client/UserShort/lastSeen.html">lastSeen</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.0/dart-core/DateTime-class.html">DateTime</a>?</span>
+        <dt id="lastSeen" class="property inherited">
+  <span class="name"><a href="../market_client/User/lastSeen.html">lastSeen</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/DateTime-class.html">DateTime</a></span>
   
 
 </dt>
-<dd>
-  A description for lastSeen
-  <div class="features"><span class="feature">final</span></div>
+<dd class="inherited">
+  Timstamp of the user's last online presence.
+  <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
 
 </dd>
 
-        <dt id="locale" class="property">
-  <span class="name"><a href="../market_client/UserShort/locale.html">locale</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a></span>
+        <dt id="locale" class="property inherited">
+  <span class="name"><a href="../market_client/User/locale.html">locale</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span>
   
 
 </dt>
-<dd>
-  User's locale.
-  <div class="features"><span class="feature">final</span></div>
+<dd class="inherited">
+  Preffered communication locale
+  <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
 
 </dd>
 
-        <dt id="props" class="property">
-  <span class="name"><a href="../market_client/UserShort/props.html">props</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.0/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.7.0/dart-core/Object-class.html">Object</a>?</span>&gt;</span></span>
+        <dt id="platform" class="property inherited">
+  <span class="name"><a href="../market_client/User/platform.html">platform</a></span>
+  <span class="signature">&#8594; MarketPlatform</span>
   
 
 </dt>
-<dd>
-  The list of properties that will be used to determine whether
-two instances are equal.
-  <div class="features"><span class="feature">no setter</span><span class="feature">override</span></div>
+<dd class="inherited">
+  Gaming platform used by the user.
+  <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
 
 </dd>
 
-        <dt id="region" class="property">
-  <span class="name"><a href="../market_client/UserShort/region.html">region</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a></span>
+        <dt id="reputation" class="property inherited">
+  <span class="name"><a href="../market_client/User/reputation.html">reputation</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/int-class.html">int</a></span>
   
 
 </dt>
-<dd>
-  A description for region
-  <div class="features"><span class="feature">final</span></div>
-
-</dd>
-
-        <dt id="reputation" class="property">
-  <span class="name"><a href="../market_client/UserShort/reputation.html">reputation</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.0/dart-core/int-class.html">int</a></span>
-  
-
-</dt>
-<dd>
-  A description for reputation
-  <div class="features"><span class="feature">final</span></div>
+<dd class="inherited">
+  Reputation score.
+  <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
 
 </dd>
 
         <dt id="runtimeType" class="property inherited">
-  <span class="name"><a href="https://api.dart.dev/stable/3.7.0/dart-core/Object/runtimeType.html">runtimeType</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.0/dart-core/Type-class.html">Type</a></span>
+  <span class="name"><a href="https://api.dart.dev/stable/3.7.3/dart-core/Object/runtimeType.html">runtimeType</a></span>
+  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/Type-class.html">Type</a></span>
   
 
 </dt>
@@ -237,28 +266,15 @@ two instances are equal.
 
 </dd>
 
-        <dt id="status" class="property">
-  <span class="name"><a href="../market_client/UserShort/status.html">status</a></span>
+        <dt id="status" class="property inherited">
+  <span class="name"><a href="../market_client/User/status.html">status</a></span>
   <span class="signature">&#8594; <a href="../market_client/UserStatus.html">UserStatus</a></span>
   
 
 </dt>
-<dd>
-  A description for status
-  <div class="features"><span class="feature">final</span></div>
-
-</dd>
-
-        <dt id="stringify" class="property inherited">
-  <span class="name"><a href="https://pub.dev/documentation/equatable/2.0.7/equatable/Equatable/stringify.html">stringify</a></span>
-  <span class="signature">&#8594; <a href="https://api.dart.dev/stable/3.7.0/dart-core/bool-class.html">bool</a>?</span>
-  
-
-</dt>
 <dd class="inherited">
-  If set to <code>true</code>, the <a href="https://pub.dev/documentation/equatable/2.0.7/equatable/Equatable/toString.html">toString</a> method will be overridden to output
-this instance's <a href="https://pub.dev/documentation/equatable/2.0.7/equatable/Equatable/props.html">props</a>.
-  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+  Current user status
+  <div class="features"><span class="feature">final</span><span class="feature">inherited</span></div>
 
 </dd>
 
@@ -267,25 +283,12 @@ this instance's <a href="https://pub.dev/documentation/equatable/2.0.7/equatable
 
     
   <section
-      class="summary offset-anchor"
+      class="summary offset-anchor inherited"
       id="instance-methods">
     <h2>Methods</h2>
     <dl class="callables">
-        <dt id="copyWith" class="callable">
-  <span class="name"><a href="../market_client/UserShort/copyWith.html">copyWith</a></span><span class="signature">(<wbr>{<span class="parameter" id="copyWith-param-id"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">id</span>, </span><span class="parameter" id="copyWith-param-ingameName"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">ingameName</span>, </span><span class="parameter" id="copyWith-param-status"><span class="type-annotation"><a href="../market_client/UserStatus.html">UserStatus</a>?</span> <span class="parameter-name">status</span>, </span><span class="parameter" id="copyWith-param-region"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">region</span>, </span><span class="parameter" id="copyWith-param-locale"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">locale</span>, </span><span class="parameter" id="copyWith-param-reputation"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">reputation</span>, </span><span class="parameter" id="copyWith-param-avatar"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">avatar</span>()?, </span><span class="parameter" id="copyWith-param-lastSeen"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/DateTime-class.html">DateTime</a>?</span> <span class="parameter-name">lastSeen</span>()?</span>})
-    <span class="returntype parameter">&#8594; <a href="../market_client/UserShort-class.html">UserShort</a></span>
-  </span>
-  
-
-</dt>
-<dd>
-  Creates a copy of the current UserShort with property changes
-  
-
-</dd>
-
         <dt id="noSuchMethod" class="callable inherited">
-  <span class="name"><a href="https://api.dart.dev/stable/3.7.0/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
+  <span class="name"><a href="https://api.dart.dev/stable/3.7.3/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
     <span class="returntype parameter">&#8594; dynamic</span>
   </span>
   
@@ -297,22 +300,35 @@ this instance's <a href="https://pub.dev/documentation/equatable/2.0.7/equatable
 
 </dd>
 
-        <dt id="toJson" class="callable">
-  <span class="name"><a href="../market_client/UserShort/toJson.html">toJson</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.7.0/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>
+        <dt id="toJson" class="callable inherited">
+  <span class="name"><a href="../market_client/UserShortMappable/toJson.html">toJson</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span>
   </span>
   
 
 </dt>
-<dd>
-  Creates a Json map from a UserShort
+<dd class="inherited">
   
+  <div class="features"><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="toMap" class="callable inherited">
+  <span class="name"><a href="../market_client/UserShortMappable/toMap.html">toMap</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span>
+  </span>
+  
+
+</dt>
+<dd class="inherited">
+  
+  <div class="features"><span class="feature">inherited</span></div>
 
 </dd>
 
         <dt id="toString" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/equatable/2.0.7/equatable/Equatable/toString.html">toString</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.7.0/dart-core/String-class.html">String</a></span>
+  <span class="name"><a href="../market_client/UserShortMappable/toString.html">toString</a></span><span class="signature">(<wbr>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/String-class.html">String</a></span>
   </span>
   
 
@@ -332,8 +348,8 @@ this instance's <a href="https://pub.dev/documentation/equatable/2.0.7/equatable
     <h2>Operators</h2>
     <dl class="callables">
         <dt id="operator ==" class="callable inherited">
-  <span class="name"><a href="https://pub.dev/documentation/equatable/2.0.7/equatable/Equatable/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.0/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.7.0/dart-core/bool-class.html">bool</a></span>
+  <span class="name"><a href="../market_client/UserShortMappable/operator_equals.html">operator ==</a></span><span class="signature">(<wbr><span class="parameter" id="==-param-other"><span class="type-annotation"><a href="https://api.dart.dev/stable/3.7.3/dart-core/Object-class.html">Object</a></span> <span class="parameter-name">other</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/3.7.3/dart-core/bool-class.html">bool</a></span>
   </span>
   
 

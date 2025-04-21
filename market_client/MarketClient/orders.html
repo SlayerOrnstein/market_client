@@ -62,7 +62,7 @@
   <section id="getter">
     <section class="multi-line-signature">
       
-      <span class="returntype"><a href="../../market_client/OrdersEndpoint-class.html">OrdersEndpoint</a></span>
+      <span class="returntype"><a href="../../market_client/Orders-class.html">Orders</a></span>
       get
       <span class="name ">orders</span>
       
@@ -70,13 +70,13 @@
     </section>
     
 <section class="desc markdown">
-  <p>endpoints to retrieve publicly available orders and new orders.</p>
+  <p>Get order(s)</p>
 </section>
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">OrdersEndpoint get orders =&gt; OrdersEndpoint(_client, _marketWebsocket);</code></pre>
+  <pre class="language-dart"><code class="language-dart">Orders get orders =&gt; Orders(client);</code></pre>
 </section>
 
   </section>
