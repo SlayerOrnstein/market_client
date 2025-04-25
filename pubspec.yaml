@@ -1,6 +1,6 @@
 name: market_client
 description: A Dart WFM API client wrapper
-version: 4.6.0
+version: 4.6.1
 publish_to: none
 # homepage: https://www.example.com
 environment:
