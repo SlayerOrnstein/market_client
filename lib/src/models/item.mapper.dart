@@ -468,7 +468,7 @@ class ItemFullMapper extends ClassMapperBase<ItemFull> {
   static List<String> _$setParts(ItemFull v) => v.setParts;
   static const Field<ItemFull, List<String>> _f$setParts =
       Field('setParts', _$setParts);
-  static int _$quantityInSet(ItemFull v) => v.quantityInSet;
+  static int? _$quantityInSet(ItemFull v) => v.quantityInSet;
   static const Field<ItemFull, int> _f$quantityInSet =
       Field('quantityInSet', _$quantityInSet);
   static String? _$rarity(ItemFull v) => v.rarity;
@@ -663,7 +663,7 @@ class _ItemFullCopyWithImpl<$R, $Out>
           bool? tradable,
           Object? setRoot = $none,
           List<String>? setParts,
-          int? quantityInSet,
+          Object? quantityInSet = $none,
           Object? rarity = $none,
           Object? reqMasteryRank = $none,
           Object? tradingTax = $none}) =>
@@ -686,7 +686,7 @@ class _ItemFullCopyWithImpl<$R, $Out>
         if (tradable != null) #tradable: tradable,
         if (setRoot != $none) #setRoot: setRoot,
         if (setParts != null) #setParts: setParts,
-        if (quantityInSet != null) #quantityInSet: quantityInSet,
+        if (quantityInSet != $none) #quantityInSet: quantityInSet,
         if (rarity != $none) #rarity: rarity,
         if (reqMasteryRank != $none) #reqMasteryRank: reqMasteryRank,
         if (tradingTax != $none) #tradingTax: tradingTax

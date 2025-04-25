@@ -193,7 +193,7 @@ class ItemFull extends Item with ItemFullMappable {
   final List<String> setParts;
 
   /// Number of items in the set
-  final int quantityInSet;
+  final int? quantityInSet;
 
   /// Rarity of the item.
   final String? rarity;
