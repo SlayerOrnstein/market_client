@@ -4,6 +4,9 @@ import 'package:market_client/src/utils/utils.dart';
 
 part 'order.mapper.dart';
 
+/// Data class for top sell and buy orders
+typedef TopOrders = ({List<OrderWithUser> buy, List<OrderWithUser> sell});
+
 /// {@template base_order}
 /// Base order class
 /// {@endtemplate}

@@ -47,10 +47,7 @@ class Orders extends BaseEndpoint {
 
   /// Fetch the top 5 buy and top 5 sell orders for a specific item, exclusively from online users.
   /// Orders are sorted by price.
-  Future<({List<OrderWithUser> buy, List<OrderWithUser> sell})> fetchTopOrders(
-    String slug, {
-    OrderFilter? filter,
-  }) async {
+  Future<TopOrders> fetchTopOrders(String slug, {OrderFilter? filter}) async {
     final response = await client.get('/orders/item/$slug/top', queryParameters: filter?.toQuery());
     final body = HttpHelpers.parseResponse<Map<String, dynamic>>(response.body);
 
