@@ -1,10 +1,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
+import 'package:market_client/src/models/market_i18n.dart';
 
 part 'dashboard_showcase.mapper.dart';
-
-/// Localized text for a [DashboardItem]
-@MappableRecord()
-typedef DashboardI18n = ({String title, String? description});
 
 /// {@template dashboard_showcase}
 /// Items to be shown in a showcase

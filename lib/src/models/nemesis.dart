@@ -1,41 +1,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
+import 'package:market_client/src/models/market_i18n.dart';
 
 part 'nemesis.mapper.dart';
-
-/// {@template nemesis_weapon_i18n}
-/// Localized text for [NemesisWeapon]
-/// {@endtemplate}
-@MappableClass(ignoreNull: true)
-class NemesisI18n with NemesisI18nMappable {
-  /// {@macro nemesis_weapon_i18n}
-  const NemesisI18n({
-    required this.itemName,
-    required this.description,
-    required this.wikiLink,
-    required this.icon,
-    required this.thumb,
-  });
-
-  /// [NemesisI18n] from a json map
-  factory NemesisI18n.fromJson(Map<String, dynamic> map) {
-    return NemesisI18nMapper.fromMap(map);
-  }
-
-  /// Localized name
-  final String itemName;
-
-  /// Localized description
-  final String? description;
-
-  /// Wiki link
-  final String? wikiLink;
-
-  /// Icon url
-  final String? icon;
-
-  /// Thumbnail url
-  final String? thumb;
-}
 
 /// {@template nemesis_weapon}
 /// Data class for litch/sister/Technocyte weapon

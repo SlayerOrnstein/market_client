@@ -101,7 +101,7 @@ abstract class DashboardShowcaseCopyWith<$R, $In extends DashboardShowcase,
   ListCopyWith<$R, DashboardItem,
       DashboardItemCopyWith<$R, DashboardItem, DashboardItem>> get items;
   MapCopyWith<$R, String, DashboardI18n,
-      ObjectCopyWith<$R, DashboardI18n, DashboardI18n>> get i18n;
+      DashboardI18nCopyWith<$R, DashboardI18n, DashboardI18n>> get i18n;
   $R call({List<DashboardItem>? items, Map<String, DashboardI18n>? i18n});
   DashboardShowcaseCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(
       Then<$Out2, $R2> t);
@@ -122,9 +122,9 @@ class _DashboardShowcaseCopyWithImpl<$R, $Out>
           $value.items, (v, t) => v.copyWith.$chain(t), (v) => call(items: v));
   @override
   MapCopyWith<$R, String, DashboardI18n,
-          ObjectCopyWith<$R, DashboardI18n, DashboardI18n>>
-      get i18n => MapCopyWith($value.i18n,
-          (v, t) => ObjectCopyWith(v, $identity, t), (v) => call(i18n: v));
+          DashboardI18nCopyWith<$R, DashboardI18n, DashboardI18n>>
+      get i18n => MapCopyWith(
+          $value.i18n, (v, t) => v.copyWith.$chain(t), (v) => call(i18n: v));
   @override
   $R call({List<DashboardItem>? items, Map<String, DashboardI18n>? i18n}) =>
       $apply(FieldCopyWithData(
@@ -261,102 +261,4 @@ class _DashboardItemCopyWithImpl<$R, $Out>
   DashboardItemCopyWith<$R2, DashboardItem, $Out2> $chain<$R2, $Out2>(
           Then<$Out2, $R2> t) =>
       _DashboardItemCopyWithImpl<$R2, $Out2>($value, $cast, t);
-}
-
-class DashboardI18nMapper extends RecordMapperBase<DashboardI18n> {
-  static DashboardI18nMapper? _instance;
-  DashboardI18nMapper._();
-
-  static DashboardI18nMapper ensureInitialized() {
-    if (_instance == null) {
-      MapperContainer.globals.use(_instance = DashboardI18nMapper._());
-      MapperBase.addType(<A, B>(f) => f<({A description, B title})>());
-    }
-    return _instance!;
-  }
-
-  static String _$title(DashboardI18n v) => v.title;
-  static const Field<DashboardI18n, String> _f$title = Field('title', _$title);
-  static String? _$description(DashboardI18n v) => v.description;
-  static const Field<DashboardI18n, String> _f$description =
-      Field('description', _$description);
-
-  @override
-  final MappableFields<DashboardI18n> fields = const {
-    #title: _f$title,
-    #description: _f$description,
-  };
-
-  @override
-  Function get typeFactory => (f) => f<DashboardI18n>();
-
-  @override
-  List<Type> apply(MappingContext context) {
-    return [];
-  }
-
-  static DashboardI18n _instantiate(DecodingData<DashboardI18n> data) {
-    return (title: data.dec(_f$title), description: data.dec(_f$description));
-  }
-
-  @override
-  final Function instantiate = _instantiate;
-
-  static DashboardI18n fromMap(Map<String, dynamic> map) {
-    return ensureInitialized().decodeMap<DashboardI18n>(map);
-  }
-
-  static DashboardI18n fromJson(String json) {
-    return ensureInitialized().decodeJson<DashboardI18n>(json);
-  }
-}
-
-extension DashboardI18nMappable on DashboardI18n {
-  Map<String, dynamic> toMap() {
-    return DashboardI18nMapper.ensureInitialized().encodeMap(this);
-  }
-
-  String toJson() {
-    return DashboardI18nMapper.ensureInitialized().encodeJson(this);
-  }
-
-  DashboardI18nCopyWith<DashboardI18n> get copyWith =>
-      _DashboardI18nCopyWithImpl(this, $identity, $identity);
-}
-
-extension DashboardI18nValueCopy<$R>
-    on ObjectCopyWith<$R, DashboardI18n, DashboardI18n> {
-  DashboardI18nCopyWith<$R> get $asDashboardI18n =>
-      $base.as((v, t, t2) => _DashboardI18nCopyWithImpl(v, t, t2));
-}
-
-abstract class DashboardI18nCopyWith<$R>
-    implements RecordCopyWith<$R, DashboardI18n> {
-  $R call({String? title, String? description});
-  DashboardI18nCopyWith<$R2> $chain<$R2>(Then<DashboardI18n, $R2> t);
-}
-
-class _DashboardI18nCopyWithImpl<$R>
-    extends RecordCopyWithBase<$R, DashboardI18n>
-    implements DashboardI18nCopyWith<$R> {
-  _DashboardI18nCopyWithImpl(super.value, super.then, super.then2);
-
-  @override
-  late final RecordMapperBase<DashboardI18n> $mapper =
-      DashboardI18nMapper.ensureInitialized();
-  @override
-  $R call({String? title, Object? description = $none}) =>
-      $apply(FieldCopyWithData({
-        if (title != null) #title: title,
-        if (description != $none) #description: description
-      }));
-  @override
-  DashboardI18n $make(CopyWithData data) => (
-        title: data.get(#title, or: $value.title),
-        description: data.get(#description, or: $value.description)
-      );
-
-  @override
-  DashboardI18nCopyWith<$R2> $chain<$R2>(Then<DashboardI18n, $R2> t) =>
-      _DashboardI18nCopyWithImpl($value, $cast, t);
 }

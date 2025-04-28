@@ -1,43 +1,7 @@
 import 'package:dart_mappable/dart_mappable.dart';
+import 'package:market_client/src/models/market_i18n.dart';
 
 part 'item.mapper.dart';
-
-/// {@template item_i18n}
-/// Localized text for an item
-/// {@endtemplate}
-@MappableClass()
-class ItemI18n with ItemI18nMappable {
-  /// {@macro item_i18n}
-  const ItemI18n({
-    required this.name,
-    this.description,
-    this.wikiLink,
-    required this.icon,
-    required this.thumb,
-    this.subIcon,
-  });
-
-  /// [ItemI18n] from json string
-  factory ItemI18n.fromJson(String json) => ItemI18nMapper.fromJson(json);
-
-  /// Localized item name.
-  final String name;
-
-  /// Localized item description.
-  final String? description;
-
-  /// Wikia item link
-  final String? wikiLink;
-
-  /// Icon for item
-  final String icon;
-
-  /// Thumbnail for item
-  final String thumb;
-
-  /// Sub Icon?
-  final String? subIcon;
-}
 
 /// {@template item}
 /// Common fields for [ItemShort] and [ItemFull]
