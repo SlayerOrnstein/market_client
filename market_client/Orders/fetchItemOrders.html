@@ -75,7 +75,7 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Future&lt;List&lt;OrderWithUser&gt;&gt; fetchItemOrders(String slug, {OrderFilter? filter}) async {
-  final response = await client.get(&#39;&#47;orders&#47;items&#47;$slug&#39;, queryParameters: filter?.toQuery());
+  final response = await client.get(&#39;&#47;orders&#47;item&#47;$slug&#39;, queryParameters: filter?.toQuery());
   final body = HttpHelpers.parseResponse&lt;List&lt;dynamic&gt;&gt;(response.body);
   final orders = List&lt;Map&lt;String, dynamic&gt;&gt;.from(body.data);
 
@@ -108,7 +108,7 @@
 <footer>
   <span class="no-break">
     market_client
-      4.6.3
+      4.7.0
   </span>
   
 </footer>
