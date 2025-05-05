@@ -154,7 +154,7 @@ class ItemFull extends Item with ItemFullMappable {
   final bool? setRoot;
 
   /// List of parts in set.
-  final List<String> setParts;
+  final List<String>? setParts;
 
   /// Number of items in the set
   final int? quantityInSet;

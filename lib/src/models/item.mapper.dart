@@ -314,7 +314,7 @@ class ItemFullMapper extends ClassMapperBase<ItemFull> {
       Field('tradable', _$tradable);
   static bool? _$setRoot(ItemFull v) => v.setRoot;
   static const Field<ItemFull, bool> _f$setRoot = Field('setRoot', _$setRoot);
-  static List<String> _$setParts(ItemFull v) => v.setParts;
+  static List<String>? _$setParts(ItemFull v) => v.setParts;
   static const Field<ItemFull, List<String>> _f$setParts =
       Field('setParts', _$setParts);
   static int? _$quantityInSet(ItemFull v) => v.quantityInSet;
@@ -437,7 +437,7 @@ abstract class ItemFullCopyWith<$R, $In extends ItemFull, $Out>
       get i18n;
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>> get tags;
   ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>? get subtypes;
-  ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>> get setParts;
+  ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>? get setParts;
   $R call(
       {String? id,
       String? slug,
@@ -489,9 +489,13 @@ class _ItemFullCopyWithImpl<$R, $Out>
               (v) => call(subtypes: v))
           : null;
   @override
-  ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>> get setParts =>
-      ListCopyWith($value.setParts, (v, t) => ObjectCopyWith(v, $identity, t),
-          (v) => call(setParts: v));
+  ListCopyWith<$R, String, ObjectCopyWith<$R, String, String>>? get setParts =>
+      $value.setParts != null
+          ? ListCopyWith(
+              $value.setParts!,
+              (v, t) => ObjectCopyWith(v, $identity, t),
+              (v) => call(setParts: v))
+          : null;
   @override
   $R call(
           {String? id,
@@ -511,7 +515,7 @@ class _ItemFullCopyWithImpl<$R, $Out>
           Object? subtypes = $none,
           bool? tradable,
           Object? setRoot = $none,
-          List<String>? setParts,
+          Object? setParts = $none,
           Object? quantityInSet = $none,
           Object? rarity = $none,
           Object? reqMasteryRank = $none,
@@ -534,7 +538,7 @@ class _ItemFullCopyWithImpl<$R, $Out>
         if (subtypes != $none) #subtypes: subtypes,
         if (tradable != null) #tradable: tradable,
         if (setRoot != $none) #setRoot: setRoot,
-        if (setParts != null) #setParts: setParts,
+        if (setParts != $none) #setParts: setParts,
         if (quantityInSet != $none) #quantityInSet: quantityInSet,
         if (rarity != $none) #rarity: rarity,
         if (reqMasteryRank != $none) #reqMasteryRank: reqMasteryRank,
