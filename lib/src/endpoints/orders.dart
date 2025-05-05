@@ -22,7 +22,7 @@ class Orders extends BaseEndpoint {
 
   /// Get a list of all orders for an item from users who were/are online within the last 7 days.
   Future<List<OrderWithUser>> fetchItemOrders(String slug, {OrderFilter? filter}) async {
-    final response = await client.get('/orders/items/$slug', queryParameters: filter?.toQuery());
+    final response = await client.get('/orders/item/$slug', queryParameters: filter?.toQuery());
     final body = HttpHelpers.parseResponse<List<dynamic>>(response.body);
     final orders = List<Map<String, dynamic>>.from(body.data);
 
